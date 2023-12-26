@@ -21,11 +21,11 @@ It omits implementation of the following components:
 
 This project was developed for the 601.428 Compilers and Interpreters
 course at [Johns Hopkins University](http://www.jhu.edu/). The
-[Fall 2023 course web page](https://jhucompilers.github.com/fall2023)
+[Fall 2023 course web page](https://jhucompilers.github.io/fall2023)
 has the assignments in which students implement the missing parts.
 (Note that the code in this repository has been refactored quite a bit,
 so some minor details have changed.)  The Fall 2023 course also has
-a [test repository](https://github.com/jhucompilers.github.com/fall2023-tests)
+a [test repository](https://github.com/jhucompilers.github.io/fall2023-tests)
 which is useful for testing code generation. (The `assign04` and
 `assign05` subdirectories have the code generation tests.)
 
