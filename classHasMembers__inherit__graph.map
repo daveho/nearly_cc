@@ -1,0 +1,6 @@
+<map id="HasMembers" name="HasMembers">
+<area shape="rect" id="node1" title="Common base class for StructType and FunctionType, which both have &quot;members&quot; (fields or parameters)." alt="" coords="66,80,174,107"/>
+<area shape="rect" id="node3" href="$classFunctionType.html" title=" " alt="" coords="5,155,112,181"/>
+<area shape="rect" id="node4" href="$classStructType.html" title=" " alt="" coords="136,155,227,181"/>
+<area shape="rect" id="node2" href="$classType.html" title="Representation of a C data type." alt="" coords="94,5,146,32"/>
+</map>

@@ -1,0 +1,8 @@
+<map id="HasBaseType" name="HasBaseType">
+<area shape="rect" id="node1" title="Common base class for QualifiedType, FunctionType, PointerType, and ArrayType." alt="" coords="178,80,287,107"/>
+<area shape="rect" id="node3" href="$classArrayType.html" title=" " alt="" coords="5,155,92,181"/>
+<area shape="rect" id="node4" href="$classFunctionType.html" title=" " alt="" coords="117,155,223,181"/>
+<area shape="rect" id="node5" href="$classPointerType.html" title=" " alt="" coords="247,155,346,181"/>
+<area shape="rect" id="node6" href="$classQualifiedType.html" title=" " alt="" coords="371,155,481,181"/>
+<area shape="rect" id="node2" href="$classType.html" title="Representation of a C data type." alt="" coords="207,5,259,32"/>
+</map>

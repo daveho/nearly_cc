@@ -1,0 +1,5 @@
+<map id="ForwardAnalysis" name="ForwardAnalysis">
+<area shape="rect" id="node1" title="Base class for forward analyses." alt="" coords="101,95,231,121"/>
+<area shape="rect" id="node2" href="$classForwardNavigation.html" title="Forward navigation in the control&#45;flow graph (from predecessors towards successors)." alt="" coords="5,5,151,32"/>
+<area shape="rect" id="node3" href="$classBackwardNavigation.html" title="Backward navigation in the control&#45;flow graph (from successors back to predecessors)." alt="" coords="175,5,333,32"/>
+</map>

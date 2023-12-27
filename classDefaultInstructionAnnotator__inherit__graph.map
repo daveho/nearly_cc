@@ -1,0 +1,4 @@
+<map id="DefaultInstructionAnnotator" name="DefaultInstructionAnnotator">
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,208,32"/>
+<area shape="rect" id="node2" href="$classDefaultBlockAnnotator.html" title="Default annotator for printing a control flow graph." alt="" coords="21,80,192,107"/>
+</map>
