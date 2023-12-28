@@ -1,11 +1,12 @@
 <map id="cfg.h" name="cfg.h">
-<area shape="rect" id="node1" title="ControlFlowGraph and associated types." alt="" coords="248,5,303,32"/>
-<area shape="rect" id="node2" href="$cfg__builder_8h.html" title="Support for building a ControlFlowGraph from an InstructionSequence." alt="" coords="5,80,111,107"/>
-<area shape="rect" id="node3" href="$cfg__printer_8h.html" title="Support for printing a textual representation of a ControlFlowGraph." alt="" coords="135,80,237,107"/>
-<area shape="rect" id="node4" href="$cfg__transform_8h_source.html" title=" " alt="" coords="155,155,281,181"/>
-<area shape="rect" id="node6" href="$dataflow_8h.html" title="Support for global (procedure&#45;scope) dataflow analysis." alt="" coords="313,80,403,107"/>
-<area shape="rect" id="node9" href="$localopt__hl_8h_source.html" title=" " alt="" coords="427,80,532,107"/>
-<area shape="rect" id="node5" href="$peephole__ll_8h_source.html" title=" " alt="" coords="233,229,342,256"/>
-<area shape="rect" id="node7" href="$live__mregs_8h.html" title="Dataflow analysis to determine which machine registers contain live values." alt="" coords="305,155,411,181"/>
-<area shape="rect" id="node8" href="$live__vregs_8h.html" title="Dataflow analysis to determine which virtual registers (in high&#45;level code) contain live values." alt="" coords="435,155,537,181"/>
+<area shape="rect" id="node1" title="ControlFlowGraph and associated types." alt="" coords="285,5,340,32"/>
+<area shape="rect" id="node2" href="$cfg__builder_8h.html" title="Support for building a ControlFlowGraph from an InstructionSequence." alt="" coords="5,155,111,181"/>
+<area shape="rect" id="node4" href="$cfg__printer_8h.html" title="Support for printing a textual representation of a ControlFlowGraph." alt="" coords="135,155,237,181"/>
+<area shape="rect" id="node5" href="$cfg__transform_8h_source.html" title=" " alt="" coords="382,80,507,107"/>
+<area shape="rect" id="node7" href="$dataflow_8h.html" title="Support for global (procedure&#45;scope) dataflow analysis." alt="" coords="268,80,357,107"/>
+<area shape="rect" id="node10" href="$localopt__hl_8h_source.html" title=" " alt="" coords="532,80,637,107"/>
+<area shape="rect" id="node3" href="$main_8cpp.html" title="Driver program for nearly_cc." alt="" coords="209,229,291,256"/>
+<area shape="rect" id="node6" href="$peephole__ll_8h_source.html" title=" " alt="" coords="431,229,541,256"/>
+<area shape="rect" id="node8" href="$live__mregs_8h.html" title="Dataflow analysis to determine which machine registers contain live values." alt="" coords="387,155,494,181"/>
+<area shape="rect" id="node9" href="$live__vregs_8h.html" title="Dataflow analysis to determine which virtual registers (in high&#45;level code) contain live values." alt="" coords="262,155,363,181"/>
 </map>
