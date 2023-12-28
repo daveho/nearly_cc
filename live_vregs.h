@@ -26,24 +26,34 @@
 #include "highlevel_defuse.h"
 #include "dataflow.h"
 
+//! @file
+//! Dataflow analysis to determine which virtual registers (in high-level code)
+//! contain live values.
+
+//! Dataflow analysis to determine which virtual registers (in high-level code)
+//! contain live values.
 class LiveVregsAnalysis : public BackwardAnalysis {
 public:
   // We assume that there are never more than this many vregs used
   static const unsigned MAX_VREGS = 256;
 
-  // Fact type is a bitset of live virtual register numbers
+  //! Fact type is a bitset of live virtual register numbers.
   typedef std::bitset<MAX_VREGS> FactType;
 
-  // The "top" fact is an unknown value that combines nondestructively
-  // with known facts. For this analysis, it's the empty set.
+  //! The "top" fact is an unknown value that combines nondestructively
+  //! with known facts. For this analysis, it's the empty set.
   FactType get_top_fact() const { return FactType(); }
 
-  // Combine live sets. For this analysis, we use union.
+  //! Combine live sets. For this analysis, we use union.
   FactType combine_facts(const FactType &left, const FactType &right) const {
     return left | right;
   }
 
-  // Model an instruction.
+  //! Model an instruction.
+  //! @param ins the Instruction to model (backwards)
+  //! @param fact initially represents what is true after the instruction
+  //!             (in program order), and will be updated to represent what
+  //!             is true before the instruction (in program order)
   void model_instruction(Instruction *ins, FactType &fact) const {
     // Model an instruction (backwards).  If the instruction is a def,
     // the assigned-to vreg is killed.  Every vreg used in the instruction,
@@ -69,8 +79,10 @@ public:
     }
   }
 
-  // Convert a dataflow fact to a string (for printing the CFG annotated with
-  // dataflow facts)
+  //! Convert a dataflow fact to a string (for printing the CFG annotated with
+  //! dataflow facts)
+  //! @param fact dataflow fact (set of virtual register numbers)
+  //! @return string representation of the dataflow fact
   std::string fact_to_string(const FactType &fact) const {
     std::string s("{");
     for (unsigned i = 0; i < MAX_VREGS; i++) {
@@ -84,6 +96,8 @@ public:
   }
 };
 
+//! Convenient typedef for the type of a dataflow object for executing
+//! LiveVregsAnalysis on a ControlFlowGraph.
 typedef Dataflow<LiveVregsAnalysis> LiveVregs;
 
 #endif // LIVE_VREGS_H

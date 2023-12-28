@@ -30,8 +30,9 @@ InstructionSequence::InstructionSequence()
 }
 
 InstructionSequence::InstructionSequence(BasicBlockKind kind, int code_order, const std::string &block_label)
-  : m_kind(kind)
-  , m_block_label(block_label)
+  : m_next_label(block_label)
+  , m_kind(kind)
+  //, m_block_label(block_label)
   , m_block_id(unsigned(-1))
   , m_code_order(code_order) {
 
@@ -106,4 +107,25 @@ unsigned InstructionSequence::get_index_of_labeled_instruction(const std::string
   if (i == cend())
     RuntimeError::raise("no instruction has label '%s'", label.c_str());
   return unsigned(i - cbegin());
+}
+
+bool InstructionSequence::has_block_label() const {
+  if (m_instructions.empty())
+    return has_label_at_end();
+  else
+    return has_label(0);
+}
+
+std::string InstructionSequence::get_block_label() const {
+  if (m_instructions.empty())
+    return m_next_label;
+  else
+    return get_label_at_index(0);
+}
+
+void InstructionSequence::set_block_label(const std::string &block_label) {
+  if (m_instructions.empty())
+    define_label(block_label);
+  else
+    m_instructions.at(0).label = block_label;
 }

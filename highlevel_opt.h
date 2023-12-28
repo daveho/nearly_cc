@@ -25,8 +25,8 @@
 #include "options.h"
 #include "function.h"
 
-// HighLevelOpt is responsible for doing optimizations
-// on the high-level IR for a Function.
+//! HighLevelOpt is responsible for doing optimizations
+//! on the high-level IR for a Function.
 class HighLevelOpt {
 private:
   // command line options
@@ -40,10 +40,18 @@ private:
   HighLevelOpt &operator=(const HighLevelOpt &);
 
 public:
+  //! Constructor.
+  //! @param options Reference to the command-line Options
   HighLevelOpt(const Options &options);
   ~HighLevelOpt();
 
-  // Optimize the high-level IR for given Function.
+  //! Optimize the high-level IR for given Function.
+  //! The implementation should store an optimized version of the
+  //! high-level InstructionSequence in the Function object,
+  //! based on the original (unoptimized) high-level InstructionSequence.
+  //!
+  //! @param function the Function whose high-level InstructionSequence
+  //!                 should be optimized
   void optimize(std::shared_ptr<Function> function);
 };
 

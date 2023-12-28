@@ -25,12 +25,19 @@
 #include "type.h"
 #include "symtab.h"
 #include "literal_value.h"
+#include "has_operand.h"
 
-// The Node class will inherit from this type, so you can use it
-// to define any attributes and methods that Node objects should have
-// (constant value, results of semantic analysis, code generation info,
-// etc.)
-class NodeBase {
+//! The Node class will inherit from this type, so you can use it
+//! to define any attributes and methods that Node objects should have
+//! (constant value, results of semantic analysis, code generation info,
+//! etc.)
+//!
+//! Because NodeBase inherits from HasOperand, each Node automatically
+//! stores an Operand. This is useful for code generation: when
+//! generating code to evaluate an expression, HighLevelCodegen
+//! can set the Node's Operation to indicate the location where the
+//! result of the evaluation is stored.
+class NodeBase : public HasOperand {
 private:
   // TODO: fields (pointer to Type, pointer to Symbol, etc.)
 

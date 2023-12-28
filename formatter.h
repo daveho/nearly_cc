@@ -24,18 +24,28 @@
 #include "operand.h"
 class Instruction;
 
-// A Formatter turns Operand and Instruction objects into
-// strings, which in turn allows high-level and low-level code
-// to be printed.
+//! A Formatter turns Operand and Instruction objects into
+//! strings, which in turn allows high-level and low-level code
+//! to be printed.
 class Formatter {
 public:
   Formatter();
   virtual ~Formatter();
 
-  // The default implementation of format_operand could be useful
-  // for immediate values and labels.
+  //! Convert an Operand to a formatted string.
+  //! The default implementation of format_operand is useful
+  //! for immediate values and labels. Subclasses should override
+  //! to implement more specific kinds of operands (registers,
+  //! memory references, etc.)
+  //!
+  //! @param operand the Operand to format
+  //! @return the string formatted from the Operand
   virtual std::string format_operand(const Operand &operand) const;
 
+  //! Convert an Instruction to a formatted string.
+  //!
+  //! @param ins the Instruction to format
+  //! @return the string formatted from the Instruction
   virtual std::string format_instruction(const Instruction *ins) const = 0;
 };
 

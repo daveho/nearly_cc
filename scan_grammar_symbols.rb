@@ -42,6 +42,15 @@ header_fh.print <<"EOF1"
 
 #include "treeprint.h"
 
+//! @file
+//! This header defines the GrammarSymbol enumeration, which defines
+//! members for each symbol (terminal and nonterminal) used in the
+//! grammar. These values are used as tags for the parse tree or
+//! AST. It also defines the `node_tag_to_string` function which
+//! converts a GrammarSymbol value to a string (useful for printing
+//! a textual representation of a ndoe or tree.)
+
+//! Grammar symbol enumeration.
 enum GrammarSymbol {
 EOF1
 
@@ -77,17 +86,25 @@ end
 header_fh.print <<"EOF2"
 };
 
-// Get grammar symbol name corresponding to tag (enumeration value).
-// Useful for making sense of a parse tree based on the tag values
-// of the nodes.
+//! Get grammar symbol name corresponding to tag (enumeration value).
+//! Useful for making sense of a parse tree node based on its tag value.
+//! Note that this function doesn't return anything useful for AST
+//! node tags, since they don't appear directly in the grammar.
+//!
+//! @param tag a GrammarSymbol value
+//! @return a string with a textual representation of the GrammarSymbol
 const char *get_grammar_symbol_name(int tag);
 
-// TreePrint subclass for parse trees
+//! Print a parse tree.
 class ParseTreePrint : public TreePrint {
 public:
   ParseTreePrint();
   ~ParseTreePrint();
 
+  //! Override to convert a parse node's tag to a string.
+  //! @param tag parse node tag value
+  //! @return the string representation of the parse node tag
+  //!         (i.e., the GrammarSymbol)
   virtual std::string node_tag_to_string(int tag) const;
 };
 

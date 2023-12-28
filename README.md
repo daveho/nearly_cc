@@ -19,6 +19,9 @@ It omits implementation of the following components:
 * Code generation
 * Optimization
 
+[API documentation](https://daveho.github.io/nearly_cc) is available.
+(This is in progress, but should be complete soon.)
+
 This project was developed for the 601.428 Compilers and Interpreters
 course at [Johns Hopkins University](http://www.jhu.edu/). The
 [Fall 2023 course web page](https://jhucompilers.github.io/fall2023)

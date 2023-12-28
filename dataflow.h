@@ -28,93 +28,158 @@
 #include <bitset>
 #include "cfg.h"
 
-// Dataflow analysis direction
+//! @file
+//! Support for global (procedure-scope) dataflow analysis.
+//! Both forward and backward analyses are supported.
+
+//! Dataflow analysis direction.
 enum class DataflowDirection {
   FORWARD,
   BACKWARD,
 };
 
-// Forward navigation in the control-flow graph (from predecessors
-// towards successors.)
+//! Forward navigation in the control-flow graph (from predecessors
+//! towards successors). This is used for forward analyses.
 class ForwardNavigation {
 public:
+  //! Get the "start" block in the ControlFlowGraph,
+  //! which for a forward analysis is the entry block.
+  //! @param cfg the ControlFlowGraph
+  //! @return a shared pointer to the start block
   std::shared_ptr<InstructionSequence> get_start_block(const std::shared_ptr<ControlFlowGraph> &cfg) const {
     return cfg->get_entry_block();
   }
 
+  //! Get the control edges for a given block which lead to the
+  //! "logical successors" of the block. For a forward analysis,
+  //! these are the outgoing edges leading to the actual successors.
+  //! @param cfg the ControlFlowGraph
+  //! @param bb the basic block
+  //! @return the edges leading to successors
   const ControlFlowGraph::EdgeList &get_edges(const std::shared_ptr<ControlFlowGraph> &cfg, std::shared_ptr<InstructionSequence> bb) const {
     return cfg->get_outgoing_edges(bb);
   }
 
+  //! Get the basic block that is a "logical" successor from an Edge
+  //! returned from the `get_edges` member function. For forward analysis,
+  //! the returned block is the target block.
+  //! @param edge an Edge returned from `get_edges()`
+  //! @return the Edge's target block
   std::shared_ptr<InstructionSequence> get_block(const Edge *edge) const {
     return edge->get_target();
   }
 };
 
-// Backward navigation in the control-flow graph (from successors
-// back to predecessors.)
+//! Backward navigation in the control-flow graph (from successors
+//! back to predecessors). This is used for backward analyses.
 class BackwardNavigation {
 public:
+  //! Get the "start" block in the ControlFlowGraph,
+  //! which for a backward analysis is the exit block.
+  //! @param cfg the ControlFlowGraph
+  //! @return a shared pointer to the exit block
   std::shared_ptr<InstructionSequence> get_start_block(const std::shared_ptr<ControlFlowGraph> &cfg) const {
     return cfg->get_exit_block();
   }
 
+  //! Get the control edges for a given block which lead to the
+  //! "logical successors" of the block. For a backward analysis,
+  //! these are the incoming edges leading to the actual predecessors.
+  //! @param cfg the ControlFlowGraph
+  //! @param bb the basic block
+  //! @return the edges coming from predecessors
   const ControlFlowGraph::EdgeList &get_edges(const std::shared_ptr<ControlFlowGraph> &cfg, std::shared_ptr<InstructionSequence> bb) const {
     return cfg->get_incoming_edges(bb);
   }
 
+  //! Get the basic block that is a "logical" successor from an Edge
+  //! returned from the `get_edges` member function. For backward analysis,
+  //! the returned block is the source block.
+  //! @param edge an Edge returned from `get_edges()`
+  //! @return the Edge's source block
   std::shared_ptr<InstructionSequence> get_block(const Edge *edge) const {
     return edge->get_source();
   }
 };
 
-// Base class for forward analyses.
+//! Base class for forward analyses.
 class ForwardAnalysis {
 public:
-  // Analysis direction is forward
+  //! Analysis direction is forward.
   const static DataflowDirection DIRECTION = DataflowDirection::FORWARD;
 
-  // iterator type for iterating over instructions in a basic block
+  //! Iterator type for iterating over instructions in a basic block
+  //! in "analysis" order.
   typedef InstructionSequence::const_iterator InstructionIterator;
 
-  // Get begin/end iterators according to desired iteration order
-  // (in this case, forward)
+  //! Get a begin iterator over the instructions in a basic block
+  //! in "analysis" order.
+  //! @param bb a basic block
+  //! @return begin iterator over the instructions in the basic block
   InstructionIterator begin(std::shared_ptr<InstructionSequence> bb) const { return bb->cbegin(); }
+
+  //! Get an end iterator over the instructions in a basic block
+  //! in "analysis" order.
+  //! @param bb a basic block
+  //! @return end iterator over the instructions in the basic block
   InstructionIterator end(std::shared_ptr<InstructionSequence> bb) const { return bb->cend(); }
 
   // Logical navigation forward and backward (program order)
+
+  //! Logical forward navigation through the ControlFlowGraph
+  //! in analysis order.
   ForwardNavigation LOGICAL_FORWARD;
+
+  //! Logical backward navigation through the ControlFlowGraph
+  //! in analysis order.
   BackwardNavigation LOGICAL_BACKWARD;
 };
 
-// Base class for backward analyses.
+//! Base class for backward analyses.
 class BackwardAnalysis {
 public:
-  // Analysis direction is backward
+  //! Analysis direction is backward.
   const static DataflowDirection DIRECTION = DataflowDirection::BACKWARD;
 
-  // iterator type for iterating over instructions in a basic block
+  //! Iterator type for iterating over instructions in a basic block
+  //! in "analysis" order.
   typedef InstructionSequence::const_reverse_iterator InstructionIterator;
 
-  // Get begin/end iterators according to desired iteration order
-  // (in this case, backward)
+  //! Get a begin iterator over the instructions in a basic block
+  //! in "analysis" order.
+  //! @param bb a basic block
+  //! @return begin iterator over the instructions in the basic block
   InstructionIterator begin(std::shared_ptr<InstructionSequence> bb) const { return bb->crbegin(); }
+
+  //! Get an end iterator over the instructions in a basic block
+  //! in "analysis" order.
+  //! @param bb a basic block
+  //! @return end iterator over the instructions in the basic block
   InstructionIterator end(std::shared_ptr<InstructionSequence> bb) const { return bb->crend(); }
 
   // Logical navigation forward and backward (reverse of program order)
+
+  //! Logical forward navigation through the ControlFlowGraph
+  //! in analysis order.
   BackwardNavigation LOGICAL_FORWARD;
+
+  //! Logical backward navigation through the ControlFlowGraph
+  //! in analysis order.
   ForwardNavigation LOGICAL_BACKWARD;
 };
 
-// Annotator to return a stringified dataflow fact for a
-// specific instruction in a basic block. This can be used
-// with ControlFlowGraphPrinter to annotated the printed
-// control-flow graph with dataflow facts.
+//! Annotator to return a stringified dataflow fact for a
+//! specific instruction in a basic block. This can be used
+//! with ControlFlowGraphPrinter to annotate the printed
+//! control-flow graph with dataflow facts.
+//! @tparam the type of the Dataflow object containing the analysis results
 template<typename DataflowType>
 class DataflowAnnotator {
 public:
   DataflowType &m_dataflow;
 
+  //! Constructor.
+  //! @param reference to the Dataflow object containing the analysis results
   DataflowAnnotator(DataflowType &dataflow)
     : m_dataflow(dataflow) {
   }
@@ -127,35 +192,51 @@ public:
     return s;
   }
 
+  //! Get a begin annotation for a basic block.
+  //! This will return a textual representation of the dataflow fact
+  //! at the beginning of the basic block.
+  //!
+  //! @param bb the basic block
+  //! @return stringified dataflow fact at the beginning of the basic block
   virtual std::string get_block_begin_annotation(std::shared_ptr<InstructionSequence> bb) const {
     typename DataflowType::FactType fact = m_dataflow.get_fact_at_beginning_of_block(bb);
     return DataflowType::fact_to_string(fact);
   }
 
+  //! Get an end annotation for a basic block.
+  //! This will return a textual representation of the dataflow fact
+  //! at the end of the basic block.
+  //!
+  //! @param bb the basic block
+  //! @return stringified dataflow fact at the end of the basic block
   virtual std::string get_block_end_annotation(std::shared_ptr<InstructionSequence> bb) const {
     typename DataflowType::FactType fact = m_dataflow.get_fact_at_end_of_block(bb);
     return DataflowType::fact_to_string(fact);
   }
 };
 
-// An instance of Dataflow performs a dataflow analysis on the basic blocks
-// of a control flow graph and provides an interface for querying
-// dataflow facts at arbitrary points.  The Analysis object (instance of the
-// Analysis type parameter) provides the concrete details about how the
-// analysis is performed:
-//
-//   - the fact type
-//   - how dataflow facts are combined
-//   - how instructions are modeled
-//
-// etc.
+//! An instance of Dataflow performs a dataflow analysis on the basic blocks
+//! of a control flow graph and provides an interface for querying
+//! dataflow facts at arbitrary points.  The Analysis object (instance of the
+//! Analysis type parameter) provides the concrete details about how the
+//! analysis is performed:
+//!
+//!   - the fact type
+//!   - how dataflow facts are combined
+//!   - how instructions are modeled
+//!
+//! etc.
+//!
+//! @tparam Analysis the analysis class, derived from either ForwardAnalysis
+//!                  or BackwardAnalysis
 template<typename Analysis>
 class Dataflow {
 public:
-  // Data type representing a dataflow fact
+  //! Data type representing a dataflow fact.
+  //! Inferred from the Analysis type.
   typedef typename Analysis::FactType FactType;
 
-  // We assume there won't be more than this many basic blocks.
+  //! We assume there won't be more than this many basic blocks.
   static const unsigned MAX_BLOCKS = 1024;
 
 private:
@@ -175,25 +256,41 @@ private:
   std::vector<unsigned> m_iter_order;
 
 public:
+  //! Constructor.
+  //! @param the ControlFlowGraph to analyze
   Dataflow(const std::shared_ptr<ControlFlowGraph> &cfg);
   ~Dataflow();
 
-  // execute the analysis
+  //! Execute the analysis.
   void execute();
 
-  // get dataflow fact at end of specified block
+  //! Get dataflow fact at end of specified block.
+  //! @param bb the basic block
+  //! @return the dataflow fact at the end of the basic block
   const FactType &get_fact_at_end_of_block(std::shared_ptr<InstructionSequence> bb) const;
 
-  // get dataflow fact at beginning of specific block
+  //! Get dataflow fact at beginning of specific block.
+  //! @param bb the basic block
+  //! @return the dataflow fact at the beginning of the basic block
   const FactType &get_fact_at_beginning_of_block(std::shared_ptr<InstructionSequence> bb) const;
 
-  // get dataflow fact after specified instruction
+  //! Get dataflow fact at the location immediately after the specified instruction
+  //! (in program order).
+  //! @param bb the basic block
+  //! @param ins pointer to an Instruction in the basic block
+  //! @return the dataflow fact at the location immediately after the specified Instruction
   FactType get_fact_after_instruction(std::shared_ptr<InstructionSequence> bb, Instruction *ins) const;
 
-  // get dataflow fact before specified instruction
+  //! Get dataflow fact at the location immediately before the specified instruction
+  //! (in program order).
+  //! @param bb the basic block
+  //! @param ins pointer to an Instruction in the basic block
+  //! @return the dataflow fact at the location immediately before the specified Instruction
   FactType get_fact_before_instruction(std::shared_ptr<InstructionSequence> bb, Instruction *ins) const;
 
-  // convert dataflow fact to a string
+  //! Convert dataflow fact to a string.
+  //! @param fact a dataflow fact
+  //! @return a stringified representation of the dataflow fact
   static std::string fact_to_string(const FactType &fact);
 
 private:

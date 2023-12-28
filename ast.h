@@ -25,6 +25,10 @@
 #include "treeprint.h"
 class Node;
 
+//! @file
+//! ASTNodeTag enumeraion and ASTTreePrint class.
+
+//! Enumeration type providing tag values for AST nodes.
 enum ASTNodeTag {
   AST_UNIT = 10000,
   AST_VARIABLE_DECLARATION,
@@ -67,6 +71,7 @@ enum ASTNodeTag {
   AST_IMPLICIT_CONVERSION, // semantic analysis can add these to mark locations of implicit type conversions
 };
 
+//! Support for printing a text representation of an AST.
 class ASTTreePrint : public ParseTreePrint {
 public:
   ASTTreePrint();

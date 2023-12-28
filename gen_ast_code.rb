@@ -39,21 +39,38 @@ def gen_ast_visitor_h(outf, ast_tags)
 
 class Node;
 
+//! Base class for AST visitors.
 class ASTVisitor {
 public:
   ASTVisitor();
   virtual ~ASTVisitor();
 
+  //! Visit given AST Node.
+  //! This will result in a call to an appropriate visitation member
+  //! function depending on the Node object's tag value.
+  //! For example, if the tag value is `AST_STATEMENT_LIST`, the
+  //! `visit_statement_list` member function will be called.
+  //!
+  //! @param n the Node to visit
   virtual void visit(Node *n);
 EOF1
 
   ast_tags.each do |tag|
+    outf.puts <<"EOF_VISIT_FN"
+  //! Visit a Node with the `#{tag}` tag value.
+  //! @param n a Node with the `#{tag}` tag value
+EOF_VISIT_FN
     outf.puts "  virtual void #{visit_function_name(tag)}(Node *n);"
   end
 
   outf.print <<"EOF2"
+  //! Call `visit` on each child Node of the given parent Node.
+  //! @param n the parent Node whose children should be visited
   virtual void visit_children(Node *n);
 
+  //! This method is called if the Node being visited is a token
+  //! (terminal symbol).
+  //! @param n the token (terminal symbol) Node
   virtual void visit_token(Node *n);
 };
 

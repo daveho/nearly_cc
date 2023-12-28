@@ -26,21 +26,39 @@
 #include "highlevel_formatter.h"
 #include "lowlevel_formatter.h"
 
-// Default annotator for printing a control flow graph.
-// Uses DefaultInstructionAnnotator for instruction annotations,
-// and returns empty begin and end annotations for basic blocks.
+//! @file
+//! Support for printing a textual representation of a ControlFlowGraph.
+
+//! Default annotator for printing a control flow graph.
+//! Uses DefaultInstructionAnnotator for instruction annotations,
+//! and returns empty begin and end annotations for basic blocks.
 class DefaultBlockAnnotator : public DefaultInstructionAnnotator {
 public:
+  //! Get a begin annotation for a basic block.
+  //! For example, this could be overridden to return a textual representation
+  //! of the dataflow fact at the beginning of the basic block.
+  //! @param bb the basic block
+  //! @return the annotation for the beginning of the basic block
   virtual std::string get_block_begin_annotation(std::shared_ptr<InstructionSequence> bb) const {
     return "";
   }
 
+  //! Get an end annotation for a basic block.
+  //! For example, this could be overridden to return a textual representation
+  //! of the dataflow fact at the end of the basic block.
+  //! @param bb the basic block
+  //! @return the annotation for the end of the basic block
   virtual std::string get_block_end_annotation(std::shared_ptr<InstructionSequence> bb) const {
     return "";
   }
 };
 
-// For debugging, print a textual representation of a ControlFlowGraph.
+//! Print a textual representation of a ControlFlowGraph.
+//! @tparam Formatter the Formatter to use for converting an Instruction
+//!                   to its textual representation (either HighLevelFormatter
+//!                   or LowLevelFormatter)
+//! @tparam BlockAnnotator the annotator to use to annotate instructions
+//                         and basic blocks
 template<typename Formatter, typename BlockAnnotator = DefaultBlockAnnotator>
 class ControlFlowGraphPrinter {
 private:
@@ -49,31 +67,52 @@ private:
   std::shared_ptr<ControlFlowGraph> m_cfg;
 
 public:
+  //! Constructor.
+  //! @param cfg shared pointer to the ControlFlowGraph to print
+  //! @param formatter the Formatter to use
+  //! @param annotator the annotator to use to annotate basic blocks
   ControlFlowGraphPrinter(const std::shared_ptr<ControlFlowGraph> &cfg,
                           Formatter formatter = Formatter(),
                           BlockAnnotator annotator = BlockAnnotator());
   ~ControlFlowGraphPrinter();
 
+  //! Print the ControlFlowGraph to the standard output.
   void print();
 };
 
 // Convenience functions for instantiating a ControlFlowGraphPrinter
 // for high-level or low-level code
-//
-// These can be used like:
-//
-//    auto hl_cfg_printer = ::make_highlevel_cfg_printer(hl_cfg);
-//
-//    auto ll_liveness_cfg_printer = ::make_lowlevel_cfg_printer(ll_cfg, DataflowAnnotator<LiveMregs>(live_mregs));
-//
-// etc. These functions avoid explicitly naming some verbose type names.
 
+//! Create a ControlFlowGraphPrinter for printing a high-level ControlFlowGraph.
+//!
+//! Example usage:
+//!
+//! ```
+//! auto hl_cfg_printer = ::make_highlevel_cfg_printer(hl_cfg);
+//! ```
+//!
+//! @tparam BlockAnnotator the type of block annotator to use to annotate basic blocks
+//! @param hl_cfg the high-level ControlFlowGraph to print
+//! @param annotator the basic block annotator object to use
+//! @return the initialized ControlFlowGraphPrinter instance
 template<typename BlockAnnotator = DefaultBlockAnnotator>
 ControlFlowGraphPrinter<HighLevelFormatter, BlockAnnotator>
 make_highlevel_cfg_printer(const std::shared_ptr<ControlFlowGraph> &hl_cfg, BlockAnnotator annotator = BlockAnnotator()) {
   return ControlFlowGraphPrinter<HighLevelFormatter, BlockAnnotator>(hl_cfg, HighLevelFormatter(), annotator);
 }
 
+//! Create a ControlFlowGraphPrinter for printing a low-level ControlFlowGraph.
+//!
+//! Example usage:
+//!
+//! ```
+//! auto ll_cfg_printer = ::make_lowlevel_cfg_printer(ll_cfg);
+//! ```
+//!
+//! @tparam BlockAnnotator the type of block annotator to use to annotate basic blocks
+//! @param ll_cfg the low-level ControlFlowGraph to print
+//! @param annotator the basic block annotator object to use
+//! @return the initialized ControlFlowGraphPrinter instance
 template<typename BlockAnnotator = DefaultBlockAnnotator>
 ControlFlowGraphPrinter<LowLevelFormatter, BlockAnnotator>
 make_lowlevel_cfg_printer(const std::shared_ptr<ControlFlowGraph> &ll_cfg, BlockAnnotator annotator = BlockAnnotator()) {

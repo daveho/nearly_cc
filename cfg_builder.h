@@ -25,15 +25,21 @@
 #include "highlevel.h"
 #include "lowlevel.h"
 
+//! @file
+//! Support for building a ControlFlowGraph from an InstructionSequence.
+
 ////////////////////////////////////////////////////////////////////////
 // ControlFlowGraph builder class
 ////////////////////////////////////////////////////////////////////////
 
-// ControlFlowGraphBuilder builds a ControlFlowGraph from an InstructionSequence.
-// It is templated by InstructionProperties, which should be either
-// HighLevelInstructionProperties or LowLevelInstructionProperties,
-// depending on whether you're building a high-level or low-level
-// control-flow graph.
+//! ControlFlowGraphBuilder builds a ControlFlowGraph from an InstructionSequence.
+//! It is templated by InstructionProperties, which should be either
+//! HighLevelInstructionProperties or LowLevelInstructionProperties,
+//! depending on whether you're building a high-level or low-level
+//! control-flow graph.
+//! @tparam InstructionProperties either HighLevelInstructionProperties or
+//!         LowLevelInstructionProperties, depending on whether the
+//!         InstructionSequence has high-level or low-level instructions
 template<typename InstructionProperties>
 class ControlFlowGraphBuilder {
 private:
@@ -51,18 +57,23 @@ private:
   };
 
 public:
+  //! Constuctor.
+  //! @param iseq the InstructionSequence containing the instructions to build
+  //         a ControlFlowGraph from
   ControlFlowGraphBuilder(const std::shared_ptr<InstructionSequence> &iseq);
   ~ControlFlowGraphBuilder();
 
-  // Build a ControlFlowGraph from the original InstructionSequence, and return
-  // a pointer to it
+  //! Build a ControlFlowGraph from the original InstructionSequence.
+  //! @return a shared pointer to the ControlFlowGraph of the original InstructionSequence
   std::shared_ptr<ControlFlowGraph> build();
 
-  // Subclasses may override this method to specify which Instructions are
-  // branches (i.e., have a control successor other than the next instruction
-  // in the original InstructionSequence).  The default implementation assumes
-  // that any Instruction with an operand of type Operand::LABEL
-  // is a branch.
+  //! Subclasses may override this method to specify which Instructions are
+  //! branches (i.e., have a control successor other than the next instruction
+  //! in the original InstructionSequence).  The default implementation assumes
+  //! that any Instruction with an operand of type Operand::LABEL
+  //! is a branch.
+  //! @param ins the Instruction to check
+  //! @return true if the instruction is a branch, false otherwise
   virtual bool is_branch(Instruction *ins);
 
 private:
@@ -79,11 +90,31 @@ private:
 //
 //   auto ll_cfg_builder = ::make_lowlevel_cfg_builder(ll_iseq);
 
+//! Return a ControlFlowGraphBuilder for building a high-level
+//! ControlFlowGraph.
+//!
+//! Example usage:
+//! ```
+//! auto hl_cfg_builder = ::make_highlevel_cfg_builder(hl_iseq);
+//! ```
+//!
+//! @param the InstructionSequence containing the high-level instructions
+//! @return a shared pointer to the resulting ControlFlowGraph
 inline ControlFlowGraphBuilder<HighLevelInstructionProperties>
 make_highlevel_cfg_builder(const std::shared_ptr<InstructionSequence> &iseq) {
   return ControlFlowGraphBuilder<HighLevelInstructionProperties>(iseq);
 }
 
+//! Return a ControlFlowGraphBuilder for building a low-level
+//! ControlFlowGraph.
+//!
+//! Example usage:
+//! ```
+//! auto ll_cfg_builder = ::make_lowlevel_cfg_builder(ll_iseq);
+//! ```
+//!
+//! @param the InstructionSequence containing the low-level instructions
+//! @return a shared pointer to the resulting ControlFlowGraph
 inline ControlFlowGraphBuilder<LowLevelInstructionProperties>
 make_lowlevel_cfg_builder(const std::shared_ptr<InstructionSequence> &iseq) {
   return ControlFlowGraphBuilder<LowLevelInstructionProperties>(iseq);

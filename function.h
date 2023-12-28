@@ -28,14 +28,14 @@
 #include "symtab.h"
 #include "instruction_seq.h"
 
-// Function encapsulates all of the information needed to generate
-// and optimize code for a function. This includes (at a minimum)
-// the function name, function definition AST, the symbol table entry,
-// generated high-level code, and generated low-level code.  However, you
-// can add any additional fields that would be helpful.  In particular,
-// any information about a function that needs to be communicated between
-// phases, such as storage allocation decisions, can also be collected in
-// the Function object.
+//! Function encapsulates all of the information needed to generate
+//! and optimize code for a function. This includes (at a minimum)
+//! the function name, function definition AST, the symbol table entry,
+//! generated high-level code, and generated low-level code.  However, you
+//! can add any additional fields that would be helpful.  In particular,
+//! any information about a function that needs to be communicated between
+//! phases, such as storage allocation decisions, can also be collected in
+//! the Function object.
 class Function {
 private:
   std::string m_name;
@@ -45,18 +45,39 @@ private:
   std::shared_ptr<InstructionSequence> m_ll_iseq; // low-level code
 
 public:
+  //! Constructor.
+  //! @param name the name of the function
+  //! @param funcdef_ast the function definition AST
+  //! @param symbol the function's symbol table entry
   Function(const std::string &name, Node *funcdef_ast, Symbol *symbol);
   ~Function();
 
+  //! Get the function name.
+  //! @return the function name
   std::string get_name() const;
 
+  //! Get the function definition AST.
+  //! @return the function definition AST
   Node *get_funcdef_ast() const;
+
+  //! Get the function's symbol table entry.
+  //! @return the function's symbol table entry
   Symbol *get_symbol() const;
 
+  //! Get the high-level InstructionSequence.
+  //! @return shared poiner to the high-level InstructionSequence
   std::shared_ptr<InstructionSequence> get_hl_iseq() const;
+
+  //! Set the high-level InstructionSequence.
+  //! @param shared pointer to the high-level InstructionSequence
   void set_hl_iseq(const std::shared_ptr<InstructionSequence> &hl_iseq);
 
+  //! Get the low-level InstructionSequence.
+  //! @return shared pointer to the low-level InstructionSequence
   std::shared_ptr<InstructionSequence> get_ll_iseq() const;
+
+  //! Set the low-level InstructionSequence.
+  //! @param shared pointer to the low-level InstructionSequence
   void set_ll_iseq(const std::shared_ptr<InstructionSequence> &ll_iseq);
 
 };

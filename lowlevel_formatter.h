@@ -23,12 +23,22 @@
 
 #include "formatter.h"
 
+//! Implementation of Formatter for low-level code.
 class LowLevelFormatter : public Formatter {
 public:
   LowLevelFormatter();
   virtual ~LowLevelFormatter();
 
+  //! Convert a low-level Operand to a formatted string.
+  //!
+  //! @param operand the low-level Operand to format
+  //! @return the string formatted from the Operand
   virtual std::string format_operand(const Operand &operand) const;
+
+  //! Convert a low-level Instruction to a formatted string.
+  //!
+  //! @param ins the low-level Instruction to format
+  //! @return the string formatted from the Instruction
   virtual std::string format_instruction(const Instruction *ins) const;
 };
 

@@ -24,22 +24,29 @@
 #include <memory>
 #include "type.h"
 
-// A GlobalVariable represents a global variable, and specifies its
-// name and data type. Each global variable in the program should
-// be added to the Module (and thus made available when target code
-// is printed.) Note that this type has value semantics (copying
-// and assignment are allowed.)
-
+//! A GlobalVariable represents a global variable, and specifies its
+//! name and data type. Each global variable in the program should
+//! be added to the Module (and thus made available when target code
+//! is printed.) Note that this type has value semantics (copying
+//! and assignment are allowed.)
 class GlobalVariable {
 private:
   std::string m_name;
   std::shared_ptr<Type> m_type;
 
 public:
+  //! Constructor.
+  //! @param name the name of the global variable
+  //! @param type shared pointer to the Type of the global variable
   GlobalVariable(const std::string &name, std::shared_ptr<Type> type);
   ~GlobalVariable();
 
+  //! Get the name of the global variable.
+  //! @return the name of the global variable
   std::string get_name() const { return m_name; }
+
+  //! Get the Type of the global variable.
+  //! @return shared pointer to the Type of the global variable
   std::shared_ptr<Type> get_type() const { return m_type; }
 };
 

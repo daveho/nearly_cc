@@ -27,24 +27,34 @@
 #include "lowlevel_formatter.h"
 #include "dataflow.h"
 
+//! @file
+//! Dataflow analysis to determine which machine registers contain
+//! live values.
+
+//! Dataflow analysis to determine which machine registers contain
+//! live values.
 class LiveMregsAnalysis : public BackwardAnalysis {
 public:
   // There are only 16 mregs
   static const unsigned MAX_MREGS = 16;
 
-  // Fact type is bitset of machine register numbers
+  //! Fact type is bitset of machine register numbers.
   typedef std::bitset<MAX_MREGS> FactType;
 
-  // The "top" fact is an unknown value that combines nondestructively
-  // with known facts. For this analysis, it's the empty set.
+  //! The "top" fact is an unknown value that combines nondestructively
+  //! with known facts. For this analysis, it's the empty set.
   FactType get_top_fact() const { return FactType(); }
 
-  // Combine live sets. For this analysis, we use union.
+  //! Combine live sets. For this analysis, we use union.
   FactType combine_facts(const FactType &left, const FactType &right) const {
     return left | right;
   }
 
-  // Model an instruction.
+  //! Model an instruction.
+  //! @param ins the Instruction to model (backwards)
+  //! @param fact initially represents what is true after the instruction
+  //!             (in program order), and will be updated to represent what
+  //!             is true before the instruction (in program order)
   void model_instruction(Instruction *ins, FactType &fact) const {
     // Model an instruction (backwards).  If the instruction is a def,
     // the assigned-to mreg is killed.  Every mreg used in the instruction,
@@ -61,8 +71,10 @@ public:
       fact.set(unsigned(*i));
   }
 
-  // Convert a dataflow fact to a string (for printing the CFG annotated with
-  // dataflow facts)
+  //! Convert a dataflow fact to a string (for printing the CFG annotated with
+  //! dataflow facts)
+  //! @param fact dataflow fact (set of machine register numbers)
+  //! @return string representation of the dataflow fact
   std::string fact_to_string(const FactType &fact) const {
     LowLevelFormatter ll_formatter;
 
@@ -80,6 +92,8 @@ public:
   }
 };
 
+//! Convenient typedef for the type of a dataflow object for executing
+//! LiveMregsAnalysis on a ControlFlowGraph.
 typedef Dataflow<LiveMregsAnalysis> LiveMregs;
 
 #endif // LIVE_MREGS_H

@@ -23,13 +23,26 @@
 
 #include "operand.h"
 
+//! HasOperand is a base class for NodeBase, which in turn is a base class
+//! for Node. The idea is that each Node in an AST has an Operand which
+//! represents the location (register or memory) where the results of
+//! expression evaluation are stored. By default, the Operand is "invalid".
+//! The `set_operand()` member function must be called to set the Operand.
 class HasOperand {
 private:
   Operand m_operand;
 
 public:
+  //! Set the Node's Operand.
+  //! @param op the Operand to set
   void set_operand(const Operand &op) { m_operand = op; }
+
+  //! Check whether this Node has a valid Operand.
+  //! @return true if the Node has a valid Operand, false otherwise
   bool has_operand() const { return m_operand.get_kind() != Operand::NONE; }
+
+  //! Get this Node's Operand.
+  //! @return this Node's Operand
   const Operand get_operand() const { return m_operand; }
 };
 

@@ -26,9 +26,10 @@
 #include "options.h"
 #include "function.h"
 
-// A HighLevelCodegen visitor generates high-level IR code for
-// a single function. Code generation is initiated by visiting
-// a function definition AST node.
+//! A HighLevelCodegen visitor generates high-level IR code for
+//! a single function definition. Code generation is initiated by
+//! calling the `generate()` member function, which in turn
+//! visits the function definition AST node.
 class HighLevelCodegen : public ASTVisitor {
 private:
   const Options &m_options;
@@ -37,16 +38,28 @@ private:
   std::string m_return_label_name; // name of the label that return instructions should target
 
 public:
-  // the next_label_num controls where the next_label() member function
+  //! Constructor.
+  //! @param options the command-line Options
+  //! @param next_label_num the next value that should be used when generating
+  //!                       a control-flow label (this is used to ensure that
+  //!                       control-flow labels aren't reused between functions)
   HighLevelCodegen(const Options &options, int next_label_num);
+
   virtual ~HighLevelCodegen();
 
-  // Create a high-level InstructionSequence from a function definition AST.
-  // The resulting InstructionSequence should be stored in the Function object.
+  //! Create a high-level InstructionSequence from a function definition AST.
+  //! The resulting InstructionSequence should be stored in the Function object.
+  //!
+  //! @param function shared pointer to the Function object
   void generate(const std::shared_ptr<Function> &function);
 
+  //! Get a shared pointer to the high-level InstructionSequence containing
+  //! the generated code.
+  //! @return shared pointer to the high-level InstructionSequence
   std::shared_ptr<InstructionSequence> get_hl_iseq() { return m_function->get_hl_iseq(); }
 
+  //! Get the next unused control-flow label number.
+  //! @return the next unused control-flow label number
   int get_next_label_num() const { return m_next_label_num; }
 
   virtual void visit_function_definition(Node *n);

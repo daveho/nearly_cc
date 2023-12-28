@@ -24,30 +24,43 @@
 #include <memory>
 #include "cfg.h"
 
+//! Base class for ControlFlowGraphTransform transformations.
+//! This is the preferred way to implement local optimizations.
+//! In general, implementations of ControlFlowGraphTransform are
+//! intended to be nondestructive, meaning that they return a
+//! new result ControlFlowGraph without modifying the original one.
 class ControlFlowGraphTransform {
 private:
   std::shared_ptr<ControlFlowGraph> m_cfg;
 
 public:
+  //! Constructor.
+  //! @param cfg the ControlFlowGraph to transform
   ControlFlowGraphTransform(const std::shared_ptr<ControlFlowGraph> &cfg);
   virtual ~ControlFlowGraphTransform();
 
+  //! Get a shared pointer to the original ControlFlowGraph.
+  //! @return the original ControlFlowGraph
   std::shared_ptr<ControlFlowGraph> get_orig_cfg();
 
+  //! Transform the original ControlFlowGraph.
+  //! @return shared pointer to the transformed ControlFlowGraph
   virtual std::shared_ptr<ControlFlowGraph> transform_cfg();
 
-  // Create a transformed version of the instructions in a basic block.
-  // Note that an InstructionSequence "owns" the Instruction objects it contains,
-  // and is responsible for deleting them. Therefore, be careful to avoid
-  // having two InstructionSequences contain pointers to the same Instruction.
-  // If you need to make an exact copy of an Instruction object, you can
-  // do so using the duplicate() member function, as follows:
-  //
-  //    Instruction *orig_ins = /* an Instruction object */
-  //    Instruction *dup_ins = orig_ins->duplicate();
-  //
-  // The transform_basic_block() function should return a unique_ptr to
-  // the transformed InstructionSequence.
+  //! Create a transformed version of the instructions in a basic block.
+  //! Note that an InstructionSequence "owns" the Instruction objects it contains,
+  //! and is responsible for deleting them. Therefore, be careful to avoid
+  //! having two InstructionSequences contain pointers to the same Instruction.
+  //! If you need to make an exact copy of an Instruction object, you can
+  //! do so using the `duplicate()` member function, as follows:
+  //!
+  //! ```
+  //! Instruction *orig_ins = // ...an Instruction object...
+  //! Instruction *dup_ins = orig_ins->duplicate();
+  //! ```
+  //!
+  //! @param orig_bb the original basic block
+  //! @return shared pointer to the new basic block InstructionSequence
   virtual std::shared_ptr<InstructionSequence> transform_basic_block(std::shared_ptr<InstructionSequence> orig_bb) = 0;
 };
 
