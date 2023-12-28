@@ -91,7 +91,7 @@ $(function() {
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;deque&gt;</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;live_mregs.h&quot;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="live__mregs_8h.html">live_mregs.h</a>&quot;</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &quot;cfg_transform.h&quot;</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
 <div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classPeepholeLowLevel.html">   29</a></span>&#160;<span class="keyword">class </span><a class="code" href="classPeepholeLowLevel.html">PeepholeLowLevel</a> : <span class="keyword">public</span> <a class="code" href="classControlFlowGraphTransform.html">ControlFlowGraphTransform</a> {</div>
@@ -120,9 +120,10 @@ $(function() {
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// PEEPHOLE_LL_H</span></div>
 <div class="ttc" id="aclassControlFlowGraphTransform_html"><div class="ttname"><a href="classControlFlowGraphTransform.html">ControlFlowGraphTransform</a></div><div class="ttdoc">Base class for ControlFlowGraphTransform transformations.</div><div class="ttdef"><b>Definition:</b> cfg_transform.h:32</div></div>
 <div class="ttc" id="aclassDataflow_html"><div class="ttname"><a href="classDataflow.html">Dataflow&lt; LiveMregsAnalysis &gt;</a></div></div>
-<div class="ttc" id="aclassInstructionSequence_html"><div class="ttname"><a href="classInstructionSequence.html">InstructionSequence</a></div><div class="ttdef"><b>Definition:</b> instruction_seq.h:39</div></div>
+<div class="ttc" id="aclassInstructionSequence_html"><div class="ttname"><a href="classInstructionSequence.html">InstructionSequence</a></div><div class="ttdoc">InstructionSequence class, which represents a linear sequence of Instruction objects.</div><div class="ttdef"><b>Definition:</b> instruction_seq.h:50</div></div>
 <div class="ttc" id="aclassPeepholeLowLevel_html"><div class="ttname"><a href="classPeepholeLowLevel.html">PeepholeLowLevel</a></div><div class="ttdef"><b>Definition:</b> peephole_ll.h:29</div></div>
 <div class="ttc" id="aclassPeepholeLowLevel_html_a9cc289d479dee5b9bba973d7412d5d9c"><div class="ttname"><a href="classPeepholeLowLevel.html#a9cc289d479dee5b9bba973d7412d5d9c">PeepholeLowLevel::transform_basic_block</a></div><div class="ttdeci">virtual std::shared_ptr&lt; InstructionSequence &gt; transform_basic_block(std::shared_ptr&lt; InstructionSequence &gt; orig_bb)</div><div class="ttdoc">Create a transformed version of the instructions in a basic block.</div><div class="ttdef"><b>Definition:</b> peephole_ll.cpp:1373</div></div>
+<div class="ttc" id="alive__mregs_8h_html"><div class="ttname"><a href="live__mregs_8h.html">live_mregs.h</a></div><div class="ttdoc">Dataflow analysis to determine which machine registers contain live values.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

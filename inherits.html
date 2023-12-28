@@ -72,7 +72,7 @@ $(function() {
 <tr><td><img src="inherit_graph_0.png" border="0" usemap="#aASTVisitor" alt=""/>
 <map name="aASTVisitor" id="aASTVisitor">
 <area shape="rect" href="classASTVisitor.html" title="Base class for AST visitors." alt="" coords="5,81,95,108"/>
-<area shape="rect" href="classHighLevelCodegen.html" title=" " alt="" coords="156,5,300,32"/>
+<area shape="rect" href="classHighLevelCodegen.html" title="A HighLevelCodegen visitor generates high&#45;level IR code for a single function definition." alt="" coords="156,5,300,32"/>
 <area shape="rect" href="classLocalStorageAllocation.html" title=" " alt="" coords="143,56,313,83"/>
 <area shape="rect" href="classLoopVars.html" title=" " alt="" coords="187,107,269,133"/>
 <area shape="rect" href="classSemanticAnalysis.html" title=" " alt="" coords="159,157,297,184"/>
@@ -81,8 +81,8 @@ $(function() {
 <tr><td><img src="inherit_graph_1.png" border="0" usemap="#aBackwardAnalysis" alt=""/>
 <map name="aBackwardAnalysis" id="aBackwardAnalysis">
 <area shape="rect" href="classBackwardAnalysis.html" title="Base class for backward analyses." alt="" coords="5,31,147,57"/>
-<area shape="rect" href="classLiveMregsAnalysis.html" title=" " alt="" coords="195,5,339,32"/>
-<area shape="rect" href="classLiveVregsAnalysis.html" title=" " alt="" coords="196,56,337,83"/>
+<area shape="rect" href="classLiveMregsAnalysis.html" title="Dataflow analysis to determine which machine registers contain live values." alt="" coords="195,5,339,32"/>
+<area shape="rect" href="classLiveVregsAnalysis.html" title="Dataflow analysis to determine which virtual registers (in high&#45;level code) contain live values." alt="" coords="196,56,337,83"/>
 </map>
 </td></tr>
 <tr><td><img src="inherit_graph_2.png" border="0" usemap="#aBackwardNavigation" alt=""/>
@@ -92,12 +92,11 @@ $(function() {
 </td></tr>
 <tr><td><img src="inherit_graph_3.png" border="0" usemap="#aBaseException" alt=""/>
 <map name="aBaseException" id="aBaseException">
-<area shape="rect" title=" " alt="" coords="5,81,144,108"/>
-<area shape="rect" href="classBaseException.html" title=" " alt="" coords="192,81,311,108"/>
-<area shape="rect" href="classEvaluationError.html" title=" " alt="" coords="359,5,481,32"/>
-<area shape="rect" href="classRuntimeError.html" title=" " alt="" coords="366,56,474,83"/>
-<area shape="rect" href="classSemanticError.html" title=" " alt="" coords="363,107,477,133"/>
-<area shape="rect" href="classSyntaxError.html" title=" " alt="" coords="371,157,469,184"/>
+<area shape="rect" title=" " alt="" coords="5,56,144,83"/>
+<area shape="rect" href="classBaseException.html" title="Base type for exceptions indicating a syntax error,." alt="" coords="192,56,311,83"/>
+<area shape="rect" href="classRuntimeError.html" title="Exception type for general runtime errors that aren&#39;t associated with source code." alt="" coords="362,5,470,32"/>
+<area shape="rect" href="classSemanticError.html" title="Exception type for semantic errors." alt="" coords="359,56,473,83"/>
+<area shape="rect" href="classSyntaxError.html" title="Exception type for lexical or syntax errors." alt="" coords="367,107,465,133"/>
 </map>
 </td></tr>
 <tr><td><img src="inherit_graph_4.png" border="0" usemap="#aControlFlowGraph" alt=""/>
@@ -154,9 +153,9 @@ $(function() {
 </td></tr>
 <tr><td><img src="inherit_graph_14.png" border="0" usemap="#aFormatter" alt=""/>
 <map name="aFormatter" id="aFormatter">
-<area shape="rect" href="classFormatter.html" title=" " alt="" coords="5,31,92,57"/>
-<area shape="rect" href="classHighLevelFormatter.html" title=" " alt="" coords="140,5,291,32"/>
-<area shape="rect" href="classLowLevelFormatter.html" title=" " alt="" coords="142,56,289,83"/>
+<area shape="rect" href="classFormatter.html" title="A Formatter turns Operand and Instruction objects into strings, which in turn allows high&#45;level and l..." alt="" coords="5,31,92,57"/>
+<area shape="rect" href="classHighLevelFormatter.html" title="Implementation of Formatter for high&#45;level code." alt="" coords="140,5,291,32"/>
+<area shape="rect" href="classLowLevelFormatter.html" title="Implementation of Formatter for low&#45;level code." alt="" coords="142,56,289,83"/>
 </map>
 </td></tr>
 <tr><td><img src="inherit_graph_15.png" border="0" usemap="#aForwardAnalysis" alt=""/>
@@ -171,177 +170,168 @@ $(function() {
 </td></tr>
 <tr><td><img src="inherit_graph_17.png" border="0" usemap="#aFunction" alt=""/>
 <map name="aFunction" id="aFunction">
-<area shape="rect" href="classFunction.html" title=" " alt="" coords="5,5,83,32"/>
+<area shape="rect" href="classFunction.html" title="Function encapsulates all of the information needed to generate and optimize code for a function." alt="" coords="5,5,83,32"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_18.png" border="0" usemap="#aGlobalRegs" alt=""/>
-<map name="aGlobalRegs" id="aGlobalRegs">
-<area shape="rect" href="classGlobalRegs.html" title=" " alt="" coords="5,5,101,32"/>
-</map>
-</td></tr>
-<tr><td><img src="inherit_graph_19.png" border="0" usemap="#aGlobalVariable" alt=""/>
+<tr><td><img src="inherit_graph_18.png" border="0" usemap="#aGlobalVariable" alt=""/>
 <map name="aGlobalVariable" id="aGlobalVariable">
-<area shape="rect" href="classGlobalVariable.html" title=" " alt="" coords="5,5,123,32"/>
+<area shape="rect" href="classGlobalVariable.html" title="A GlobalVariable represents a global variable, and specifies its name and data type." alt="" coords="5,5,123,32"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_20.png" border="0" usemap="#aHasOperand" alt=""/>
+<tr><td><img src="inherit_graph_19.png" border="0" usemap="#aHasOperand" alt=""/>
 <map name="aHasOperand" id="aHasOperand">
-<area shape="rect" href="classHasOperand.html" title=" " alt="" coords="5,5,108,32"/>
-<area shape="rect" href="classSymbol.html" title=" " alt="" coords="156,5,227,32"/>
+<area shape="rect" href="classHasOperand.html" title="HasOperand is a base class for NodeBase, which in turn is a base class for Node." alt="" coords="5,31,108,57"/>
+<area shape="rect" href="classNodeBase.html" title="The Node class will inherit from this type, so you can use it to define any attributes and methods th..." alt="" coords="156,5,244,32"/>
+<area shape="rect" href="classSymbol.html" title=" " alt="" coords="165,56,235,83"/>
+<area shape="rect" href="classNode.html" title=" " alt="" coords="292,5,348,32"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_21.png" border="0" usemap="#aHighLevelInstructionProperties" alt=""/>
+<tr><td><img src="inherit_graph_20.png" border="0" usemap="#aHighLevelInstructionProperties" alt=""/>
 <map name="aHighLevelInstructionProperties" id="aHighLevelInstructionProperties">
-<area shape="rect" href="classHighLevelInstructionProperties.html" title=" " alt="" coords="5,5,228,32"/>
+<area shape="rect" href="classHighLevelInstructionProperties.html" title="HighLevelInstructionProperties class: this is used by ControlFlowGraphBuilder to make sense of contro..." alt="" coords="5,5,228,32"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_22.png" border="0" usemap="#aHighLevelOpt" alt=""/>
+<tr><td><img src="inherit_graph_21.png" border="0" usemap="#aHighLevelOpt" alt=""/>
 <map name="aHighLevelOpt" id="aHighLevelOpt">
-<area shape="rect" href="classHighLevelOpt.html" title=" " alt="" coords="5,5,116,32"/>
+<area shape="rect" href="classHighLevelOpt.html" title="HighLevelOpt is responsible for doing optimizations on the high&#45;level IR for a Function." alt="" coords="5,5,116,32"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_23.png" border="0" usemap="#aInstruction" alt=""/>
+<tr><td><img src="inherit_graph_22.png" border="0" usemap="#aInstruction" alt=""/>
 <map name="aInstruction" id="aInstruction">
-<area shape="rect" href="classInstruction.html" title=" " alt="" coords="5,5,96,32"/>
+<area shape="rect" href="classInstruction.html" title="Instruction object type." alt="" coords="5,5,96,32"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_24.png" border="0" usemap="#aInstructionSequence" alt=""/>
+<tr><td><img src="inherit_graph_23.png" border="0" usemap="#aInstructionSequence" alt=""/>
 <map name="aInstructionSequence" id="aInstructionSequence">
-<area shape="rect" href="classInstructionSequence.html" title=" " alt="" coords="5,5,160,32"/>
+<area shape="rect" href="classInstructionSequence.html" title="InstructionSequence class, which represents a linear sequence of Instruction objects." alt="" coords="5,5,160,32"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_25.png" border="0" usemap="#aISeqIterator_3_01It_01_4" alt=""/>
+<tr><td><img src="inherit_graph_24.png" border="0" usemap="#aISeqIterator_3_01It_01_4" alt=""/>
 <map name="aISeqIterator_3_01It_01_4" id="aISeqIterator_3_01It_01_4">
 <area shape="rect" href="classISeqIterator.html" title=" " alt="" coords="5,5,143,32"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_26.png" border="0" usemap="#aLiteralValue" alt=""/>
+<tr><td><img src="inherit_graph_25.png" border="0" usemap="#aLiteralValue" alt=""/>
 <map name="aLiteralValue" id="aLiteralValue">
-<area shape="rect" href="classLiteralValue.html" title=" " alt="" coords="5,5,104,32"/>
+<area shape="rect" href="classLiteralValue.html" title="Helper class for representing literal values (integer, character, and string)." alt="" coords="5,5,104,32"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_27.png" border="0" usemap="#aLocalOptimizationHighLevel" alt=""/>
+<tr><td><img src="inherit_graph_26.png" border="0" usemap="#aLocalOptimizationHighLevel" alt=""/>
 <map name="aLocalOptimizationHighLevel" id="aLocalOptimizationHighLevel">
 <area shape="rect" href="classLocalOptimizationHighLevel.html" title=" " alt="" coords="5,5,211,32"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_28.png" border="0" usemap="#aLocation" alt=""/>
+<tr><td><img src="inherit_graph_27.png" border="0" usemap="#aLocation" alt=""/>
 <map name="aLocation" id="aLocation">
 <area shape="rect" href="classLocation.html" title=" " alt="" coords="5,5,83,32"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_29.png" border="0" usemap="#aLowLevelCodeGen" alt=""/>
+<tr><td><img src="inherit_graph_28.png" border="0" usemap="#aLowLevelCodeGen" alt=""/>
 <map name="aLowLevelCodeGen" id="aLowLevelCodeGen">
 <area shape="rect" href="classLowLevelCodeGen.html" title=" " alt="" coords="5,5,148,32"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_30.png" border="0" usemap="#aLowLevelInstructionProperties" alt=""/>
+<tr><td><img src="inherit_graph_29.png" border="0" usemap="#aLowLevelInstructionProperties" alt=""/>
 <map name="aLowLevelInstructionProperties" id="aLowLevelInstructionProperties">
 <area shape="rect" href="classLowLevelInstructionProperties.html" title=" " alt="" coords="5,5,224,32"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_31.png" border="0" usemap="#aLowLevelOpt" alt=""/>
+<tr><td><img src="inherit_graph_30.png" border="0" usemap="#aLowLevelOpt" alt=""/>
 <map name="aLowLevelOpt" id="aLowLevelOpt">
 <area shape="rect" href="classLowLevelOpt.html" title=" " alt="" coords="5,5,112,32"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_32.png" border="0" usemap="#aMember" alt=""/>
+<tr><td><img src="inherit_graph_31.png" border="0" usemap="#aMember" alt=""/>
 <map name="aMember" id="aMember">
 <area shape="rect" href="classMember.html" title="A parameter of a FunctionType or a field of a StructType." alt="" coords="5,5,81,32"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_33.png" border="0" usemap="#aNodeBase" alt=""/>
-<map name="aNodeBase" id="aNodeBase">
-<area shape="rect" href="classNodeBase.html" title=" " alt="" coords="5,5,93,32"/>
-<area shape="rect" href="classNode.html" title=" " alt="" coords="141,5,197,32"/>
-</map>
-</td></tr>
-<tr><td><img src="inherit_graph_34.png" border="0" usemap="#aOperand" alt=""/>
+<tr><td><img src="inherit_graph_32.png" border="0" usemap="#aOperand" alt=""/>
 <map name="aOperand" id="aOperand">
 <area shape="rect" href="classOperand.html" title=" " alt="" coords="5,5,83,32"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_35.png" border="0" usemap="#aOptions" alt=""/>
+<tr><td><img src="inherit_graph_33.png" border="0" usemap="#aOptions" alt=""/>
 <map name="aOptions" id="aOptions">
 <area shape="rect" href="classOptions.html" title=" " alt="" coords="5,5,77,32"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_36.png" border="0" usemap="#aParserState" alt=""/>
+<tr><td><img src="inherit_graph_34.png" border="0" usemap="#aParserState" alt=""/>
 <map name="aParserState" id="aParserState">
 <area shape="rect" href="structParserState.html" title=" " alt="" coords="5,5,101,32"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_37.png" border="0" usemap="#aPrintGraph" alt=""/>
+<tr><td><img src="inherit_graph_35.png" border="0" usemap="#aPrintGraph" alt=""/>
 <map name="aPrintGraph" id="aPrintGraph">
 <area shape="rect" href="classPrintGraph.html" title=" " alt="" coords="5,5,96,32"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_38.png" border="0" usemap="#aPrintInstructionSequence_3_01Formatter_00_01Annotator_01_4" alt=""/>
+<tr><td><img src="inherit_graph_36.png" border="0" usemap="#aPrintInstructionSequence_3_01Formatter_00_01Annotator_01_4" alt=""/>
 <map name="aPrintInstructionSequence_3_01Formatter_00_01Annotator_01_4" id="aPrintInstructionSequence_3_01Formatter_00_01Annotator_01_4">
 <area shape="rect" href="classPrintInstructionSequence.html" title=" " alt="" coords="5,5,193,47"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_39.png" border="0" usemap="#aStorageCalculator" alt=""/>
+<tr><td><img src="inherit_graph_37.png" border="0" usemap="#aStorageCalculator" alt=""/>
 <map name="aStorageCalculator" id="aStorageCalculator">
 <area shape="rect" href="classStorageCalculator.html" title=" " alt="" coords="5,5,144,32"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_40.png" border="0" usemap="#aStringConstant" alt=""/>
+<tr><td><img src="inherit_graph_38.png" border="0" usemap="#aStringConstant" alt=""/>
 <map name="aStringConstant" id="aStringConstant">
 <area shape="rect" href="classStringConstant.html" title=" " alt="" coords="5,5,124,32"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_41.png" border="0" usemap="#aSymbolTable" alt=""/>
+<tr><td><img src="inherit_graph_39.png" border="0" usemap="#aSymbolTable" alt=""/>
 <map name="aSymbolTable" id="aSymbolTable">
 <area shape="rect" href="classSymbolTable.html" title=" " alt="" coords="5,5,111,32"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_42.png" border="0" usemap="#aTreePrint" alt=""/>
+<tr><td><img src="inherit_graph_40.png" border="0" usemap="#aTreePrint" alt=""/>
 <map name="aTreePrint" id="aTreePrint">
 <area shape="rect" href="classTreePrint.html" title=" " alt="" coords="5,5,84,32"/>
 <area shape="rect" href="classParseTreePrint.html" title="Print a parse tree." alt="" coords="132,5,247,32"/>
 <area shape="rect" href="classASTTreePrint.html" title="Support for printing a text representation of an AST." alt="" coords="295,5,399,32"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_43.png" border="0" usemap="#aType" alt=""/>
+<tr><td><img src="inherit_graph_41.png" border="0" usemap="#aType" alt=""/>
 <map name="aType" id="aType">
 <area shape="rect" href="classType.html" title="Representation of a C data type." alt="" coords="5,107,57,133"/>
-<area shape="rect" href="classBasicType.html" title=" " alt="" coords="117,56,203,83"/>
+<area shape="rect" href="classBasicType.html" title="A BasicType represents a basic type (int, char, etc.)" alt="" coords="117,56,203,83"/>
 <area shape="rect" href="classHasBaseType.html" title="Common base class for QualifiedType, FunctionType, PointerType, and ArrayType." alt="" coords="105,107,215,133"/>
 <area shape="rect" href="classHasMembers.html" title="Common base class for StructType and FunctionType, which both have &quot;members&quot; (fields or parameters)." alt="" coords="106,157,214,184"/>
-<area shape="rect" href="classArrayType.html" title=" " alt="" coords="275,5,361,32"/>
-<area shape="rect" href="classFunctionType.html" title=" " alt="" coords="265,157,371,184"/>
-<area shape="rect" href="classPointerType.html" title=" " alt="" coords="269,56,367,83"/>
-<area shape="rect" href="classQualifiedType.html" title=" " alt="" coords="263,107,373,133"/>
-<area shape="rect" href="classStructType.html" title=" " alt="" coords="273,208,363,235"/>
+<area shape="rect" href="classArrayType.html" title="ArrayType represents an array type." alt="" coords="275,5,361,32"/>
+<area shape="rect" href="classFunctionType.html" title="A FunctionType represents the type of a function." alt="" coords="265,157,371,184"/>
+<area shape="rect" href="classPointerType.html" title="PointerType represents a pointer type." alt="" coords="269,56,367,83"/>
+<area shape="rect" href="classQualifiedType.html" title="A QualifiedType modifies a &quot;delegate&quot; type with a TypeQualifier (const or volatile)." alt="" coords="263,107,373,133"/>
+<area shape="rect" href="classStructType.html" title="StructType represents a struct type." alt="" coords="273,208,363,235"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_44.png" border="0" usemap="#aUnit" alt=""/>
+<tr><td><img src="inherit_graph_42.png" border="0" usemap="#aUnit" alt=""/>
 <map name="aUnit" id="aUnit">
 <area shape="rect" href="classUnit.html" title=" " alt="" coords="5,5,55,32"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_45.png" border="0" usemap="#ayy__buffer__state" alt=""/>
+<tr><td><img src="inherit_graph_43.png" border="0" usemap="#ayy__buffer__state" alt=""/>
 <map name="ayy__buffer__state" id="ayy__buffer__state">
 <area shape="rect" href="structyy__buffer__state.html" title=" " alt="" coords="5,5,128,32"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_46.png" border="0" usemap="#ayy__trans__info" alt=""/>
+<tr><td><img src="inherit_graph_44.png" border="0" usemap="#ayy__trans__info" alt=""/>
 <map name="ayy__trans__info" id="ayy__trans__info">
 <area shape="rect" href="structyy__trans__info.html" title=" " alt="" coords="5,5,116,32"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_47.png" border="0" usemap="#ayyalloc" alt=""/>
+<tr><td><img src="inherit_graph_45.png" border="0" usemap="#ayyalloc" alt=""/>
 <map name="ayyalloc" id="ayyalloc">
 <area shape="rect" href="unionyyalloc.html" title=" " alt="" coords="5,5,75,32"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_48.png" border="0" usemap="#ayyguts__t" alt=""/>
+<tr><td><img src="inherit_graph_46.png" border="0" usemap="#ayyguts__t" alt=""/>
 <map name="ayyguts__t" id="ayyguts__t">
 <area shape="rect" href="structyyguts__t.html" title=" " alt="" coords="5,5,84,32"/>
 </map>
 </td></tr>
-<tr><td><img src="inherit_graph_49.png" border="0" usemap="#aYYSTYPE" alt=""/>
+<tr><td><img src="inherit_graph_47.png" border="0" usemap="#aYYSTYPE" alt=""/>
 <map name="aYYSTYPE" id="aYYSTYPE">
 <area shape="rect" href="unionYYSTYPE.html" title=" " alt="" coords="5,5,84,32"/>
 </map>

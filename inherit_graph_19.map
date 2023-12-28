@@ -1,3 +1,6 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classGlobalVariable.html" title=" " alt="" coords="5,5,123,32"/>
+<area shape="rect" id="node1" href="$classHasOperand.html" title="HasOperand is a base class for NodeBase, which in turn is a base class for Node." alt="" coords="5,31,108,57"/>
+<area shape="rect" id="node2" href="$classNodeBase.html" title="The Node class will inherit from this type, so you can use it to define any attributes and methods th..." alt="" coords="156,5,244,32"/>
+<area shape="rect" id="node4" href="$classSymbol.html" title=" " alt="" coords="165,56,235,83"/>
+<area shape="rect" id="node3" href="$classNode.html" title=" " alt="" coords="292,5,348,32"/>
 </map>

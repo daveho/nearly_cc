@@ -71,7 +71,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p><a class="el" href="classControlFlowGraphBuilder.html" title="ControlFlowGraphBuilder builds a ControlFlowGraph from an InstructionSequence.">ControlFlowGraphBuilder</a> builds a <a class="el" href="classControlFlowGraph.html" title="ControlFlowGraph: graph of basic blocks connected by control edges.">ControlFlowGraph</a> from an <a class="el" href="classInstructionSequence.html">InstructionSequence</a>.  
+<p><a class="el" href="classControlFlowGraphBuilder.html" title="ControlFlowGraphBuilder builds a ControlFlowGraph from an InstructionSequence.">ControlFlowGraphBuilder</a> builds a <a class="el" href="classControlFlowGraph.html" title="ControlFlowGraph: graph of basic blocks connected by control edges.">ControlFlowGraph</a> from an <a class="el" href="classInstructionSequence.html" title="InstructionSequence class, which represents a linear sequence of Instruction objects.">InstructionSequence</a>.  
  <a href="classControlFlowGraphBuilder.html#details">More...</a></p>
 
 <p><code>#include &quot;<a class="el" href="cfg__builder_8h_source.html">cfg_builder.h</a>&quot;</code></p>
@@ -82,20 +82,20 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:aa97714859867d35f23d472822bc5f1b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constuctor.  <a href="classControlFlowGraphBuilder.html#aa97714859867d35f23d472822bc5f1b1">More...</a><br /></td></tr>
 <tr class="separator:aa97714859867d35f23d472822bc5f1b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6d01fe856a5bc6a565c183a247ef4276"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classControlFlowGraph.html">ControlFlowGraph</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classControlFlowGraphBuilder.html#a6d01fe856a5bc6a565c183a247ef4276">build</a> ()</td></tr>
-<tr class="memdesc:a6d01fe856a5bc6a565c183a247ef4276"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build a <a class="el" href="classControlFlowGraph.html" title="ControlFlowGraph: graph of basic blocks connected by control edges.">ControlFlowGraph</a> from the original <a class="el" href="classInstructionSequence.html">InstructionSequence</a>.  <a href="classControlFlowGraphBuilder.html#a6d01fe856a5bc6a565c183a247ef4276">More...</a><br /></td></tr>
+<tr class="memdesc:a6d01fe856a5bc6a565c183a247ef4276"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build a <a class="el" href="classControlFlowGraph.html" title="ControlFlowGraph: graph of basic blocks connected by control edges.">ControlFlowGraph</a> from the original <a class="el" href="classInstructionSequence.html" title="InstructionSequence class, which represents a linear sequence of Instruction objects.">InstructionSequence</a>.  <a href="classControlFlowGraphBuilder.html#a6d01fe856a5bc6a565c183a247ef4276">More...</a><br /></td></tr>
 <tr class="separator:a6d01fe856a5bc6a565c183a247ef4276"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa5ff7f21e27c73dc1259d8aecafd18ce"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classControlFlowGraphBuilder.html#aa5ff7f21e27c73dc1259d8aecafd18ce">is_branch</a> (<a class="el" href="classInstruction.html">Instruction</a> *ins)</td></tr>
-<tr class="memdesc:aa5ff7f21e27c73dc1259d8aecafd18ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subclasses may override this method to specify which Instructions are branches (i.e., have a control successor other than the next instruction in the original <a class="el" href="classInstructionSequence.html">InstructionSequence</a>).  <a href="classControlFlowGraphBuilder.html#aa5ff7f21e27c73dc1259d8aecafd18ce">More...</a><br /></td></tr>
+<tr class="memdesc:aa5ff7f21e27c73dc1259d8aecafd18ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subclasses may override this method to specify which Instructions are branches (i.e., have a control successor other than the next instruction in the original <a class="el" href="classInstructionSequence.html" title="InstructionSequence class, which represents a linear sequence of Instruction objects.">InstructionSequence</a>).  <a href="classControlFlowGraphBuilder.html#aa5ff7f21e27c73dc1259d8aecafd18ce">More...</a><br /></td></tr>
 <tr class="separator:aa5ff7f21e27c73dc1259d8aecafd18ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;typename InstructionProperties&gt;<br />
 class ControlFlowGraphBuilder&lt; InstructionProperties &gt;</h3>
 
-<p><a class="el" href="classControlFlowGraphBuilder.html" title="ControlFlowGraphBuilder builds a ControlFlowGraph from an InstructionSequence.">ControlFlowGraphBuilder</a> builds a <a class="el" href="classControlFlowGraph.html" title="ControlFlowGraph: graph of basic blocks connected by control edges.">ControlFlowGraph</a> from an <a class="el" href="classInstructionSequence.html">InstructionSequence</a>. </p>
-<p>It is templated by InstructionProperties, which should be either <a class="el" href="classHighLevelInstructionProperties.html">HighLevelInstructionProperties</a> or <a class="el" href="classLowLevelInstructionProperties.html">LowLevelInstructionProperties</a>, depending on whether you're building a high-level or low-level control-flow graph. </p><dl class="tparams"><dt>Template Parameters</dt><dd>
+<p><a class="el" href="classControlFlowGraphBuilder.html" title="ControlFlowGraphBuilder builds a ControlFlowGraph from an InstructionSequence.">ControlFlowGraphBuilder</a> builds a <a class="el" href="classControlFlowGraph.html" title="ControlFlowGraph: graph of basic blocks connected by control edges.">ControlFlowGraph</a> from an <a class="el" href="classInstructionSequence.html" title="InstructionSequence class, which represents a linear sequence of Instruction objects.">InstructionSequence</a>. </p>
+<p>It is templated by InstructionProperties, which should be either <a class="el" href="classHighLevelInstructionProperties.html" title="HighLevelInstructionProperties class: this is used by ControlFlowGraphBuilder to make sense of contro...">HighLevelInstructionProperties</a> or <a class="el" href="classLowLevelInstructionProperties.html">LowLevelInstructionProperties</a>, depending on whether you're building a high-level or low-level control-flow graph. </p><dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">InstructionProperties</td><td>either <a class="el" href="classHighLevelInstructionProperties.html">HighLevelInstructionProperties</a> or <a class="el" href="classLowLevelInstructionProperties.html">LowLevelInstructionProperties</a>, depending on whether the <a class="el" href="classInstructionSequence.html">InstructionSequence</a> has high-level or low-level instructions </td></tr>
+    <tr><td class="paramname">InstructionProperties</td><td>either <a class="el" href="classHighLevelInstructionProperties.html" title="HighLevelInstructionProperties class: this is used by ControlFlowGraphBuilder to make sense of contro...">HighLevelInstructionProperties</a> or <a class="el" href="classLowLevelInstructionProperties.html">LowLevelInstructionProperties</a>, depending on whether the <a class="el" href="classInstructionSequence.html" title="InstructionSequence class, which represents a linear sequence of Instruction objects.">InstructionSequence</a> has high-level or low-level instructions </td></tr>
   </table>
   </dd>
 </dl>
@@ -121,7 +121,7 @@ template&lt;typename InstructionProperties &gt; </div>
 <p>Constuctor. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">iseq</td><td>the <a class="el" href="classInstructionSequence.html">InstructionSequence</a> containing the instructions to build </td></tr>
+    <tr><td class="paramname">iseq</td><td>the <a class="el" href="classInstructionSequence.html" title="InstructionSequence class, which represents a linear sequence of Instruction objects.">InstructionSequence</a> containing the instructions to build </td></tr>
   </table>
   </dd>
 </dl>
@@ -143,8 +143,8 @@ template&lt;typename InstructionProperties &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Build a <a class="el" href="classControlFlowGraph.html" title="ControlFlowGraph: graph of basic blocks connected by control edges.">ControlFlowGraph</a> from the original <a class="el" href="classInstructionSequence.html">InstructionSequence</a>. </p>
-<dl class="section return"><dt>Returns</dt><dd>a shared pointer to the <a class="el" href="classControlFlowGraph.html" title="ControlFlowGraph: graph of basic blocks connected by control edges.">ControlFlowGraph</a> of the original <a class="el" href="classInstructionSequence.html">InstructionSequence</a> </dd></dl>
+<p>Build a <a class="el" href="classControlFlowGraph.html" title="ControlFlowGraph: graph of basic blocks connected by control edges.">ControlFlowGraph</a> from the original <a class="el" href="classInstructionSequence.html" title="InstructionSequence class, which represents a linear sequence of Instruction objects.">InstructionSequence</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>a shared pointer to the <a class="el" href="classControlFlowGraph.html" title="ControlFlowGraph: graph of basic blocks connected by control edges.">ControlFlowGraph</a> of the original <a class="el" href="classInstructionSequence.html" title="InstructionSequence class, which represents a linear sequence of Instruction objects.">InstructionSequence</a> </dd></dl>
 
 </div>
 </div>
@@ -174,10 +174,10 @@ template&lt;typename InstructionProperties &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Subclasses may override this method to specify which Instructions are branches (i.e., have a control successor other than the next instruction in the original <a class="el" href="classInstructionSequence.html">InstructionSequence</a>). </p>
-<p>The default implementation assumes that any <a class="el" href="classInstruction.html">Instruction</a> with an operand of type Operand::LABEL is a branch. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Subclasses may override this method to specify which Instructions are branches (i.e., have a control successor other than the next instruction in the original <a class="el" href="classInstructionSequence.html" title="InstructionSequence class, which represents a linear sequence of Instruction objects.">InstructionSequence</a>). </p>
+<p>The default implementation assumes that any <a class="el" href="classInstruction.html" title="Instruction object type.">Instruction</a> with an operand of type Operand::LABEL is a branch. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">ins</td><td>the <a class="el" href="classInstruction.html">Instruction</a> to check </td></tr>
+    <tr><td class="paramname">ins</td><td>the <a class="el" href="classInstruction.html" title="Instruction object type.">Instruction</a> to check </td></tr>
   </table>
   </dd>
 </dl>

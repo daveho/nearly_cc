@@ -75,8 +75,9 @@ Inheritance diagram for Node:</div>
 <div class="dyncontent">
 <div class="center"><img src="classNode__inherit__graph.png" border="0" usemap="#aNode_inherit__map" alt="Inheritance graph"/></div>
 <map name="aNode_inherit__map" id="aNode_inherit__map">
-<area shape="rect" title=" " alt="" coords="21,80,77,107"/>
-<area shape="rect" href="classNodeBase.html" title=" " alt="" coords="5,5,93,32"/>
+<area shape="rect" title=" " alt="" coords="29,155,85,181"/>
+<area shape="rect" href="classNodeBase.html" title="The Node class will inherit from this type, so you can use it to define any attributes and methods th..." alt="" coords="13,80,101,107"/>
+<area shape="rect" href="classHasOperand.html" title="HasOperand is a base class for NodeBase, which in turn is a base class for Node." alt="" coords="5,5,108,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -84,8 +85,9 @@ Collaboration diagram for Node:</div>
 <div class="dyncontent">
 <div class="center"><img src="classNode__coll__graph.png" border="0" usemap="#aNode_coll__map" alt="Collaboration graph"/></div>
 <map name="aNode_coll__map" id="aNode_coll__map">
-<area shape="rect" title=" " alt="" coords="21,80,77,107"/>
-<area shape="rect" href="classNodeBase.html" title=" " alt="" coords="5,5,93,32"/>
+<area shape="rect" title=" " alt="" coords="29,155,85,181"/>
+<area shape="rect" href="classNodeBase.html" title="The Node class will inherit from this type, so you can use it to define any attributes and methods th..." alt="" coords="13,80,101,107"/>
+<area shape="rect" href="classHasOperand.html" title="HasOperand is a base class for NodeBase, which in turn is a base class for Node." alt="" coords="5,5,108,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -162,7 +164,107 @@ template&lt;typename Fn &gt; </td></tr>
 template&lt;typename Fn &gt; </td></tr>
 <tr class="memitem:af8b0450cbf812eace0e6e7b93145f302"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>each_child</b> (Fn fn) const</td></tr>
 <tr class="separator:af8b0450cbf812eace0e6e7b93145f302"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1c8a5a67398060bc4526819b517f4cb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHasOperand.html#ab1c8a5a67398060bc4526819b517f4cb">set_operand</a> (const <a class="el" href="classOperand.html">Operand</a> &amp;op)</td></tr>
+<tr class="memdesc:ab1c8a5a67398060bc4526819b517f4cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the <a class="el" href="classNode.html">Node</a>'s <a class="el" href="classOperand.html">Operand</a>.  <a href="classHasOperand.html#ab1c8a5a67398060bc4526819b517f4cb">More...</a><br /></td></tr>
+<tr class="separator:ab1c8a5a67398060bc4526819b517f4cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21664d15696e71d458c86b77c46eb235"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHasOperand.html#a21664d15696e71d458c86b77c46eb235">has_operand</a> () const</td></tr>
+<tr class="memdesc:a21664d15696e71d458c86b77c46eb235"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether this <a class="el" href="classNode.html">Node</a> has a valid <a class="el" href="classOperand.html">Operand</a>.  <a href="classHasOperand.html#a21664d15696e71d458c86b77c46eb235">More...</a><br /></td></tr>
+<tr class="separator:a21664d15696e71d458c86b77c46eb235"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1ae1e2838c723f429e24c28f46399b3"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classOperand.html">Operand</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHasOperand.html#af1ae1e2838c723f429e24c28f46399b3">get_operand</a> () const</td></tr>
+<tr class="memdesc:af1ae1e2838c723f429e24c28f46399b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get this <a class="el" href="classNode.html">Node</a>'s <a class="el" href="classOperand.html">Operand</a>.  <a href="classHasOperand.html#af1ae1e2838c723f429e24c28f46399b3">More...</a><br /></td></tr>
+<tr class="separator:af1ae1e2838c723f429e24c28f46399b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="af1ae1e2838c723f429e24c28f46399b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1ae1e2838c723f429e24c28f46399b3">&#9670;&nbsp;</a></span>get_operand()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classOperand.html">Operand</a> HasOperand::get_operand </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get this <a class="el" href="classNode.html">Node</a>'s <a class="el" href="classOperand.html">Operand</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>this <a class="el" href="classNode.html">Node</a>'s <a class="el" href="classOperand.html">Operand</a> </dd></dl>
+
+</div>
+</div>
+<a id="a21664d15696e71d458c86b77c46eb235"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21664d15696e71d458c86b77c46eb235">&#9670;&nbsp;</a></span>has_operand()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool HasOperand::has_operand </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check whether this <a class="el" href="classNode.html">Node</a> has a valid <a class="el" href="classOperand.html">Operand</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>true if the <a class="el" href="classNode.html">Node</a> has a valid <a class="el" href="classOperand.html">Operand</a>, false otherwise </dd></dl>
+
+</div>
+</div>
+<a id="ab1c8a5a67398060bc4526819b517f4cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1c8a5a67398060bc4526819b517f4cb">&#9670;&nbsp;</a></span>set_operand()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void HasOperand::set_operand </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classOperand.html">Operand</a> &amp;&#160;</td>
+          <td class="paramname"><em>op</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the <a class="el" href="classNode.html">Node</a>'s <a class="el" href="classOperand.html">Operand</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">op</td><td>the <a class="el" href="classOperand.html">Operand</a> to set </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="node_8h_source.html">node.h</a></li>
 <li>node.cpp</li>

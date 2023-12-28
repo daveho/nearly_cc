@@ -69,55 +69,536 @@ $(function() {
 <div class="title">Instruction Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><a class="el" href="classInstruction.html" title="Instruction object type.">Instruction</a> object type.  
+ <a href="classInstruction.html#details">More...</a></p>
+
+<p><code>#include &quot;<a class="el" href="instruction_8h_source.html">instruction.h</a>&quot;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a3cf30c35a07e7b9a462e7593957f6174"><td class="memItemLeft" align="right" valign="top"><a id="a3cf30c35a07e7b9a462e7593957f6174"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Instruction</b> (int opcode)</td></tr>
+<tr class="memitem:a3cf30c35a07e7b9a462e7593957f6174"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classInstruction.html#a3cf30c35a07e7b9a462e7593957f6174">Instruction</a> (int opcode)</td></tr>
+<tr class="memdesc:a3cf30c35a07e7b9a462e7593957f6174"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contructor from opcode.  <a href="classInstruction.html#a3cf30c35a07e7b9a462e7593957f6174">More...</a><br /></td></tr>
 <tr class="separator:a3cf30c35a07e7b9a462e7593957f6174"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abeac8ea8724c6ce6c4413b5b66ddf1b9"><td class="memItemLeft" align="right" valign="top"><a id="abeac8ea8724c6ce6c4413b5b66ddf1b9"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Instruction</b> (int opcode, const <a class="el" href="classOperand.html">Operand</a> &amp;op1)</td></tr>
+<tr class="memitem:abeac8ea8724c6ce6c4413b5b66ddf1b9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classInstruction.html#abeac8ea8724c6ce6c4413b5b66ddf1b9">Instruction</a> (int opcode, const <a class="el" href="classOperand.html">Operand</a> &amp;op1)</td></tr>
+<tr class="memdesc:abeac8ea8724c6ce6c4413b5b66ddf1b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor from opcode and one <a class="el" href="classOperand.html">Operand</a>.  <a href="classInstruction.html#abeac8ea8724c6ce6c4413b5b66ddf1b9">More...</a><br /></td></tr>
 <tr class="separator:abeac8ea8724c6ce6c4413b5b66ddf1b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2db852a4f2bf3f82c5e8e118bf92e010"><td class="memItemLeft" align="right" valign="top"><a id="a2db852a4f2bf3f82c5e8e118bf92e010"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Instruction</b> (int opcode, const <a class="el" href="classOperand.html">Operand</a> &amp;op1, const <a class="el" href="classOperand.html">Operand</a> &amp;op2)</td></tr>
+<tr class="memitem:a2db852a4f2bf3f82c5e8e118bf92e010"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classInstruction.html#a2db852a4f2bf3f82c5e8e118bf92e010">Instruction</a> (int opcode, const <a class="el" href="classOperand.html">Operand</a> &amp;op1, const <a class="el" href="classOperand.html">Operand</a> &amp;op2)</td></tr>
+<tr class="memdesc:a2db852a4f2bf3f82c5e8e118bf92e010"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor from opcode and two Operands.  <a href="classInstruction.html#a2db852a4f2bf3f82c5e8e118bf92e010">More...</a><br /></td></tr>
 <tr class="separator:a2db852a4f2bf3f82c5e8e118bf92e010"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8c78b641ee4d6996e07f29f7a939d69a"><td class="memItemLeft" align="right" valign="top"><a id="a8c78b641ee4d6996e07f29f7a939d69a"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Instruction</b> (int opcode, const <a class="el" href="classOperand.html">Operand</a> &amp;op1, const <a class="el" href="classOperand.html">Operand</a> &amp;op2, const <a class="el" href="classOperand.html">Operand</a> &amp;op3, unsigned num_operands=3)</td></tr>
+<tr class="memitem:a8c78b641ee4d6996e07f29f7a939d69a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classInstruction.html#a8c78b641ee4d6996e07f29f7a939d69a">Instruction</a> (int opcode, const <a class="el" href="classOperand.html">Operand</a> &amp;op1, const <a class="el" href="classOperand.html">Operand</a> &amp;op2, const <a class="el" href="classOperand.html">Operand</a> &amp;op3, unsigned num_operands=3)</td></tr>
+<tr class="memdesc:a8c78b641ee4d6996e07f29f7a939d69a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor from opcode and up to three operands.  <a href="classInstruction.html#a8c78b641ee4d6996e07f29f7a939d69a">More...</a><br /></td></tr>
 <tr class="separator:a8c78b641ee4d6996e07f29f7a939d69a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9f10e0ea40e9ae95fff29e2d85164317"><td class="memItemLeft" align="right" valign="top"><a id="a9f10e0ea40e9ae95fff29e2d85164317"></a>
-<a class="el" href="classInstruction.html">Instruction</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>duplicate</b> () const</td></tr>
+<tr class="memitem:a9f10e0ea40e9ae95fff29e2d85164317"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classInstruction.html">Instruction</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classInstruction.html#a9f10e0ea40e9ae95fff29e2d85164317">duplicate</a> () const</td></tr>
+<tr class="memdesc:a9f10e0ea40e9ae95fff29e2d85164317"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return an exact duplicate of this <a class="el" href="classInstruction.html" title="Instruction object type.">Instruction</a>.  <a href="classInstruction.html#a9f10e0ea40e9ae95fff29e2d85164317">More...</a><br /></td></tr>
 <tr class="separator:a9f10e0ea40e9ae95fff29e2d85164317"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af0bce765cf38d96d4d0e6c3f2f752703"><td class="memItemLeft" align="right" valign="top"><a id="af0bce765cf38d96d4d0e6c3f2f752703"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>get_opcode</b> () const</td></tr>
+<tr class="memitem:af0bce765cf38d96d4d0e6c3f2f752703"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classInstruction.html#af0bce765cf38d96d4d0e6c3f2f752703">get_opcode</a> () const</td></tr>
+<tr class="memdesc:af0bce765cf38d96d4d0e6c3f2f752703"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the opcode value.  <a href="classInstruction.html#af0bce765cf38d96d4d0e6c3f2f752703">More...</a><br /></td></tr>
 <tr class="separator:af0bce765cf38d96d4d0e6c3f2f752703"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aefb6579dfc23659e304479b3764a1abd"><td class="memItemLeft" align="right" valign="top"><a id="aefb6579dfc23659e304479b3764a1abd"></a>
-unsigned&#160;</td><td class="memItemRight" valign="bottom"><b>get_num_operands</b> () const</td></tr>
+<tr class="memitem:aefb6579dfc23659e304479b3764a1abd"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classInstruction.html#aefb6579dfc23659e304479b3764a1abd">get_num_operands</a> () const</td></tr>
+<tr class="memdesc:aefb6579dfc23659e304479b3764a1abd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the number of operands.  <a href="classInstruction.html#aefb6579dfc23659e304479b3764a1abd">More...</a><br /></td></tr>
 <tr class="separator:aefb6579dfc23659e304479b3764a1abd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2f4d69885c8c97c8de2307c6956e3bda"><td class="memItemLeft" align="right" valign="top"><a id="a2f4d69885c8c97c8de2307c6956e3bda"></a>
-const <a class="el" href="classOperand.html">Operand</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>get_operand</b> (unsigned index) const</td></tr>
+<tr class="memitem:a2f4d69885c8c97c8de2307c6956e3bda"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classOperand.html">Operand</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classInstruction.html#a2f4d69885c8c97c8de2307c6956e3bda">get_operand</a> (unsigned index) const</td></tr>
+<tr class="memdesc:a2f4d69885c8c97c8de2307c6956e3bda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the specified <a class="el" href="classOperand.html">Operand</a>.  <a href="classInstruction.html#a2f4d69885c8c97c8de2307c6956e3bda">More...</a><br /></td></tr>
 <tr class="separator:a2f4d69885c8c97c8de2307c6956e3bda"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6ecab378b7cb0d54f36f7e470ef84463"><td class="memItemLeft" align="right" valign="top"><a id="a6ecab378b7cb0d54f36f7e470ef84463"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_operand</b> (unsigned index, const <a class="el" href="classOperand.html">Operand</a> &amp;operand)</td></tr>
+<tr class="memitem:a6ecab378b7cb0d54f36f7e470ef84463"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classInstruction.html#a6ecab378b7cb0d54f36f7e470ef84463">set_operand</a> (unsigned index, const <a class="el" href="classOperand.html">Operand</a> &amp;operand)</td></tr>
+<tr class="memdesc:a6ecab378b7cb0d54f36f7e470ef84463"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modify the specified <a class="el" href="classOperand.html">Operand</a>.  <a href="classInstruction.html#a6ecab378b7cb0d54f36f7e470ef84463">More...</a><br /></td></tr>
 <tr class="separator:a6ecab378b7cb0d54f36f7e470ef84463"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a67e3233e8e91f8bdfd31daae47f4a4de"><td class="memItemLeft" align="right" valign="top"><a id="a67e3233e8e91f8bdfd31daae47f4a4de"></a>
-<a class="el" href="classOperand.html">Operand</a>&#160;</td><td class="memItemRight" valign="bottom"><b>get_last_operand</b> () const</td></tr>
+<tr class="memitem:a67e3233e8e91f8bdfd31daae47f4a4de"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classOperand.html">Operand</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classInstruction.html#a67e3233e8e91f8bdfd31daae47f4a4de">get_last_operand</a> () const</td></tr>
+<tr class="memdesc:a67e3233e8e91f8bdfd31daae47f4a4de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a copy of the last (rightmost) <a class="el" href="classOperand.html">Operand</a>.  <a href="classInstruction.html#a67e3233e8e91f8bdfd31daae47f4a4de">More...</a><br /></td></tr>
 <tr class="separator:a67e3233e8e91f8bdfd31daae47f4a4de"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a36295123f8d88d7f744feddc3f145223"><td class="memItemLeft" align="right" valign="top"><a id="a36295123f8d88d7f744feddc3f145223"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_comment</b> (const std::string &amp;comment)</td></tr>
+<tr class="memitem:a36295123f8d88d7f744feddc3f145223"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classInstruction.html#a36295123f8d88d7f744feddc3f145223">set_comment</a> (const std::string &amp;comment)</td></tr>
+<tr class="memdesc:a36295123f8d88d7f744feddc3f145223"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a textual comment for this <a class="el" href="classInstruction.html" title="Instruction object type.">Instruction</a>.  <a href="classInstruction.html#a36295123f8d88d7f744feddc3f145223">More...</a><br /></td></tr>
 <tr class="separator:a36295123f8d88d7f744feddc3f145223"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afcfc7b1f59f832d34786b49ae09381c0"><td class="memItemLeft" align="right" valign="top"><a id="afcfc7b1f59f832d34786b49ae09381c0"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>has_comment</b> () const</td></tr>
+<tr class="memitem:afcfc7b1f59f832d34786b49ae09381c0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classInstruction.html#afcfc7b1f59f832d34786b49ae09381c0">has_comment</a> () const</td></tr>
+<tr class="memdesc:afcfc7b1f59f832d34786b49ae09381c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether this <a class="el" href="classInstruction.html" title="Instruction object type.">Instruction</a> has a comment set.  <a href="classInstruction.html#afcfc7b1f59f832d34786b49ae09381c0">More...</a><br /></td></tr>
 <tr class="separator:afcfc7b1f59f832d34786b49ae09381c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a057937486b26ac891c53a80fe2c9e51b"><td class="memItemLeft" align="right" valign="top"><a id="a057937486b26ac891c53a80fe2c9e51b"></a>
-const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>get_comment</b> () const</td></tr>
+<tr class="memitem:a057937486b26ac891c53a80fe2c9e51b"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classInstruction.html#a057937486b26ac891c53a80fe2c9e51b">get_comment</a> () const</td></tr>
+<tr class="memdesc:a057937486b26ac891c53a80fe2c9e51b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the textual comment for this <a class="el" href="classInstruction.html" title="Instruction object type.">Instruction</a>.  <a href="classInstruction.html#a057937486b26ac891c53a80fe2c9e51b">More...</a><br /></td></tr>
 <tr class="separator:a057937486b26ac891c53a80fe2c9e51b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a914e988ca2a7702ff834ea3dd24e8e57"><td class="memItemLeft" align="right" valign="top"><a id="a914e988ca2a7702ff834ea3dd24e8e57"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_symbol</b> (<a class="el" href="classSymbol.html">Symbol</a> *sym)</td></tr>
+<tr class="memitem:a914e988ca2a7702ff834ea3dd24e8e57"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classInstruction.html#a914e988ca2a7702ff834ea3dd24e8e57">set_symbol</a> (<a class="el" href="classSymbol.html">Symbol</a> *sym)</td></tr>
+<tr class="memdesc:a914e988ca2a7702ff834ea3dd24e8e57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a symbol table entry (<a class="el" href="classSymbol.html">Symbol</a>).  <a href="classInstruction.html#a914e988ca2a7702ff834ea3dd24e8e57">More...</a><br /></td></tr>
 <tr class="separator:a914e988ca2a7702ff834ea3dd24e8e57"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a72f57190efda90c0b15a750448b88f8d"><td class="memItemLeft" align="right" valign="top"><a id="a72f57190efda90c0b15a750448b88f8d"></a>
-<a class="el" href="classSymbol.html">Symbol</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>get_symbol</b> () const</td></tr>
+<tr class="memitem:a72f57190efda90c0b15a750448b88f8d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classSymbol.html">Symbol</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classInstruction.html#a72f57190efda90c0b15a750448b88f8d">get_symbol</a> () const</td></tr>
+<tr class="memdesc:a72f57190efda90c0b15a750448b88f8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the symbol table entry (<a class="el" href="classSymbol.html">Symbol</a>).  <a href="classInstruction.html#a72f57190efda90c0b15a750448b88f8d">More...</a><br /></td></tr>
 <tr class="separator:a72f57190efda90c0b15a750448b88f8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p><a class="el" href="classInstruction.html" title="Instruction object type.">Instruction</a> object type. </p>
+<p>This is a traditional "quad"-style instruction representation. Can be used for either high-level or low-level code. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a3cf30c35a07e7b9a462e7593957f6174"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3cf30c35a07e7b9a462e7593957f6174">&#9670;&nbsp;</a></span>Instruction() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Instruction::Instruction </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>opcode</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Contructor from opcode. </p>
+<p>The initialized <a class="el" href="classInstruction.html" title="Instruction object type.">Instruction</a> object will not have any operands. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">opcode</td><td>the high-level or low-level opcode value </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="abeac8ea8724c6ce6c4413b5b66ddf1b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abeac8ea8724c6ce6c4413b5b66ddf1b9">&#9670;&nbsp;</a></span>Instruction() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Instruction::Instruction </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>opcode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classOperand.html">Operand</a> &amp;&#160;</td>
+          <td class="paramname"><em>op1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructor from opcode and one <a class="el" href="classOperand.html">Operand</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">opcode</td><td>the high-level or low-level opcode value </td></tr>
+    <tr><td class="paramname">op1</td><td>the first (and only) <a class="el" href="classOperand.html">Operand</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2db852a4f2bf3f82c5e8e118bf92e010"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2db852a4f2bf3f82c5e8e118bf92e010">&#9670;&nbsp;</a></span>Instruction() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Instruction::Instruction </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>opcode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classOperand.html">Operand</a> &amp;&#160;</td>
+          <td class="paramname"><em>op1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classOperand.html">Operand</a> &amp;&#160;</td>
+          <td class="paramname"><em>op2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructor from opcode and two Operands. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">opcode</td><td>the high-level or low-level opcode value </td></tr>
+    <tr><td class="paramname">op1</td><td>the first <a class="el" href="classOperand.html">Operand</a> </td></tr>
+    <tr><td class="paramname">op2</td><td>the second <a class="el" href="classOperand.html">Operand</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a8c78b641ee4d6996e07f29f7a939d69a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c78b641ee4d6996e07f29f7a939d69a">&#9670;&nbsp;</a></span>Instruction() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Instruction::Instruction </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>opcode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classOperand.html">Operand</a> &amp;&#160;</td>
+          <td class="paramname"><em>op1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classOperand.html">Operand</a> &amp;&#160;</td>
+          <td class="paramname"><em>op2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classOperand.html">Operand</a> &amp;&#160;</td>
+          <td class="paramname"><em>op3</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>num_operands</em> = <code>3</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructor from opcode and up to three operands. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">opcode</td><td>the high-level or low-level opcode value </td></tr>
+    <tr><td class="paramname">op1</td><td>the first <a class="el" href="classOperand.html">Operand</a> </td></tr>
+    <tr><td class="paramname">op2</td><td>the second <a class="el" href="classOperand.html">Operand</a> </td></tr>
+    <tr><td class="paramname">op3</td><td>the third <a class="el" href="classOperand.html">Operand</a> </td></tr>
+    <tr><td class="paramname">num_operands</td><td>the number of operands (defaults to 3) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a9f10e0ea40e9ae95fff29e2d85164317"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f10e0ea40e9ae95fff29e2d85164317">&#9670;&nbsp;</a></span>duplicate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classInstruction.html">Instruction</a>* Instruction::duplicate </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return an exact duplicate of this <a class="el" href="classInstruction.html" title="Instruction object type.">Instruction</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>an exact duplicate of this <a class="el" href="classInstruction.html" title="Instruction object type.">Instruction</a> </dd></dl>
+
+</div>
+</div>
+<a id="a057937486b26ac891c53a80fe2c9e51b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a057937486b26ac891c53a80fe2c9e51b">&#9670;&nbsp;</a></span>get_comment()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string&amp; Instruction::get_comment </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the textual comment for this <a class="el" href="classInstruction.html" title="Instruction object type.">Instruction</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>the comment for this instruction (empty sting if there is no comment) </dd></dl>
+
+</div>
+</div>
+<a id="a67e3233e8e91f8bdfd31daae47f4a4de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67e3233e8e91f8bdfd31daae47f4a4de">&#9670;&nbsp;</a></span>get_last_operand()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classOperand.html">Operand</a> Instruction::get_last_operand </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Return a copy of the last (rightmost) <a class="el" href="classOperand.html">Operand</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>a copy of the last (rightmost) <a class="el" href="classOperand.html">Operand</a> </dd></dl>
+
+</div>
+</div>
+<a id="aefb6579dfc23659e304479b3764a1abd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aefb6579dfc23659e304479b3764a1abd">&#9670;&nbsp;</a></span>get_num_operands()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned Instruction::get_num_operands </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the number of operands. </p>
+<dl class="section return"><dt>Returns</dt><dd>the number of operands </dd></dl>
+
+</div>
+</div>
+<a id="af0bce765cf38d96d4d0e6c3f2f752703"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0bce765cf38d96d4d0e6c3f2f752703">&#9670;&nbsp;</a></span>get_opcode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Instruction::get_opcode </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the opcode value. </p>
+<p>In general, this will be the ordinal value of either a HighLevelOpcode or LowLevelOpcode enumeration member, depending on whether the object is a high-level or low-level Instuctiion. </p><dl class="section return"><dt>Returns</dt><dd>the opcode value </dd></dl>
+
+</div>
+</div>
+<a id="a2f4d69885c8c97c8de2307c6956e3bda"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f4d69885c8c97c8de2307c6956e3bda">&#9670;&nbsp;</a></span>get_operand()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classOperand.html">Operand</a> &amp; Instruction::get_operand </td>
+          <td>(</td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the specified <a class="el" href="classOperand.html">Operand</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>the index of the <a class="el" href="classOperand.html">Operand</a> to return (0 for first, etc.) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the specified <a class="el" href="classOperand.html">Operand</a> </dd></dl>
+
+</div>
+</div>
+<a id="a72f57190efda90c0b15a750448b88f8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72f57190efda90c0b15a750448b88f8d">&#9670;&nbsp;</a></span>get_symbol()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classSymbol.html">Symbol</a>* Instruction::get_symbol </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the symbol table entry (<a class="el" href="classSymbol.html">Symbol</a>). </p>
+<dl class="section return"><dt>Returns</dt><dd>a pointer to the symbol table entry (<a class="el" href="classSymbol.html">Symbol</a>), or a null pointer if the <a class="el" href="classInstruction.html" title="Instruction object type.">Instruction</a> doesn't have a symbol table entry set </dd></dl>
+
+</div>
+</div>
+<a id="afcfc7b1f59f832d34786b49ae09381c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afcfc7b1f59f832d34786b49ae09381c0">&#9670;&nbsp;</a></span>has_comment()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Instruction::has_comment </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check whether this <a class="el" href="classInstruction.html" title="Instruction object type.">Instruction</a> has a comment set. </p>
+<dl class="section return"><dt>Returns</dt><dd>true if this <a class="el" href="classInstruction.html" title="Instruction object type.">Instruction</a> has a comment set, false otherwise </dd></dl>
+
+</div>
+</div>
+<a id="a36295123f8d88d7f744feddc3f145223"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36295123f8d88d7f744feddc3f145223">&#9670;&nbsp;</a></span>set_comment()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Instruction::set_comment </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>comment</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set a textual comment for this <a class="el" href="classInstruction.html" title="Instruction object type.">Instruction</a>. </p>
+<p>The comment will appear in the printed representation of the <a class="el" href="classInstruction.html" title="Instruction object type.">Instruction</a>. This is useful for debugging. For example, when a high-level <a class="el" href="classInstruction.html" title="Instruction object type.">Instruction</a> is translated to a sequence of low-level Instructions, a string representation of the high-level instruction can be set as a comment for the first low-level <a class="el" href="classInstruction.html" title="Instruction object type.">Instruction</a>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">comment</td><td>the comment to set </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a6ecab378b7cb0d54f36f7e470ef84463"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ecab378b7cb0d54f36f7e470ef84463">&#9670;&nbsp;</a></span>set_operand()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Instruction::set_operand </td>
+          <td>(</td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classOperand.html">Operand</a> &amp;&#160;</td>
+          <td class="paramname"><em>operand</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Modify the specified <a class="el" href="classOperand.html">Operand</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>the <a class="el" href="classOperand.html">Operand</a> to modify (0 for first, etc.) </td></tr>
+    <tr><td class="paramname">operand</td><td>the value to copy to the specified <a class="el" href="classOperand.html">Operand</a> of the <a class="el" href="classInstruction.html" title="Instruction object type.">Instruction</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a914e988ca2a7702ff834ea3dd24e8e57"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a914e988ca2a7702ff834ea3dd24e8e57">&#9670;&nbsp;</a></span>set_symbol()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Instruction::set_symbol </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classSymbol.html">Symbol</a> *&#160;</td>
+          <td class="paramname"><em>sym</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set a symbol table entry (<a class="el" href="classSymbol.html">Symbol</a>). </p>
+<p>This is useful for function calls, to link the function call with information (such as the <a class="el" href="classFunctionType.html" title="A FunctionType represents the type of a function.">FunctionType</a>) of the called function.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sym</td><td>the <a class="el" href="classSymbol.html">Symbol</a> to set </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="instruction_8h_source.html">instruction.h</a></li>
 <li>instruction.cpp</li>

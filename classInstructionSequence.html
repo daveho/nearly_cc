@@ -71,104 +71,920 @@ $(function() {
 <div class="title">InstructionSequence Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><a class="el" href="classInstructionSequence.html" title="InstructionSequence class, which represents a linear sequence of Instruction objects.">InstructionSequence</a> class, which represents a linear sequence of <a class="el" href="classInstruction.html" title="Instruction object type.">Instruction</a> objects.  
+ <a href="classInstructionSequence.html#details">More...</a></p>
+
+<p><code>#include &quot;<a class="el" href="instruction__seq_8h_source.html">instruction_seq.h</a>&quot;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
 <tr class="memitem:a3451594e08ffcea33df8e3a3a182d2c4"><td class="memItemLeft" align="right" valign="top"><a id="a3451594e08ffcea33df8e3a3a182d2c4"></a>
-typedef <a class="el" href="classISeqIterator.html">ISeqIterator</a>&lt; std::vector&lt; Slot &gt;::<a class="el" href="classISeqIterator.html">const_iterator</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>const_iterator</b></td></tr>
+typedef <a class="el" href="classISeqIterator.html">ISeqIterator</a>&lt; std::vector&lt; Slot &gt;::<a class="el" href="classInstructionSequence.html#a3451594e08ffcea33df8e3a3a182d2c4">const_iterator</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classInstructionSequence.html#a3451594e08ffcea33df8e3a3a182d2c4">const_iterator</a></td></tr>
+<tr class="memdesc:a3451594e08ffcea33df8e3a3a182d2c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterator over instructions in forward order. <br /></td></tr>
 <tr class="separator:a3451594e08ffcea33df8e3a3a182d2c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ada89b442c54fb83470eeb23f7c11baf9"><td class="memItemLeft" align="right" valign="top"><a id="ada89b442c54fb83470eeb23f7c11baf9"></a>
-typedef <a class="el" href="classISeqIterator.html">ISeqIterator</a>&lt; std::vector&lt; Slot &gt;::<a class="el" href="classISeqIterator.html">const_reverse_iterator</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>const_reverse_iterator</b></td></tr>
+typedef <a class="el" href="classISeqIterator.html">ISeqIterator</a>&lt; std::vector&lt; Slot &gt;::<a class="el" href="classInstructionSequence.html#ada89b442c54fb83470eeb23f7c11baf9">const_reverse_iterator</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classInstructionSequence.html#ada89b442c54fb83470eeb23f7c11baf9">const_reverse_iterator</a></td></tr>
+<tr class="memdesc:ada89b442c54fb83470eeb23f7c11baf9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterator over instructions in reverse order. <br /></td></tr>
 <tr class="separator:ada89b442c54fb83470eeb23f7c11baf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a29c1c7c6f96a875d2191fe301fb8a44b"><td class="memItemLeft" align="right" valign="top"><a id="a29c1c7c6f96a875d2191fe301fb8a44b"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>InstructionSequence</b> (BasicBlockKind kind, int code_order, const std::string &amp;block_label)</td></tr>
+<tr class="memitem:aff976ef834ff8502c9895c896a0fd697"><td class="memItemLeft" align="right" valign="top"><a id="aff976ef834ff8502c9895c896a0fd697"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classInstructionSequence.html#aff976ef834ff8502c9895c896a0fd697">InstructionSequence</a> ()</td></tr>
+<tr class="memdesc:aff976ef834ff8502c9895c896a0fd697"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor. <br /></td></tr>
+<tr class="separator:aff976ef834ff8502c9895c896a0fd697"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29c1c7c6f96a875d2191fe301fb8a44b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classInstructionSequence.html#a29c1c7c6f96a875d2191fe301fb8a44b">InstructionSequence</a> (<a class="el" href="instruction__seq_8h.html#a03fb029250768e2a3f0fe55b3d4d017b">BasicBlockKind</a> kind, int code_order, const std::string &amp;block_label)</td></tr>
+<tr class="memdesc:a29c1c7c6f96a875d2191fe301fb8a44b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor from BasicBlockKind, code order value, and block label.  <a href="classInstructionSequence.html#a29c1c7c6f96a875d2191fe301fb8a44b">More...</a><br /></td></tr>
 <tr class="separator:a29c1c7c6f96a875d2191fe301fb8a44b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a03b6a73fdd593d827c7b3899bb88035a"><td class="memItemLeft" align="right" valign="top"><a id="a03b6a73fdd593d827c7b3899bb88035a"></a>
-<a class="el" href="classInstructionSequence.html">InstructionSequence</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>duplicate</b> () const</td></tr>
+<tr class="memitem:a03b6a73fdd593d827c7b3899bb88035a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classInstructionSequence.html">InstructionSequence</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classInstructionSequence.html#a03b6a73fdd593d827c7b3899bb88035a">duplicate</a> () const</td></tr>
+<tr class="memdesc:a03b6a73fdd593d827c7b3899bb88035a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a dynamically-allocated duplicate of this <a class="el" href="classInstructionSequence.html" title="InstructionSequence class, which represents a linear sequence of Instruction objects.">InstructionSequence</a>.  <a href="classInstructionSequence.html#a03b6a73fdd593d827c7b3899bb88035a">More...</a><br /></td></tr>
 <tr class="separator:a03b6a73fdd593d827c7b3899bb88035a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4416e0c65377084d314fd268449eba3f"><td class="memItemLeft" align="right" valign="top"><a id="a4416e0c65377084d314fd268449eba3f"></a>
-<a class="el" href="classISeqIterator.html">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><b>cbegin</b> () const</td></tr>
+<tr class="memitem:a4416e0c65377084d314fd268449eba3f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classInstructionSequence.html#a3451594e08ffcea33df8e3a3a182d2c4">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classInstructionSequence.html#a4416e0c65377084d314fd268449eba3f">cbegin</a> () const</td></tr>
+<tr class="memdesc:a4416e0c65377084d314fd268449eba3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get begin forward iterator over the instructions.  <a href="classInstructionSequence.html#a4416e0c65377084d314fd268449eba3f">More...</a><br /></td></tr>
 <tr class="separator:a4416e0c65377084d314fd268449eba3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0862069571c03e85380c2ee3434b699c"><td class="memItemLeft" align="right" valign="top"><a id="a0862069571c03e85380c2ee3434b699c"></a>
-<a class="el" href="classISeqIterator.html">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><b>cend</b> () const</td></tr>
+<tr class="memitem:a0862069571c03e85380c2ee3434b699c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classInstructionSequence.html#a3451594e08ffcea33df8e3a3a182d2c4">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classInstructionSequence.html#a0862069571c03e85380c2ee3434b699c">cend</a> () const</td></tr>
+<tr class="memdesc:a0862069571c03e85380c2ee3434b699c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get end forward iterator over the instructions.  <a href="classInstructionSequence.html#a0862069571c03e85380c2ee3434b699c">More...</a><br /></td></tr>
 <tr class="separator:a0862069571c03e85380c2ee3434b699c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6d95b6b6c8e726a89dbee68d2f4527f5"><td class="memItemLeft" align="right" valign="top"><a id="a6d95b6b6c8e726a89dbee68d2f4527f5"></a>
-<a class="el" href="classISeqIterator.html">const_reverse_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><b>crbegin</b> () const</td></tr>
+<tr class="memitem:a6d95b6b6c8e726a89dbee68d2f4527f5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classInstructionSequence.html#ada89b442c54fb83470eeb23f7c11baf9">const_reverse_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classInstructionSequence.html#a6d95b6b6c8e726a89dbee68d2f4527f5">crbegin</a> () const</td></tr>
+<tr class="memdesc:a6d95b6b6c8e726a89dbee68d2f4527f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get begin reverse iterator over the instructions.  <a href="classInstructionSequence.html#a6d95b6b6c8e726a89dbee68d2f4527f5">More...</a><br /></td></tr>
 <tr class="separator:a6d95b6b6c8e726a89dbee68d2f4527f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acafae9ad7dd367ad1a377593bbe246eb"><td class="memItemLeft" align="right" valign="top"><a id="acafae9ad7dd367ad1a377593bbe246eb"></a>
-<a class="el" href="classISeqIterator.html">const_reverse_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><b>crend</b> () const</td></tr>
+<tr class="memitem:acafae9ad7dd367ad1a377593bbe246eb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classInstructionSequence.html#ada89b442c54fb83470eeb23f7c11baf9">const_reverse_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classInstructionSequence.html#acafae9ad7dd367ad1a377593bbe246eb">crend</a> () const</td></tr>
+<tr class="memdesc:acafae9ad7dd367ad1a377593bbe246eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get end reverse iterator over the instructions.  <a href="classInstructionSequence.html#acafae9ad7dd367ad1a377593bbe246eb">More...</a><br /></td></tr>
 <tr class="separator:acafae9ad7dd367ad1a377593bbe246eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abe4c3da2c33c96714fac25d1f9c8a67a"><td class="memTemplParams" colspan="2"><a id="abe4c3da2c33c96714fac25d1f9c8a67a"></a>
-template&lt;typename Fn &gt; </td></tr>
-<tr class="memitem:abe4c3da2c33c96714fac25d1f9c8a67a"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>apply_to_all</b> (Fn f)</td></tr>
+<tr class="memitem:abe4c3da2c33c96714fac25d1f9c8a67a"><td class="memTemplParams" colspan="2">template&lt;typename Fn &gt; </td></tr>
+<tr class="memitem:abe4c3da2c33c96714fac25d1f9c8a67a"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classInstructionSequence.html#abe4c3da2c33c96714fac25d1f9c8a67a">apply_to_all</a> (Fn f)</td></tr>
 <tr class="separator:abe4c3da2c33c96714fac25d1f9c8a67a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6b240b81b47b53ceaadc3f40d2b556f7"><td class="memItemLeft" align="right" valign="top"><a id="a6b240b81b47b53ceaadc3f40d2b556f7"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>append</b> (<a class="el" href="classInstruction.html">Instruction</a> *ins)</td></tr>
+<tr class="memitem:a6b240b81b47b53ceaadc3f40d2b556f7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classInstructionSequence.html#a6b240b81b47b53ceaadc3f40d2b556f7">append</a> (<a class="el" href="classInstruction.html">Instruction</a> *ins)</td></tr>
+<tr class="memdesc:a6b240b81b47b53ceaadc3f40d2b556f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Append an <a class="el" href="classInstruction.html" title="Instruction object type.">Instruction</a>.  <a href="classInstructionSequence.html#a6b240b81b47b53ceaadc3f40d2b556f7">More...</a><br /></td></tr>
 <tr class="separator:a6b240b81b47b53ceaadc3f40d2b556f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aea0f4684c33b7ec0a401f89f32902953"><td class="memItemLeft" align="right" valign="top"><a id="aea0f4684c33b7ec0a401f89f32902953"></a>
-unsigned&#160;</td><td class="memItemRight" valign="bottom"><b>get_length</b> () const</td></tr>
+<tr class="memitem:aea0f4684c33b7ec0a401f89f32902953"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classInstructionSequence.html#aea0f4684c33b7ec0a401f89f32902953">get_length</a> () const</td></tr>
+<tr class="memdesc:aea0f4684c33b7ec0a401f89f32902953"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get number of instructions.  <a href="classInstructionSequence.html#aea0f4684c33b7ec0a401f89f32902953">More...</a><br /></td></tr>
 <tr class="separator:aea0f4684c33b7ec0a401f89f32902953"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a94a63bd76f9d1de4512b9cef0d0173cc"><td class="memItemLeft" align="right" valign="top"><a id="a94a63bd76f9d1de4512b9cef0d0173cc"></a>
-<a class="el" href="classInstruction.html">Instruction</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>get_instruction</b> (unsigned index) const</td></tr>
+<tr class="memitem:a94a63bd76f9d1de4512b9cef0d0173cc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classInstruction.html">Instruction</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classInstructionSequence.html#a94a63bd76f9d1de4512b9cef0d0173cc">get_instruction</a> (unsigned index) const</td></tr>
+<tr class="memdesc:a94a63bd76f9d1de4512b9cef0d0173cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get <a class="el" href="classInstruction.html" title="Instruction object type.">Instruction</a> at specified index.  <a href="classInstructionSequence.html#a94a63bd76f9d1de4512b9cef0d0173cc">More...</a><br /></td></tr>
 <tr class="separator:a94a63bd76f9d1de4512b9cef0d0173cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a92550340826babc825868f6520cc197c"><td class="memItemLeft" align="right" valign="top"><a id="a92550340826babc825868f6520cc197c"></a>
-<a class="el" href="classInstruction.html">Instruction</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>get_last_instruction</b> () const</td></tr>
+<tr class="memitem:a92550340826babc825868f6520cc197c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classInstruction.html">Instruction</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classInstructionSequence.html#a92550340826babc825868f6520cc197c">get_last_instruction</a> () const</td></tr>
+<tr class="memdesc:a92550340826babc825868f6520cc197c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the last <a class="el" href="classInstruction.html" title="Instruction object type.">Instruction</a>.  <a href="classInstructionSequence.html#a92550340826babc825868f6520cc197c">More...</a><br /></td></tr>
 <tr class="separator:a92550340826babc825868f6520cc197c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4b4acf64fc173a30443be409bbcb56d2"><td class="memItemLeft" align="right" valign="top"><a id="a4b4acf64fc173a30443be409bbcb56d2"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>define_label</b> (const std::string &amp;label)</td></tr>
+<tr class="memitem:a4b4acf64fc173a30443be409bbcb56d2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classInstructionSequence.html#a4b4acf64fc173a30443be409bbcb56d2">define_label</a> (const std::string &amp;label)</td></tr>
+<tr class="memdesc:a4b4acf64fc173a30443be409bbcb56d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define a label.  <a href="classInstructionSequence.html#a4b4acf64fc173a30443be409bbcb56d2">More...</a><br /></td></tr>
 <tr class="separator:a4b4acf64fc173a30443be409bbcb56d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a83ea3d1757a7d54f666a249d04ede540"><td class="memItemLeft" align="right" valign="top"><a id="a83ea3d1757a7d54f666a249d04ede540"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>has_label</b> (unsigned index) const</td></tr>
+<tr class="memitem:a83ea3d1757a7d54f666a249d04ede540"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classInstructionSequence.html#a83ea3d1757a7d54f666a249d04ede540">has_label</a> (unsigned index) const</td></tr>
+<tr class="memdesc:a83ea3d1757a7d54f666a249d04ede540"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine if <a class="el" href="classInstruction.html" title="Instruction object type.">Instruction</a> at given index has a label.  <a href="classInstructionSequence.html#a83ea3d1757a7d54f666a249d04ede540">More...</a><br /></td></tr>
 <tr class="separator:a83ea3d1757a7d54f666a249d04ede540"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5c44d3b40e2cfc0c3a498e3a438790f2"><td class="memItemLeft" align="right" valign="top"><a id="a5c44d3b40e2cfc0c3a498e3a438790f2"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>get_label_at_index</b> (unsigned index) const</td></tr>
+<tr class="memitem:a5c44d3b40e2cfc0c3a498e3a438790f2"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classInstructionSequence.html#a5c44d3b40e2cfc0c3a498e3a438790f2">get_label_at_index</a> (unsigned index) const</td></tr>
+<tr class="memdesc:a5c44d3b40e2cfc0c3a498e3a438790f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get label of the <a class="el" href="classInstruction.html" title="Instruction object type.">Instruction</a> at the specified index.  <a href="classInstructionSequence.html#a5c44d3b40e2cfc0c3a498e3a438790f2">More...</a><br /></td></tr>
 <tr class="separator:a5c44d3b40e2cfc0c3a498e3a438790f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adc43facca41fb131a9555faffd7d6acb"><td class="memItemLeft" align="right" valign="top"><a id="adc43facca41fb131a9555faffd7d6acb"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>has_label</b> (<a class="el" href="classISeqIterator.html">const_iterator</a> i) const</td></tr>
-<tr class="separator:adc43facca41fb131a9555faffd7d6acb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5fdf9655aa18c93216a854686890c8ef"><td class="memItemLeft" align="right" valign="top"><a id="a5fdf9655aa18c93216a854686890c8ef"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>has_label_at_end</b> () const</td></tr>
+<tr class="memitem:a70db5144ea6486b06cf55f958445fadd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classInstructionSequence.html#a70db5144ea6486b06cf55f958445fadd">has_label</a> (<a class="el" href="classInstructionSequence.html#a3451594e08ffcea33df8e3a3a182d2c4">const_iterator</a> iter) const</td></tr>
+<tr class="memdesc:a70db5144ea6486b06cf55f958445fadd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine if <a class="el" href="classInstruction.html" title="Instruction object type.">Instruction</a> referred to by specified iterator has a label.  <a href="classInstructionSequence.html#a70db5144ea6486b06cf55f958445fadd">More...</a><br /></td></tr>
+<tr class="separator:a70db5144ea6486b06cf55f958445fadd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5fdf9655aa18c93216a854686890c8ef"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classInstructionSequence.html#a5fdf9655aa18c93216a854686890c8ef">has_label_at_end</a> () const</td></tr>
+<tr class="memdesc:a5fdf9655aa18c93216a854686890c8ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine if the <a class="el" href="classInstructionSequence.html" title="InstructionSequence class, which represents a linear sequence of Instruction objects.">InstructionSequence</a> has a label at the end This can happen in code generation for control constructs, when a label is generated as a target for the code that comes after the construct.  <a href="classInstructionSequence.html#a5fdf9655aa18c93216a854686890c8ef">More...</a><br /></td></tr>
 <tr class="separator:a5fdf9655aa18c93216a854686890c8ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0ed81c47d5c5db07685a5ebb82317781"><td class="memItemLeft" align="right" valign="top"><a id="a0ed81c47d5c5db07685a5ebb82317781"></a>
-<a class="el" href="classISeqIterator.html">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><b>get_iterator_at_labeled_position</b> (const std::string &amp;label) const</td></tr>
+<tr class="memitem:a0ed81c47d5c5db07685a5ebb82317781"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classInstructionSequence.html#a3451594e08ffcea33df8e3a3a182d2c4">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classInstructionSequence.html#a0ed81c47d5c5db07685a5ebb82317781">get_iterator_at_labeled_position</a> (const std::string &amp;label) const</td></tr>
+<tr class="memdesc:a0ed81c47d5c5db07685a5ebb82317781"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a forward const iterator positioned at the instruction with the specified label, or the end iterator if there is no instruction with the specified label.  <a href="classInstructionSequence.html#a0ed81c47d5c5db07685a5ebb82317781">More...</a><br /></td></tr>
 <tr class="separator:a0ed81c47d5c5db07685a5ebb82317781"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9c2e7ebad6c36e01e8557275b21355d4"><td class="memItemLeft" align="right" valign="top"><a id="a9c2e7ebad6c36e01e8557275b21355d4"></a>
-<a class="el" href="classInstruction.html">Instruction</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>find_labeled_instruction</b> (const std::string &amp;label) const</td></tr>
+<tr class="memitem:a9c2e7ebad6c36e01e8557275b21355d4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classInstruction.html">Instruction</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classInstructionSequence.html#a9c2e7ebad6c36e01e8557275b21355d4">find_labeled_instruction</a> (const std::string &amp;label) const</td></tr>
+<tr class="memdesc:a9c2e7ebad6c36e01e8557275b21355d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find <a class="el" href="classInstruction.html" title="Instruction object type.">Instruction</a> labeled with specified label.  <a href="classInstructionSequence.html#a9c2e7ebad6c36e01e8557275b21355d4">More...</a><br /></td></tr>
 <tr class="separator:a9c2e7ebad6c36e01e8557275b21355d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3ca15879fd5363381b2cc10362b8b816"><td class="memItemLeft" align="right" valign="top"><a id="a3ca15879fd5363381b2cc10362b8b816"></a>
-unsigned&#160;</td><td class="memItemRight" valign="bottom"><b>get_index_of_labeled_instruction</b> (const std::string &amp;label) const</td></tr>
+<tr class="memitem:a3ca15879fd5363381b2cc10362b8b816"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classInstructionSequence.html#a3ca15879fd5363381b2cc10362b8b816">get_index_of_labeled_instruction</a> (const std::string &amp;label) const</td></tr>
+<tr class="memdesc:a3ca15879fd5363381b2cc10362b8b816"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the index of instruction labeled with the specified label.  <a href="classInstructionSequence.html#a3ca15879fd5363381b2cc10362b8b816">More...</a><br /></td></tr>
 <tr class="separator:a3ca15879fd5363381b2cc10362b8b816"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a70274345a2828ed0a9cf299e992c241e"><td class="memItemLeft" align="right" valign="top"><a id="a70274345a2828ed0a9cf299e992c241e"></a>
-BasicBlockKind&#160;</td><td class="memItemRight" valign="bottom"><b>get_kind</b> () const</td></tr>
+<tr class="memitem:a70274345a2828ed0a9cf299e992c241e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="instruction__seq_8h.html#a03fb029250768e2a3f0fe55b3d4d017b">BasicBlockKind</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classInstructionSequence.html#a70274345a2828ed0a9cf299e992c241e">get_kind</a> () const</td></tr>
+<tr class="memdesc:a70274345a2828ed0a9cf299e992c241e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the BasicBlockKind.  <a href="classInstructionSequence.html#a70274345a2828ed0a9cf299e992c241e">More...</a><br /></td></tr>
 <tr class="separator:a70274345a2828ed0a9cf299e992c241e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a133649da7103058b5057a5127b26dfa8"><td class="memItemLeft" align="right" valign="top"><a id="a133649da7103058b5057a5127b26dfa8"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_kind</b> (BasicBlockKind kind)</td></tr>
+<tr class="memitem:a133649da7103058b5057a5127b26dfa8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classInstructionSequence.html#a133649da7103058b5057a5127b26dfa8">set_kind</a> (<a class="el" href="instruction__seq_8h.html#a03fb029250768e2a3f0fe55b3d4d017b">BasicBlockKind</a> kind)</td></tr>
+<tr class="memdesc:a133649da7103058b5057a5127b26dfa8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the BasicBlockKind.  <a href="classInstructionSequence.html#a133649da7103058b5057a5127b26dfa8">More...</a><br /></td></tr>
 <tr class="separator:a133649da7103058b5057a5127b26dfa8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a986ebb3f8c7e5b5b409e24534243bb80"><td class="memItemLeft" align="right" valign="top"><a id="a986ebb3f8c7e5b5b409e24534243bb80"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>has_block_label</b> () const</td></tr>
+<tr class="memitem:a986ebb3f8c7e5b5b409e24534243bb80"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classInstructionSequence.html#a986ebb3f8c7e5b5b409e24534243bb80">has_block_label</a> () const</td></tr>
+<tr class="memdesc:a986ebb3f8c7e5b5b409e24534243bb80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether the first <a class="el" href="classInstruction.html" title="Instruction object type.">Instruction</a> is labeled.  <a href="classInstructionSequence.html#a986ebb3f8c7e5b5b409e24534243bb80">More...</a><br /></td></tr>
 <tr class="separator:a986ebb3f8c7e5b5b409e24534243bb80"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a90a593b5c2afbaeb058a10760aff953a"><td class="memItemLeft" align="right" valign="top"><a id="a90a593b5c2afbaeb058a10760aff953a"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>get_block_label</b> () const</td></tr>
+<tr class="memitem:a90a593b5c2afbaeb058a10760aff953a"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classInstructionSequence.html#a90a593b5c2afbaeb058a10760aff953a">get_block_label</a> () const</td></tr>
+<tr class="memdesc:a90a593b5c2afbaeb058a10760aff953a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the label of the first <a class="el" href="classInstruction.html" title="Instruction object type.">Instruction</a>.  <a href="classInstructionSequence.html#a90a593b5c2afbaeb058a10760aff953a">More...</a><br /></td></tr>
 <tr class="separator:a90a593b5c2afbaeb058a10760aff953a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a29955407845735fbdd25d2563970eacd"><td class="memItemLeft" align="right" valign="top"><a id="a29955407845735fbdd25d2563970eacd"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_block_label</b> (const std::string &amp;block_label)</td></tr>
+<tr class="memitem:a29955407845735fbdd25d2563970eacd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classInstructionSequence.html#a29955407845735fbdd25d2563970eacd">set_block_label</a> (const std::string &amp;block_label)</td></tr>
+<tr class="memdesc:a29955407845735fbdd25d2563970eacd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the label on the first <a class="el" href="classInstruction.html" title="Instruction object type.">Instruction</a>.  <a href="classInstructionSequence.html#a29955407845735fbdd25d2563970eacd">More...</a><br /></td></tr>
 <tr class="separator:a29955407845735fbdd25d2563970eacd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0b47480bbfabba0fa3e52a87f490e07d"><td class="memItemLeft" align="right" valign="top"><a id="a0b47480bbfabba0fa3e52a87f490e07d"></a>
-unsigned&#160;</td><td class="memItemRight" valign="bottom"><b>get_block_id</b> () const</td></tr>
+<tr class="memitem:a0b47480bbfabba0fa3e52a87f490e07d"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classInstructionSequence.html#a0b47480bbfabba0fa3e52a87f490e07d">get_block_id</a> () const</td></tr>
+<tr class="memdesc:a0b47480bbfabba0fa3e52a87f490e07d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the basic block id.  <a href="classInstructionSequence.html#a0b47480bbfabba0fa3e52a87f490e07d">More...</a><br /></td></tr>
 <tr class="separator:a0b47480bbfabba0fa3e52a87f490e07d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af3c9d115ebcdcb1d2aff70f20e59bf62"><td class="memItemLeft" align="right" valign="top"><a id="af3c9d115ebcdcb1d2aff70f20e59bf62"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_block_id</b> (unsigned block_id)</td></tr>
+<tr class="memitem:af3c9d115ebcdcb1d2aff70f20e59bf62"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classInstructionSequence.html#af3c9d115ebcdcb1d2aff70f20e59bf62">set_block_id</a> (unsigned block_id)</td></tr>
+<tr class="memdesc:af3c9d115ebcdcb1d2aff70f20e59bf62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the basic block id.  <a href="classInstructionSequence.html#af3c9d115ebcdcb1d2aff70f20e59bf62">More...</a><br /></td></tr>
 <tr class="separator:af3c9d115ebcdcb1d2aff70f20e59bf62"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afc49b96f81fca9b8812cb0c715d6ffed"><td class="memItemLeft" align="right" valign="top"><a id="afc49b96f81fca9b8812cb0c715d6ffed"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>get_code_order</b> () const</td></tr>
+<tr class="memitem:afc49b96f81fca9b8812cb0c715d6ffed"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classInstructionSequence.html#afc49b96f81fca9b8812cb0c715d6ffed">get_code_order</a> () const</td></tr>
+<tr class="memdesc:afc49b96f81fca9b8812cb0c715d6ffed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the code order value of this block.  <a href="classInstructionSequence.html#afc49b96f81fca9b8812cb0c715d6ffed">More...</a><br /></td></tr>
 <tr class="separator:afc49b96f81fca9b8812cb0c715d6ffed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaeea2cb7fa73d20428d8aff44410ef28"><td class="memItemLeft" align="right" valign="top"><a id="aaeea2cb7fa73d20428d8aff44410ef28"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_code_order</b> (int code_order)</td></tr>
+<tr class="memitem:aaeea2cb7fa73d20428d8aff44410ef28"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classInstructionSequence.html#aaeea2cb7fa73d20428d8aff44410ef28">set_code_order</a> (int code_order)</td></tr>
+<tr class="memdesc:aaeea2cb7fa73d20428d8aff44410ef28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the code order value of this block.  <a href="classInstructionSequence.html#aaeea2cb7fa73d20428d8aff44410ef28">More...</a><br /></td></tr>
 <tr class="separator:aaeea2cb7fa73d20428d8aff44410ef28"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p><a class="el" href="classInstructionSequence.html" title="InstructionSequence class, which represents a linear sequence of Instruction objects.">InstructionSequence</a> class, which represents a linear sequence of <a class="el" href="classInstruction.html" title="Instruction object type.">Instruction</a> objects. </p>
+<p>This can be used for both a "flat" IR for a function (with control flow), or a basic block in a <a class="el" href="classControlFlowGraph.html" title="ControlFlowGraph: graph of basic blocks connected by control edges.">ControlFlowGraph</a> (where a branch or function call can only be the last instruction in the block.) </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a29c1c7c6f96a875d2191fe301fb8a44b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29c1c7c6f96a875d2191fe301fb8a44b">&#9670;&nbsp;</a></span>InstructionSequence()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">InstructionSequence::InstructionSequence </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="instruction__seq_8h.html#a03fb029250768e2a3f0fe55b3d4d017b">BasicBlockKind</a>&#160;</td>
+          <td class="paramname"><em>kind</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>code_order</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>block_label</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructor from BasicBlockKind, code order value, and block label. </p>
+<p>This is useful for creating an <a class="el" href="classInstructionSequence.html" title="InstructionSequence class, which represents a linear sequence of Instruction objects.">InstructionSequence</a> to be used as a basic block in a <a class="el" href="classControlFlowGraph.html" title="ControlFlowGraph: graph of basic blocks connected by control edges.">ControlFlowGraph</a>. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">kind</td><td>the BasicBlockKind </td></tr>
+    <tr><td class="paramname">code_order</td><td>the relative order of this basic block </td></tr>
+    <tr><td class="paramname">block_label</td><td>label of first <a class="el" href="classInstruction.html" title="Instruction object type.">Instruction</a> in the basic block </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a6b240b81b47b53ceaadc3f40d2b556f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b240b81b47b53ceaadc3f40d2b556f7">&#9670;&nbsp;</a></span>append()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void InstructionSequence::append </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classInstruction.html">Instruction</a> *&#160;</td>
+          <td class="paramname"><em>ins</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Append an <a class="el" href="classInstruction.html" title="Instruction object type.">Instruction</a>. </p>
+<p>The <a class="el" href="classInstructionSequence.html" title="InstructionSequence class, which represents a linear sequence of Instruction objects.">InstructionSequence</a> will assume responsibility for deleting the <a class="el" href="classInstruction.html" title="Instruction object type.">Instruction</a> object. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ins</td><td>pointer to the <a class="el" href="classInstruction.html" title="Instruction object type.">Instruction</a> to append (and adopt) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="abe4c3da2c33c96714fac25d1f9c8a67a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe4c3da2c33c96714fac25d1f9c8a67a">&#9670;&nbsp;</a></span>apply_to_all()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Fn &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void InstructionSequence::apply_to_all </td>
+          <td>(</td>
+          <td class="paramtype">Fn&#160;</td>
+          <td class="paramname"><em>f</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Fn</td><td>the type of the function to apply </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fn</td><td>the function to apply to each instruction </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a4416e0c65377084d314fd268449eba3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4416e0c65377084d314fd268449eba3f">&#9670;&nbsp;</a></span>cbegin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classInstructionSequence.html#a3451594e08ffcea33df8e3a3a182d2c4">const_iterator</a> InstructionSequence::cbegin </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get begin forward iterator over the instructions. </p>
+<dl class="section return"><dt>Returns</dt><dd>begin forward iterator over the instructions </dd></dl>
+
+</div>
+</div>
+<a id="a0862069571c03e85380c2ee3434b699c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0862069571c03e85380c2ee3434b699c">&#9670;&nbsp;</a></span>cend()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classInstructionSequence.html#a3451594e08ffcea33df8e3a3a182d2c4">const_iterator</a> InstructionSequence::cend </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get end forward iterator over the instructions. </p>
+<dl class="section return"><dt>Returns</dt><dd>end forward iterator over the instructions </dd></dl>
+
+</div>
+</div>
+<a id="a6d95b6b6c8e726a89dbee68d2f4527f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d95b6b6c8e726a89dbee68d2f4527f5">&#9670;&nbsp;</a></span>crbegin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classInstructionSequence.html#ada89b442c54fb83470eeb23f7c11baf9">const_reverse_iterator</a> InstructionSequence::crbegin </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get begin reverse iterator over the instructions. </p>
+<dl class="section return"><dt>Returns</dt><dd>begin reverse iterator over the instructions </dd></dl>
+
+</div>
+</div>
+<a id="acafae9ad7dd367ad1a377593bbe246eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acafae9ad7dd367ad1a377593bbe246eb">&#9670;&nbsp;</a></span>crend()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classInstructionSequence.html#ada89b442c54fb83470eeb23f7c11baf9">const_reverse_iterator</a> InstructionSequence::crend </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get end reverse iterator over the instructions. </p>
+<dl class="section return"><dt>Returns</dt><dd>end reverse iterator over the instructions </dd></dl>
+
+</div>
+</div>
+<a id="a4b4acf64fc173a30443be409bbcb56d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b4acf64fc173a30443be409bbcb56d2">&#9670;&nbsp;</a></span>define_label()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void InstructionSequence::define_label </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>label</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Define a label. </p>
+<p>The next <a class="el" href="classInstruction.html" title="Instruction object type.">Instruction</a> appended will be labeled with this label. This is useful for labeling an instruction as a control-flow target.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">label</td><td>the label to apply to use for the next appended <a class="el" href="classInstruction.html" title="Instruction object type.">Instruction</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a03b6a73fdd593d827c7b3899bb88035a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03b6a73fdd593d827c7b3899bb88035a">&#9670;&nbsp;</a></span>duplicate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classInstructionSequence.html">InstructionSequence</a> * InstructionSequence::duplicate </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Return a dynamically-allocated duplicate of this <a class="el" href="classInstructionSequence.html" title="InstructionSequence class, which represents a linear sequence of Instruction objects.">InstructionSequence</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>duplicate of this <a class="el" href="classInstructionSequence.html" title="InstructionSequence class, which represents a linear sequence of Instruction objects.">InstructionSequence</a> </dd></dl>
+
+</div>
+</div>
+<a id="a9c2e7ebad6c36e01e8557275b21355d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c2e7ebad6c36e01e8557275b21355d4">&#9670;&nbsp;</a></span>find_labeled_instruction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classInstruction.html">Instruction</a> * InstructionSequence::find_labeled_instruction </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>label</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Find <a class="el" href="classInstruction.html" title="Instruction object type.">Instruction</a> labeled with specified label. </p>
+<p>Returns null pointer if no <a class="el" href="classInstruction.html" title="Instruction object type.">Instruction</a> has the specified label. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">label</td><td>a label </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>pointer to the <a class="el" href="classInstruction.html" title="Instruction object type.">Instruction</a> with the label, or a null pointer if there is no <a class="el" href="classInstruction.html" title="Instruction object type.">Instruction</a> with this label </dd></dl>
+
+</div>
+</div>
+<a id="a0b47480bbfabba0fa3e52a87f490e07d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b47480bbfabba0fa3e52a87f490e07d">&#9670;&nbsp;</a></span>get_block_id()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned InstructionSequence::get_block_id </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the basic block id. </p>
+<p>This is an arbitrary integer whose only significance is that it is different than the id of any other basic block.</p>
+<dl class="section return"><dt>Returns</dt><dd>the basic block id </dd></dl>
+
+</div>
+</div>
+<a id="a90a593b5c2afbaeb058a10760aff953a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90a593b5c2afbaeb058a10760aff953a">&#9670;&nbsp;</a></span>get_block_label()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string InstructionSequence::get_block_label </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the label of the first <a class="el" href="classInstruction.html" title="Instruction object type.">Instruction</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>true if the first <a class="el" href="classInstruction.html" title="Instruction object type.">Instruction</a> is labeled, false if not </dd></dl>
+
+</div>
+</div>
+<a id="afc49b96f81fca9b8812cb0c715d6ffed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc49b96f81fca9b8812cb0c715d6ffed">&#9670;&nbsp;</a></span>get_code_order()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int InstructionSequence::get_code_order </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the code order value of this block. </p>
+<p>This represents the relative position of the basic block's instructions in the original "flat" <a class="el" href="classInstructionSequence.html" title="InstructionSequence class, which represents a linear sequence of Instruction objects.">InstructionSequence</a>. </p><dl class="section return"><dt>Returns</dt><dd>the basic block's code order value </dd></dl>
+
+</div>
+</div>
+<a id="a3ca15879fd5363381b2cc10362b8b816"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ca15879fd5363381b2cc10362b8b816">&#9670;&nbsp;</a></span>get_index_of_labeled_instruction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned InstructionSequence::get_index_of_labeled_instruction </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>label</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Return the index of instruction labeled with the specified label. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">label</td><td>a label </td></tr>
+    <tr><td class="paramname">the</td><td>index of the <a class="el" href="classInstruction.html" title="Instruction object type.">Instruction</a> with this label </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classRuntimeError.html" title="Exception type for general runtime errors that aren&#39;t associated with source code.">RuntimeError</a></td><td>if there is no instruction with the label </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a94a63bd76f9d1de4512b9cef0d0173cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94a63bd76f9d1de4512b9cef0d0173cc">&#9670;&nbsp;</a></span>get_instruction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classInstruction.html">Instruction</a> * InstructionSequence::get_instruction </td>
+          <td>(</td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get <a class="el" href="classInstruction.html" title="Instruction object type.">Instruction</a> at specified index. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>index of instruction to get (0 for first, etc.) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>pointer to the <a class="el" href="classInstruction.html" title="Instruction object type.">Instruction</a> at that index </dd></dl>
+
+</div>
+</div>
+<a id="a0ed81c47d5c5db07685a5ebb82317781"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ed81c47d5c5db07685a5ebb82317781">&#9670;&nbsp;</a></span>get_iterator_at_labeled_position()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classInstructionSequence.html#a3451594e08ffcea33df8e3a3a182d2c4">InstructionSequence::const_iterator</a> InstructionSequence::get_iterator_at_labeled_position </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>label</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Return a forward const iterator positioned at the instruction with the specified label, or the end iterator if there is no instruction with the specified label. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">label</td><td>a label </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the forward iterator pointing to the <a class="el" href="classInstruction.html" title="Instruction object type.">Instruction</a> with the label, or the end iterator if there is no instruction with this label </dd></dl>
+
+</div>
+</div>
+<a id="a70274345a2828ed0a9cf299e992c241e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70274345a2828ed0a9cf299e992c241e">&#9670;&nbsp;</a></span>get_kind()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="instruction__seq_8h.html#a03fb029250768e2a3f0fe55b3d4d017b">BasicBlockKind</a> InstructionSequence::get_kind </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the BasicBlockKind. </p>
+<p>This is useful for checking a basic block to see if it is the entry or exit block. </p><dl class="section return"><dt>Returns</dt><dd>the BasicBlockKind </dd></dl>
+
+</div>
+</div>
+<a id="a5c44d3b40e2cfc0c3a498e3a438790f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c44d3b40e2cfc0c3a498e3a438790f2">&#9670;&nbsp;</a></span>get_label_at_index()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string InstructionSequence::get_label_at_index </td>
+          <td>(</td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get label of the <a class="el" href="classInstruction.html" title="Instruction object type.">Instruction</a> at the specified index. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>index of instruction to get (0 for first, etc.) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>label of the instructino at this index (empty string if there is no label) </dd></dl>
+
+</div>
+</div>
+<a id="a92550340826babc825868f6520cc197c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92550340826babc825868f6520cc197c">&#9670;&nbsp;</a></span>get_last_instruction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classInstruction.html">Instruction</a> * InstructionSequence::get_last_instruction </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the last <a class="el" href="classInstruction.html" title="Instruction object type.">Instruction</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>pointer to last <a class="el" href="classInstruction.html" title="Instruction object type.">Instruction</a> </dd></dl>
+
+</div>
+</div>
+<a id="aea0f4684c33b7ec0a401f89f32902953"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea0f4684c33b7ec0a401f89f32902953">&#9670;&nbsp;</a></span>get_length()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned InstructionSequence::get_length </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get number of instructions. </p>
+<dl class="section return"><dt>Returns</dt><dd>the number of instrtuctions </dd></dl>
+
+</div>
+</div>
+<a id="a986ebb3f8c7e5b5b409e24534243bb80"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a986ebb3f8c7e5b5b409e24534243bb80">&#9670;&nbsp;</a></span>has_block_label()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool InstructionSequence::has_block_label </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check whether the first <a class="el" href="classInstruction.html" title="Instruction object type.">Instruction</a> is labeled. </p>
+<p>This is useful for identifying whether a basic block is targeted by a branch instruction. </p><dl class="section return"><dt>Returns</dt><dd>true if the first <a class="el" href="classInstruction.html" title="Instruction object type.">Instruction</a> in the block is labeled, false if not </dd></dl>
+
+</div>
+</div>
+<a id="a70db5144ea6486b06cf55f958445fadd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70db5144ea6486b06cf55f958445fadd">&#9670;&nbsp;</a></span>has_label() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool InstructionSequence::has_label </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classInstructionSequence.html#a3451594e08ffcea33df8e3a3a182d2c4">const_iterator</a>&#160;</td>
+          <td class="paramname"><em>iter</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Determine if <a class="el" href="classInstruction.html" title="Instruction object type.">Instruction</a> referred to by specified iterator has a label. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">iter</td><td>a forward iterator </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if the instruction pointed-to by the iterator has a label </dd></dl>
+
+</div>
+</div>
+<a id="a83ea3d1757a7d54f666a249d04ede540"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83ea3d1757a7d54f666a249d04ede540">&#9670;&nbsp;</a></span>has_label() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool InstructionSequence::has_label </td>
+          <td>(</td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Determine if <a class="el" href="classInstruction.html" title="Instruction object type.">Instruction</a> at given index has a label. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>index of instruction to get (0 for first, etc.) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if the instruction at this index has a label, false if not </dd></dl>
+
+</div>
+</div>
+<a id="a5fdf9655aa18c93216a854686890c8ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5fdf9655aa18c93216a854686890c8ef">&#9670;&nbsp;</a></span>has_label_at_end()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool InstructionSequence::has_label_at_end </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Determine if the <a class="el" href="classInstructionSequence.html" title="InstructionSequence class, which represents a linear sequence of Instruction objects.">InstructionSequence</a> has a label at the end This can happen in code generation for control constructs, when a label is generated as a target for the code that comes after the construct. </p>
+<dl class="section return"><dt>Returns</dt><dd>true if there is a label at the end of the <a class="el" href="classInstructionSequence.html" title="InstructionSequence class, which represents a linear sequence of Instruction objects.">InstructionSequence</a>, false if not </dd></dl>
+
+</div>
+</div>
+<a id="af3c9d115ebcdcb1d2aff70f20e59bf62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3c9d115ebcdcb1d2aff70f20e59bf62">&#9670;&nbsp;</a></span>set_block_id()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void InstructionSequence::set_block_id </td>
+          <td>(</td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>block_id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the basic block id. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">block_id</td><td>the basic block id to set </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a29955407845735fbdd25d2563970eacd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29955407845735fbdd25d2563970eacd">&#9670;&nbsp;</a></span>set_block_label()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void InstructionSequence::set_block_label </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>block_label</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the label on the first <a class="el" href="classInstruction.html" title="Instruction object type.">Instruction</a>. </p>
+<p>This is used by <a class="el" href="classControlFlowGraphBuilder.html" title="ControlFlowGraphBuilder builds a ControlFlowGraph from an InstructionSequence.">ControlFlowGraphBuilder</a> when constructing a <a class="el" href="classControlFlowGraph.html" title="ControlFlowGraph: graph of basic blocks connected by control edges.">ControlFlowGraph</a> from a "flat" <a class="el" href="classInstructionSequence.html" title="InstructionSequence class, which represents a linear sequence of Instruction objects.">InstructionSequence</a>. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">block_label</td><td>the label to set on the first <a class="el" href="classInstruction.html" title="Instruction object type.">Instruction</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aaeea2cb7fa73d20428d8aff44410ef28"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaeea2cb7fa73d20428d8aff44410ef28">&#9670;&nbsp;</a></span>set_code_order()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void InstructionSequence::set_code_order </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>code_order</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the code order value of this block. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">code_order</td><td>the code order value to set </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a133649da7103058b5057a5127b26dfa8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a133649da7103058b5057a5127b26dfa8">&#9670;&nbsp;</a></span>set_kind()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void InstructionSequence::set_kind </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="instruction__seq_8h.html#a03fb029250768e2a3f0fe55b3d4d017b">BasicBlockKind</a>&#160;</td>
+          <td class="paramname"><em>kind</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the BasicBlockKind. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">kind</td><td>the BasicBlockKind to set </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="instruction__seq_8h_source.html">instruction_seq.h</a></li>
 <li>instruction_seq.cpp</li>

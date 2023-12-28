@@ -69,16 +69,78 @@ $(function() {
 <div class="title">HighLevelOpt Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><a class="el" href="classHighLevelOpt.html" title="HighLevelOpt is responsible for doing optimizations on the high-level IR for a Function.">HighLevelOpt</a> is responsible for doing optimizations on the high-level IR for a <a class="el" href="classFunction.html" title="Function encapsulates all of the information needed to generate and optimize code for a function.">Function</a>.  
+ <a href="classHighLevelOpt.html#details">More...</a></p>
+
+<p><code>#include &quot;<a class="el" href="highlevel__opt_8h_source.html">highlevel_opt.h</a>&quot;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ac95ea19edbc95167d36fa361cd4921ac"><td class="memItemLeft" align="right" valign="top"><a id="ac95ea19edbc95167d36fa361cd4921ac"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>HighLevelOpt</b> (const <a class="el" href="classOptions.html">Options</a> &amp;options)</td></tr>
+<tr class="memitem:ac95ea19edbc95167d36fa361cd4921ac"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHighLevelOpt.html#ac95ea19edbc95167d36fa361cd4921ac">HighLevelOpt</a> (const <a class="el" href="classOptions.html">Options</a> &amp;options)</td></tr>
+<tr class="memdesc:ac95ea19edbc95167d36fa361cd4921ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classHighLevelOpt.html#ac95ea19edbc95167d36fa361cd4921ac">More...</a><br /></td></tr>
 <tr class="separator:ac95ea19edbc95167d36fa361cd4921ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac96585c1813a6665bf5186d72f859282"><td class="memItemLeft" align="right" valign="top"><a id="ac96585c1813a6665bf5186d72f859282"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>optimize</b> (std::shared_ptr&lt; <a class="el" href="classFunction.html">Function</a> &gt; function)</td></tr>
+<tr class="memitem:ac96585c1813a6665bf5186d72f859282"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHighLevelOpt.html#ac96585c1813a6665bf5186d72f859282">optimize</a> (std::shared_ptr&lt; <a class="el" href="classFunction.html">Function</a> &gt; function)</td></tr>
+<tr class="memdesc:ac96585c1813a6665bf5186d72f859282"><td class="mdescLeft">&#160;</td><td class="mdescRight">Optimize the high-level IR for given <a class="el" href="classFunction.html" title="Function encapsulates all of the information needed to generate and optimize code for a function.">Function</a>.  <a href="classHighLevelOpt.html#ac96585c1813a6665bf5186d72f859282">More...</a><br /></td></tr>
 <tr class="separator:ac96585c1813a6665bf5186d72f859282"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p><a class="el" href="classHighLevelOpt.html" title="HighLevelOpt is responsible for doing optimizations on the high-level IR for a Function.">HighLevelOpt</a> is responsible for doing optimizations on the high-level IR for a <a class="el" href="classFunction.html" title="Function encapsulates all of the information needed to generate and optimize code for a function.">Function</a>. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ac95ea19edbc95167d36fa361cd4921ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac95ea19edbc95167d36fa361cd4921ac">&#9670;&nbsp;</a></span>HighLevelOpt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HighLevelOpt::HighLevelOpt </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classOptions.html">Options</a> &amp;&#160;</td>
+          <td class="paramname"><em>options</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">options</td><td>Reference to the command-line <a class="el" href="classOptions.html">Options</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="ac96585c1813a6665bf5186d72f859282"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac96585c1813a6665bf5186d72f859282">&#9670;&nbsp;</a></span>optimize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void HighLevelOpt::optimize </td>
+          <td>(</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classFunction.html">Function</a> &gt;&#160;</td>
+          <td class="paramname"><em>function</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Optimize the high-level IR for given <a class="el" href="classFunction.html" title="Function encapsulates all of the information needed to generate and optimize code for a function.">Function</a>. </p>
+<p>The implementation should store an optimized version of the high-level <a class="el" href="classInstructionSequence.html" title="InstructionSequence class, which represents a linear sequence of Instruction objects.">InstructionSequence</a> in the <a class="el" href="classFunction.html" title="Function encapsulates all of the information needed to generate and optimize code for a function.">Function</a> object, based on the original (unoptimized) high-level <a class="el" href="classInstructionSequence.html" title="InstructionSequence class, which represents a linear sequence of Instruction objects.">InstructionSequence</a>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">function</td><td>the <a class="el" href="classFunction.html" title="Function encapsulates all of the information needed to generate and optimize code for a function.">Function</a> whose high-level <a class="el" href="classInstructionSequence.html" title="InstructionSequence class, which represents a linear sequence of Instruction objects.">InstructionSequence</a> should be optimized </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="highlevel__opt_8h_source.html">highlevel_opt.h</a></li>
 <li>highlevel_opt.cpp</li>

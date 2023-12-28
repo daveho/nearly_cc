@@ -1,5 +1,5 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classFormatter.html" title=" " alt="" coords="5,31,92,57"/>
-<area shape="rect" id="node2" href="$classHighLevelFormatter.html" title=" " alt="" coords="140,5,291,32"/>
-<area shape="rect" id="node3" href="$classLowLevelFormatter.html" title=" " alt="" coords="142,56,289,83"/>
+<area shape="rect" id="node1" href="$classFormatter.html" title="A Formatter turns Operand and Instruction objects into strings, which in turn allows high&#45;level and l..." alt="" coords="5,31,92,57"/>
+<area shape="rect" id="node2" href="$classHighLevelFormatter.html" title="Implementation of Formatter for high&#45;level code." alt="" coords="140,5,291,32"/>
+<area shape="rect" id="node3" href="$classLowLevelFormatter.html" title="Implementation of Formatter for low&#45;level code." alt="" coords="142,56,289,83"/>
 </map>

@@ -216,17 +216,18 @@ $(function() {
 <div class="line"><a name="l00148"></a><span class="lineno"><a class="line" href="classLowLevelInstructionProperties.html">  148</a></span>&#160;<span class="keyword">class </span><a class="code" href="classLowLevelInstructionProperties.html">LowLevelInstructionProperties</a> {</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;  <span class="keywordtype">bool</span> is_function_call(<a class="code" href="classInstruction.html">Instruction</a> *ins)<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="keywordflow">return</span> ins-&gt;get_opcode() == MINS_CALL;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="keywordflow">return</span> ins-&gt;<a class="code" href="classInstruction.html#af0bce765cf38d96d4d0e6c3f2f752703">get_opcode</a>() == MINS_CALL;</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;  }</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;  <span class="keywordtype">bool</span> falls_through(<a class="code" href="classInstruction.html">Instruction</a> *ins)<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="comment">// only an unconditional jump instruction does not fall through</span></div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <span class="keywordflow">return</span> ins-&gt;get_opcode() != MINS_JMP;</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <span class="keywordflow">return</span> ins-&gt;<a class="code" href="classInstruction.html#af0bce765cf38d96d4d0e6c3f2f752703">get_opcode</a>() != MINS_JMP;</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;  }</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;};</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160; </div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// LOWLEVEL_H</span></div>
-<div class="ttc" id="aclassInstruction_html"><div class="ttname"><a href="classInstruction.html">Instruction</a></div><div class="ttdef"><b>Definition:</b> instruction.h:30</div></div>
+<div class="ttc" id="aclassInstruction_html"><div class="ttname"><a href="classInstruction.html">Instruction</a></div><div class="ttdoc">Instruction object type.</div><div class="ttdef"><b>Definition:</b> instruction.h:31</div></div>
+<div class="ttc" id="aclassInstruction_html_af0bce765cf38d96d4d0e6c3f2f752703"><div class="ttname"><a href="classInstruction.html#af0bce765cf38d96d4d0e6c3f2f752703">Instruction::get_opcode</a></div><div class="ttdeci">int get_opcode() const</div><div class="ttdoc">Get the opcode value.</div><div class="ttdef"><b>Definition:</b> instruction.cpp:46</div></div>
 <div class="ttc" id="aclassLowLevelInstructionProperties_html"><div class="ttname"><a href="classLowLevelInstructionProperties.html">LowLevelInstructionProperties</a></div><div class="ttdef"><b>Definition:</b> lowlevel.h:148</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

@@ -1,4 +1,4 @@
 <map id="HighLevelCodegen" name="HighLevelCodegen">
-<area shape="rect" id="node1" title=" " alt="" coords="5,80,149,107"/>
+<area shape="rect" id="node1" title="A HighLevelCodegen visitor generates high&#45;level IR code for a single function definition." alt="" coords="5,80,149,107"/>
 <area shape="rect" id="node2" href="$classASTVisitor.html" title="Base class for AST visitors." alt="" coords="33,5,122,32"/>
 </map>

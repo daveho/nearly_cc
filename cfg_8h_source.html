@@ -96,7 +96,7 @@ $(function() {
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;instruction.h&quot;</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &quot;instruction_seq.h&quot;</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="instruction__seq_8h.html">instruction_seq.h</a>&quot;</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &quot;operand.h&quot;</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
@@ -146,11 +146,11 @@ $(function() {
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keywordtype">void</span> append(std::shared_ptr&lt;InstructionSequence&gt; bb) {</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;      blocks.push_back(bb);</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;      <span class="keywordflow">if</span> (bb-&gt;get_kind() == BASICBLOCK_EXIT) { is_exit = <span class="keyword">true</span>; }</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;      <span class="keywordflow">if</span> (bb-&gt;get_kind() == <a class="code" href="instruction__seq_8h.html#a03fb029250768e2a3f0fe55b3d4d017bae3e52ee916d7f16337962ee88a3abce9">BASICBLOCK_EXIT</a>) { is_exit = <span class="keyword">true</span>; }</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    }</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keywordtype">void</span> prepend(std::shared_ptr&lt;InstructionSequence&gt; bb) {</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;      blocks.insert(blocks.begin(), bb);</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;      <span class="keywordflow">if</span> (bb-&gt;get_kind() == BASICBLOCK_EXIT) { is_exit = <span class="keyword">true</span>; }</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;      <span class="keywordflow">if</span> (bb-&gt;get_kind() == <a class="code" href="instruction__seq_8h.html#a03fb029250768e2a3f0fe55b3d4d017bae3e52ee916d7f16337962ee88a3abce9">BASICBLOCK_EXIT</a>) { is_exit = <span class="keyword">true</span>; }</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    }</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    Chunk *merge_with(Chunk *other) {</div>
@@ -196,7 +196,7 @@ $(function() {
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160; </div>
 <div class="line"><a name="l00177"></a><span class="lineno"><a class="line" href="classControlFlowGraph.html#a29f7d53b946fb8108f0f09d5d611c9c1">  177</a></span>&#160;  BlockList::const_iterator <a class="code" href="classControlFlowGraph.html#a29f7d53b946fb8108f0f09d5d611c9c1">bb_end</a>()<span class="keyword"> const   </span>{ <span class="keywordflow">return</span> m_basic_blocks.cend(); }</div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160; </div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;  std::shared_ptr&lt;InstructionSequence&gt; <a class="code" href="classControlFlowGraph.html#a842af9f8405f820201b4c2d0ff634085">create_basic_block</a>(BasicBlockKind kind, <span class="keywordtype">int</span> code_order, <span class="keyword">const</span> std::string &amp;label = <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;  std::shared_ptr&lt;InstructionSequence&gt; <a class="code" href="classControlFlowGraph.html#a842af9f8405f820201b4c2d0ff634085">create_basic_block</a>(<a class="code" href="instruction__seq_8h.html#a03fb029250768e2a3f0fe55b3d4d017b">BasicBlockKind</a> kind, <span class="keywordtype">int</span> code_order, <span class="keyword">const</span> std::string &amp;label = <span class="stringliteral">&quot;&quot;</span>);</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160; </div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classControlFlowGraph.html#afa1d54a1e859228740d5f6ede7f8a216">adopt_basic_block</a>(std::shared_ptr&lt;InstructionSequence&gt; &amp;bb);</div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160; </div>
@@ -246,6 +246,9 @@ $(function() {
 <div class="ttc" id="aclassEdge_html_a8c01b6367c67fe6e5a4bbf841a5a51e6"><div class="ttname"><a href="classEdge.html#a8c01b6367c67fe6e5a4bbf841a5a51e6">Edge::get_kind</a></div><div class="ttdeci">EdgeKind get_kind() const</div><div class="ttdoc">Get the EdgeKind of this Edge.</div><div class="ttdef"><b>Definition:</b> cfg.h:71</div></div>
 <div class="ttc" id="aclassEdge_html_aa7e87af45a945508bc2a5544a71ea530"><div class="ttname"><a href="classEdge.html#aa7e87af45a945508bc2a5544a71ea530">Edge::get_source</a></div><div class="ttdeci">std::shared_ptr&lt; InstructionSequence &gt; get_source() const</div><div class="ttdoc">Get the source basic block.</div><div class="ttdef"><b>Definition:</b> cfg.h:75</div></div>
 <div class="ttc" id="aclassEdge_html_ac7b7c73b34d96417d63d709b09b9987d"><div class="ttname"><a href="classEdge.html#ac7b7c73b34d96417d63d709b09b9987d">Edge::get_target</a></div><div class="ttdeci">std::shared_ptr&lt; InstructionSequence &gt; get_target() const</div><div class="ttdoc">Get the target basic block.</div><div class="ttdef"><b>Definition:</b> cfg.h:79</div></div>
+<div class="ttc" id="ainstruction__seq_8h_html"><div class="ttname"><a href="instruction__seq_8h.html">instruction_seq.h</a></div><div class="ttdoc">InstructionSequence and friends.</div></div>
+<div class="ttc" id="ainstruction__seq_8h_html_a03fb029250768e2a3f0fe55b3d4d017b"><div class="ttname"><a href="instruction__seq_8h.html#a03fb029250768e2a3f0fe55b3d4d017b">BasicBlockKind</a></div><div class="ttdeci">BasicBlockKind</div><div class="ttdoc">Kinds of basic blocks.</div><div class="ttdef"><b>Definition:</b> instruction_seq.h:39</div></div>
+<div class="ttc" id="ainstruction__seq_8h_html_a03fb029250768e2a3f0fe55b3d4d017bae3e52ee916d7f16337962ee88a3abce9"><div class="ttname"><a href="instruction__seq_8h.html#a03fb029250768e2a3f0fe55b3d4d017bae3e52ee916d7f16337962ee88a3abce9">BASICBLOCK_EXIT</a></div><div class="ttdeci">@ BASICBLOCK_EXIT</div><div class="ttdoc">special &quot;exit&quot; block</div><div class="ttdef"><b>Definition:</b> instruction_seq.h:41</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

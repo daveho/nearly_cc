@@ -69,13 +69,18 @@ $(function() {
 <div class="title">HighLevelFormatter Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Implementation of <a class="el" href="classFormatter.html" title="A Formatter turns Operand and Instruction objects into strings, which in turn allows high-level and l...">Formatter</a> for high-level code.  
+ <a href="classHighLevelFormatter.html#details">More...</a></p>
+
+<p><code>#include &quot;<a class="el" href="highlevel__formatter_8h_source.html">highlevel_formatter.h</a>&quot;</code></p>
 <div class="dynheader">
 Inheritance diagram for HighLevelFormatter:</div>
 <div class="dyncontent">
 <div class="center"><img src="classHighLevelFormatter__inherit__graph.png" border="0" usemap="#aHighLevelFormatter_inherit__map" alt="Inheritance graph"/></div>
 <map name="aHighLevelFormatter_inherit__map" id="aHighLevelFormatter_inherit__map">
-<area shape="rect" title=" " alt="" coords="5,80,156,107"/>
-<area shape="rect" href="classFormatter.html" title=" " alt="" coords="37,5,124,32"/>
+<area shape="rect" title="Implementation of Formatter for high&#45;level code." alt="" coords="5,80,156,107"/>
+<area shape="rect" href="classFormatter.html" title="A Formatter turns Operand and Instruction objects into strings, which in turn allows high&#45;level and l..." alt="" coords="37,5,124,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -83,20 +88,97 @@ Collaboration diagram for HighLevelFormatter:</div>
 <div class="dyncontent">
 <div class="center"><img src="classHighLevelFormatter__coll__graph.png" border="0" usemap="#aHighLevelFormatter_coll__map" alt="Collaboration graph"/></div>
 <map name="aHighLevelFormatter_coll__map" id="aHighLevelFormatter_coll__map">
-<area shape="rect" title=" " alt="" coords="5,80,156,107"/>
-<area shape="rect" href="classFormatter.html" title=" " alt="" coords="37,5,124,32"/>
+<area shape="rect" title="Implementation of Formatter for high&#45;level code." alt="" coords="5,80,156,107"/>
+<area shape="rect" href="classFormatter.html" title="A Formatter turns Operand and Instruction objects into strings, which in turn allows high&#45;level and l..." alt="" coords="37,5,124,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a2d818bd5827f01bc27439acc4a3349bd"><td class="memItemLeft" align="right" valign="top"><a id="a2d818bd5827f01bc27439acc4a3349bd"></a>
-virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><b>format_operand</b> (const <a class="el" href="classOperand.html">Operand</a> &amp;operand) const</td></tr>
+<tr class="memitem:a2d818bd5827f01bc27439acc4a3349bd"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHighLevelFormatter.html#a2d818bd5827f01bc27439acc4a3349bd">format_operand</a> (const <a class="el" href="classOperand.html">Operand</a> &amp;operand) const</td></tr>
+<tr class="memdesc:a2d818bd5827f01bc27439acc4a3349bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a high-level <a class="el" href="classOperand.html">Operand</a> to a formatted string.  <a href="classHighLevelFormatter.html#a2d818bd5827f01bc27439acc4a3349bd">More...</a><br /></td></tr>
 <tr class="separator:a2d818bd5827f01bc27439acc4a3349bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1cfd9c54353d268cdde5466261260de7"><td class="memItemLeft" align="right" valign="top"><a id="a1cfd9c54353d268cdde5466261260de7"></a>
-virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><b>format_instruction</b> (const <a class="el" href="classInstruction.html">Instruction</a> *ins) const</td></tr>
+<tr class="memitem:a1cfd9c54353d268cdde5466261260de7"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHighLevelFormatter.html#a1cfd9c54353d268cdde5466261260de7">format_instruction</a> (const <a class="el" href="classInstruction.html">Instruction</a> *ins) const</td></tr>
+<tr class="memdesc:a1cfd9c54353d268cdde5466261260de7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a high-level <a class="el" href="classInstruction.html" title="Instruction object type.">Instruction</a> to a formatted string.  <a href="classHighLevelFormatter.html#a1cfd9c54353d268cdde5466261260de7">More...</a><br /></td></tr>
 <tr class="separator:a1cfd9c54353d268cdde5466261260de7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Implementation of <a class="el" href="classFormatter.html" title="A Formatter turns Operand and Instruction objects into strings, which in turn allows high-level and l...">Formatter</a> for high-level code. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a1cfd9c54353d268cdde5466261260de7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1cfd9c54353d268cdde5466261260de7">&#9670;&nbsp;</a></span>format_instruction()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string HighLevelFormatter::format_instruction </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classInstruction.html">Instruction</a> *&#160;</td>
+          <td class="paramname"><em>ins</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Convert a high-level <a class="el" href="classInstruction.html" title="Instruction object type.">Instruction</a> to a formatted string. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ins</td><td>the high-level <a class="el" href="classInstruction.html" title="Instruction object type.">Instruction</a> to format </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the string formatted from the <a class="el" href="classInstruction.html" title="Instruction object type.">Instruction</a> </dd></dl>
+
+<p>Implements <a class="el" href="classFormatter.html#a9efe5d92c2c9c80b1b60f7558f0e5bcd">Formatter</a>.</p>
+
+</div>
+</div>
+<a id="a2d818bd5827f01bc27439acc4a3349bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d818bd5827f01bc27439acc4a3349bd">&#9670;&nbsp;</a></span>format_operand()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string HighLevelFormatter::format_operand </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classOperand.html">Operand</a> &amp;&#160;</td>
+          <td class="paramname"><em>operand</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Convert a high-level <a class="el" href="classOperand.html">Operand</a> to a formatted string. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">operand</td><td>the high-level <a class="el" href="classOperand.html">Operand</a> to format </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the string formatted from the <a class="el" href="classOperand.html">Operand</a> </dd></dl>
+
+<p>Reimplemented from <a class="el" href="classFormatter.html#af577e5d989849a72906dfd48f453ced5">Formatter</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="highlevel__formatter_8h_source.html">highlevel_formatter.h</a></li>
 <li>highlevel_formatter.cpp</li>

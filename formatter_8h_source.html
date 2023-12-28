@@ -92,24 +92,21 @@ $(function() {
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;operand.h&quot;</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">class </span><a class="code" href="classInstruction.html">Instruction</a>;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">// A Formatter turns Operand and Instruction objects into</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">// strings, which in turn allows high-level and low-level code</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">// to be printed.</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classFormatter.html">   30</a></span>&#160;<span class="keyword">class </span><a class="code" href="classFormatter.html">Formatter</a> {</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <a class="code" href="classFormatter.html">Formatter</a>();</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keyword">virtual</span> ~<a class="code" href="classFormatter.html">Formatter</a>();</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="comment">// The default implementation of format_operand could be useful</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="comment">// for immediate values and labels.</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keyword">virtual</span> std::string format_operand(<span class="keyword">const</span> <a class="code" href="classOperand.html">Operand</a> &amp;operand) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="keyword">virtual</span> std::string format_instruction(<span class="keyword">const</span> <a class="code" href="classInstruction.html">Instruction</a> *ins) <span class="keyword">const</span> = 0;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;};</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// FORMATTER_H</span></div>
-<div class="ttc" id="aclassFormatter_html"><div class="ttname"><a href="classFormatter.html">Formatter</a></div><div class="ttdef"><b>Definition:</b> formatter.h:30</div></div>
-<div class="ttc" id="aclassInstruction_html"><div class="ttname"><a href="classInstruction.html">Instruction</a></div><div class="ttdef"><b>Definition:</b> instruction.h:30</div></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keyword">virtual</span> std::string <a class="code" href="classFormatter.html#af577e5d989849a72906dfd48f453ced5">format_operand</a>(<span class="keyword">const</span> <a class="code" href="classOperand.html">Operand</a> &amp;operand) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="classFormatter.html#a9efe5d92c2c9c80b1b60f7558f0e5bcd">   49</a></span>&#160;  <span class="keyword">virtual</span> std::string <a class="code" href="classFormatter.html#a9efe5d92c2c9c80b1b60f7558f0e5bcd">format_instruction</a>(<span class="keyword">const</span> <a class="code" href="classInstruction.html">Instruction</a> *ins) <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;};</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// FORMATTER_H</span></div>
+<div class="ttc" id="aclassFormatter_html"><div class="ttname"><a href="classFormatter.html">Formatter</a></div><div class="ttdoc">A Formatter turns Operand and Instruction objects into strings, which in turn allows high-level and l...</div><div class="ttdef"><b>Definition:</b> formatter.h:30</div></div>
+<div class="ttc" id="aclassFormatter_html_a9efe5d92c2c9c80b1b60f7558f0e5bcd"><div class="ttname"><a href="classFormatter.html#a9efe5d92c2c9c80b1b60f7558f0e5bcd">Formatter::format_instruction</a></div><div class="ttdeci">virtual std::string format_instruction(const Instruction *ins) const =0</div><div class="ttdoc">Convert an Instruction to a formatted string.</div></div>
+<div class="ttc" id="aclassFormatter_html_af577e5d989849a72906dfd48f453ced5"><div class="ttname"><a href="classFormatter.html#af577e5d989849a72906dfd48f453ced5">Formatter::format_operand</a></div><div class="ttdeci">virtual std::string format_operand(const Operand &amp;operand) const</div><div class="ttdoc">Convert an Operand to a formatted string.</div><div class="ttdef"><b>Definition:</b> formatter.cpp:31</div></div>
+<div class="ttc" id="aclassInstruction_html"><div class="ttname"><a href="classInstruction.html">Instruction</a></div><div class="ttdoc">Instruction object type.</div><div class="ttdef"><b>Definition:</b> instruction.h:31</div></div>
 <div class="ttc" id="aclassOperand_html"><div class="ttname"><a href="classOperand.html">Operand</a></div><div class="ttdef"><b>Definition:</b> operand.h:31</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

@@ -1,7 +1,7 @@
 <map id="cfg_builder.h" name="cfg_builder.h">
 <area shape="rect" id="node1" title="Support for building a ControlFlowGraph from an InstructionSequence." alt="" coords="229,5,335,32"/>
 <area shape="rect" id="node2" href="$cfg_8h.html" title="ControlFlowGraph and associated types." alt="" coords="468,80,523,107"/>
-<area shape="rect" id="node16" href="$highlevel_8h_source.html" title=" " alt="" coords="119,80,213,107"/>
+<area shape="rect" id="node16" href="$highlevel_8h.html" title="HighLevelOpcode enumeration and associated helper functions and the HighLevelInstructionProperties cl..." alt="" coords="119,80,213,107"/>
 <area shape="rect" id="node18" href="$lowlevel_8h_source.html" title=" " alt="" coords="237,80,327,107"/>
 <area shape="rect" id="node3" title=" " alt="" coords="303,155,373,181"/>
 <area shape="rect" id="node4" title=" " alt="" coords="681,379,744,405"/>
@@ -11,7 +11,7 @@
 <area shape="rect" id="node8" title=" " alt="" coords="510,379,587,405"/>
 <area shape="rect" id="node9" href="$instruction_8h_source.html" title=" " alt="" coords="176,155,279,181"/>
 <area shape="rect" id="node12" href="$operand_8h_source.html" title=" " alt="" coords="133,229,220,256"/>
-<area shape="rect" id="node13" href="$instruction__seq_8h_source.html" title=" " alt="" coords="687,229,821,256"/>
+<area shape="rect" id="node13" href="$instruction__seq_8h.html" title="InstructionSequence and friends." alt="" coords="687,229,821,256"/>
 <area shape="rect" id="node10" href="$symtab_8h_source.html" title=" " alt="" coords="458,229,541,256"/>
 <area shape="rect" id="node11" href="$type_8h_source.html" title=" " alt="" coords="448,304,511,331"/>
 <area shape="rect" id="node14" href="$instruction__seq__iter_8h_source.html" title=" " alt="" coords="813,304,975,331"/>

@@ -66,7 +66,7 @@ $(function() {
 <div class="title">literal_value.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// Copyright (c) 2021-2023, David H. Hovemeyer &lt;david.hovemeyer@gmail.com&gt;</span></div>
+<a href="literal__value_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// Copyright (c) 2021-2023, David H. Hovemeyer &lt;david.hovemeyer@gmail.com&gt;</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">// Permission is hereby granted, free of charge, to any person obtaining a</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">// copy of this software and associated documentation files (the &quot;Software&quot;),</span></div>
@@ -92,59 +92,81 @@ $(function() {
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;cstdint&gt;</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;location.h&quot;</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">enum class</span> LiteralValueKind {</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  NONE,</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  INTEGER,</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  CHARACTER,</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  STRING,</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;};</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">// Helper class for representing literal values (integer, character,</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">// and string)</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="classLiteralValue.html">   36</a></span>&#160;<span class="keyword">class </span><a class="code" href="classLiteralValue.html">LiteralValue</a> {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  LiteralValueKind m_kind;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  int64_t m_intval;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  std::string m_strval; <span class="comment">// this is also used for character literals</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="literal__value_8h.html#a3169f2cb31c6482b9fbafbf84476c105">   35</a></span>&#160;<span class="keyword">enum class</span> <a class="code" href="literal__value_8h.html#a3169f2cb31c6482b9fbafbf84476c105">LiteralValueKind</a> {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  NONE,</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  INTEGER,</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  CHARACTER,</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  STRING,</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;};</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="comment">// integer literals can be specified as being unsigned and/or long</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keywordtype">bool</span> m_is_unsigned;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keywordtype">bool</span> m_is_long;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <a class="code" href="classLiteralValue.html">LiteralValue</a>();</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <a class="code" href="classLiteralValue.html">LiteralValue</a>(int64_t val, <span class="keywordtype">bool</span> is_unsigned, <span class="keywordtype">bool</span> is_long);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <a class="code" href="classLiteralValue.html">LiteralValue</a>(<span class="keywordtype">char</span> c);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <a class="code" href="classLiteralValue.html">LiteralValue</a>(<span class="keyword">const</span> std::string &amp;s);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <a class="code" href="classLiteralValue.html">LiteralValue</a>(<span class="keyword">const</span> <a class="code" href="classLiteralValue.html">LiteralValue</a> &amp;other);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  ~<a class="code" href="classLiteralValue.html">LiteralValue</a>();</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <a class="code" href="classLiteralValue.html">LiteralValue</a> &amp;operator=(<span class="keyword">const</span> <a class="code" href="classLiteralValue.html">LiteralValue</a> &amp;rhs);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  LiteralValueKind get_kind() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  int64_t get_int_value() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keywordtype">char</span> get_char_value() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  std::string get_str_value() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="comment">// This gets the escaped value of a string.</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  std::string get_str_value_escaped() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="classLiteralValue.html">   45</a></span>&#160;<span class="keyword">class </span><a class="code" href="classLiteralValue.html">LiteralValue</a> {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <a class="code" href="literal__value_8h.html#a3169f2cb31c6482b9fbafbf84476c105">LiteralValueKind</a> m_kind;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  int64_t m_intval;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  std::string m_strval; <span class="comment">// this is also used for character literals</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="comment">// integer literals can be specified as being unsigned and/or long</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keywordtype">bool</span> m_is_unsigned;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keywordtype">bool</span> m_is_long;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <a class="code" href="classLiteralValue.html#a2b97db2633c16ec674b743064abbfe6b">LiteralValue</a>();</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <a class="code" href="classLiteralValue.html#a2b97db2633c16ec674b743064abbfe6b">LiteralValue</a>(int64_t val, <span class="keywordtype">bool</span> <a class="code" href="classLiteralValue.html#a3cb6bf04017a807bad39be5384f8ff51">is_unsigned</a>, <span class="keywordtype">bool</span> <a class="code" href="classLiteralValue.html#a52800f898525bb8388eaf1b081e848af">is_long</a>);</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keywordtype">bool</span> is_unsigned() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keywordtype">bool</span> is_long() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="comment">// helper functions to create a LiteralValue from a token lexeme</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keyword">static</span> <a class="code" href="classLiteralValue.html">LiteralValue</a> from_char_literal(<span class="keyword">const</span> std::string &amp;lexeme, <span class="keyword">const</span> <a class="code" href="classLocation.html">Location</a> &amp;loc);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keyword">static</span> <a class="code" href="classLiteralValue.html">LiteralValue</a> from_int_literal(<span class="keyword">const</span> std::string &amp;lexeme, <span class="keyword">const</span> <a class="code" href="classLocation.html">Location</a> &amp;loc);</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="keyword">static</span> <a class="code" href="classLiteralValue.html">LiteralValue</a> from_str_literal(<span class="keyword">const</span> std::string &amp;lexeme, <span class="keyword">const</span> <a class="code" href="classLocation.html">Location</a> &amp;loc);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <a class="code" href="classLiteralValue.html#a2b97db2633c16ec674b743064abbfe6b">LiteralValue</a>(<span class="keywordtype">char</span> c);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <a class="code" href="classLiteralValue.html#a2b97db2633c16ec674b743064abbfe6b">LiteralValue</a>(<span class="keyword">const</span> std::string &amp;s);</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <span class="keyword">static</span> std::string strip_quotes(<span class="keyword">const</span> std::string &amp;lexeme, <span class="keywordtype">char</span> quote);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;};</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <a class="code" href="classLiteralValue.html#a2b97db2633c16ec674b743064abbfe6b">LiteralValue</a>(<span class="keyword">const</span> <a class="code" href="classLiteralValue.html">LiteralValue</a> &amp;other);</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// LITERAL_VALUE_H</span></div>
-<div class="ttc" id="aclassLiteralValue_html"><div class="ttname"><a href="classLiteralValue.html">LiteralValue</a></div><div class="ttdef"><b>Definition:</b> literal_value.h:36</div></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  ~<a class="code" href="classLiteralValue.html">LiteralValue</a>();</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <a class="code" href="classLiteralValue.html">LiteralValue</a> &amp;<a class="code" href="classLiteralValue.html#ad28acca98601a9dd7593f03eea0ce1f5">operator=</a>(<span class="keyword">const</span> <a class="code" href="classLiteralValue.html">LiteralValue</a> &amp;rhs);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <a class="code" href="literal__value_8h.html#a3169f2cb31c6482b9fbafbf84476c105">LiteralValueKind</a> <a class="code" href="classLiteralValue.html#a7fdd818b9d339308d95b502bdb63ef8f">get_kind</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  int64_t <a class="code" href="classLiteralValue.html#a555ec9e123e62fcc82593142f8150752">get_int_value</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  <span class="keywordtype">char</span> <a class="code" href="classLiteralValue.html#a4ca82c3d24fc6acf9cc41b3d842a7a16">get_char_value</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  std::string <a class="code" href="classLiteralValue.html#a6f668a828ad8c19c6f203651f4a8a08e">get_str_value</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  std::string <a class="code" href="classLiteralValue.html#a862b8cfae247d77f0dc48a11605a27c2">get_str_value_escaped</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="classLiteralValue.html#a3cb6bf04017a807bad39be5384f8ff51">is_unsigned</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="classLiteralValue.html#a52800f898525bb8388eaf1b081e848af">is_long</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;  <span class="comment">// helper functions to create a LiteralValue from a token lexeme</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  <span class="keyword">static</span> <a class="code" href="classLiteralValue.html">LiteralValue</a> <a class="code" href="classLiteralValue.html#a9bf4b27ed767ad777b799c20f1298c7b">from_char_literal</a>(<span class="keyword">const</span> std::string &amp;lexeme, <span class="keyword">const</span> <a class="code" href="classLocation.html">Location</a> &amp;loc);</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;  <span class="keyword">static</span> <a class="code" href="classLiteralValue.html">LiteralValue</a> <a class="code" href="classLiteralValue.html#ad19d9ffc3778183038ed32faab34622d">from_int_literal</a>(<span class="keyword">const</span> std::string &amp;lexeme, <span class="keyword">const</span> <a class="code" href="classLocation.html">Location</a> &amp;loc);</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; </div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;  <span class="keyword">static</span> <a class="code" href="classLiteralValue.html">LiteralValue</a> <a class="code" href="classLiteralValue.html#a04ecb1a24c65414427632fb0dc739bd0">from_str_literal</a>(<span class="keyword">const</span> std::string &amp;lexeme, <span class="keyword">const</span> <a class="code" href="classLocation.html">Location</a> &amp;loc);</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;  <span class="keyword">static</span> std::string strip_quotes(<span class="keyword">const</span> std::string &amp;lexeme, <span class="keywordtype">char</span> quote);</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;};</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160; </div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// LITERAL_VALUE_H</span></div>
+<div class="ttc" id="aclassLiteralValue_html"><div class="ttname"><a href="classLiteralValue.html">LiteralValue</a></div><div class="ttdoc">Helper class for representing literal values (integer, character, and string).</div><div class="ttdef"><b>Definition:</b> literal_value.h:45</div></div>
+<div class="ttc" id="aclassLiteralValue_html_a04ecb1a24c65414427632fb0dc739bd0"><div class="ttname"><a href="classLiteralValue.html#a04ecb1a24c65414427632fb0dc739bd0">LiteralValue::from_str_literal</a></div><div class="ttdeci">static LiteralValue from_str_literal(const std::string &amp;lexeme, const Location &amp;loc)</div><div class="ttdoc">Create a LiteralValue from the lexeme of a string literal token.</div><div class="ttdef"><b>Definition:</b> literal_value.cpp:197</div></div>
+<div class="ttc" id="aclassLiteralValue_html_a2b97db2633c16ec674b743064abbfe6b"><div class="ttname"><a href="classLiteralValue.html#a2b97db2633c16ec674b743064abbfe6b">LiteralValue::LiteralValue</a></div><div class="ttdeci">LiteralValue()</div><div class="ttdoc">Default constuctor. The LiteralValueKind is set to NONE.</div><div class="ttdef"><b>Definition:</b> literal_value.cpp:26</div></div>
+<div class="ttc" id="aclassLiteralValue_html_a3cb6bf04017a807bad39be5384f8ff51"><div class="ttname"><a href="classLiteralValue.html#a3cb6bf04017a807bad39be5384f8ff51">LiteralValue::is_unsigned</a></div><div class="ttdeci">bool is_unsigned() const</div><div class="ttdoc">Check whether an INTEGER value is unsigned.</div><div class="ttdef"><b>Definition:</b> literal_value.cpp:121</div></div>
+<div class="ttc" id="aclassLiteralValue_html_a4ca82c3d24fc6acf9cc41b3d842a7a16"><div class="ttname"><a href="classLiteralValue.html#a4ca82c3d24fc6acf9cc41b3d842a7a16">LiteralValue::get_char_value</a></div><div class="ttdeci">char get_char_value() const</div><div class="ttdoc">Get the character value of an CHAR literal value.</div><div class="ttdef"><b>Definition:</b> literal_value.cpp:88</div></div>
+<div class="ttc" id="aclassLiteralValue_html_a52800f898525bb8388eaf1b081e848af"><div class="ttname"><a href="classLiteralValue.html#a52800f898525bb8388eaf1b081e848af">LiteralValue::is_long</a></div><div class="ttdeci">bool is_long() const</div><div class="ttdoc">Check whether an INTEGER value is long.</div><div class="ttdef"><b>Definition:</b> literal_value.cpp:126</div></div>
+<div class="ttc" id="aclassLiteralValue_html_a555ec9e123e62fcc82593142f8150752"><div class="ttname"><a href="classLiteralValue.html#a555ec9e123e62fcc82593142f8150752">LiteralValue::get_int_value</a></div><div class="ttdeci">int64_t get_int_value() const</div><div class="ttdoc">Get the integer value of an INTEGER literal value.</div><div class="ttdef"><b>Definition:</b> literal_value.cpp:83</div></div>
+<div class="ttc" id="aclassLiteralValue_html_a6f668a828ad8c19c6f203651f4a8a08e"><div class="ttname"><a href="classLiteralValue.html#a6f668a828ad8c19c6f203651f4a8a08e">LiteralValue::get_str_value</a></div><div class="ttdeci">std::string get_str_value() const</div><div class="ttdoc">Get the string value of an STRING literal value.</div><div class="ttdef"><b>Definition:</b> literal_value.cpp:94</div></div>
+<div class="ttc" id="aclassLiteralValue_html_a7fdd818b9d339308d95b502bdb63ef8f"><div class="ttname"><a href="classLiteralValue.html#a7fdd818b9d339308d95b502bdb63ef8f">LiteralValue::get_kind</a></div><div class="ttdeci">LiteralValueKind get_kind() const</div><div class="ttdoc">Get the LiteralValueKind of this literal value.</div><div class="ttdef"><b>Definition:</b> literal_value.cpp:79</div></div>
+<div class="ttc" id="aclassLiteralValue_html_a862b8cfae247d77f0dc48a11605a27c2"><div class="ttname"><a href="classLiteralValue.html#a862b8cfae247d77f0dc48a11605a27c2">LiteralValue::get_str_value_escaped</a></div><div class="ttdeci">std::string get_str_value_escaped() const</div><div class="ttdoc">Get the true value of a STRING literal value (as opposed to the contents of the original string liter...</div><div class="ttdef"><b>Definition:</b> literal_value.cpp:99</div></div>
+<div class="ttc" id="aclassLiteralValue_html_a9bf4b27ed767ad777b799c20f1298c7b"><div class="ttname"><a href="classLiteralValue.html#a9bf4b27ed767ad777b799c20f1298c7b">LiteralValue::from_char_literal</a></div><div class="ttdeci">static LiteralValue from_char_literal(const std::string &amp;lexeme, const Location &amp;loc)</div><div class="ttdoc">Create a LiteralValue from the lexeme of a character literal token.</div><div class="ttdef"><b>Definition:</b> literal_value.cpp:131</div></div>
+<div class="ttc" id="aclassLiteralValue_html_ad19d9ffc3778183038ed32faab34622d"><div class="ttname"><a href="classLiteralValue.html#ad19d9ffc3778183038ed32faab34622d">LiteralValue::from_int_literal</a></div><div class="ttdeci">static LiteralValue from_int_literal(const std::string &amp;lexeme, const Location &amp;loc)</div><div class="ttdoc">Create a LiteralValue from the lexeme of a integer literal token.</div><div class="ttdef"><b>Definition:</b> literal_value.cpp:161</div></div>
+<div class="ttc" id="aclassLiteralValue_html_ad28acca98601a9dd7593f03eea0ce1f5"><div class="ttname"><a href="classLiteralValue.html#ad28acca98601a9dd7593f03eea0ce1f5">LiteralValue::operator=</a></div><div class="ttdeci">LiteralValue &amp; operator=(const LiteralValue &amp;rhs)</div><div class="ttdoc">Assignment operator.</div><div class="ttdef"><b>Definition:</b> literal_value.cpp:68</div></div>
 <div class="ttc" id="aclassLocation_html"><div class="ttname"><a href="classLocation.html">Location</a></div><div class="ttdef"><b>Definition:</b> location.h:26</div></div>
+<div class="ttc" id="aliteral__value_8h_html_a3169f2cb31c6482b9fbafbf84476c105"><div class="ttname"><a href="literal__value_8h.html#a3169f2cb31c6482b9fbafbf84476c105">LiteralValueKind</a></div><div class="ttdeci">LiteralValueKind</div><div class="ttdoc">Kinds of literal values.</div><div class="ttdef"><b>Definition:</b> literal_value.h:35</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

@@ -1,6 +1,6 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
 <area shape="rect" id="node1" href="$classASTVisitor.html" title="Base class for AST visitors." alt="" coords="5,81,95,108"/>
-<area shape="rect" id="node2" href="$classHighLevelCodegen.html" title=" " alt="" coords="156,5,300,32"/>
+<area shape="rect" id="node2" href="$classHighLevelCodegen.html" title="A HighLevelCodegen visitor generates high&#45;level IR code for a single function definition." alt="" coords="156,5,300,32"/>
 <area shape="rect" id="node3" href="$classLocalStorageAllocation.html" title=" " alt="" coords="143,56,313,83"/>
 <area shape="rect" id="node4" href="$classLoopVars.html" title=" " alt="" coords="187,107,269,133"/>
 <area shape="rect" id="node5" href="$classSemanticAnalysis.html" title=" " alt="" coords="159,157,297,184"/>

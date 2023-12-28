@@ -1,4 +1,4 @@
 <map id="Symbol" name="Symbol">
 <area shape="rect" id="node1" title=" " alt="" coords="21,80,92,107"/>
-<area shape="rect" id="node2" href="$classHasOperand.html" title=" " alt="" coords="5,5,108,32"/>
+<area shape="rect" id="node2" href="$classHasOperand.html" title="HasOperand is a base class for NodeBase, which in turn is a base class for Node." alt="" coords="5,5,108,32"/>
 </map>

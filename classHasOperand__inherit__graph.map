@@ -1,4 +1,6 @@
 <map id="HasOperand" name="HasOperand">
-<area shape="rect" id="node1" title=" " alt="" coords="5,5,108,32"/>
-<area shape="rect" id="node2" href="$classSymbol.html" title=" " alt="" coords="21,80,92,107"/>
+<area shape="rect" id="node1" title="HasOperand is a base class for NodeBase, which in turn is a base class for Node." alt="" coords="50,5,153,32"/>
+<area shape="rect" id="node2" href="$classNodeBase.html" title="The Node class will inherit from this type, so you can use it to define any attributes and methods th..." alt="" coords="5,80,93,107"/>
+<area shape="rect" id="node4" href="$classSymbol.html" title=" " alt="" coords="118,80,189,107"/>
+<area shape="rect" id="node3" href="$classNode.html" title=" " alt="" coords="21,155,77,181"/>
 </map>

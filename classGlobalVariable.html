@@ -69,19 +69,122 @@ $(function() {
 <div class="title">GlobalVariable Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>A <a class="el" href="classGlobalVariable.html" title="A GlobalVariable represents a global variable, and specifies its name and data type.">GlobalVariable</a> represents a global variable, and specifies its name and data type.  
+ <a href="classGlobalVariable.html#details">More...</a></p>
+
+<p><code>#include &quot;<a class="el" href="global__variable_8h_source.html">global_variable.h</a>&quot;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ac9e90f92e9d7c06709dce3695d8a88b6"><td class="memItemLeft" align="right" valign="top"><a id="ac9e90f92e9d7c06709dce3695d8a88b6"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>GlobalVariable</b> (const std::string &amp;name, std::shared_ptr&lt; <a class="el" href="classType.html">Type</a> &gt; type)</td></tr>
+<tr class="memitem:ac9e90f92e9d7c06709dce3695d8a88b6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGlobalVariable.html#ac9e90f92e9d7c06709dce3695d8a88b6">GlobalVariable</a> (const std::string &amp;name, std::shared_ptr&lt; <a class="el" href="classType.html">Type</a> &gt; type)</td></tr>
+<tr class="memdesc:ac9e90f92e9d7c06709dce3695d8a88b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classGlobalVariable.html#ac9e90f92e9d7c06709dce3695d8a88b6">More...</a><br /></td></tr>
 <tr class="separator:ac9e90f92e9d7c06709dce3695d8a88b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6f1e7b108f377836c92229ae545cd225"><td class="memItemLeft" align="right" valign="top"><a id="a6f1e7b108f377836c92229ae545cd225"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>get_name</b> () const</td></tr>
+<tr class="memitem:a6f1e7b108f377836c92229ae545cd225"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGlobalVariable.html#a6f1e7b108f377836c92229ae545cd225">get_name</a> () const</td></tr>
+<tr class="memdesc:a6f1e7b108f377836c92229ae545cd225"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the name of the global variable.  <a href="classGlobalVariable.html#a6f1e7b108f377836c92229ae545cd225">More...</a><br /></td></tr>
 <tr class="separator:a6f1e7b108f377836c92229ae545cd225"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aed1ccfd54a829bd40bef20dd8a968106"><td class="memItemLeft" align="right" valign="top"><a id="aed1ccfd54a829bd40bef20dd8a968106"></a>
-std::shared_ptr&lt; <a class="el" href="classType.html">Type</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>get_type</b> () const</td></tr>
+<tr class="memitem:aed1ccfd54a829bd40bef20dd8a968106"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classType.html">Type</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classGlobalVariable.html#aed1ccfd54a829bd40bef20dd8a968106">get_type</a> () const</td></tr>
+<tr class="memdesc:aed1ccfd54a829bd40bef20dd8a968106"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the <a class="el" href="classType.html" title="Representation of a C data type.">Type</a> of the global variable.  <a href="classGlobalVariable.html#aed1ccfd54a829bd40bef20dd8a968106">More...</a><br /></td></tr>
 <tr class="separator:aed1ccfd54a829bd40bef20dd8a968106"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A <a class="el" href="classGlobalVariable.html" title="A GlobalVariable represents a global variable, and specifies its name and data type.">GlobalVariable</a> represents a global variable, and specifies its name and data type. </p>
+<p>Each global variable in the program should be added to the Module (and thus made available when target code is printed.) Note that this type has value semantics (copying and assignment are allowed.) </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ac9e90f92e9d7c06709dce3695d8a88b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9e90f92e9d7c06709dce3695d8a88b6">&#9670;&nbsp;</a></span>GlobalVariable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">GlobalVariable::GlobalVariable </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classType.html">Type</a> &gt;&#160;</td>
+          <td class="paramname"><em>type</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>the name of the global variable </td></tr>
+    <tr><td class="paramname">type</td><td>shared pointer to the <a class="el" href="classType.html" title="Representation of a C data type.">Type</a> of the global variable </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a6f1e7b108f377836c92229ae545cd225"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f1e7b108f377836c92229ae545cd225">&#9670;&nbsp;</a></span>get_name()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string GlobalVariable::get_name </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the name of the global variable. </p>
+<dl class="section return"><dt>Returns</dt><dd>the name of the global variable </dd></dl>
+
+</div>
+</div>
+<a id="aed1ccfd54a829bd40bef20dd8a968106"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed1ccfd54a829bd40bef20dd8a968106">&#9670;&nbsp;</a></span>get_type()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt;<a class="el" href="classType.html">Type</a>&gt; GlobalVariable::get_type </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the <a class="el" href="classType.html" title="Representation of a C data type.">Type</a> of the global variable. </p>
+<dl class="section return"><dt>Returns</dt><dd>shared pointer to the <a class="el" href="classType.html" title="Representation of a C data type.">Type</a> of the global variable </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="global__variable_8h_source.html">global_variable.h</a></li>
 <li>global_variable.cpp</li>

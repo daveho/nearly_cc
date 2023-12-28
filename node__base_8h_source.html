@@ -95,71 +95,64 @@ $(function() {
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &quot;type.h&quot;</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &quot;symtab.h&quot;</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;literal_value.h&quot;</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#ifdef SOLUTION</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &quot;operand.h&quot;</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">// The Node class will inherit from this type, so you can use it</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">// to define any attributes and methods that Node objects should have</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">// (constant value, results of semantic analysis, code generation info,</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">// etc.)</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classNodeBase.html">   39</a></span>&#160;<span class="keyword">class </span><a class="code" href="classNodeBase.html">NodeBase</a> {</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#ifdef SOLUTION</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <a class="code" href="classSymbol.html">Symbol</a> *m_symbol;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  std::shared_ptr&lt;Type&gt; m_type;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keywordtype">bool</span> m_lvalue;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <a class="code" href="classLiteralValue.html">LiteralValue</a> m_literal_value;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <a class="code" href="classOperand.html">Operand</a> m_operand;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keywordtype">int</span> m_strnum;                   <span class="comment">// for string constants</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="comment">// TODO: fields (pointer to Type, pointer to Symbol, etc.)</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="comment">// copy ctor and assignment operator not supported</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <a class="code" href="classNodeBase.html">NodeBase</a>(<span class="keyword">const</span> <a class="code" href="classNodeBase.html">NodeBase</a> &amp;);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <a class="code" href="classNodeBase.html">NodeBase</a> &amp;operator=(<span class="keyword">const</span> <a class="code" href="classNodeBase.html">NodeBase</a> &amp;);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="literal__value_8h.html">literal_value.h</a>&quot;</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &quot;has_operand.h&quot;</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="classNodeBase.html">   43</a></span>&#160;<span class="keyword">class </span><a class="code" href="classNodeBase.html">NodeBase</a> : <span class="keyword">public</span> <a class="code" href="classHasOperand.html">HasOperand</a> {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#ifdef SOLUTION</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <a class="code" href="classSymbol.html">Symbol</a> *m_symbol;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  std::shared_ptr&lt;Type&gt; m_type;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keywordtype">bool</span> m_lvalue;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <a class="code" href="classLiteralValue.html">LiteralValue</a> m_literal_value;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <a class="code" href="classOperand.html">Operand</a> m_operand;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keywordtype">int</span> m_strnum;                   <span class="comment">// for string constants</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="comment">// TODO: fields (pointer to Type, pointer to Symbol, etc.)</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <a class="code" href="classNodeBase.html">NodeBase</a>();</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keyword">virtual</span> ~<a class="code" href="classNodeBase.html">NodeBase</a>();  </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="comment">// copy ctor and assignment operator not supported</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <a class="code" href="classNodeBase.html">NodeBase</a>(<span class="keyword">const</span> <a class="code" href="classNodeBase.html">NodeBase</a> &amp;);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <a class="code" href="classNodeBase.html">NodeBase</a> &amp;operator=(<span class="keyword">const</span> <a class="code" href="classNodeBase.html">NodeBase</a> &amp;);</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#ifdef SOLUTION</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keywordtype">void</span> set_symbol(<a class="code" href="classSymbol.html">Symbol</a> *symbol);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keywordtype">void</span> set_type(<span class="keyword">const</span> std::shared_ptr&lt;Type&gt; &amp;type);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <a class="code" href="classNodeBase.html">NodeBase</a>();</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keyword">virtual</span> ~<a class="code" href="classNodeBase.html">NodeBase</a>();  </div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keywordtype">void</span> reset_symbol(<a class="code" href="classSymbol.html">Symbol</a> *symbol) {</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    assert(has_symbol());</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    m_symbol = symbol;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  }</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keywordtype">bool</span> has_symbol() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <a class="code" href="classSymbol.html">Symbol</a> *get_symbol() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  std::shared_ptr&lt;Type&gt; get_type() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor">#ifdef SOLUTION</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keywordtype">void</span> set_symbol(<a class="code" href="classSymbol.html">Symbol</a> *symbol);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keywordtype">void</span> set_type(<span class="keyword">const</span> std::shared_ptr&lt;Type&gt; &amp;type);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keywordtype">void</span> reset_symbol(<a class="code" href="classSymbol.html">Symbol</a> *symbol) {</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    assert(has_symbol());</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    m_symbol = symbol;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  }</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="keywordtype">bool</span> is_lvalue() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <span class="keywordtype">void</span> set_lvalue(<span class="keywordtype">bool</span> lvalue);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keywordtype">bool</span> has_literal_value() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="keywordtype">void</span> set_literal_value(<span class="keyword">const</span> <a class="code" href="classLiteralValue.html">LiteralValue</a> &amp;literal_value);</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <a class="code" href="classLiteralValue.html">LiteralValue</a> get_literal_value() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="keywordtype">bool</span> has_symbol() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <a class="code" href="classSymbol.html">Symbol</a> *get_symbol() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  std::shared_ptr&lt;Type&gt; get_type() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="keywordtype">bool</span> is_lvalue() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <span class="keywordtype">void</span> set_lvalue(<span class="keywordtype">bool</span> lvalue);</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <span class="keywordtype">void</span> set_operand(<span class="keyword">const</span> <a class="code" href="classOperand.html">Operand</a> &amp;operand) { m_operand = operand; }</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <a class="code" href="classOperand.html">Operand</a> get_operand()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_operand; }</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <span class="keywordtype">void</span> set_strnum(<span class="keywordtype">int</span> strnum) { m_strnum = strnum; }</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <span class="keywordtype">int</span> get_strnum()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_strnum; }</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  <span class="comment">// TODO: add member functions</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;};</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// NODE_BASE_H</span></div>
-<div class="ttc" id="aclassLiteralValue_html"><div class="ttname"><a href="classLiteralValue.html">LiteralValue</a></div><div class="ttdef"><b>Definition:</b> literal_value.h:36</div></div>
-<div class="ttc" id="aclassNodeBase_html"><div class="ttname"><a href="classNodeBase.html">NodeBase</a></div><div class="ttdef"><b>Definition:</b> node_base.h:39</div></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <span class="keywordtype">bool</span> has_literal_value() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <span class="keywordtype">void</span> set_literal_value(<span class="keyword">const</span> <a class="code" href="classLiteralValue.html">LiteralValue</a> &amp;literal_value);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  <a class="code" href="classLiteralValue.html">LiteralValue</a> get_literal_value() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <span class="keywordtype">void</span> set_strnum(<span class="keywordtype">int</span> strnum) { m_strnum = strnum; }</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <span class="keywordtype">int</span> get_strnum()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_strnum; }</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  <span class="comment">// TODO: add member functions</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;};</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// NODE_BASE_H</span></div>
+<div class="ttc" id="aclassHasOperand_html"><div class="ttname"><a href="classHasOperand.html">HasOperand</a></div><div class="ttdoc">HasOperand is a base class for NodeBase, which in turn is a base class for Node.</div><div class="ttdef"><b>Definition:</b> has_operand.h:31</div></div>
+<div class="ttc" id="aclassLiteralValue_html"><div class="ttname"><a href="classLiteralValue.html">LiteralValue</a></div><div class="ttdoc">Helper class for representing literal values (integer, character, and string).</div><div class="ttdef"><b>Definition:</b> literal_value.h:45</div></div>
+<div class="ttc" id="aclassNodeBase_html"><div class="ttname"><a href="classNodeBase.html">NodeBase</a></div><div class="ttdoc">The Node class will inherit from this type, so you can use it to define any attributes and methods th...</div><div class="ttdef"><b>Definition:</b> node_base.h:43</div></div>
 <div class="ttc" id="aclassOperand_html"><div class="ttname"><a href="classOperand.html">Operand</a></div><div class="ttdef"><b>Definition:</b> operand.h:31</div></div>
 <div class="ttc" id="aclassSymbol_html"><div class="ttname"><a href="classSymbol.html">Symbol</a></div><div class="ttdef"><b>Definition:</b> symbol.h:28</div></div>
+<div class="ttc" id="aliteral__value_8h_html"><div class="ttname"><a href="literal__value_8h.html">literal_value.h</a></div><div class="ttdoc">Support for working with literal values appearing in source code.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

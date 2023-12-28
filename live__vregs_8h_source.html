@@ -66,7 +66,7 @@ $(function() {
 <div class="title">live_vregs.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// Copyright (c) 2021-2023, David H. Hovemeyer &lt;david.hovemeyer@gmail.com&gt;</span></div>
+<a href="live__vregs_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// Copyright (c) 2021-2023, David H. Hovemeyer &lt;david.hovemeyer@gmail.com&gt;</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">// Permission is hereby granted, free of charge, to any person obtaining a</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">// copy of this software and associated documentation files (the &quot;Software&quot;),</span></div>
@@ -94,73 +94,75 @@ $(function() {
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;highlevel_defuse.h&quot;</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="dataflow_8h.html">dataflow.h</a>&quot;</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classLiveVregsAnalysis.html">   29</a></span>&#160;<span class="keyword">class </span><a class="code" href="classLiveVregsAnalysis.html">LiveVregsAnalysis</a> : <span class="keyword">public</span> <a class="code" href="classBackwardAnalysis.html">BackwardAnalysis</a> {</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="comment">// We assume that there are never more than this many vregs used</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">unsigned</span> MAX_VREGS = 256;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="comment">// Fact type is a bitset of live virtual register numbers</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keyword">typedef</span> std::bitset&lt;MAX_VREGS&gt; FactType;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="comment">// The &quot;top&quot; fact is an unknown value that combines nondestructively</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="comment">// with known facts. For this analysis, it&#39;s the empty set.</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  FactType get_top_fact()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> FactType(); }</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="comment">// Combine live sets. For this analysis, we use union.</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  FactType combine_facts(<span class="keyword">const</span> FactType &amp;left, <span class="keyword">const</span> FactType &amp;right)<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordflow">return</span> left | right;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  }</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="comment">// Model an instruction.</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keywordtype">void</span> model_instruction(<a class="code" href="classInstruction.html">Instruction</a> *ins, FactType &amp;fact)<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="comment">// Model an instruction (backwards).  If the instruction is a def,</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="comment">// the assigned-to vreg is killed.  Every vreg used in the instruction,</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="comment">// the vreg becomes alive (or is kept alive.)</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classLiveVregsAnalysis.html">   35</a></span>&#160;<span class="keyword">class </span><a class="code" href="classLiveVregsAnalysis.html">LiveVregsAnalysis</a> : <span class="keyword">public</span> <a class="code" href="classBackwardAnalysis.html">BackwardAnalysis</a> {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="comment">// We assume that there are never more than this many vregs used</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">unsigned</span> MAX_VREGS = 256;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classLiveVregsAnalysis.html#a5d4bf623ce5051294a445c90a3a68e9f">   41</a></span>&#160;  <span class="keyword">typedef</span> std::bitset&lt;MAX_VREGS&gt; <a class="code" href="classLiveVregsAnalysis.html#a5d4bf623ce5051294a445c90a3a68e9f">FactType</a>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="classLiveVregsAnalysis.html#aac1d71547f5ce30e0f41b14bb8a9cf31">   45</a></span>&#160;  <a class="code" href="classLiveVregsAnalysis.html#a5d4bf623ce5051294a445c90a3a68e9f">FactType</a> <a class="code" href="classLiveVregsAnalysis.html#aac1d71547f5ce30e0f41b14bb8a9cf31">get_top_fact</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="classLiveVregsAnalysis.html#a5d4bf623ce5051294a445c90a3a68e9f">FactType</a>(); }</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="classLiveVregsAnalysis.html#a77905fce8dbeb5fe830eabbd171f02d5">   48</a></span>&#160;  <a class="code" href="classLiveVregsAnalysis.html#a5d4bf623ce5051294a445c90a3a68e9f">FactType</a> <a class="code" href="classLiveVregsAnalysis.html#a77905fce8dbeb5fe830eabbd171f02d5">combine_facts</a>(<span class="keyword">const</span> <a class="code" href="classLiveVregsAnalysis.html#a5d4bf623ce5051294a445c90a3a68e9f">FactType</a> &amp;left, <span class="keyword">const</span> <a class="code" href="classLiveVregsAnalysis.html#a5d4bf623ce5051294a445c90a3a68e9f">FactType</a> &amp;right)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordflow">return</span> left | right;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  }</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">if</span> (HighLevel::is_def(ins)) {</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;      <a class="code" href="classOperand.html">Operand</a> operand = ins-&gt;get_operand(0);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;      assert(operand.has_base_reg());</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;      fact.reset(operand.get_base_reg());</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> i = 0; i &lt; ins-&gt;get_num_operands(); i++) {</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;      <span class="keywordflow">if</span> (HighLevel::is_use(ins, i)) {</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <a class="code" href="classOperand.html">Operand</a> operand = ins-&gt;get_operand(i); </div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="classLiveVregsAnalysis.html#a45fb2e66145bd69ab9e454a8af7b5473">   57</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classLiveVregsAnalysis.html#a45fb2e66145bd69ab9e454a8af7b5473">model_instruction</a>(<a class="code" href="classInstruction.html">Instruction</a> *ins, <a class="code" href="classLiveVregsAnalysis.html#a5d4bf623ce5051294a445c90a3a68e9f">FactType</a> &amp;fact)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="comment">// Model an instruction (backwards).  If the instruction is a def,</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="comment">// the assigned-to vreg is killed.  Every vreg used in the instruction,</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="comment">// the vreg becomes alive (or is kept alive.)</span></div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        assert(operand.has_base_reg());</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        fact.set(operand.get_base_reg());</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordflow">if</span> (operand.has_index_reg()) {</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;          fact.set(operand.get_index_reg());</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        }</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;      }</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    }</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  }</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordflow">if</span> (HighLevel::is_def(ins)) {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;      <a class="code" href="classOperand.html">Operand</a> operand = ins-&gt;<a class="code" href="classInstruction.html#a2f4d69885c8c97c8de2307c6956e3bda">get_operand</a>(0);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;      assert(operand.has_base_reg());</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;      fact.reset(operand.get_base_reg());</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    }</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> i = 0; i &lt; ins-&gt;<a class="code" href="classInstruction.html#aefb6579dfc23659e304479b3764a1abd">get_num_operands</a>(); i++) {</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;      <span class="keywordflow">if</span> (HighLevel::is_use(ins, i)) {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <a class="code" href="classOperand.html">Operand</a> operand = ins-&gt;<a class="code" href="classInstruction.html#a2f4d69885c8c97c8de2307c6956e3bda">get_operand</a>(i); </div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="comment">// Convert a dataflow fact to a string (for printing the CFG annotated with</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="comment">// dataflow facts)</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  std::string fact_to_string(<span class="keyword">const</span> FactType &amp;fact)<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    std::string s(<span class="stringliteral">&quot;{&quot;</span>);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> i = 0; i &lt; MAX_VREGS; i++) {</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;      <span class="keywordflow">if</span> (fact.test(i)) {</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keywordflow">if</span> (s != <span class="stringliteral">&quot;{&quot;</span>) { s += <span class="stringliteral">&quot;,&quot;</span>; }</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        s += std::to_string(i);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;      }</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    }</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    s += <span class="stringliteral">&quot;}&quot;</span>;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordflow">return</span> s;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  }</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;};</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="keyword">typedef</span> <a class="code" href="classDataflow.html">Dataflow&lt;LiveVregsAnalysis&gt;</a> <a class="code" href="classDataflow.html">LiveVregs</a>;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// LIVE_VREGS_H</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        assert(operand.has_base_reg());</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        fact.set(operand.get_base_reg());</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keywordflow">if</span> (operand.has_index_reg()) {</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;          fact.set(operand.get_index_reg());</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        }</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;      }</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    }</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  }</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="classLiveVregsAnalysis.html#a486def8aa14a4135fcd820df2ee6b99d">   86</a></span>&#160;  std::string <a class="code" href="classLiveVregsAnalysis.html#a486def8aa14a4135fcd820df2ee6b99d">fact_to_string</a>(<span class="keyword">const</span> <a class="code" href="classLiveVregsAnalysis.html#a5d4bf623ce5051294a445c90a3a68e9f">FactType</a> &amp;fact)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    std::string s(<span class="stringliteral">&quot;{&quot;</span>);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> i = 0; i &lt; MAX_VREGS; i++) {</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;      <span class="keywordflow">if</span> (fact.test(i)) {</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keywordflow">if</span> (s != <span class="stringliteral">&quot;{&quot;</span>) { s += <span class="stringliteral">&quot;,&quot;</span>; }</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        s += std::to_string(i);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;      }</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    }</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    s += <span class="stringliteral">&quot;}&quot;</span>;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordflow">return</span> s;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  }</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;};</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="live__vregs_8h.html#a3cd5a95ca2d5bada1290ce1668b67dd8">  101</a></span>&#160;<span class="keyword">typedef</span> <a class="code" href="classDataflow.html">Dataflow&lt;LiveVregsAnalysis&gt;</a> <a class="code" href="live__vregs_8h.html#a3cd5a95ca2d5bada1290ce1668b67dd8">LiveVregs</a>;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// LIVE_VREGS_H</span></div>
 <div class="ttc" id="aclassBackwardAnalysis_html"><div class="ttname"><a href="classBackwardAnalysis.html">BackwardAnalysis</a></div><div class="ttdoc">Base class for backward analyses.</div><div class="ttdef"><b>Definition:</b> dataflow.h:139</div></div>
 <div class="ttc" id="aclassDataflow_html"><div class="ttname"><a href="classDataflow.html">Dataflow</a></div><div class="ttdoc">An instance of Dataflow performs a dataflow analysis on the basic blocks of a control flow graph and ...</div><div class="ttdef"><b>Definition:</b> dataflow.h:233</div></div>
-<div class="ttc" id="aclassInstruction_html"><div class="ttname"><a href="classInstruction.html">Instruction</a></div><div class="ttdef"><b>Definition:</b> instruction.h:30</div></div>
-<div class="ttc" id="aclassLiveVregsAnalysis_html"><div class="ttname"><a href="classLiveVregsAnalysis.html">LiveVregsAnalysis</a></div><div class="ttdef"><b>Definition:</b> live_vregs.h:29</div></div>
+<div class="ttc" id="aclassInstruction_html"><div class="ttname"><a href="classInstruction.html">Instruction</a></div><div class="ttdoc">Instruction object type.</div><div class="ttdef"><b>Definition:</b> instruction.h:31</div></div>
+<div class="ttc" id="aclassInstruction_html_a2f4d69885c8c97c8de2307c6956e3bda"><div class="ttname"><a href="classInstruction.html#a2f4d69885c8c97c8de2307c6956e3bda">Instruction::get_operand</a></div><div class="ttdeci">const Operand &amp; get_operand(unsigned index) const</div><div class="ttdoc">Get the specified Operand.</div><div class="ttdef"><b>Definition:</b> instruction.cpp:54</div></div>
+<div class="ttc" id="aclassInstruction_html_aefb6579dfc23659e304479b3764a1abd"><div class="ttname"><a href="classInstruction.html#aefb6579dfc23659e304479b3764a1abd">Instruction::get_num_operands</a></div><div class="ttdeci">unsigned get_num_operands() const</div><div class="ttdoc">Get the number of operands.</div><div class="ttdef"><b>Definition:</b> instruction.cpp:50</div></div>
+<div class="ttc" id="aclassLiveVregsAnalysis_html"><div class="ttname"><a href="classLiveVregsAnalysis.html">LiveVregsAnalysis</a></div><div class="ttdoc">Dataflow analysis to determine which virtual registers (in high-level code) contain live values.</div><div class="ttdef"><b>Definition:</b> live_vregs.h:35</div></div>
+<div class="ttc" id="aclassLiveVregsAnalysis_html_a45fb2e66145bd69ab9e454a8af7b5473"><div class="ttname"><a href="classLiveVregsAnalysis.html#a45fb2e66145bd69ab9e454a8af7b5473">LiveVregsAnalysis::model_instruction</a></div><div class="ttdeci">void model_instruction(Instruction *ins, FactType &amp;fact) const</div><div class="ttdoc">Model an instruction.</div><div class="ttdef"><b>Definition:</b> live_vregs.h:57</div></div>
+<div class="ttc" id="aclassLiveVregsAnalysis_html_a486def8aa14a4135fcd820df2ee6b99d"><div class="ttname"><a href="classLiveVregsAnalysis.html#a486def8aa14a4135fcd820df2ee6b99d">LiveVregsAnalysis::fact_to_string</a></div><div class="ttdeci">std::string fact_to_string(const FactType &amp;fact) const</div><div class="ttdoc">Convert a dataflow fact to a string (for printing the CFG annotated with dataflow facts)</div><div class="ttdef"><b>Definition:</b> live_vregs.h:86</div></div>
+<div class="ttc" id="aclassLiveVregsAnalysis_html_a5d4bf623ce5051294a445c90a3a68e9f"><div class="ttname"><a href="classLiveVregsAnalysis.html#a5d4bf623ce5051294a445c90a3a68e9f">LiveVregsAnalysis::FactType</a></div><div class="ttdeci">std::bitset&lt; MAX_VREGS &gt; FactType</div><div class="ttdoc">Fact type is a bitset of live virtual register numbers.</div><div class="ttdef"><b>Definition:</b> live_vregs.h:41</div></div>
+<div class="ttc" id="aclassLiveVregsAnalysis_html_a77905fce8dbeb5fe830eabbd171f02d5"><div class="ttname"><a href="classLiveVregsAnalysis.html#a77905fce8dbeb5fe830eabbd171f02d5">LiveVregsAnalysis::combine_facts</a></div><div class="ttdeci">FactType combine_facts(const FactType &amp;left, const FactType &amp;right) const</div><div class="ttdoc">Combine live sets. For this analysis, we use union.</div><div class="ttdef"><b>Definition:</b> live_vregs.h:48</div></div>
+<div class="ttc" id="aclassLiveVregsAnalysis_html_aac1d71547f5ce30e0f41b14bb8a9cf31"><div class="ttname"><a href="classLiveVregsAnalysis.html#aac1d71547f5ce30e0f41b14bb8a9cf31">LiveVregsAnalysis::get_top_fact</a></div><div class="ttdeci">FactType get_top_fact() const</div><div class="ttdoc">The &quot;top&quot; fact is an unknown value that combines nondestructively with known facts.</div><div class="ttdef"><b>Definition:</b> live_vregs.h:45</div></div>
 <div class="ttc" id="aclassOperand_html"><div class="ttname"><a href="classOperand.html">Operand</a></div><div class="ttdef"><b>Definition:</b> operand.h:31</div></div>
 <div class="ttc" id="adataflow_8h_html"><div class="ttname"><a href="dataflow_8h.html">dataflow.h</a></div><div class="ttdoc">Support for global (procedure-scope) dataflow analysis.</div></div>
+<div class="ttc" id="alive__vregs_8h_html_a3cd5a95ca2d5bada1290ce1668b67dd8"><div class="ttname"><a href="live__vregs_8h.html#a3cd5a95ca2d5bada1290ce1668b67dd8">LiveVregs</a></div><div class="ttdeci">Dataflow&lt; LiveVregsAnalysis &gt; LiveVregs</div><div class="ttdoc">Convenient typedef for the type of a dataflow object for executing LiveVregsAnalysis on a ControlFlow...</div><div class="ttdef"><b>Definition:</b> live_vregs.h:101</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

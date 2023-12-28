@@ -70,10 +70,10 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Support for building a <a class="el" href="classControlFlowGraph.html" title="ControlFlowGraph: graph of basic blocks connected by control edges.">ControlFlowGraph</a> from an <a class="el" href="classInstructionSequence.html">InstructionSequence</a>.  
+<p>Support for building a <a class="el" href="classControlFlowGraph.html" title="ControlFlowGraph: graph of basic blocks connected by control edges.">ControlFlowGraph</a> from an <a class="el" href="classInstructionSequence.html" title="InstructionSequence class, which represents a linear sequence of Instruction objects.">InstructionSequence</a>.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="cfg_8h_source.html">cfg.h</a>&quot;</code><br />
-<code>#include &quot;highlevel.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="highlevel_8h_source.html">highlevel.h</a>&quot;</code><br />
 <code>#include &quot;lowlevel.h&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for cfg_builder.h:</div>
@@ -82,7 +82,7 @@ Include dependency graph for cfg_builder.h:</div>
 <map name="acfg__builder_8h" id="acfg__builder_8h">
 <area shape="rect" title="Support for building a ControlFlowGraph from an InstructionSequence." alt="" coords="229,5,335,32"/>
 <area shape="rect" href="cfg_8h.html" title="ControlFlowGraph and associated types." alt="" coords="468,80,523,107"/>
-<area shape="rect" href="highlevel_8h_source.html" title=" " alt="" coords="119,80,213,107"/>
+<area shape="rect" href="highlevel_8h.html" title="HighLevelOpcode enumeration and associated helper functions and the HighLevelInstructionProperties cl..." alt="" coords="119,80,213,107"/>
 <area shape="rect" href="lowlevel_8h_source.html" title=" " alt="" coords="237,80,327,107"/>
 <area shape="rect" title=" " alt="" coords="303,155,373,181"/>
 <area shape="rect" title=" " alt="" coords="681,379,744,405"/>
@@ -92,7 +92,7 @@ Include dependency graph for cfg_builder.h:</div>
 <area shape="rect" title=" " alt="" coords="510,379,587,405"/>
 <area shape="rect" href="instruction_8h_source.html" title=" " alt="" coords="176,155,279,181"/>
 <area shape="rect" href="operand_8h_source.html" title=" " alt="" coords="133,229,220,256"/>
-<area shape="rect" href="instruction__seq_8h_source.html" title=" " alt="" coords="687,229,821,256"/>
+<area shape="rect" href="instruction__seq_8h.html" title="InstructionSequence and friends." alt="" coords="687,229,821,256"/>
 <area shape="rect" href="symtab_8h_source.html" title=" " alt="" coords="458,229,541,256"/>
 <area shape="rect" href="type_8h_source.html" title=" " alt="" coords="448,304,511,331"/>
 <area shape="rect" href="instruction__seq__iter_8h_source.html" title=" " alt="" coords="813,304,975,331"/>
@@ -106,7 +106,7 @@ Include dependency graph for cfg_builder.h:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classControlFlowGraphBuilder.html">ControlFlowGraphBuilder&lt; InstructionProperties &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classControlFlowGraphBuilder.html" title="ControlFlowGraphBuilder builds a ControlFlowGraph from an InstructionSequence.">ControlFlowGraphBuilder</a> builds a <a class="el" href="classControlFlowGraph.html" title="ControlFlowGraph: graph of basic blocks connected by control edges.">ControlFlowGraph</a> from an <a class="el" href="classInstructionSequence.html">InstructionSequence</a>.  <a href="classControlFlowGraphBuilder.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classControlFlowGraphBuilder.html" title="ControlFlowGraphBuilder builds a ControlFlowGraph from an InstructionSequence.">ControlFlowGraphBuilder</a> builds a <a class="el" href="classControlFlowGraph.html" title="ControlFlowGraph: graph of basic blocks connected by control edges.">ControlFlowGraph</a> from an <a class="el" href="classInstructionSequence.html" title="InstructionSequence class, which represents a linear sequence of Instruction objects.">InstructionSequence</a>.  <a href="classControlFlowGraphBuilder.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
@@ -119,7 +119,7 @@ Functions</h2></td></tr>
 <tr class="separator:a452814012b0205b459cd98d31b6ba50d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Support for building a <a class="el" href="classControlFlowGraph.html" title="ControlFlowGraph: graph of basic blocks connected by control edges.">ControlFlowGraph</a> from an <a class="el" href="classInstructionSequence.html">InstructionSequence</a>. </p>
+<div class="textblock"><p>Support for building a <a class="el" href="classControlFlowGraph.html" title="ControlFlowGraph: graph of basic blocks connected by control edges.">ControlFlowGraph</a> from an <a class="el" href="classInstructionSequence.html" title="InstructionSequence class, which represents a linear sequence of Instruction objects.">InstructionSequence</a>. </p>
 </div><h2 class="groupheader">Function Documentation</h2>
 <a id="a309b6dd403cc2b25070fde8139fb6ce6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a309b6dd403cc2b25070fde8139fb6ce6">&#9670;&nbsp;</a></span>make_highlevel_cfg_builder()</h2>
@@ -150,7 +150,7 @@ Functions</h2></td></tr>
 <div class="ttc" id="acfg__builder_8h_html_a309b6dd403cc2b25070fde8139fb6ce6"><div class="ttname"><a href="cfg__builder_8h.html#a309b6dd403cc2b25070fde8139fb6ce6">make_highlevel_cfg_builder</a></div><div class="ttdeci">ControlFlowGraphBuilder&lt; HighLevelInstructionProperties &gt; make_highlevel_cfg_builder(const std::shared_ptr&lt; InstructionSequence &gt; &amp;iseq)</div><div class="ttdoc">Return a ControlFlowGraphBuilder for building a high-level ControlFlowGraph.</div><div class="ttdef"><b>Definition:</b> cfg_builder.h:104</div></div>
 </div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">the</td><td><a class="el" href="classInstructionSequence.html">InstructionSequence</a> containing the high-level instructions </td></tr>
+    <tr><td class="paramname">the</td><td><a class="el" href="classInstructionSequence.html" title="InstructionSequence class, which represents a linear sequence of Instruction objects.">InstructionSequence</a> containing the high-level instructions </td></tr>
   </table>
   </dd>
 </dl>
@@ -187,7 +187,7 @@ Functions</h2></td></tr>
 <div class="ttc" id="acfg__builder_8h_html_a452814012b0205b459cd98d31b6ba50d"><div class="ttname"><a href="cfg__builder_8h.html#a452814012b0205b459cd98d31b6ba50d">make_lowlevel_cfg_builder</a></div><div class="ttdeci">ControlFlowGraphBuilder&lt; LowLevelInstructionProperties &gt; make_lowlevel_cfg_builder(const std::shared_ptr&lt; InstructionSequence &gt; &amp;iseq)</div><div class="ttdoc">Return a ControlFlowGraphBuilder for building a low-level ControlFlowGraph.</div><div class="ttdef"><b>Definition:</b> cfg_builder.h:119</div></div>
 </div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">the</td><td><a class="el" href="classInstructionSequence.html">InstructionSequence</a> containing the low-level instructions </td></tr>
+    <tr><td class="paramname">the</td><td><a class="el" href="classInstructionSequence.html" title="InstructionSequence class, which represents a linear sequence of Instruction objects.">InstructionSequence</a> containing the low-level instructions </td></tr>
   </table>
   </dd>
 </dl>

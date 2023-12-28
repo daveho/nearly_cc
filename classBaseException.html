@@ -69,17 +69,21 @@ $(function() {
 <div class="title">BaseException Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Base type for exceptions indicating a syntax error,.  
+ <a href="classBaseException.html#details">More...</a></p>
+
+<p><code>#include &quot;<a class="el" href="exceptions_8h_source.html">exceptions.h</a>&quot;</code></p>
 <div class="dynheader">
 Inheritance diagram for BaseException:</div>
 <div class="dyncontent">
 <div class="center"><img src="classBaseException__inherit__graph.png" border="0" usemap="#aBaseException_inherit__map" alt="Inheritance graph"/></div>
 <map name="aBaseException_inherit__map" id="aBaseException_inherit__map">
-<area shape="rect" title=" " alt="" coords="215,80,334,107"/>
-<area shape="rect" href="classEvaluationError.html" title=" " alt="" coords="5,155,128,181"/>
-<area shape="rect" href="classRuntimeError.html" title=" " alt="" coords="153,155,261,181"/>
-<area shape="rect" href="classSemanticError.html" title=" " alt="" coords="285,155,400,181"/>
-<area shape="rect" href="classSyntaxError.html" title=" " alt="" coords="424,155,523,181"/>
-<area shape="rect" title=" " alt="" coords="205,5,344,32"/>
+<area shape="rect" title="Base type for exceptions indicating a syntax error,." alt="" coords="136,80,255,107"/>
+<area shape="rect" href="classRuntimeError.html" title="Exception type for general runtime errors that aren&#39;t associated with source code." alt="" coords="5,155,113,181"/>
+<area shape="rect" href="classSemanticError.html" title="Exception type for semantic errors." alt="" coords="138,155,253,181"/>
+<area shape="rect" href="classSyntaxError.html" title="Exception type for lexical or syntax errors." alt="" coords="277,155,375,181"/>
+<area shape="rect" title=" " alt="" coords="126,5,265,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -87,26 +91,141 @@ Collaboration diagram for BaseException:</div>
 <div class="dyncontent">
 <div class="center"><img src="classBaseException__coll__graph.png" border="0" usemap="#aBaseException_coll__map" alt="Collaboration graph"/></div>
 <map name="aBaseException_coll__map" id="aBaseException_coll__map">
-<area shape="rect" title=" " alt="" coords="15,80,134,107"/>
+<area shape="rect" title="Base type for exceptions indicating a syntax error,." alt="" coords="15,80,134,107"/>
 <area shape="rect" title=" " alt="" coords="5,5,144,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a090f9b9656007e1f1b7cd639ba57c8ec"><td class="memItemLeft" align="right" valign="top"><a id="a090f9b9656007e1f1b7cd639ba57c8ec"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>BaseException</b> (const <a class="el" href="classLocation.html">Location</a> &amp;loc, const std::string &amp;desc)</td></tr>
+<tr class="memitem:a090f9b9656007e1f1b7cd639ba57c8ec"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBaseException.html#a090f9b9656007e1f1b7cd639ba57c8ec">BaseException</a> (const <a class="el" href="classLocation.html">Location</a> &amp;loc, const std::string &amp;desc)</td></tr>
+<tr class="memdesc:a090f9b9656007e1f1b7cd639ba57c8ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classBaseException.html#a090f9b9656007e1f1b7cd639ba57c8ec">More...</a><br /></td></tr>
 <tr class="separator:a090f9b9656007e1f1b7cd639ba57c8ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a876064d02fca0540d04144e0786c4ddf"><td class="memItemLeft" align="right" valign="top"><a id="a876064d02fca0540d04144e0786c4ddf"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>BaseException</b> (const <a class="el" href="classBaseException.html">BaseException</a> &amp;other)</td></tr>
+<tr class="memitem:a876064d02fca0540d04144e0786c4ddf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBaseException.html#a876064d02fca0540d04144e0786c4ddf">BaseException</a> (const <a class="el" href="classBaseException.html">BaseException</a> &amp;other)</td></tr>
+<tr class="memdesc:a876064d02fca0540d04144e0786c4ddf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy constructor.  <a href="classBaseException.html#a876064d02fca0540d04144e0786c4ddf">More...</a><br /></td></tr>
 <tr class="separator:a876064d02fca0540d04144e0786c4ddf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a40274a4647d04ea473e0d9bcf0cf8c48"><td class="memItemLeft" align="right" valign="top"><a id="a40274a4647d04ea473e0d9bcf0cf8c48"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>has_location</b> () const</td></tr>
+<tr class="memitem:a40274a4647d04ea473e0d9bcf0cf8c48"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBaseException.html#a40274a4647d04ea473e0d9bcf0cf8c48">has_location</a> () const</td></tr>
+<tr class="memdesc:a40274a4647d04ea473e0d9bcf0cf8c48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether this exception has a valud source <a class="el" href="classLocation.html">Location</a>.  <a href="classBaseException.html#a40274a4647d04ea473e0d9bcf0cf8c48">More...</a><br /></td></tr>
 <tr class="separator:a40274a4647d04ea473e0d9bcf0cf8c48"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a474b9850f0435c41cb46e8b3491552c5"><td class="memItemLeft" align="right" valign="top"><a id="a474b9850f0435c41cb46e8b3491552c5"></a>
-const <a class="el" href="classLocation.html">Location</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>get_loc</b> () const</td></tr>
+<tr class="memitem:a474b9850f0435c41cb46e8b3491552c5"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classLocation.html">Location</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBaseException.html#a474b9850f0435c41cb46e8b3491552c5">get_loc</a> () const</td></tr>
+<tr class="memdesc:a474b9850f0435c41cb46e8b3491552c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the source <a class="el" href="classLocation.html">Location</a>.  <a href="classBaseException.html#a474b9850f0435c41cb46e8b3491552c5">More...</a><br /></td></tr>
 <tr class="separator:a474b9850f0435c41cb46e8b3491552c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Base type for exceptions indicating a syntax error,. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a090f9b9656007e1f1b7cd639ba57c8ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a090f9b9656007e1f1b7cd639ba57c8ec">&#9670;&nbsp;</a></span>BaseException() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BaseException::BaseException </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classLocation.html">Location</a> &amp;&#160;</td>
+          <td class="paramname"><em>loc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>desc</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">loc</td><td>the source <a class="el" href="classLocation.html">Location</a> of the error </td></tr>
+    <tr><td class="paramname">desc</td><td>description of the error </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a876064d02fca0540d04144e0786c4ddf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a876064d02fca0540d04144e0786c4ddf">&#9670;&nbsp;</a></span>BaseException() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BaseException::BaseException </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classBaseException.html">BaseException</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Copy constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>the <a class="el" href="classBaseException.html" title="Base type for exceptions indicating a syntax error,.">BaseException</a> object to copy from </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a474b9850f0435c41cb46e8b3491552c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a474b9850f0435c41cb46e8b3491552c5">&#9670;&nbsp;</a></span>get_loc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classLocation.html">Location</a> &amp; BaseException::get_loc </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the source <a class="el" href="classLocation.html">Location</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>the source <a class="el" href="classLocation.html">Location</a> </dd></dl>
+
+</div>
+</div>
+<a id="a40274a4647d04ea473e0d9bcf0cf8c48"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40274a4647d04ea473e0d9bcf0cf8c48">&#9670;&nbsp;</a></span>has_location()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool BaseException::has_location </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check whether this exception has a valud source <a class="el" href="classLocation.html">Location</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>true if this exception has a valid source <a class="el" href="classLocation.html">Location</a>, false otherwise </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="exceptions_8h_source.html">exceptions.h</a></li>
 <li>exceptions.cpp</li>

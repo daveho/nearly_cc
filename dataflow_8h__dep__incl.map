@@ -1,6 +1,6 @@
 <map id="dataflow.h" name="dataflow.h">
 <area shape="rect" id="node1" title="Support for global (procedure&#45;scope) dataflow analysis." alt="" coords="79,5,169,32"/>
-<area shape="rect" id="node2" href="$live__mregs_8h_source.html" title=" " alt="" coords="7,80,113,107"/>
-<area shape="rect" id="node4" href="$live__vregs_8h_source.html" title=" " alt="" coords="137,80,239,107"/>
+<area shape="rect" id="node2" href="$live__mregs_8h.html" title="Dataflow analysis to determine which machine registers contain live values." alt="" coords="7,80,113,107"/>
+<area shape="rect" id="node4" href="$live__vregs_8h.html" title="Dataflow analysis to determine which virtual registers (in high&#45;level code) contain live values." alt="" coords="137,80,239,107"/>
 <area shape="rect" id="node3" href="$peephole__ll_8h_source.html" title=" " alt="" coords="5,155,115,181"/>
 </map>

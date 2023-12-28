@@ -90,13 +90,13 @@ $(function() {
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#define PRINT_INSTRUCTION_SEQ_H</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;instruction.h&quot;</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;instruction_seq.h&quot;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="instruction__seq_8h.html">instruction_seq.h</a>&quot;</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">// Default annotator for instructions: returns the Instruction&#39;s comment.</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classDefaultInstructionAnnotator.html">   28</a></span>&#160;<span class="keyword">class </span><a class="code" href="classDefaultInstructionAnnotator.html">DefaultInstructionAnnotator</a> {</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  std::string get_instruction_annotation(std::shared_ptr&lt;InstructionSequence&gt; iseq, <a class="code" href="classInstruction.html">Instruction</a> *ins)<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordflow">return</span> ins-&gt;get_comment();</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordflow">return</span> ins-&gt;<a class="code" href="classInstruction.html#a057937486b26ac891c53a80fe2c9e51b">get_comment</a>();</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  }</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;};</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
@@ -158,9 +158,11 @@ $(function() {
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// PRINT_INSTRUCTION_SEQ_H</span></div>
 <div class="ttc" id="aclassDefaultInstructionAnnotator_html"><div class="ttname"><a href="classDefaultInstructionAnnotator.html">DefaultInstructionAnnotator</a></div><div class="ttdef"><b>Definition:</b> print_instruction_seq.h:28</div></div>
-<div class="ttc" id="aclassFormatter_html"><div class="ttname"><a href="classFormatter.html">Formatter</a></div><div class="ttdef"><b>Definition:</b> formatter.h:30</div></div>
-<div class="ttc" id="aclassInstruction_html"><div class="ttname"><a href="classInstruction.html">Instruction</a></div><div class="ttdef"><b>Definition:</b> instruction.h:30</div></div>
+<div class="ttc" id="aclassFormatter_html"><div class="ttname"><a href="classFormatter.html">Formatter</a></div><div class="ttdoc">A Formatter turns Operand and Instruction objects into strings, which in turn allows high-level and l...</div><div class="ttdef"><b>Definition:</b> formatter.h:30</div></div>
+<div class="ttc" id="aclassInstruction_html"><div class="ttname"><a href="classInstruction.html">Instruction</a></div><div class="ttdoc">Instruction object type.</div><div class="ttdef"><b>Definition:</b> instruction.h:31</div></div>
+<div class="ttc" id="aclassInstruction_html_a057937486b26ac891c53a80fe2c9e51b"><div class="ttname"><a href="classInstruction.html#a057937486b26ac891c53a80fe2c9e51b">Instruction::get_comment</a></div><div class="ttdeci">const std::string &amp; get_comment() const</div><div class="ttdoc">Get the textual comment for this Instruction.</div><div class="ttdef"><b>Definition:</b> instruction.h:112</div></div>
 <div class="ttc" id="aclassPrintInstructionSequence_html"><div class="ttname"><a href="classPrintInstructionSequence.html">PrintInstructionSequence</a></div><div class="ttdef"><b>Definition:</b> print_instruction_seq.h:43</div></div>
+<div class="ttc" id="ainstruction__seq_8h_html"><div class="ttname"><a href="instruction__seq_8h.html">instruction_seq.h</a></div><div class="ttdoc">InstructionSequence and friends.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

@@ -1,11 +1,11 @@
 <map id="Type" name="Type">
 <area shape="rect" id="node1" title="Representation of a C data type." alt="" coords="269,5,321,32"/>
-<area shape="rect" id="node2" href="$classBasicType.html" title=" " alt="" coords="129,80,216,107"/>
+<area shape="rect" id="node2" href="$classBasicType.html" title="A BasicType represents a basic type (int, char, etc.)" alt="" coords="129,80,216,107"/>
 <area shape="rect" id="node3" href="$classHasBaseType.html" title="Common base class for QualifiedType, FunctionType, PointerType, and ArrayType." alt="" coords="241,80,350,107"/>
 <area shape="rect" id="node8" href="$classHasMembers.html" title="Common base class for StructType and FunctionType, which both have &quot;members&quot; (fields or parameters)." alt="" coords="375,80,483,107"/>
-<area shape="rect" id="node4" href="$classArrayType.html" title=" " alt="" coords="5,155,92,181"/>
-<area shape="rect" id="node5" href="$classFunctionType.html" title=" " alt="" coords="375,155,482,181"/>
-<area shape="rect" id="node6" href="$classPointerType.html" title=" " alt="" coords="117,155,215,181"/>
-<area shape="rect" id="node7" href="$classQualifiedType.html" title=" " alt="" coords="240,155,351,181"/>
-<area shape="rect" id="node9" href="$classStructType.html" title=" " alt="" coords="506,155,597,181"/>
+<area shape="rect" id="node4" href="$classArrayType.html" title="ArrayType represents an array type." alt="" coords="5,155,92,181"/>
+<area shape="rect" id="node5" href="$classFunctionType.html" title="A FunctionType represents the type of a function." alt="" coords="375,155,482,181"/>
+<area shape="rect" id="node6" href="$classPointerType.html" title="PointerType represents a pointer type." alt="" coords="117,155,215,181"/>
+<area shape="rect" id="node7" href="$classQualifiedType.html" title="A QualifiedType modifies a &quot;delegate&quot; type with a TypeQualifier (const or volatile)." alt="" coords="240,155,351,181"/>
+<area shape="rect" id="node9" href="$classStructType.html" title="StructType represents a struct type." alt="" coords="506,155,597,181"/>
 </map>

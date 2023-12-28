@@ -1,8 +1,7 @@
 <map id="BaseException" name="BaseException">
-<area shape="rect" id="node1" title=" " alt="" coords="215,80,334,107"/>
-<area shape="rect" id="node3" href="$classEvaluationError.html" title=" " alt="" coords="5,155,128,181"/>
-<area shape="rect" id="node4" href="$classRuntimeError.html" title=" " alt="" coords="153,155,261,181"/>
-<area shape="rect" id="node5" href="$classSemanticError.html" title=" " alt="" coords="285,155,400,181"/>
-<area shape="rect" id="node6" href="$classSyntaxError.html" title=" " alt="" coords="424,155,523,181"/>
-<area shape="rect" id="node2" title=" " alt="" coords="205,5,344,32"/>
+<area shape="rect" id="node1" title="Base type for exceptions indicating a syntax error,." alt="" coords="136,80,255,107"/>
+<area shape="rect" id="node3" href="$classRuntimeError.html" title="Exception type for general runtime errors that aren&#39;t associated with source code." alt="" coords="5,155,113,181"/>
+<area shape="rect" id="node4" href="$classSemanticError.html" title="Exception type for semantic errors." alt="" coords="138,155,253,181"/>
+<area shape="rect" id="node5" href="$classSyntaxError.html" title="Exception type for lexical or syntax errors." alt="" coords="277,155,375,181"/>
+<area shape="rect" id="node2" title=" " alt="" coords="126,5,265,32"/>
 </map>

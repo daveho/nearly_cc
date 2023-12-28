@@ -1,4 +1,4 @@
 <map id="LiveVregsAnalysis" name="LiveVregsAnalysis">
-<area shape="rect" id="node1" title=" " alt="" coords="5,80,147,107"/>
+<area shape="rect" id="node1" title="Dataflow analysis to determine which virtual registers (in high&#45;level code) contain live values." alt="" coords="5,80,147,107"/>
 <area shape="rect" id="node2" href="$classBackwardAnalysis.html" title="Base class for backward analyses." alt="" coords="5,5,147,32"/>
 </map>

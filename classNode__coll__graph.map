@@ -1,4 +1,5 @@
 <map id="Node" name="Node">
-<area shape="rect" id="node1" title=" " alt="" coords="21,80,77,107"/>
-<area shape="rect" id="node2" href="$classNodeBase.html" title=" " alt="" coords="5,5,93,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="29,155,85,181"/>
+<area shape="rect" id="node2" href="$classNodeBase.html" title="The Node class will inherit from this type, so you can use it to define any attributes and methods th..." alt="" coords="13,80,101,107"/>
+<area shape="rect" id="node3" href="$classHasOperand.html" title="HasOperand is a base class for NodeBase, which in turn is a base class for Node." alt="" coords="5,5,108,32"/>
 </map>

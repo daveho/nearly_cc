@@ -91,19 +91,22 @@ $(function() {
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;formatter.h&quot;</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classLowLevelFormatter.html">   26</a></span>&#160;<span class="keyword">class </span><a class="code" href="classLowLevelFormatter.html">LowLevelFormatter</a> : <span class="keyword">public</span> <a class="code" href="classFormatter.html">Formatter</a> {</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <a class="code" href="classLowLevelFormatter.html">LowLevelFormatter</a>();</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keyword">virtual</span> ~<a class="code" href="classLowLevelFormatter.html">LowLevelFormatter</a>();</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keyword">virtual</span> std::string format_operand(<span class="keyword">const</span> <a class="code" href="classOperand.html">Operand</a> &amp;operand) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keyword">virtual</span> std::string format_instruction(<span class="keyword">const</span> <a class="code" href="classInstruction.html">Instruction</a> *ins) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;};</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// LOWLEVEL_FORMATTER_H</span></div>
-<div class="ttc" id="aclassFormatter_html"><div class="ttname"><a href="classFormatter.html">Formatter</a></div><div class="ttdef"><b>Definition:</b> formatter.h:30</div></div>
-<div class="ttc" id="aclassInstruction_html"><div class="ttname"><a href="classInstruction.html">Instruction</a></div><div class="ttdef"><b>Definition:</b> instruction.h:30</div></div>
-<div class="ttc" id="aclassLowLevelFormatter_html"><div class="ttname"><a href="classLowLevelFormatter.html">LowLevelFormatter</a></div><div class="ttdef"><b>Definition:</b> lowlevel_formatter.h:26</div></div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classLowLevelFormatter.html">   27</a></span>&#160;<span class="keyword">class </span><a class="code" href="classLowLevelFormatter.html">LowLevelFormatter</a> : <span class="keyword">public</span> <a class="code" href="classFormatter.html">Formatter</a> {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <a class="code" href="classLowLevelFormatter.html">LowLevelFormatter</a>();</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keyword">virtual</span> ~<a class="code" href="classLowLevelFormatter.html">LowLevelFormatter</a>();</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keyword">virtual</span> std::string <a class="code" href="classLowLevelFormatter.html#a1e506b6da1866cf4ff27c4406edd2b7d">format_operand</a>(<span class="keyword">const</span> <a class="code" href="classOperand.html">Operand</a> &amp;operand) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keyword">virtual</span> std::string <a class="code" href="classLowLevelFormatter.html#a6f0f166fcf6229375b4f96ecf1041f99">format_instruction</a>(<span class="keyword">const</span> <a class="code" href="classInstruction.html">Instruction</a> *ins) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;};</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// LOWLEVEL_FORMATTER_H</span></div>
+<div class="ttc" id="aclassFormatter_html"><div class="ttname"><a href="classFormatter.html">Formatter</a></div><div class="ttdoc">A Formatter turns Operand and Instruction objects into strings, which in turn allows high-level and l...</div><div class="ttdef"><b>Definition:</b> formatter.h:30</div></div>
+<div class="ttc" id="aclassInstruction_html"><div class="ttname"><a href="classInstruction.html">Instruction</a></div><div class="ttdoc">Instruction object type.</div><div class="ttdef"><b>Definition:</b> instruction.h:31</div></div>
+<div class="ttc" id="aclassLowLevelFormatter_html"><div class="ttname"><a href="classLowLevelFormatter.html">LowLevelFormatter</a></div><div class="ttdoc">Implementation of Formatter for low-level code.</div><div class="ttdef"><b>Definition:</b> lowlevel_formatter.h:27</div></div>
+<div class="ttc" id="aclassLowLevelFormatter_html_a1e506b6da1866cf4ff27c4406edd2b7d"><div class="ttname"><a href="classLowLevelFormatter.html#a1e506b6da1866cf4ff27c4406edd2b7d">LowLevelFormatter::format_operand</a></div><div class="ttdeci">virtual std::string format_operand(const Operand &amp;operand) const</div><div class="ttdoc">Convert a low-level Operand to a formatted string.</div><div class="ttdef"><b>Definition:</b> lowlevel_formatter.cpp:71</div></div>
+<div class="ttc" id="aclassLowLevelFormatter_html_a6f0f166fcf6229375b4f96ecf1041f99"><div class="ttname"><a href="classLowLevelFormatter.html#a6f0f166fcf6229375b4f96ecf1041f99">LowLevelFormatter::format_instruction</a></div><div class="ttdeci">virtual std::string format_instruction(const Instruction *ins) const</div><div class="ttdoc">Convert a low-level Instruction to a formatted string.</div><div class="ttdef"><b>Definition:</b> lowlevel_formatter.cpp:113</div></div>
 <div class="ttc" id="aclassOperand_html"><div class="ttname"><a href="classOperand.html">Operand</a></div><div class="ttdef"><b>Definition:</b> operand.h:31</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

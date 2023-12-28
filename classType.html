@@ -80,14 +80,14 @@ Inheritance diagram for Type:</div>
 <div class="center"><img src="classType__inherit__graph.png" border="0" usemap="#aType_inherit__map" alt="Inheritance graph"/></div>
 <map name="aType_inherit__map" id="aType_inherit__map">
 <area shape="rect" title="Representation of a C data type." alt="" coords="269,5,321,32"/>
-<area shape="rect" href="classBasicType.html" title=" " alt="" coords="129,80,216,107"/>
+<area shape="rect" href="classBasicType.html" title="A BasicType represents a basic type (int, char, etc.)" alt="" coords="129,80,216,107"/>
 <area shape="rect" href="classHasBaseType.html" title="Common base class for QualifiedType, FunctionType, PointerType, and ArrayType." alt="" coords="241,80,350,107"/>
 <area shape="rect" href="classHasMembers.html" title="Common base class for StructType and FunctionType, which both have &quot;members&quot; (fields or parameters)." alt="" coords="375,80,483,107"/>
-<area shape="rect" href="classArrayType.html" title=" " alt="" coords="5,155,92,181"/>
-<area shape="rect" href="classFunctionType.html" title=" " alt="" coords="375,155,482,181"/>
-<area shape="rect" href="classPointerType.html" title=" " alt="" coords="117,155,215,181"/>
-<area shape="rect" href="classQualifiedType.html" title=" " alt="" coords="240,155,351,181"/>
-<area shape="rect" href="classStructType.html" title=" " alt="" coords="506,155,597,181"/>
+<area shape="rect" href="classArrayType.html" title="ArrayType represents an array type." alt="" coords="5,155,92,181"/>
+<area shape="rect" href="classFunctionType.html" title="A FunctionType represents the type of a function." alt="" coords="375,155,482,181"/>
+<area shape="rect" href="classPointerType.html" title="PointerType represents a pointer type." alt="" coords="117,155,215,181"/>
+<area shape="rect" href="classQualifiedType.html" title="A QualifiedType modifies a &quot;delegate&quot; type with a TypeQualifier (const or volatile)." alt="" coords="240,155,351,181"/>
+<area shape="rect" href="classStructType.html" title="StructType represents a struct type." alt="" coords="506,155,597,181"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -110,22 +110,22 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memdesc:a927a5252d66c733e631c0afc8862743f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get unqualified type (strip off type qualifiers, if any).  <a href="classType.html#a927a5252d66c733e631c0afc8862743f">More...</a><br /></td></tr>
 <tr class="separator:a927a5252d66c733e631c0afc8862743f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa3f009f82e3f9f678dbad870f3aab051"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classType.html#aa3f009f82e3f9f678dbad870f3aab051">is_basic</a> () const</td></tr>
-<tr class="memdesc:aa3f009f82e3f9f678dbad870f3aab051"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether the type is a <a class="el" href="classBasicType.html">BasicType</a>.  <a href="classType.html#aa3f009f82e3f9f678dbad870f3aab051">More...</a><br /></td></tr>
+<tr class="memdesc:aa3f009f82e3f9f678dbad870f3aab051"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether the type is a <a class="el" href="classBasicType.html" title="A BasicType represents a basic type (int, char, etc.)">BasicType</a>.  <a href="classType.html#aa3f009f82e3f9f678dbad870f3aab051">More...</a><br /></td></tr>
 <tr class="separator:aa3f009f82e3f9f678dbad870f3aab051"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1cef24a59ab45291dff4b86d51f91ab0"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classType.html#a1cef24a59ab45291dff4b86d51f91ab0">is_void</a> () const</td></tr>
 <tr class="memdesc:a1cef24a59ab45291dff4b86d51f91ab0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether the type represents <code>void</code>.  <a href="classType.html#a1cef24a59ab45291dff4b86d51f91ab0">More...</a><br /></td></tr>
 <tr class="separator:a1cef24a59ab45291dff4b86d51f91ab0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afbbeb04d2990666e6efe383d576c680a"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classType.html#afbbeb04d2990666e6efe383d576c680a">is_struct</a> () const</td></tr>
-<tr class="memdesc:afbbeb04d2990666e6efe383d576c680a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether the type is a <a class="el" href="classStructType.html">StructType</a>.  <a href="classType.html#afbbeb04d2990666e6efe383d576c680a">More...</a><br /></td></tr>
+<tr class="memdesc:afbbeb04d2990666e6efe383d576c680a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether the type is a <a class="el" href="classStructType.html" title="StructType represents a struct type.">StructType</a>.  <a href="classType.html#afbbeb04d2990666e6efe383d576c680a">More...</a><br /></td></tr>
 <tr class="separator:afbbeb04d2990666e6efe383d576c680a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a60bea0f07116f63ac3ed68d1a37d5c1d"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classType.html#a60bea0f07116f63ac3ed68d1a37d5c1d">is_pointer</a> () const</td></tr>
-<tr class="memdesc:a60bea0f07116f63ac3ed68d1a37d5c1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether the type is a <a class="el" href="classPointerType.html">PointerType</a>.  <a href="classType.html#a60bea0f07116f63ac3ed68d1a37d5c1d">More...</a><br /></td></tr>
+<tr class="memdesc:a60bea0f07116f63ac3ed68d1a37d5c1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether the type is a <a class="el" href="classPointerType.html" title="PointerType represents a pointer type.">PointerType</a>.  <a href="classType.html#a60bea0f07116f63ac3ed68d1a37d5c1d">More...</a><br /></td></tr>
 <tr class="separator:a60bea0f07116f63ac3ed68d1a37d5c1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a529ac00c57fa85d06049c644ed98d0d7"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classType.html#a529ac00c57fa85d06049c644ed98d0d7">is_array</a> () const</td></tr>
-<tr class="memdesc:a529ac00c57fa85d06049c644ed98d0d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether the type is an <a class="el" href="classArrayType.html">ArrayType</a>.  <a href="classType.html#a529ac00c57fa85d06049c644ed98d0d7">More...</a><br /></td></tr>
+<tr class="memdesc:a529ac00c57fa85d06049c644ed98d0d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether the type is an <a class="el" href="classArrayType.html" title="ArrayType represents an array type.">ArrayType</a>.  <a href="classType.html#a529ac00c57fa85d06049c644ed98d0d7">More...</a><br /></td></tr>
 <tr class="separator:a529ac00c57fa85d06049c644ed98d0d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab62a7b6a43944449b7fa14b05fb29350"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classType.html#ab62a7b6a43944449b7fa14b05fb29350">is_function</a> () const</td></tr>
-<tr class="memdesc:ab62a7b6a43944449b7fa14b05fb29350"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether the type is a <a class="el" href="classFunctionType.html">FunctionType</a>.  <a href="classType.html#ab62a7b6a43944449b7fa14b05fb29350">More...</a><br /></td></tr>
+<tr class="memdesc:ab62a7b6a43944449b7fa14b05fb29350"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether the type is a <a class="el" href="classFunctionType.html" title="A FunctionType represents the type of a function.">FunctionType</a>.  <a href="classType.html#ab62a7b6a43944449b7fa14b05fb29350">More...</a><br /></td></tr>
 <tr class="separator:ab62a7b6a43944449b7fa14b05fb29350"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad9125b77867b4b6f8987ae8385d15103"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classType.html#ad9125b77867b4b6f8987ae8385d15103">is_volatile</a> () const</td></tr>
 <tr class="memdesc:ad9125b77867b4b6f8987ae8385d15103"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether the type is qualified as <code>volatile</code>.  <a href="classType.html#ad9125b77867b4b6f8987ae8385d15103">More...</a><br /></td></tr>
@@ -134,10 +134,10 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memdesc:a0fd6d3dc6a482637560b5d6630677771"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether the type is qualified as <code>const</code>.  <a href="classType.html#a0fd6d3dc6a482637560b5d6630677771">More...</a><br /></td></tr>
 <tr class="separator:a0fd6d3dc6a482637560b5d6630677771"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af9421fce94be9fe840657e579b57df0d"><td class="memItemLeft" align="right" valign="top">virtual BasicTypeKind&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classType.html#af9421fce94be9fe840657e579b57df0d">get_basic_type_kind</a> () const</td></tr>
-<tr class="memdesc:af9421fce94be9fe840657e579b57df0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the BasicTypeKind of a <a class="el" href="classBasicType.html">BasicType</a>.  <a href="classType.html#af9421fce94be9fe840657e579b57df0d">More...</a><br /></td></tr>
+<tr class="memdesc:af9421fce94be9fe840657e579b57df0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the BasicTypeKind of a <a class="el" href="classBasicType.html" title="A BasicType represents a basic type (int, char, etc.)">BasicType</a>.  <a href="classType.html#af9421fce94be9fe840657e579b57df0d">More...</a><br /></td></tr>
 <tr class="separator:af9421fce94be9fe840657e579b57df0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a105a0c8356f36f91e987a6d7f10cbdfb"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classType.html#a105a0c8356f36f91e987a6d7f10cbdfb">is_signed</a> () const</td></tr>
-<tr class="memdesc:a105a0c8356f36f91e987a6d7f10cbdfb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether the <a class="el" href="classBasicType.html">BasicType</a> is a signed type.  <a href="classType.html#a105a0c8356f36f91e987a6d7f10cbdfb">More...</a><br /></td></tr>
+<tr class="memdesc:a105a0c8356f36f91e987a6d7f10cbdfb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether the <a class="el" href="classBasicType.html" title="A BasicType represents a basic type (int, char, etc.)">BasicType</a> is a signed type.  <a href="classType.html#a105a0c8356f36f91e987a6d7f10cbdfb">More...</a><br /></td></tr>
 <tr class="separator:a105a0c8356f36f91e987a6d7f10cbdfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae893378a0d6cf75f4b616c2bd3dd3b67"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classType.html#ae893378a0d6cf75f4b616c2bd3dd3b67">add_member</a> (const <a class="el" href="classMember.html">Member</a> &amp;member)</td></tr>
 <tr class="memdesc:ae893378a0d6cf75f4b616c2bd3dd3b67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a member.  <a href="classType.html#ae893378a0d6cf75f4b616c2bd3dd3b67">More...</a><br /></td></tr>
@@ -194,7 +194,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </div><div class="memdoc">
 
 <p>Add a member. </p>
-<p>This should only be called if the type type is a <a class="el" href="classStructType.html">StructType</a> or <a class="el" href="classFunctionType.html">FunctionType</a>. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>This should only be called if the type type is a <a class="el" href="classStructType.html" title="StructType represents a struct type.">StructType</a> or <a class="el" href="classFunctionType.html" title="A FunctionType represents the type of a function.">FunctionType</a>. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">member</td><td>the member (field or parameter) to add </td></tr>
   </table>
@@ -286,7 +286,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </div><div class="memdoc">
 
 <p>Get the storage alignment multiple in bytes for an instance of this type. </p>
-<p>I.e., the start address of an instance of this type in memory must be aligned on a multiple of the returned value. Throws an exception if called on a <a class="el" href="classFunctionType.html">FunctionType</a>. </p><dl class="section return"><dt>Returns</dt><dd>the storage alignment multiple in bytes for an instance of this type </dd></dl>
+<p>I.e., the start address of an instance of this type in memory must be aligned on a multiple of the returned value. Throws an exception if called on a <a class="el" href="classFunctionType.html" title="A FunctionType represents the type of a function.">FunctionType</a>. </p><dl class="section return"><dt>Returns</dt><dd>the storage alignment multiple in bytes for an instance of this type </dd></dl>
 
 <p>Implemented in <a class="el" href="classArrayType.html#a22ba029ef261f57ac5553a60ff4b6ace">ArrayType</a>, <a class="el" href="classPointerType.html#ad04857306105ebde3bf41ac93d903c65">PointerType</a>, <a class="el" href="classFunctionType.html#a3b8e90b507fd96b3b22d032d52a54a33">FunctionType</a>, <a class="el" href="classStructType.html#ad716085d9199f0c4494d36cf8cdb0886">StructType</a>, <a class="el" href="classBasicType.html#ab660f04c60cfc0a7cacce6372e0f828c">BasicType</a>, and <a class="el" href="classQualifiedType.html#a992c9c94114fd22e9ee1cc22d998203b">QualifiedType</a>.</p>
 
@@ -316,7 +316,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </div><div class="memdoc">
 
 <p>Get the array size (number of elements). </p>
-<p>Throws an exception if the type isn't an <a class="el" href="classArrayType.html">ArrayType</a>. </p><dl class="section return"><dt>Returns</dt><dd>the array size (number of elements) </dd></dl>
+<p>Throws an exception if the type isn't an <a class="el" href="classArrayType.html" title="ArrayType represents an array type.">ArrayType</a>. </p><dl class="section return"><dt>Returns</dt><dd>the array size (number of elements) </dd></dl>
 
 <p>Reimplemented in <a class="el" href="classArrayType.html#ac7e62abd8b8cf1262ca171f62117ad97">ArrayType</a>, and <a class="el" href="classQualifiedType.html#aa2e27f3a9879064a7bfbc83decccafcc">QualifiedType</a>.</p>
 
@@ -346,7 +346,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </div><div class="memdoc">
 
 <p>Get the base type. </p>
-<p>For a <a class="el" href="classFunctionType.html">FunctionType</a>, the base type is the return type. For a <a class="el" href="classPointerType.html">PointerType</a>, the base type is the pointed-to type. For an <a class="el" href="classArrayType.html">ArrayType</a>, the base type is the element type. </p><dl class="section return"><dt>Returns</dt><dd>the base type </dd></dl>
+<p>For a <a class="el" href="classFunctionType.html" title="A FunctionType represents the type of a function.">FunctionType</a>, the base type is the return type. For a <a class="el" href="classPointerType.html" title="PointerType represents a pointer type.">PointerType</a>, the base type is the pointed-to type. For an <a class="el" href="classArrayType.html" title="ArrayType represents an array type.">ArrayType</a>, the base type is the element type. </p><dl class="section return"><dt>Returns</dt><dd>the base type </dd></dl>
 
 <p>Reimplemented in <a class="el" href="classHasBaseType.html#ae01335e4e6ad017187b1113649436003">HasBaseType</a>.</p>
 
@@ -375,7 +375,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </table>
 </div><div class="memdoc">
 
-<p>Get the BasicTypeKind of a <a class="el" href="classBasicType.html">BasicType</a>. </p>
+<p>Get the BasicTypeKind of a <a class="el" href="classBasicType.html" title="A BasicType represents a basic type (int, char, etc.)">BasicType</a>. </p>
 <dl class="section return"><dt>Returns</dt><dd>the BasicTypeKind of this basic type (throws an exception if this type is not a basic type) </dd></dl>
 
 <p>Reimplemented in <a class="el" href="classBasicType.html#ad88eeceda97d86faf2e2f21af85a2184">BasicType</a>, and <a class="el" href="classQualifiedType.html#a0eb2d0e020de50435597d1d303aead3f">QualifiedType</a>.</p>
@@ -407,7 +407,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </div><div class="memdoc">
 
 <p>Get the offset of the named field. </p>
-<p>Throws an exception if the type is not a <a class="el" href="classStructType.html">StructType</a>. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Throws an exception if the type is not a <a class="el" href="classStructType.html" title="StructType represents a struct type.">StructType</a>. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">name</td><td>the name of a field </td></tr>
   </table>
@@ -480,7 +480,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </div><div class="memdoc">
 
 <p>Get the number of members (fields or parameters). </p>
-<p>Throws an exception if this type isn't a <a class="el" href="classStructType.html">StructType</a> or <a class="el" href="classFunctionType.html">FunctionType</a>. </p><dl class="section return"><dt>Returns</dt><dd>the number of members </dd></dl>
+<p>Throws an exception if this type isn't a <a class="el" href="classStructType.html" title="StructType represents a struct type.">StructType</a> or <a class="el" href="classFunctionType.html" title="A FunctionType represents the type of a function.">FunctionType</a>. </p><dl class="section return"><dt>Returns</dt><dd>the number of members </dd></dl>
 
 <p>Reimplemented in <a class="el" href="classQualifiedType.html#aa170810cb01a85c7cb552c13ff914c5f">QualifiedType</a>, and <a class="el" href="classHasMembers.html#aeba8a5534d95d9c339a0fce7e505fccf">HasMembers</a>.</p>
 
@@ -510,7 +510,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </div><div class="memdoc">
 
 <p>Get the number of bytes required to store an instance of this type. </p>
-<p>Throws an exception if called on a <a class="el" href="classFunctionType.html">FunctionType</a>. </p><dl class="section return"><dt>Returns</dt><dd>the number of bytes required to store an instance of this type </dd></dl>
+<p>Throws an exception if called on a <a class="el" href="classFunctionType.html" title="A FunctionType represents the type of a function.">FunctionType</a>. </p><dl class="section return"><dt>Returns</dt><dd>the number of bytes required to store an instance of this type </dd></dl>
 
 <p>Implemented in <a class="el" href="classArrayType.html#a090fb329c13e5f0523b81b9b9ae083c0">ArrayType</a>, <a class="el" href="classPointerType.html#a19db272dca533e81b665ceec99f94e08">PointerType</a>, <a class="el" href="classFunctionType.html#a568debe6d866bb69eab0ad360caf277d">FunctionType</a>, <a class="el" href="classStructType.html#aeb7faab46c8d27d5c7a47caa246d6a42">StructType</a>, <a class="el" href="classBasicType.html#a9ffbdfde0c3e1da6a83170ef29a654e5">BasicType</a>, and <a class="el" href="classQualifiedType.html#ab689e5d2d2a94f4ac63e568bf0fa2e87">QualifiedType</a>.</p>
 
@@ -569,8 +569,8 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </table>
 </div><div class="memdoc">
 
-<p>Check whether the type is an <a class="el" href="classArrayType.html">ArrayType</a>. </p>
-<dl class="section return"><dt>Returns</dt><dd>true if this an <a class="el" href="classArrayType.html">ArrayType</a>, false otherwise </dd></dl>
+<p>Check whether the type is an <a class="el" href="classArrayType.html" title="ArrayType represents an array type.">ArrayType</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>true if this an <a class="el" href="classArrayType.html" title="ArrayType represents an array type.">ArrayType</a>, false otherwise </dd></dl>
 
 <p>Reimplemented in <a class="el" href="classArrayType.html#a74019db1c4e89b05f5e47dde62cc903e">ArrayType</a>, and <a class="el" href="classQualifiedType.html#ad62de38b7b6a17d8c2bd3d4b542e2a41">QualifiedType</a>.</p>
 
@@ -599,7 +599,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </table>
 </div><div class="memdoc">
 
-<p>Check whether the type is a <a class="el" href="classBasicType.html">BasicType</a>. </p>
+<p>Check whether the type is a <a class="el" href="classBasicType.html" title="A BasicType represents a basic type (int, char, etc.)">BasicType</a>. </p>
 <dl class="section return"><dt>Returns</dt><dd>true if this type represents a basic type (<code>int</code>, <code>char</code>, etc., including qualified variants like <code>const char</code>), false otherwise </dd></dl>
 
 <p>Reimplemented in <a class="el" href="classBasicType.html#ac7c87ad9978fd21996151f68677db0f6">BasicType</a>, and <a class="el" href="classQualifiedType.html#a2eb96427f42c983b98e4269b5beee936">QualifiedType</a>.</p>
@@ -659,8 +659,8 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </table>
 </div><div class="memdoc">
 
-<p>Check whether the type is a <a class="el" href="classFunctionType.html">FunctionType</a>. </p>
-<dl class="section return"><dt>Returns</dt><dd>true if this is a <a class="el" href="classFunctionType.html">FunctionType</a>, false otherwise </dd></dl>
+<p>Check whether the type is a <a class="el" href="classFunctionType.html" title="A FunctionType represents the type of a function.">FunctionType</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>true if this is a <a class="el" href="classFunctionType.html" title="A FunctionType represents the type of a function.">FunctionType</a>, false otherwise </dd></dl>
 
 <p>Reimplemented in <a class="el" href="classFunctionType.html#aedfe17c164f1710f83c709b039d464fe">FunctionType</a>, and <a class="el" href="classQualifiedType.html#ac56686288a06006555f96c4d587fe7b2">QualifiedType</a>.</p>
 
@@ -689,8 +689,8 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </table>
 </div><div class="memdoc">
 
-<p>Check whether the type is a <a class="el" href="classPointerType.html">PointerType</a>. </p>
-<dl class="section return"><dt>Returns</dt><dd>true if this is a <a class="el" href="classPointerType.html">PointerType</a>, false otherwise </dd></dl>
+<p>Check whether the type is a <a class="el" href="classPointerType.html" title="PointerType represents a pointer type.">PointerType</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>true if this is a <a class="el" href="classPointerType.html" title="PointerType represents a pointer type.">PointerType</a>, false otherwise </dd></dl>
 
 <p>Reimplemented in <a class="el" href="classPointerType.html#ae52bda630fe742203327a69ba322646a">PointerType</a>, and <a class="el" href="classQualifiedType.html#a08ae626d1359fa608c3831bb37300540">QualifiedType</a>.</p>
 
@@ -750,7 +750,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </table>
 </div><div class="memdoc">
 
-<p>Check whether the <a class="el" href="classBasicType.html">BasicType</a> is a signed type. </p>
+<p>Check whether the <a class="el" href="classBasicType.html" title="A BasicType represents a basic type (int, char, etc.)">BasicType</a> is a signed type. </p>
 <dl class="section return"><dt>Returns</dt><dd>true if this basic type is signed, false if it's unsigned (throws an exception if this is not a basic type) </dd></dl>
 
 <p>Reimplemented in <a class="el" href="classBasicType.html#a8f4f3e6a49bb10047959588bdc76e6fd">BasicType</a>, and <a class="el" href="classQualifiedType.html#acb3b966fa287a5c8f72f9c4d4f8e1cda">QualifiedType</a>.</p>
@@ -780,8 +780,8 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </table>
 </div><div class="memdoc">
 
-<p>Check whether the type is a <a class="el" href="classStructType.html">StructType</a>. </p>
-<dl class="section return"><dt>Returns</dt><dd>true if this is a <a class="el" href="classStructType.html">StructType</a>, false otherwise </dd></dl>
+<p>Check whether the type is a <a class="el" href="classStructType.html" title="StructType represents a struct type.">StructType</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>true if this is a <a class="el" href="classStructType.html" title="StructType represents a struct type.">StructType</a>, false otherwise </dd></dl>
 
 <p>Reimplemented in <a class="el" href="classStructType.html#a016db1075fcce94af302eb3e9a57b211">StructType</a>, and <a class="el" href="classQualifiedType.html#a6c327ecf2d223a4241c696a02731edcc">QualifiedType</a>.</p>
 

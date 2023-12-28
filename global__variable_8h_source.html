@@ -92,28 +92,26 @@ $(function() {
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;type.h&quot;</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">// A GlobalVariable represents a global variable, and specifies its</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">// name and data type. Each global variable in the program should</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">// be added to the Module (and thus made available when target code</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">// is printed.) Note that this type has value semantics (copying</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">// and assignment are allowed.)</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classGlobalVariable.html">   33</a></span>&#160;<span class="keyword">class </span><a class="code" href="classGlobalVariable.html">GlobalVariable</a> {</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  std::string m_name;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  std::shared_ptr&lt;Type&gt; m_type;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <a class="code" href="classGlobalVariable.html">GlobalVariable</a>(<span class="keyword">const</span> std::string &amp;name, std::shared_ptr&lt;Type&gt; type);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  ~<a class="code" href="classGlobalVariable.html">GlobalVariable</a>();</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  std::string get_name()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_name; }</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  std::shared_ptr&lt;Type&gt; get_type()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_type; }</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;};</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// GLOBAL_VARIABLE_H</span></div>
-<div class="ttc" id="aclassGlobalVariable_html"><div class="ttname"><a href="classGlobalVariable.html">GlobalVariable</a></div><div class="ttdef"><b>Definition:</b> global_variable.h:33</div></div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classGlobalVariable.html">   32</a></span>&#160;<span class="keyword">class </span><a class="code" href="classGlobalVariable.html">GlobalVariable</a> {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  std::string m_name;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  std::shared_ptr&lt;Type&gt; m_type;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <a class="code" href="classGlobalVariable.html#ac9e90f92e9d7c06709dce3695d8a88b6">GlobalVariable</a>(<span class="keyword">const</span> std::string &amp;name, std::shared_ptr&lt;Type&gt; type);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  ~<a class="code" href="classGlobalVariable.html">GlobalVariable</a>();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="classGlobalVariable.html#a6f1e7b108f377836c92229ae545cd225">   46</a></span>&#160;  std::string <a class="code" href="classGlobalVariable.html#a6f1e7b108f377836c92229ae545cd225">get_name</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_name; }</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classGlobalVariable.html#aed1ccfd54a829bd40bef20dd8a968106">   50</a></span>&#160;  std::shared_ptr&lt;Type&gt; <a class="code" href="classGlobalVariable.html#aed1ccfd54a829bd40bef20dd8a968106">get_type</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_type; }</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;};</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// GLOBAL_VARIABLE_H</span></div>
+<div class="ttc" id="aclassGlobalVariable_html"><div class="ttname"><a href="classGlobalVariable.html">GlobalVariable</a></div><div class="ttdoc">A GlobalVariable represents a global variable, and specifies its name and data type.</div><div class="ttdef"><b>Definition:</b> global_variable.h:32</div></div>
+<div class="ttc" id="aclassGlobalVariable_html_a6f1e7b108f377836c92229ae545cd225"><div class="ttname"><a href="classGlobalVariable.html#a6f1e7b108f377836c92229ae545cd225">GlobalVariable::get_name</a></div><div class="ttdeci">std::string get_name() const</div><div class="ttdoc">Get the name of the global variable.</div><div class="ttdef"><b>Definition:</b> global_variable.h:46</div></div>
+<div class="ttc" id="aclassGlobalVariable_html_ac9e90f92e9d7c06709dce3695d8a88b6"><div class="ttname"><a href="classGlobalVariable.html#ac9e90f92e9d7c06709dce3695d8a88b6">GlobalVariable::GlobalVariable</a></div><div class="ttdeci">GlobalVariable(const std::string &amp;name, std::shared_ptr&lt; Type &gt; type)</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition:</b> global_variable.cpp:23</div></div>
+<div class="ttc" id="aclassGlobalVariable_html_aed1ccfd54a829bd40bef20dd8a968106"><div class="ttname"><a href="classGlobalVariable.html#aed1ccfd54a829bd40bef20dd8a968106">GlobalVariable::get_type</a></div><div class="ttdeci">std::shared_ptr&lt; Type &gt; get_type() const</div><div class="ttdoc">Get the Type of the global variable.</div><div class="ttdef"><b>Definition:</b> global_variable.h:50</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

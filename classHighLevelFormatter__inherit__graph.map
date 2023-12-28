@@ -1,4 +1,4 @@
 <map id="HighLevelFormatter" name="HighLevelFormatter">
-<area shape="rect" id="node1" title=" " alt="" coords="5,80,156,107"/>
-<area shape="rect" id="node2" href="$classFormatter.html" title=" " alt="" coords="37,5,124,32"/>
+<area shape="rect" id="node1" title="Implementation of Formatter for high&#45;level code." alt="" coords="5,80,156,107"/>
+<area shape="rect" id="node2" href="$classFormatter.html" title="A Formatter turns Operand and Instruction objects into strings, which in turn allows high&#45;level and l..." alt="" coords="37,5,124,32"/>
 </map>

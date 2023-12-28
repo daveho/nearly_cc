@@ -112,8 +112,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a29f7d53b946fb8108f0f09d5d611c9c1"><td class="memItemLeft" align="right" valign="top">BlockList::const_iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classControlFlowGraph.html#a29f7d53b946fb8108f0f09d5d611c9c1">bb_end</a> () const</td></tr>
 <tr class="memdesc:a29f7d53b946fb8108f0f09d5d611c9c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get an end iterator for the list of all basic blocks in the <a class="el" href="classControlFlowGraph.html" title="ControlFlowGraph: graph of basic blocks connected by control edges.">ControlFlowGraph</a>.  <a href="classControlFlowGraph.html#a29f7d53b946fb8108f0f09d5d611c9c1">More...</a><br /></td></tr>
 <tr class="separator:a29f7d53b946fb8108f0f09d5d611c9c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a842af9f8405f820201b4c2d0ff634085"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classInstructionSequence.html">InstructionSequence</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classControlFlowGraph.html#a842af9f8405f820201b4c2d0ff634085">create_basic_block</a> (BasicBlockKind kind, int code_order, const std::string &amp;label=&quot;&quot;)</td></tr>
-<tr class="memdesc:a842af9f8405f820201b4c2d0ff634085"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new <a class="el" href="classInstructionSequence.html">InstructionSequence</a>.  <a href="classControlFlowGraph.html#a842af9f8405f820201b4c2d0ff634085">More...</a><br /></td></tr>
+<tr class="memitem:a842af9f8405f820201b4c2d0ff634085"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classInstructionSequence.html">InstructionSequence</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classControlFlowGraph.html#a842af9f8405f820201b4c2d0ff634085">create_basic_block</a> (<a class="el" href="instruction__seq_8h.html#a03fb029250768e2a3f0fe55b3d4d017b">BasicBlockKind</a> kind, int code_order, const std::string &amp;label=&quot;&quot;)</td></tr>
+<tr class="memdesc:a842af9f8405f820201b4c2d0ff634085"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new <a class="el" href="classInstructionSequence.html" title="InstructionSequence class, which represents a linear sequence of Instruction objects.">InstructionSequence</a>.  <a href="classControlFlowGraph.html#a842af9f8405f820201b4c2d0ff634085">More...</a><br /></td></tr>
 <tr class="separator:a842af9f8405f820201b4c2d0ff634085"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afa1d54a1e859228740d5f6ede7f8a216"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classControlFlowGraph.html#afa1d54a1e859228740d5f6ede7f8a216">adopt_basic_block</a> (std::shared_ptr&lt; <a class="el" href="classInstructionSequence.html">InstructionSequence</a> &gt; &amp;bb)</td></tr>
 <tr class="memdesc:afa1d54a1e859228740d5f6ede7f8a216"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adopt a new basic block.  <a href="classControlFlowGraph.html#afa1d54a1e859228740d5f6ede7f8a216">More...</a><br /></td></tr>
@@ -131,12 +131,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a306e257d0df69693d8af73d6792965d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get vector of all incoming edges to given block.  <a href="classControlFlowGraph.html#a306e257d0df69693d8af73d6792965d4">More...</a><br /></td></tr>
 <tr class="separator:a306e257d0df69693d8af73d6792965d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abf14cdbeb139a872da24e124ce29e429"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classInstructionSequence.html">InstructionSequence</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classControlFlowGraph.html#abf14cdbeb139a872da24e124ce29e429">create_instruction_sequence</a> () const</td></tr>
-<tr class="memdesc:abf14cdbeb139a872da24e124ce29e429"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a "flat" <a class="el" href="classInstructionSequence.html">InstructionSequence</a> created from this <a class="el" href="classControlFlowGraph.html" title="ControlFlowGraph: graph of basic blocks connected by control edges.">ControlFlowGraph</a>.  <a href="classControlFlowGraph.html#abf14cdbeb139a872da24e124ce29e429">More...</a><br /></td></tr>
+<tr class="memdesc:abf14cdbeb139a872da24e124ce29e429"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a "flat" <a class="el" href="classInstructionSequence.html" title="InstructionSequence class, which represents a linear sequence of Instruction objects.">InstructionSequence</a> created from this <a class="el" href="classControlFlowGraph.html" title="ControlFlowGraph: graph of basic blocks connected by control edges.">ControlFlowGraph</a>.  <a href="classControlFlowGraph.html#abf14cdbeb139a872da24e124ce29e429">More...</a><br /></td></tr>
 <tr class="separator:abf14cdbeb139a872da24e124ce29e429"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="classControlFlowGraph.html" title="ControlFlowGraph: graph of basic blocks connected by control edges.">ControlFlowGraph</a>: graph of basic blocks connected by control edges. </p>
-<p>There are dedicated empty entry and exit blocks. An <a class="el" href="classInstructionSequence.html">InstructionSequence</a> can be converted to a <a class="el" href="classControlFlowGraph.html" title="ControlFlowGraph: graph of basic blocks connected by control edges.">ControlFlowGraph</a> by a <a class="el" href="classControlFlowGraphBuilder.html" title="ControlFlowGraphBuilder builds a ControlFlowGraph from an InstructionSequence.">ControlFlowGraphBuilder</a> object. </p>
+<p>There are dedicated empty entry and exit blocks. An <a class="el" href="classInstructionSequence.html" title="InstructionSequence class, which represents a linear sequence of Instruction objects.">InstructionSequence</a> can be converted to a <a class="el" href="classControlFlowGraph.html" title="ControlFlowGraph: graph of basic blocks connected by control edges.">ControlFlowGraph</a> by a <a class="el" href="classControlFlowGraphBuilder.html" title="ControlFlowGraphBuilder builds a ControlFlowGraph from an InstructionSequence.">ControlFlowGraphBuilder</a> object. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="afa1d54a1e859228740d5f6ede7f8a216"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afa1d54a1e859228740d5f6ede7f8a216">&#9670;&nbsp;</a></span>adopt_basic_block()</h2>
@@ -229,7 +229,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">std::shared_ptr&lt; <a class="el" href="classInstructionSequence.html">InstructionSequence</a> &gt; ControlFlowGraph::create_basic_block </td>
           <td>(</td>
-          <td class="paramtype">BasicBlockKind&#160;</td>
+          <td class="paramtype"><a class="el" href="instruction__seq_8h.html#a03fb029250768e2a3f0fe55b3d4d017b">BasicBlockKind</a>&#160;</td>
           <td class="paramname"><em>kind</em>, </td>
         </tr>
         <tr>
@@ -252,12 +252,12 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Create a new <a class="el" href="classInstructionSequence.html">InstructionSequence</a>. </p>
-<p>Use <code>BASICBLOCK_INTERIOR</code> for all blocks except for entry and exit. The label parameter should be a non-empty string if the <a class="el" href="classInstructionSequence.html">InstructionSequence</a> is reached via one or more branch instructions (which should have this label as their <a class="el" href="classOperand.html">Operand</a>.)</p>
+<p>Create a new <a class="el" href="classInstructionSequence.html" title="InstructionSequence class, which represents a linear sequence of Instruction objects.">InstructionSequence</a>. </p>
+<p>Use <code>BASICBLOCK_INTERIOR</code> for all blocks except for entry and exit. The label parameter should be a non-empty string if the <a class="el" href="classInstructionSequence.html" title="InstructionSequence class, which represents a linear sequence of Instruction objects.">InstructionSequence</a> is reached via one or more branch instructions (which should have this label as their <a class="el" href="classOperand.html">Operand</a>.)</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">kind</td><td>the BasicBlockKind for the block to be created </td></tr>
-    <tr><td class="paramname">code_order</td><td>relative order of this basic block in the original <a class="el" href="classInstructionSequence.html">InstructionSequence</a> (so that when the <a class="el" href="classControlFlowGraph.html" title="ControlFlowGraph: graph of basic blocks connected by control edges.">ControlFlowGraph</a> is converted back to an <a class="el" href="classInstructionSequence.html">InstructionSequence</a>, the instructions are in the "correct" order) </td></tr>
+    <tr><td class="paramname">code_order</td><td>relative order of this basic block in the original <a class="el" href="classInstructionSequence.html" title="InstructionSequence class, which represents a linear sequence of Instruction objects.">InstructionSequence</a> (so that when the <a class="el" href="classControlFlowGraph.html" title="ControlFlowGraph: graph of basic blocks connected by control edges.">ControlFlowGraph</a> is converted back to an <a class="el" href="classInstructionSequence.html" title="InstructionSequence class, which represents a linear sequence of Instruction objects.">InstructionSequence</a>, the instructions are in the "correct" order) </td></tr>
     <tr><td class="paramname">label</td><td>label of the first instruction (if this basic block is reached by any branch edges) </td></tr>
   </table>
   </dd>
@@ -327,8 +327,8 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Return a "flat" <a class="el" href="classInstructionSequence.html">InstructionSequence</a> created from this <a class="el" href="classControlFlowGraph.html" title="ControlFlowGraph: graph of basic blocks connected by control edges.">ControlFlowGraph</a>. </p>
-<p>This is useful for optimization passes which create a transformed <a class="el" href="classControlFlowGraph.html" title="ControlFlowGraph: graph of basic blocks connected by control edges.">ControlFlowGraph</a>. </p><dl class="section return"><dt>Returns</dt><dd>an <a class="el" href="classInstructionSequence.html">InstructionSequence</a> containing all instructions in all </dd></dl>
+<p>Return a "flat" <a class="el" href="classInstructionSequence.html" title="InstructionSequence class, which represents a linear sequence of Instruction objects.">InstructionSequence</a> created from this <a class="el" href="classControlFlowGraph.html" title="ControlFlowGraph: graph of basic blocks connected by control edges.">ControlFlowGraph</a>. </p>
+<p>This is useful for optimization passes which create a transformed <a class="el" href="classControlFlowGraph.html" title="ControlFlowGraph: graph of basic blocks connected by control edges.">ControlFlowGraph</a>. </p><dl class="section return"><dt>Returns</dt><dd>an <a class="el" href="classInstructionSequence.html" title="InstructionSequence class, which represents a linear sequence of Instruction objects.">InstructionSequence</a> containing all instructions in all </dd></dl>
 
 </div>
 </div>
