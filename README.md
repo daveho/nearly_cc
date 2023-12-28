@@ -4,14 +4,19 @@ This project is a compiler framework for the [Nearly C](https://github.com/daveh
 C subset front end. It contains the following components (in addition to the code provided
 by `nearly_c`):
 
-* A representation for C data types
-* Symbol tables
-* Linear intermediate representations for both "high-level" code
-  (RISC-like, unlimited virtual registers) and low-level x86-64 code
-* Control-flow graphs
-* Generic dataflow analysis framework, with provided implementations
-  for live values on both high-level and low-level IR
-* Driver program with command line option handling
+* A [representation for C data types](https://daveho.github.io/nearly_cc/classType.html)
+* [Symbol tables](https://daveho.github.io/nearly_cc/classSymbolTable.html)
+* [Linear intermediate representation](https://daveho.github.io/nearly_cc/classInstructionSequence.html)
+  for both "high-level" code (RISC-like, unlimited virtual registers)
+  and low-level x86-64 code
+* [Control-flow graphs](https://daveho.github.io/nearly_cc/classControlFlowGraph.html)
+* [Generic dataflow analysis framework](https://daveho.github.io/nearly_cc/classDataflow.html),
+  with provided implementations for live values on both
+  [high-level](https://daveho.github.io/nearly_cc/classLiveVregsAnalysis.html) and
+  [low-level](https://daveho.github.io/nearly_cc/classLiveMregsAnalysis.html)
+  IR
+* [Driver program](https://daveho.github.io/nearly_cc/main_8cpp.html) with
+  [command line option handling](https://daveho.github.io/nearly_cc/classOptions.html)
 
 It omits implementation of the following components:
 
