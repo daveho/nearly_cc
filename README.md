@@ -20,7 +20,8 @@ by `nearly_c`):
 
 It omits implementation of the following components:
 
-* Semantic analysis (type checking, insertion of implicit conversions)
+* Semantic analysis (type checking, building symbol tables and annotating
+  AST nodes with pointers to symbol table entries, insertion of implicit conversions)
 * Code generation
 * Optimization
 
