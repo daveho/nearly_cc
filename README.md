@@ -1,6 +1,6 @@
-# Nearly CC: compiler skeleton for the "Nearly C" C subset
+# NearlyCC: compiler skeleton for the "NearlyC" C subset
 
-This project is a compiler framework for the [Nearly C](https://github.com/daveho/nearly_c)
+This project is a compiler framework for the [NearlyC](https://github.com/daveho/nearly_c)
 C subset front end. It contains the following components (in addition to the code provided
 by `nearly_c`):
 
@@ -38,7 +38,7 @@ which is useful for testing code generation. (The `assign04` and
 `assign05` subdirectories have the code generation tests.)
 
 This repository is intended to be the official "public" release of
-Nearly CC. It is in a somewhat preliminary form currently, but is
+NearlyCC. It is in a somewhat preliminary form currently, but is
 definitely at a point where it is useful. I will be adding documentation
 and making improvements in the future.
 
