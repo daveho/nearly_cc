@@ -24,9 +24,10 @@
 #include <string>
 #include <map>
 
-// Command line options handling
+//! @file
+//! Command line options handling.
 
-// Enumeration of IR kinds
+//! Enumeration of IR kinds.
 enum class IRKind {
   TOKENS=0,
   AST,              // implies parsing
@@ -35,15 +36,15 @@ enum class IRKind {
   LOWLEVEL_CODE,    // implies low-level codegen
 };
 
-// Code IR output formats
-// (these need to have higher ordinal values than IRKind members)
+//! Code IR output formats.
+//! These need to have higher ordinal values than IRKind members.
 enum class CodeFormat {
   ASSEMBLY=100,     // normal assembly code output
   CFG,              // print code as function CFGs
   DATAFLOW_CFG,     // options will indicate which dataflow analysis
 };
 
-
+//! Command-line options.
 class Options {
 private:
   std::map<std::string, std::string> m_opts;
@@ -63,30 +64,40 @@ public:
   Options();
   ~Options();
 
-  // Throws RuntimeError if provided command line options
-  // aren't valid. Returns the index of the first command line
-  // argument that isn't an option (which in theory should be the
-  // filename.)
+  //! Parse command line arguments.
+  //! @throw RuntimeError if provided command line options aren't valid
+  //! @return the index of the first command line
+  //!         argument that isn't an option (which in theory should be the
+  //!         filename)
   int parse(int argc, char **argv);
 
-  // Return true if the named option was specified
-  // on the command line, false otherwise
+  //! Check whether specific option was given on the command line.
+  //! @return true if the named option was specified
+  //!         on the command line, false otherwise
   bool has_option(const std::string &opt_name) const;
 
-  // Get the argument specified for the given option
-  // (if the option requires an argument). Should only be called
-  // if has_option indicates that the option was specified
-  // on the command line.
+  //! Get the argument specified for the given option
+  //! (if the option requires an argument). Should only be called
+  //! if has_option indicates that the option was specified
+  //! on the command line.
+  //! @param opt_name name of a command-line option
+  //! @return the argument given for the named command-line option
   std::string get_arg(const std::string &opt_name) const;
 
-  // Get the goal indicating what kind of intermediate representation
-  // the compiler is being asked to produce.
+  //! Get the goal indicating what kind of intermediate representation
+  //! the compiler is being asked to produce.
+  //! @return the IRKind value indicating what kind of intermediate representation
+  //!         should be generated
   IRKind get_ir_kind_goal() const { return m_ir_kind_goal; }
 
-  // Get the goal indicating the code format (relevant if the
-  // IR goal is high-level code or low-level code)
+  //! Get the goal indicating the code format (relevant if the
+  //! IR goal is high-level code or low-level code).
+  //! @return the CodeFormat value indicating the format in which
+  //!         the generated code should be printed
   CodeFormat get_code_format_goal() const { return m_code_format_goal; }
 
+  //! Get the usage text.
+  //! @return the usage text
   std::string get_usage() const;
 };
 

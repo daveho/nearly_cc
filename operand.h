@@ -208,8 +208,18 @@ public:
   //! @param offset the offset to set
   void set_offset(long offset);
 
+  //! Return a memory reference Operand, using the register
+  //! this Operand represents as the pointer providing the memory address.
+  //! For example, if this operand represents the virtual register
+  //! `vr10` (operand Kind value `VREG`), calling `to_memref()`
+  //! would return the memory reference operand `(vr10)`
+  //! (operand Kind value `VREG_MEM`.)
+  //!
+  //! @return a memory reference Operand
   Operand to_memref() const;
 
+  //! Get the Operand's label.
+  //! @return the label
   std::string get_label() const;
 };
 

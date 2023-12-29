@@ -25,6 +25,9 @@
 #include <vector>
 #include <string>
 
+//! @file
+//! Representations of C data and function types.
+
 //! Kinds of basic types.
 //! Note that these can be signed or unsigned
 //! (except for void).
