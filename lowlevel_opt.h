@@ -25,8 +25,8 @@
 #include "options.h"
 #include "function.h"
 
-// LowLevelOpt is responsible for doing optimizations
-// on the low-level (x64-64) IR for a Function.
+//! LowLevelOpt is responsible for doing optimizations
+//! on the low-level (x64-64) IR for a Function.
 class LowLevelOpt {
 private:
   // command line options
@@ -40,10 +40,17 @@ private:
   LowLevelOpt &operator=(const LowLevelOpt &);
 
 public:
+  //! Constructor.
+  //! @param options the command-line options (useful for controlling
+  //!                which optimizations are performed)
   LowLevelOpt(const Options &options);
   ~LowLevelOpt();
 
-  // Optimize the high-level IR for given Function.
+  //! Optimize the high-level IR for given Function.
+  //! The unoptimized low-level InstructionSequence should be replaced
+  //! with an optimized (more efficient) low-level InstructionSequence.
+  //! @param function the Function containing the low-level InstructionSequence
+  //!                 to optimize
   void optimize(std::shared_ptr<Function> function);
 };
 

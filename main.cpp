@@ -43,6 +43,9 @@
 #include "exceptions.h"
 #include "options.h"
 
+//! @file
+//! Driver program for `nearly_cc`.
+
 namespace { // anonymous namespace for helper functions
 
 struct CloseFile {

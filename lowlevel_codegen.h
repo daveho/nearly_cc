@@ -28,9 +28,12 @@
 #include "instruction_seq.h"
 #include "function.h"
 
-// A LowLevelCodeGen object transforms an InstructionSequence containing
-// high-level instructions into an InstructionSequence containing
-// low-level (x86-64) instructions.
+//! @file
+//! Translation of high-level IR code to Low-level (x86-64) IR code.
+
+//! A LowLevelCodeGen object transforms an InstructionSequence containing
+//! high-level instructions into an InstructionSequence containing
+//! low-level (x86-64) instructions.
 class LowLevelCodeGen {
 private:
   const Options &m_options;
@@ -41,10 +44,10 @@ public:
   LowLevelCodeGen(const Options &options);
   virtual ~LowLevelCodeGen();
 
-  // Generate low-level InstructionSequence based on the high-level InstructionSequence.
-  // This function should
-  //   - use the high-level InstructionSequence in the Function object
-  //   - store the generated low-level InstructionSequence in the Function object
+  //! Generate low-level InstructionSequence based on the high-level InstructionSequence.
+  //! This function should
+  //!   - use the high-level InstructionSequence in the Function object
+  //!   - store the generated low-level InstructionSequence in the Function object
   void generate(const std::shared_ptr<Function> &function);
 
 private:

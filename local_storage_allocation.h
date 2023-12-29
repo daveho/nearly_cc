@@ -25,13 +25,13 @@
 #include "ast_visitor.h"
 #include "function.h"
 
-// A LocalStorageAllocation object is responsible for allocating local
-// storage for variables in exactly one function. The allocate_storage()
-// member function will be called with a shared pointer to the
-// Function containing the information about the function
-// (including its AST). The Function object is also intended to
-// the place where storage allocation decisions for the function
-// are recorded.
+//! A LocalStorageAllocation object is responsible for allocating local
+//! storage for variables in exactly one function. The `allocate_storage()`
+//! member function will be called with a shared pointer to the
+//! Function containing the information about the function
+//! (including its AST). The Function object is also intended to
+//! the place where storage allocation decisions for the function
+//! are recorded.
 class LocalStorageAllocation : public ASTVisitor {
 public:
   // vr0 is the return value vreg
@@ -53,6 +53,23 @@ public:
   LocalStorageAllocation();
   virtual ~LocalStorageAllocation();
 
+  //! Allocate storage for all variables defined in the specified Function.
+  //!
+  //! Suggested approach:
+  //! - find all variable declarations in the AST
+  //! - for all non-struct/non-array variables whose addresses aren't taken,
+  //!   allocate a virtual register as the storage location for the variable
+  //! - for all struct variables, array variables, and variables whose address
+  //!   is taken, allocate storage in memory in the function's stack frame
+  //!
+  //! The symbol table entry (Symbol) of a variable is probably the best place
+  //! to record the storage allocation decision for that variable.
+  //!
+  //! An instance of StorageCalculator could be useful for allocating storage
+  //! for local variables requiring memory storage.
+  //!
+  //! @param function the Function containing the AST representaion of the function
+  //!                 to allocate local storage for
   void allocate_storage(const std::shared_ptr<Function> &function);
 
   virtual void visit_declarator_list(Node *n);

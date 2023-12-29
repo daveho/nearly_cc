@@ -27,7 +27,7 @@
 #include "function.h"
 
 //! A HighLevelCodegen visitor generates high-level IR code for
-//! a single function definition. Code generation is initiated by
+//! a single function definition AST. Code generation is initiated by
 //! calling the `generate()` member function, which in turn
 //! visits the function definition AST node.
 class HighLevelCodegen : public ASTVisitor {

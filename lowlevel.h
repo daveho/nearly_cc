@@ -25,16 +25,17 @@
 #include "operand.h"
 #include "instruction.h"
 
-// Machine registers, machine instructions, and low-level code formatting
-// support for x86-64
+//! @file
+//! Machine registers, machine instructions, and low-level code formatting
+//! support for x86-64.
 
-// Enumeration for naming machine registers.
-// Note that these names correspond to the full 64-bit name
-// of each register. However, when used as the register number
-// in an Operand, the Operand kind will select whether the
-// 64-bit (Operand::MREG64), 32-bit (Operand::MREG32),
-// 16-bit (Operand::MREG16), or 8-bit (Operand::MREG8)
-// variant of the register is being accessed.
+//! Enumeration for naming machine registers.
+//! Note that these names correspond to the full 64-bit name
+//! of each register. However, when used as the register number
+//! in an Operand, the Operand kind will select whether the
+//! 64-bit (Operand::MREG64), 32-bit (Operand::MREG32),
+//! 16-bit (Operand::MREG16), or 8-bit (Operand::MREG8)
+//! variant of the register is being accessed.
 enum MachineReg {
   MREG_RAX,
   MREG_RBX,
@@ -59,14 +60,14 @@ enum MachineReg {
   MREG_END,
 };
 
-// x86-64 assembly language instruction mnemonics.
-// You may add other instructions here. If you do, you will need
-// to modify the lowlevel_opcode_to_str() function to add
-// support for translating the instruction's enum value to a string.
-// For instructions which allow an operand size suffix, there should
-// be 4 enum values, in the order "b", "w", "l", and "q".
-// (The same way that the high-level instructions with operand size
-// suffixes use this order.)
+//! x86-64 assembly language instruction mnemonics.
+//! You may add other instructions here. If you do, you will need
+//! to modify the lowlevel_opcode_to_str() function to add
+//! support for translating the instruction's enum value to a string.
+//! For instructions which allow an operand size suffix, there should
+//! be 4 enum values, in the order "b", "w", "l", and "q".
+//! (The same way that the high-level instructions with operand size
+//! suffixes use this order.)
 enum LowLevelOpcode {
   MINS_NOP,
   MINS_MOVB,
@@ -139,18 +140,28 @@ enum LowLevelOpcode {
   MINS_DECQ,
 };
 
+//! Convert a LowLevelOpcode to a string containing its assembler mnemonic.
+//! @param opcode a LowLevelOpcode
+//! @return a string containing the opcode's assembler mnemonic
 const char *lowlevel_opcode_to_str(LowLevelOpcode opcode);
 
-// LowLevelInstructionProperties class:
-// this is used by ControlFlowGraphBuilder to make sense of
-// control flow involving low-level instructions
-// control flow involving high-level instructions
+//! LowLevelInstructionProperties class:
+//! this is used by ControlFlowGraphBuilder to make sense of
+//! control flow involving low-level instructions.
 class LowLevelInstructionProperties {
 public:
+  //! Determine whether an Instruction is a function call.
+  //! @param ins an Instruction
+  //! @return true if the instuction is a function call, false otherwise
   bool is_function_call(Instruction *ins) const {
     return ins->get_opcode() == MINS_CALL;
   }
 
+  //! Determine whether it is possible for an Instruction to fall through
+  //! to the next sequential instruction in program order.
+  //! @param ins an Instruction
+  //! @return true if the instuction can fall through to the next sequential
+  //!         instruction in program order, false otherwise
   bool falls_through(Instruction *ins) const {
     // only an unconditional jump instruction does not fall through
     return ins->get_opcode() != MINS_JMP;
