@@ -1,4 +1,4 @@
-// Copyright (c) 2021-2023, David H. Hovemeyer <david.hovemeyer@gmail.com>
+// Copyright (c) 2021-2024, David H. Hovemeyer <david.hovemeyer@gmail.com>
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
 // copy of this software and associated documentation files (the "Software"),
@@ -22,6 +22,7 @@
 #define INSTRUCTION_H
 
 #include <string>
+#include <vector>
 #include "symtab.h"
 #include "operand.h"
 
@@ -31,8 +32,7 @@
 class Instruction {
 private:
   int m_opcode;
-  unsigned m_num_operands;
-  Operand m_operands[3];
+  std::vector<Operand> m_operands;
   std::string m_comment;
   Symbol *m_symbol;
 
@@ -60,7 +60,7 @@ public:
   //! @param op2 the second Operand
   //! @param op3 the third Operand
   //! @param num_operands the number of operands (defaults to 3)
-  Instruction(int opcode, const Operand &op1, const Operand &op2, const Operand &op3, unsigned num_operands = 3);
+  Instruction(int opcode, const Operand &op1, const Operand &op2, const Operand &op3);
 
   ~Instruction();
 

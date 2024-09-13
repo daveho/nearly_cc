@@ -670,8 +670,7 @@ Instruction *InstructionTemplate::generate(const MatchContext &ctx) const {
     operands[i] = m_operand_generators[i]->get_operand(ctx);
 
   return new Instruction(m_opcode_generator->get_opcode(ctx),
-                         operands[0], operands[1], operands[2],
-                         num_operands);
+                         operands[0], operands[1], operands[2]);
 }
 
 ////////////////////////////////////////////////////////////////////////

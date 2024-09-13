@@ -1,4 +1,4 @@
-// Copyright (c) 2021-2023, David H. Hovemeyer <david.hovemeyer@gmail.com>
+// Copyright (c) 2021-2024, David H. Hovemeyer <david.hovemeyer@gmail.com>
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
 // copy of this software and associated documentation files (the "Software"),
@@ -22,22 +22,34 @@
 #include "instruction.h"
 
 Instruction::Instruction(int opcode)
-  : Instruction(opcode, Operand(), Operand(), Operand(), 0) {
+  : Instruction(opcode, Operand(), Operand(), Operand()) {
 }
 
 Instruction::Instruction(int opcode, const Operand &op1)
-  : Instruction(opcode, op1, Operand(), Operand(), 1) {
+  : Instruction(opcode, op1, Operand(), Operand()) {
 }
 
 Instruction::Instruction(int opcode, const Operand &op1, const Operand &op2)
-  : Instruction(opcode, op1, op2, Operand(), 2) {
+  : Instruction(opcode, op1, op2, Operand()) {
 }
 
-Instruction::Instruction(int opcode, const Operand &op1, const Operand &op2, const Operand &op3, unsigned num_operands)
+Instruction::Instruction(int opcode, const Operand &op1, const Operand &op2, const Operand &op3)
   : m_opcode(opcode)
-  , m_num_operands(num_operands)
-  , m_operands { op1, op2, op3 }
   , m_symbol(nullptr) {
+  // Don't allow a "real" Operand to follow an Operand marked
+  // as kind Operand::NONE
+
+  if (op1.get_kind() != Operand::NONE) {
+    m_operands.push_back(op1);
+  }
+  if (op2.get_kind() != Operand::NONE) {
+    assert(op1.get_kind() != Operand::NONE);
+    m_operands.push_back(op2);
+  }
+  if (op3.get_kind() != Operand::NONE) {
+    assert(op2.get_kind() != Operand::NONE);
+    m_operands.push_back(op3);
+  }
 }
 
 Instruction::~Instruction() {
@@ -48,21 +60,21 @@ int Instruction::get_opcode() const {
 }
 
 unsigned Instruction::get_num_operands() const {
-  return m_num_operands;
+  return unsigned(m_operands.size());
 }
 
 const Operand &Instruction::get_operand(unsigned index) const {
-  assert(index < m_num_operands);
+  assert(index < get_num_operands());
   return m_operands[index];
 }
 
 
 void Instruction::set_operand(unsigned index, const Operand &operand) {
-  assert(index < m_num_operands);
+  assert(index < get_num_operands());
   m_operands[index] = operand;
 }
 
 Operand Instruction::get_last_operand() const {
-  assert(m_num_operands > 0);
-  return m_operands[m_num_operands - 1];
+  assert(get_num_operands() > 0);
+  return m_operands[get_num_operands() - 1];
 }
