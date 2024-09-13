@@ -59,7 +59,7 @@ private:
 public:
   //! Constuctor.
   //! @param iseq the InstructionSequence containing the instructions to build
-  //         a ControlFlowGraph from
+  //!        a ControlFlowGraph from
   ControlFlowGraphBuilder(const std::shared_ptr<InstructionSequence> &iseq);
   ~ControlFlowGraphBuilder();
 
