@@ -1,4 +1,4 @@
-// Copyright (c) 2021-2023, David H. Hovemeyer <david.hovemeyer@gmail.com>
+// Copyright (c) 2021-2022, David H. Hovemeyer <david.hovemeyer@gmail.com>
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
 // copy of this software and associated documentation files (the "Software"),
@@ -18,15 +18,30 @@
 // ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 // OTHER DEALINGS IN THE SOFTWARE.
 
-#include <cassert>
-#include "node_base.h"
+#ifndef PRINT_GRAPH_H
+#define PRINT_GRAPH_H
 
-NodeBase::NodeBase()
-  : m_symbol(nullptr)
-{
-}
+#include <map>
+#include <vector>
+#include <string>
+class Node;
 
-NodeBase::~NodeBase() {
-}
+class PrintGraph {
+private:
+  std::map<std::string, int> m_node_levels;
+  std::map<std::string, std::vector<std::string>> m_edges;
+  std::map<int, int> m_node_type_count;
+  Node *m_root;
 
-// TODO: implement member functions
+public:
+  PrintGraph(Node *root);
+  ~PrintGraph();
+
+  void print();
+
+private:
+  // returns maximum level
+  int visit(Node *n, const std::string &parent_name, int level);
+};
+
+#endif // PRINT_GRAPH_H

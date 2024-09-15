@@ -19,28 +19,14 @@
 // OTHER DEALINGS IN THE SOFTWARE.
 
 #include <cassert>
-#include "symbol.h"
+#include "node_base.h"
 
-Symbol::Symbol(const std::string &name, Kind kind, StorageClass storage_class, const Type *type)
-  : m_name(name)
-  , m_kind(kind)
-  , m_storage_class(storage_class)
-  , m_type(type)
-  , m_offset(0U) {
+NodeBase::NodeBase()
+  // TODO: initialize member variables (e.g., pointer to Symbol)
+{
 }
 
-Symbol::~Symbol() {
+NodeBase::~NodeBase() {
 }
 
-void Symbol::promote_fn_decl_to_def() {
-  assert(m_kind == FUNC_DECL);
-  m_kind = FUNC_DEF;
-}
-
-void Symbol::set_codegen_name(const std::string &codegen_name) {
-  m_codegen_name = codegen_name;
-}
-
-std::string Symbol::get_codegen_name() const {
-  return m_codegen_name.empty() ? m_name : m_codegen_name;
-}
+// TODO: implement member functions
