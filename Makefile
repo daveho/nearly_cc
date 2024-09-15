@@ -112,7 +112,7 @@ depend.mak :
 	touch $@
 
 clean :
-	rm -f *.o depend.mak $(GENERATED_SRCS) $(GENERATED_HDRS) \
-		-f parse.output $(EXE)
+	rm -f build/*.o depend.mak $(GENERATED_SRCS) $(GENERATED_HDRS) \
+		build/parse.output $(EXE)
 
 include depend.mak
