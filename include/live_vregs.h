@@ -79,6 +79,10 @@ public:
     }
   }
 
+  //! Model basic blocks by modeling the individual instructions
+  //! in analysis order.
+  ModelInstructionsInBasicBlock<LiveVregsAnalysis> MODEL_BLOCK;
+
   //! Convert a dataflow fact to a string (for printing the CFG annotated with
   //! dataflow facts)
   //! @param fact dataflow fact (set of virtual register numbers)

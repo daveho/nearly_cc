@@ -71,6 +71,10 @@ public:
       fact.set(unsigned(*i));
   }
 
+  //! Model basic blocks by modeling the individual instructions
+  //! in analysis order.
+  ModelInstructionsInBasicBlock<LiveMregsAnalysis> MODEL_BLOCK;
+
   //! Convert a dataflow fact to a string (for printing the CFG annotated with
   //! dataflow facts)
   //! @param fact dataflow fact (set of machine register numbers)

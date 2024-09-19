@@ -168,6 +168,25 @@ public:
   ForwardNavigation LOGICAL_BACKWARD;
 };
 
+//! Class to model a basic block by invoking the Analysis object's
+//! model_instruction member function on each Instruction in the
+//! basic block, in analysis order.
+//! Most dataflow analysis implementations will want to use this
+//! to provide their MODEL_BLOCK implementation.
+template< typename Analysis >
+class ModelInstructionsInBasicBlock {
+public:
+  void operator()(Analysis &analysis, std::shared_ptr<InstructionSequence> bb, typename Analysis::FactType &fact) {
+    // For each Instruction in the basic block (in the appropriate analysis order)...
+    for (auto j = analysis.begin(bb); j != analysis.end(bb); ++j) {
+      Instruction *ins = *j;
+
+      // model the instruction
+      analysis.model_instruction(ins, fact);
+    }
+  }
+};
+
 //! Annotator to return a stringified dataflow fact for a
 //! specific instruction in a basic block. This can be used
 //! with ControlFlowGraphPrinter to annotate the printed
@@ -382,13 +401,8 @@ void Dataflow<Analysis>::execute() {
       // (which will actually be the end of the basic block for backward analyses)
       logical_begin_facts[id] = fact;
 
-      // For each Instruction in the basic block (in the appropriate analysis order)...
-      for (auto j = m_analysis.begin(bb); j != m_analysis.end(bb); ++j) {
-        Instruction *ins = *j;
-
-        // model the instruction
-        m_analysis.model_instruction(ins, fact);
-      }
+      // Model the basic block
+      m_analysis.MODEL_BLOCK(m_analysis, bb, fact);
 
       // Did the fact at the logical "end" of the block change?
       // If so, at least one more round will be needed.
