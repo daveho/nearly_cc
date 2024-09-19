@@ -56,6 +56,15 @@ public:
     return left | right;
   }
 
+  //! Model basic block.
+  //! This is a no-op for this analysis, since the actual
+  //! modeling is done by model_instruction().
+  //! @param bb the basic block
+  //! @param fact dataflow fact representing what is true at the
+  //!             beginning of the block, to be modified as needed
+  void model_block(std::shared_ptr<InstructionSequence> bb, FactType &fact) {
+  }
+
   //! Model an instruction.
   //! @param ins the Instruction to model (backwards)
   //! @param fact initially represents what is true after the instruction
@@ -76,10 +85,6 @@ public:
     for (auto i = uses.begin(); i != uses.end(); ++i)
       fact.set(unsigned(*i));
   }
-
-  //! Model basic blocks by modeling the individual instructions
-  //! in analysis order.
-  ModelInstructionsInBasicBlock<LiveMregsAnalysis> MODEL_BLOCK;
 
   //! Convert a dataflow fact to a string (for printing the CFG annotated with
   //! dataflow facts)
