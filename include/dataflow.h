@@ -116,7 +116,7 @@ public:
   { }
 
   //! Return a reference to the ControlFlowGraph being analyzed.
-  std::shared_ptr<ControlFlowGraph> get_cfg() { return m_cfg; }
+  std::shared_ptr<ControlFlowGraph> get_cfg() const { return m_cfg; }
 };
 
 //! Base class for forward analyses.
