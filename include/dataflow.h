@@ -102,9 +102,30 @@ public:
   }
 };
 
-//! Base class for forward analyses.
-class ForwardAnalysis {
+//! ForwardAnalysis and BackwardAnalysis inherit from this class,
+//! which provides a reference to the ControlFlowGraph being
+//! analyzed. This allows any analysis to access the ControlFlowGraph
+//! by calling get_cfg().
+class HasCFG {
+private:
+  std::shared_ptr<ControlFlowGraph> m_cfg;
+
 public:
+  HasCFG(std::shared_ptr<ControlFlowGraph> cfg)
+    : m_cfg(cfg)
+  { }
+
+  //! Return a reference to the ControlFlowGraph being analyzed.
+  std::shared_ptr<ControlFlowGraph> get_cfg() { return m_cfg; }
+};
+
+//! Base class for forward analyses.
+class ForwardAnalysis : public HasCFG {
+public:
+  ForwardAnalysis(std::shared_ptr<ControlFlowGraph> cfg)
+    : HasCFG(cfg)
+  { }
+
   //! Analysis direction is forward.
   const static DataflowDirection DIRECTION = DataflowDirection::FORWARD;
 
@@ -136,8 +157,12 @@ public:
 };
 
 //! Base class for backward analyses.
-class BackwardAnalysis {
+class BackwardAnalysis : public HasCFG {
 public:
+  BackwardAnalysis(std::shared_ptr<ControlFlowGraph> cfg)
+    : HasCFG(cfg)
+  { }
+
   //! Analysis direction is backward.
   const static DataflowDirection DIRECTION = DataflowDirection::BACKWARD;
 
@@ -206,7 +231,7 @@ public:
   std::string get_instruction_annotation(std::shared_ptr<InstructionSequence> bb, Instruction *ins) const {
     // get dataflow fact just before the instruction
     typename DataflowType::FactType fact = m_dataflow.get_fact_before_instruction(bb, ins);
-    std::string s = DataflowType::fact_to_string(fact);
+    std::string s = m_dataflow.fact_to_string(fact);
     //printf("annotation: %s\n", s.c_str());
     return s;
   }
@@ -219,7 +244,7 @@ public:
   //! @return stringified dataflow fact at the beginning of the basic block
   virtual std::string get_block_begin_annotation(std::shared_ptr<InstructionSequence> bb) const {
     typename DataflowType::FactType fact = m_dataflow.get_fact_at_beginning_of_block(bb);
-    return DataflowType::fact_to_string(fact);
+    return m_dataflow.fact_to_string(fact);
   }
 
   //! Get an end annotation for a basic block.
@@ -230,7 +255,7 @@ public:
   //! @return stringified dataflow fact at the end of the basic block
   virtual std::string get_block_end_annotation(std::shared_ptr<InstructionSequence> bb) const {
     typename DataflowType::FactType fact = m_dataflow.get_fact_at_end_of_block(bb);
-    return DataflowType::fact_to_string(fact);
+    return m_dataflow.fact_to_string(fact);
   }
 };
 
@@ -310,7 +335,7 @@ public:
   //! Convert dataflow fact to a string.
   //! @param fact a dataflow fact
   //! @return a stringified representation of the dataflow fact
-  static std::string fact_to_string(const FactType &fact);
+  std::string fact_to_string(const FactType &fact);
 
 private:
   // Helpers to get the vector containing the facts known at "logical"
@@ -355,7 +380,8 @@ private:
 
 template<typename Analysis>
 Dataflow<Analysis>::Dataflow(const std::shared_ptr<ControlFlowGraph> &cfg)
-  : m_cfg(cfg) {
+  : m_analysis(cfg)
+  , m_cfg(cfg) {
   for (unsigned i = 0; i < cfg->get_num_blocks(); ++i) {
     m_beginfacts.push_back(m_analysis.get_top_fact());
     m_endfacts.push_back(m_analysis.get_top_fact());
@@ -448,8 +474,7 @@ typename Dataflow<Analysis>::FactType Dataflow<Analysis>::get_fact_before_instru
 
 template<typename Analysis>
 std::string Dataflow<Analysis>::fact_to_string(const FactType &fact) {
-  Analysis analysis;
-  return analysis.fact_to_string(fact);
+  return m_analysis.fact_to_string(fact);
 }
 
 // Compute the dataflow fact immediately before or after the specified instruction,

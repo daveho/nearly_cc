@@ -40,6 +40,12 @@ public:
   //! Fact type is a bitset of live virtual register numbers.
   typedef std::bitset<MAX_VREGS> FactType;
 
+  //! Constructor.
+  //! @param cfg the ControlFlowGraph being analyzed
+  LiveVregsAnalysis(std::shared_ptr<ControlFlowGraph> cfg)
+    : BackwardAnalysis(cfg)
+  { }
+
   //! The "top" fact is an unknown value that combines nondestructively
   //! with known facts. For this analysis, it's the empty set.
   FactType get_top_fact() const { return FactType(); }
