@@ -1,4 +1,4 @@
-// Copyright (c) 2021-2023, David H. Hovemeyer <david.hovemeyer@gmail.com>
+// Copyright (c) 2021-2024, David H. Hovemeyer <david.hovemeyer@gmail.com>
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
 // copy of this software and associated documentation files (the "Software"),
@@ -952,7 +952,7 @@ const unsigned NUM_MATCHERS = sizeof(matchers) / sizeof(matchers[0]);
 // PeepholeLowLevel implementation
 ////////////////////////////////////////////////////////////////////////
 
-PeepholeLowLevel::PeepholeLowLevel(const std::shared_ptr<ControlFlowGraph> &cfg)
+PeepholeLowLevel::PeepholeLowLevel(std::shared_ptr<ControlFlowGraph> cfg)
   : ControlFlowGraphTransform(cfg)
   , m_live_mregs(cfg)
   , m_num_matched(0) {

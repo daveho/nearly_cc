@@ -1,4 +1,4 @@
-// Copyright (c) 2021-2023, David H. Hovemeyer <david.hovemeyer@gmail.com>
+// Copyright (c) 2021-2024, David H. Hovemeyer <david.hovemeyer@gmail.com>
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
 // copy of this software and associated documentation files (the "Software"),
@@ -48,7 +48,7 @@ public:
 
   // Add a field of given type.
   // Returns the field's storage offset.
-  unsigned add_field(const std::shared_ptr<Type> &type);
+  unsigned add_field(std::shared_ptr<Type> type);
 
   // Call this after all fields have been added.
   // Adds padding at end (if necessary).

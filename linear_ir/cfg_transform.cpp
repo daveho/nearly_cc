@@ -1,4 +1,4 @@
-// Copyright (c) 2021-2023, David H. Hovemeyer <david.hovemeyer@gmail.com>
+// Copyright (c) 2021-2024, David H. Hovemeyer <david.hovemeyer@gmail.com>
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
 // copy of this software and associated documentation files (the "Software"),
@@ -22,7 +22,7 @@
 #include "cfg.h"
 #include "cfg_transform.h"
 
-ControlFlowGraphTransform::ControlFlowGraphTransform(const std::shared_ptr<ControlFlowGraph> &cfg)
+ControlFlowGraphTransform::ControlFlowGraphTransform(std::shared_ptr<ControlFlowGraph> cfg)
   : m_cfg(cfg) {
 }
 

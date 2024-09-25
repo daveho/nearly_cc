@@ -1,4 +1,4 @@
-// Copyright (c) 2021-2023, David H. Hovemeyer <david.hovemeyer@gmail.com>
+// Copyright (c) 2021-2024, David H. Hovemeyer <david.hovemeyer@gmail.com>
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
 // copy of this software and associated documentation files (the "Software"),
@@ -70,7 +70,7 @@ public:
   //!
   //! @param function the Function containing the AST representaion of the function
   //!                 to allocate local storage for
-  void allocate_storage(const std::shared_ptr<Function> &function);
+  void allocate_storage(std::shared_ptr<Function> function);
 
   virtual void visit_declarator_list(Node *n);
   virtual void visit_function_definition(Node *n);

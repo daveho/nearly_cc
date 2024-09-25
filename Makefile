@@ -2,7 +2,7 @@
 # In theory you should not need to make any changes.
 
 CXX = g++
-CXXFLAGS = -g -Wall -std=c++17 -Iinclude -Ibuild
+CXXFLAGS = -g -Wall -std=c++20 -Iinclude -Ibuild
 #ifdef SOLUTION
 CXXFLAGS += -DSOLUTION
 #endif

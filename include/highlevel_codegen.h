@@ -1,4 +1,4 @@
-// Copyright (c) 2021-2023, David H. Hovemeyer <david.hovemeyer@gmail.com>
+// Copyright (c) 2021-2024, David H. Hovemeyer <david.hovemeyer@gmail.com>
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
 // copy of this software and associated documentation files (the "Software"),
@@ -51,7 +51,7 @@ public:
   //! The resulting InstructionSequence should be stored in the Function object.
   //!
   //! @param function shared pointer to the Function object
-  void generate(const std::shared_ptr<Function> &function);
+  void generate(std::shared_ptr<Function> function);
 
   //! Get a shared pointer to the high-level InstructionSequence containing
   //! the generated code.

@@ -1,4 +1,4 @@
-// Copyright (c) 2021-2023, David H. Hovemeyer <david.hovemeyer@gmail.com>
+// Copyright (c) 2021-2024, David H. Hovemeyer <david.hovemeyer@gmail.com>
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
 // copy of this software and associated documentation files (the "Software"),
@@ -71,7 +71,7 @@ public:
   //! @param cfg shared pointer to the ControlFlowGraph to print
   //! @param formatter the Formatter to use
   //! @param annotator the annotator to use to annotate basic blocks
-  ControlFlowGraphPrinter(const std::shared_ptr<ControlFlowGraph> &cfg,
+  ControlFlowGraphPrinter(std::shared_ptr<ControlFlowGraph> cfg,
                           Formatter formatter = Formatter(),
                           BlockAnnotator annotator = BlockAnnotator());
   ~ControlFlowGraphPrinter();
@@ -97,7 +97,7 @@ public:
 //! @return the initialized ControlFlowGraphPrinter instance
 template<typename BlockAnnotator = DefaultBlockAnnotator>
 ControlFlowGraphPrinter<HighLevelFormatter, BlockAnnotator>
-make_highlevel_cfg_printer(const std::shared_ptr<ControlFlowGraph> &hl_cfg, BlockAnnotator annotator = BlockAnnotator()) {
+make_highlevel_cfg_printer(std::shared_ptr<ControlFlowGraph> &hl_cfg, BlockAnnotator annotator = BlockAnnotator()) {
   return ControlFlowGraphPrinter<HighLevelFormatter, BlockAnnotator>(hl_cfg, HighLevelFormatter(), annotator);
 }
 
@@ -115,7 +115,7 @@ make_highlevel_cfg_printer(const std::shared_ptr<ControlFlowGraph> &hl_cfg, Bloc
 //! @return the initialized ControlFlowGraphPrinter instance
 template<typename BlockAnnotator = DefaultBlockAnnotator>
 ControlFlowGraphPrinter<LowLevelFormatter, BlockAnnotator>
-make_lowlevel_cfg_printer(const std::shared_ptr<ControlFlowGraph> &ll_cfg, BlockAnnotator annotator = BlockAnnotator()) {
+make_lowlevel_cfg_printer(std::shared_ptr<ControlFlowGraph> &ll_cfg, BlockAnnotator annotator = BlockAnnotator()) {
   return ControlFlowGraphPrinter<LowLevelFormatter, BlockAnnotator>(ll_cfg, LowLevelFormatter(), annotator);
 }
 
@@ -124,7 +124,7 @@ make_lowlevel_cfg_printer(const std::shared_ptr<ControlFlowGraph> &ll_cfg, Block
 ////////////////////////////////////////////////////////////////////////
 
 template<typename Formatter, typename BlockAnnotator>
-ControlFlowGraphPrinter<Formatter, BlockAnnotator>::ControlFlowGraphPrinter(const std::shared_ptr<ControlFlowGraph> &cfg,
+ControlFlowGraphPrinter<Formatter, BlockAnnotator>::ControlFlowGraphPrinter(std::shared_ptr<ControlFlowGraph> cfg,
                                                                        Formatter formatter,
                                                                        BlockAnnotator annotator)
   : m_formatter(formatter)

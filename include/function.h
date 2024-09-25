@@ -1,4 +1,4 @@
-// Copyright (c) 2021-2023, David H. Hovemeyer <david.hovemeyer@gmail.com>
+// Copyright (c) 2021-2024, David H. Hovemeyer <david.hovemeyer@gmail.com>
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
 // copy of this software and associated documentation files (the "Software"),
@@ -70,7 +70,7 @@ public:
 
   //! Set the high-level InstructionSequence.
   //! @param shared pointer to the high-level InstructionSequence
-  void set_hl_iseq(const std::shared_ptr<InstructionSequence> &hl_iseq);
+  void set_hl_iseq(std::shared_ptr<InstructionSequence> hl_iseq);
 
   //! Get the low-level InstructionSequence.
   //! @return shared pointer to the low-level InstructionSequence
@@ -78,7 +78,7 @@ public:
 
   //! Set the low-level InstructionSequence.
   //! @param shared pointer to the low-level InstructionSequence
-  void set_ll_iseq(const std::shared_ptr<InstructionSequence> &ll_iseq);
+  void set_ll_iseq(std::shared_ptr<InstructionSequence> ll_iseq);
 
 };
 

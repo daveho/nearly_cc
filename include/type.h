@@ -1,4 +1,4 @@
-// Copyright (c) 2021-2023, David H. Hovemeyer <david.hovemeyer@gmail.com>
+// Copyright (c) 2021-2024, David H. Hovemeyer <david.hovemeyer@gmail.com>
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
 // copy of this software and associated documentation files (the "Software"),
@@ -222,7 +222,7 @@ private:
   HasBaseType &operator=(const HasBaseType &);
 
 public:
-  HasBaseType(const std::shared_ptr<Type> &base_type);
+  HasBaseType(std::shared_ptr<Type> base_type);
   virtual ~HasBaseType();
 
   virtual std::shared_ptr<Type> get_base_type() const;
@@ -237,7 +237,7 @@ private:
   // offset value (for struct fields), etc.
 
 public:
-  Member(const std::string &name, const std::shared_ptr<Type> &type);
+  Member(const std::string &name, std::shared_ptr<Type> type);
   ~Member();
 
   //! @return the member name
@@ -279,7 +279,7 @@ private:
   QualifiedType &operator=(const QualifiedType &);
 
 public:
-  QualifiedType(const std::shared_ptr<Type> &delegate, TypeQualifier type_qualifier);
+  QualifiedType(std::shared_ptr<Type> delegate, TypeQualifier type_qualifier);
   virtual ~QualifiedType();
 
   virtual bool is_same(const Type *other) const;
@@ -366,7 +366,7 @@ private:
   FunctionType &operator=(const FunctionType &);
 
 public:
-  FunctionType(const std::shared_ptr<Type> &base_type);
+  FunctionType(std::shared_ptr<Type> base_type);
   virtual ~FunctionType();
 
   virtual bool is_same(const Type *other) const;
@@ -385,7 +385,7 @@ private:
   PointerType &operator=(const PointerType &);
 
 public:
-  PointerType(const std::shared_ptr<Type> &base_type);
+  PointerType(std::shared_ptr<Type> base_type);
   virtual ~PointerType();
 
   virtual bool is_same(const Type *other) const;
@@ -406,7 +406,7 @@ private:
   ArrayType &operator=(const ArrayType &);
 
 public:
-  ArrayType(const std::shared_ptr<Type> &base_type, unsigned size);
+  ArrayType(std::shared_ptr<Type> base_type, unsigned size);
   virtual ~ArrayType();
 
   virtual bool is_same(const Type *other) const;

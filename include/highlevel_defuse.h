@@ -1,4 +1,4 @@
-// Copyright (c) 2021-2023, David H. Hovemeyer <david.hovemeyer@gmail.com>
+// Copyright (c) 2021-2024, David H. Hovemeyer <david.hovemeyer@gmail.com>
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
 // copy of this software and associated documentation files (the "Software"),
@@ -25,7 +25,32 @@ class Instruction;
 
 namespace HighLevel {
 
+//! Check whether given high-level Instruction is a def,
+//! i.e., an assignment to a virtual register.
+//!
+//! @param ins a high-level Instruction
+//! @return true if the high-level Instruction is a def, false if not
 bool is_def(Instruction *ins);
+
+//! Get the register number of the virtual register assigned-to
+//! by a def Instruction. This is *usually* the base register
+//! of the first Operand. However, a `HINS_call` instruction should
+//! be considered a def of `vr0`, the return value register,
+//! even though it doesn't have an explicit Operand naming
+//! that vreg.
+//!
+//! @param ins a high-level Instruction known to be a def
+//! @return the register number of the assigned-to virtual register
+int get_def_vreg(Instruction *ins);
+
+//! Check whether a particular Operand of a high-level Instruction
+//! is a use of a virtual register. The caller can call
+//! `get_base_reg()` on the Operand object to find the register
+//! number of the used virtual register.
+//!
+//! @param ins a high-level Instruction
+//! @param operand_index index of operand to check
+//! @return true if the specified operand is a use, false if not
 bool is_use(Instruction *ins, unsigned operand_index);
 
 };

@@ -1,4 +1,4 @@
-// Copyright (c) 2021-2023, David H. Hovemeyer <david.hovemeyer@gmail.com>
+// Copyright (c) 2021-2024, David H. Hovemeyer <david.hovemeyer@gmail.com>
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
 // copy of this software and associated documentation files (the "Software"),
@@ -31,7 +31,7 @@ LocalStorageAllocation::LocalStorageAllocation()
 LocalStorageAllocation::~LocalStorageAllocation() {
 }
 
-void LocalStorageAllocation::allocate_storage(const std::shared_ptr<Function> &function) {
+void LocalStorageAllocation::allocate_storage(std::shared_ptr<Function> function) {
   // Any member function can use m_function to refer to the
   // Function object.
   m_function = function;

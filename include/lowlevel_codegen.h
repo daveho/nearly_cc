@@ -1,4 +1,4 @@
-// Copyright (c) 2021-2023, David H. Hovemeyer <david.hovemeyer@gmail.com>
+// Copyright (c) 2021-2024, David H. Hovemeyer <david.hovemeyer@gmail.com>
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
 // copy of this software and associated documentation files (the "Software"),
@@ -48,12 +48,12 @@ public:
   //! This function should
   //!   - use the high-level InstructionSequence in the Function object
   //!   - store the generated low-level InstructionSequence in the Function object
-  void generate(const std::shared_ptr<Function> &function);
+  void generate(std::shared_ptr<Function> function);
 
 private:
-  std::shared_ptr<InstructionSequence> translate_hl_to_ll(const std::shared_ptr<InstructionSequence> &hl_iseq);
-  void translate_instruction(Instruction *hl_ins, const std::shared_ptr<InstructionSequence> &ll_iseq);
-  Operand get_ll_operand(Operand hl_opcode, int size, const std::shared_ptr<InstructionSequence> &ll_iseq);
+  std::shared_ptr<InstructionSequence> translate_hl_to_ll(std::shared_ptr<InstructionSequence> hl_iseq);
+  void translate_instruction(Instruction *hl_ins, std::shared_ptr<InstructionSequence> ll_iseq);
+  Operand get_ll_operand(Operand hl_opcode, int size, std::shared_ptr<InstructionSequence> ll_iseq);
 };
 
 #endif // LOWLEVEL_CODEGEN_H

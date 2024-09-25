@@ -1,4 +1,4 @@
-// Copyright (c) 2021-2023, David H. Hovemeyer <david.hovemeyer@gmail.com>
+// Copyright (c) 2021-2024, David H. Hovemeyer <david.hovemeyer@gmail.com>
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
 // copy of this software and associated documentation files (the "Software"),
@@ -115,7 +115,7 @@ unsigned Type::get_array_size() const {
 // HasBaseType implementation
 ////////////////////////////////////////////////////////////////////////
 
-HasBaseType::HasBaseType(const std::shared_ptr<Type> &base_type)
+HasBaseType::HasBaseType(std::shared_ptr<Type> base_type)
   : m_base_type(base_type) {
 }
 
@@ -130,7 +130,7 @@ std::shared_ptr<Type> HasBaseType::get_base_type() const {
 // Member implementation
 ////////////////////////////////////////////////////////////////////////
 
-Member::Member(const std::string &name, const std::shared_ptr<Type> &type)
+Member::Member(const std::string &name, std::shared_ptr<Type> type)
   : m_name(name)
   , m_type(type) {
 }
@@ -204,7 +204,7 @@ const Member &HasMembers::get_member(unsigned index) const {
 // QualifiedType implementation
 ////////////////////////////////////////////////////////////////////////
 
-QualifiedType::QualifiedType(const std::shared_ptr<Type> &delegate, TypeQualifier type_qualifier)
+QualifiedType::QualifiedType(std::shared_ptr<Type> delegate, TypeQualifier type_qualifier)
   : HasBaseType(delegate)
   , m_type_qualifier(type_qualifier) {
 }
@@ -476,7 +476,7 @@ void StructType::calculate_storage() const {
 // FunctionType implementation
 ////////////////////////////////////////////////////////////////////////
 
-FunctionType::FunctionType(const std::shared_ptr<Type> &base_type)
+FunctionType::FunctionType(std::shared_ptr<Type> base_type)
   : HasBaseType(base_type) {
 }
 
@@ -531,7 +531,7 @@ unsigned FunctionType::get_alignment() const {
 // PointerType implementation
 ////////////////////////////////////////////////////////////////////////
 
-PointerType::PointerType(const std::shared_ptr<Type> &base_type)
+PointerType::PointerType(std::shared_ptr<Type> base_type)
   : HasBaseType(base_type) {
 }
 
@@ -570,7 +570,7 @@ unsigned PointerType::get_alignment() const {
 // ArrayType implementation
 ////////////////////////////////////////////////////////////////////////
 
-ArrayType::ArrayType(const std::shared_ptr<Type> &base_type, unsigned size)
+ArrayType::ArrayType(std::shared_ptr<Type> base_type, unsigned size)
   : HasBaseType(base_type)
   , m_size(size) {
 }

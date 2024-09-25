@@ -26,7 +26,7 @@
 // Symbol implementation
 ////////////////////////////////////////////////////////////////////////
 
-Symbol::Symbol(SymbolKind kind, const std::string &name, const std::shared_ptr<Type> &type, SymbolTable *symtab, bool is_defined)
+Symbol::Symbol(SymbolKind kind, const std::string &name, std::shared_ptr<Type> type, SymbolTable *symtab, bool is_defined)
   : m_kind(kind)
   , m_name(name)
   , m_type(type)
@@ -97,13 +97,13 @@ Symbol *SymbolTable::lookup_local(const std::string &name) const {
   return (i != m_lookup.end()) ? m_symbols[i->second] : nullptr;
 }
 
-Symbol *SymbolTable::declare(SymbolKind sym_kind, const std::string &name, const std::shared_ptr<Type> &type) {
+Symbol *SymbolTable::declare(SymbolKind sym_kind, const std::string &name, std::shared_ptr<Type> type) {
   Symbol *sym = new Symbol(sym_kind, name, type, this, false);
   add_symbol(sym);
   return sym;
 }
 
-Symbol *SymbolTable::define(SymbolKind sym_kind, const std::string &name, const std::shared_ptr<Type> &type) {
+Symbol *SymbolTable::define(SymbolKind sym_kind, const std::string &name, std::shared_ptr<Type> type) {
   Symbol *sym = new Symbol(sym_kind, name, type, this, true);
   add_symbol(sym);
   return sym;
@@ -122,7 +122,7 @@ Symbol *SymbolTable::lookup_recursive(const std::string &name) const {
   return nullptr;
 }
 
-void SymbolTable::set_fn_type(const std::shared_ptr<Type> &fn_type) {
+void SymbolTable::set_fn_type(std::shared_ptr<Type> fn_type) {
   assert(!m_fn_type);
   assert(fn_type->is_function());
   m_fn_type = fn_type;

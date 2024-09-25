@@ -46,7 +46,7 @@ public:
   //! which for a forward analysis is the entry block.
   //! @param cfg the ControlFlowGraph
   //! @return a shared pointer to the start block
-  std::shared_ptr<InstructionSequence> get_start_block(const std::shared_ptr<ControlFlowGraph> &cfg) const {
+  std::shared_ptr<InstructionSequence> get_start_block(std::shared_ptr<ControlFlowGraph> cfg) const {
     return cfg->get_entry_block();
   }
 
@@ -56,7 +56,7 @@ public:
   //! @param cfg the ControlFlowGraph
   //! @param bb the basic block
   //! @return the edges leading to successors
-  const ControlFlowGraph::EdgeList &get_edges(const std::shared_ptr<ControlFlowGraph> &cfg, std::shared_ptr<InstructionSequence> bb) const {
+  const ControlFlowGraph::EdgeList &get_edges(std::shared_ptr<ControlFlowGraph> cfg, std::shared_ptr<InstructionSequence> bb) const {
     return cfg->get_outgoing_edges(bb);
   }
 
@@ -78,7 +78,7 @@ public:
   //! which for a backward analysis is the exit block.
   //! @param cfg the ControlFlowGraph
   //! @return a shared pointer to the exit block
-  std::shared_ptr<InstructionSequence> get_start_block(const std::shared_ptr<ControlFlowGraph> &cfg) const {
+  std::shared_ptr<InstructionSequence> get_start_block(std::shared_ptr<ControlFlowGraph> cfg) const {
     return cfg->get_exit_block();
   }
 
@@ -88,7 +88,7 @@ public:
   //! @param cfg the ControlFlowGraph
   //! @param bb the basic block
   //! @return the edges coming from predecessors
-  const ControlFlowGraph::EdgeList &get_edges(const std::shared_ptr<ControlFlowGraph> &cfg, std::shared_ptr<InstructionSequence> bb) const {
+  const ControlFlowGraph::EdgeList &get_edges(std::shared_ptr<ControlFlowGraph> cfg, std::shared_ptr<InstructionSequence> bb) const {
     return cfg->get_incoming_edges(bb);
   }
 
@@ -283,7 +283,7 @@ private:
 public:
   //! Constructor.
   //! @param the ControlFlowGraph to analyze
-  Dataflow(const std::shared_ptr<ControlFlowGraph> &cfg);
+  Dataflow(std::shared_ptr<ControlFlowGraph> cfg);
   ~Dataflow();
 
   //! Execute the analysis.
@@ -360,7 +360,7 @@ private:
 };
 
 template<typename Analysis>
-Dataflow<Analysis>::Dataflow(const std::shared_ptr<ControlFlowGraph> &cfg)
+Dataflow<Analysis>::Dataflow(std::shared_ptr<ControlFlowGraph> cfg)
   : m_analysis(cfg)
   , m_cfg(cfg) {
   for (unsigned i = 0; i < cfg->get_num_blocks(); ++i) {

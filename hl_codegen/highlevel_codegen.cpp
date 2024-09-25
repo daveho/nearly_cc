@@ -1,4 +1,4 @@
-// Copyright (c) 2021-2023, David H. Hovemeyer <david.hovemeyer@gmail.com>
+// Copyright (c) 2021-2024, David H. Hovemeyer <david.hovemeyer@gmail.com>
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
 // copy of this software and associated documentation files (the "Software"),
@@ -31,7 +31,7 @@
 
 
 // Adjust an opcode for a basic type
-HighLevelOpcode get_opcode(HighLevelOpcode base_opcode, const std::shared_ptr<Type> &type) {
+HighLevelOpcode get_opcode(HighLevelOpcode base_opcode, std::shared_ptr<Type> type) {
   if (type->is_basic())
     return static_cast<HighLevelOpcode>(int(base_opcode) + int(type->get_basic_type_kind()));
   else if (type->is_pointer())
@@ -49,7 +49,7 @@ HighLevelCodegen::HighLevelCodegen(const Options &options, int next_label_num)
 HighLevelCodegen::~HighLevelCodegen() {
 }
 
-void HighLevelCodegen::generate(const std::shared_ptr<Function> &function) {
+void HighLevelCodegen::generate(std::shared_ptr<Function> function) {
   assert(function->get_funcdef_ast() != nullptr);
   assert(!function->get_hl_iseq());
 

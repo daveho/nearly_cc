@@ -1,4 +1,4 @@
-// Copyright (c) 2021-2023, David H. Hovemeyer <david.hovemeyer@gmail.com>
+// Copyright (c) 2021-2024, David H. Hovemeyer <david.hovemeyer@gmail.com>
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
 // copy of this software and associated documentation files (the "Software"),
@@ -48,7 +48,7 @@ private:
   Symbol &operator=(const Symbol &);
 
 public:
-  Symbol(SymbolKind kind, const std::string &name, const std::shared_ptr<Type> &type, SymbolTable *symtab, bool is_defined);
+  Symbol(SymbolKind kind, const std::string &name, std::shared_ptr<Type> type, SymbolTable *symtab, bool is_defined);
   ~Symbol();
 
   // a function, variable, or type can be declared
@@ -89,8 +89,8 @@ public:
   // in the current scope before calling declare or define.
   bool has_symbol_local(const std::string &name) const;
   Symbol *lookup_local(const std::string &name) const;
-  Symbol *declare(SymbolKind sym_kind, const std::string &name, const std::shared_ptr<Type> &type);
-  Symbol *define(SymbolKind sym_kind, const std::string &name, const std::shared_ptr<Type> &type);
+  Symbol *declare(SymbolKind sym_kind, const std::string &name, std::shared_ptr<Type> type);
+  Symbol *define(SymbolKind sym_kind, const std::string &name, std::shared_ptr<Type> type);
 
   // Iterate through the symbol table entries in the order in which they were added
   // to the symbol table. This is important for struct types, where the representation
@@ -106,7 +106,7 @@ public:
 
   // This can be called on the symbol table representing the function parameter
   // scope of a function to record the exact type of the function
-  void set_fn_type(const std::shared_ptr<Type> &fn_type);
+  void set_fn_type(std::shared_ptr<Type> fn_type);
 
   // This returns the function type of the enclosing function, or nullptr
   // if there is no enclosing function. This is helpful for type checking

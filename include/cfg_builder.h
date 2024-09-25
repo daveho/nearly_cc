@@ -1,4 +1,4 @@
-// Copyright (c) 2021-2023, David H. Hovemeyer <david.hovemeyer@gmail.com>
+// Copyright (c) 2021-2024, David H. Hovemeyer <david.hovemeyer@gmail.com>
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
 // copy of this software and associated documentation files (the "Software"),
@@ -60,7 +60,7 @@ public:
   //! Constuctor.
   //! @param iseq the InstructionSequence containing the instructions to build
   //!        a ControlFlowGraph from
-  ControlFlowGraphBuilder(const std::shared_ptr<InstructionSequence> &iseq);
+  ControlFlowGraphBuilder(std::shared_ptr<InstructionSequence> iseq);
   ~ControlFlowGraphBuilder();
 
   //! Build a ControlFlowGraph from the original InstructionSequence.
@@ -101,7 +101,7 @@ private:
 //! @param the InstructionSequence containing the high-level instructions
 //! @return a shared pointer to the resulting ControlFlowGraph
 inline ControlFlowGraphBuilder<HighLevelInstructionProperties>
-make_highlevel_cfg_builder(const std::shared_ptr<InstructionSequence> &iseq) {
+make_highlevel_cfg_builder(std::shared_ptr<InstructionSequence> iseq) {
   return ControlFlowGraphBuilder<HighLevelInstructionProperties>(iseq);
 }
 
@@ -116,7 +116,7 @@ make_highlevel_cfg_builder(const std::shared_ptr<InstructionSequence> &iseq) {
 //! @param the InstructionSequence containing the low-level instructions
 //! @return a shared pointer to the resulting ControlFlowGraph
 inline ControlFlowGraphBuilder<LowLevelInstructionProperties>
-make_lowlevel_cfg_builder(const std::shared_ptr<InstructionSequence> &iseq) {
+make_lowlevel_cfg_builder(std::shared_ptr<InstructionSequence> iseq) {
   return ControlFlowGraphBuilder<LowLevelInstructionProperties>(iseq);
 }
 
@@ -125,7 +125,7 @@ make_lowlevel_cfg_builder(const std::shared_ptr<InstructionSequence> &iseq) {
 ////////////////////////////////////////////////////////////////////////
 
 template<typename InstructionProperties>
-ControlFlowGraphBuilder<InstructionProperties>::ControlFlowGraphBuilder(const std::shared_ptr<InstructionSequence> &iseq)
+ControlFlowGraphBuilder<InstructionProperties>::ControlFlowGraphBuilder(std::shared_ptr<InstructionSequence> iseq)
   : m_ins_props(InstructionProperties())
   , m_iseq(iseq)
   , m_cfg(new ControlFlowGraph()) {

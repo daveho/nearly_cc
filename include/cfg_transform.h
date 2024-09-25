@@ -1,4 +1,4 @@
-// Copyright (c) 2021-2023, David H. Hovemeyer <david.hovemeyer@gmail.com>
+// Copyright (c) 2021-2024, David H. Hovemeyer <david.hovemeyer@gmail.com>
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
 // copy of this software and associated documentation files (the "Software"),
@@ -36,7 +36,7 @@ private:
 public:
   //! Constructor.
   //! @param cfg the ControlFlowGraph to transform
-  ControlFlowGraphTransform(const std::shared_ptr<ControlFlowGraph> &cfg);
+  ControlFlowGraphTransform(std::shared_ptr<ControlFlowGraph> cfg);
   virtual ~ControlFlowGraphTransform();
 
   //! Get a shared pointer to the original ControlFlowGraph.

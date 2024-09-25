@@ -1,4 +1,4 @@
-// Copyright (c) 2021-2023, David H. Hovemeyer <david.hovemeyer@gmail.com>
+// Copyright (c) 2021-2024, David H. Hovemeyer <david.hovemeyer@gmail.com>
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
 // copy of this software and associated documentation files (the "Software"),
@@ -25,6 +25,7 @@
 //! Utility functions for C++ code
 
 #include <string>
+#include <bitset>
 
 namespace cpputil {
 
@@ -44,6 +45,25 @@ std::string format(const char *fmt, ...)
 //! @param args the arguments (corresponding to conversions in the format string)
 //! @return the formatted string
 std::string vformat(const char *fmt, va_list args);
+
+//! Stringify a `std::bitset` by converting it to a comma-separated
+//! list of integers (set members) surrounded by curly braces.
+//! @tparam LEN bitset length (inferred from the argument)
+//! @param b the bitset to stringify
+template< std::size_t LEN >
+std::string stringify_bitset( const std::bitset<LEN> &b ) {
+  std::string s;
+  s += "{";
+  for (unsigned i = 0; i < LEN; ++i) {
+    if (b.test(i)) {
+      if (s.size() > 1)
+        s += ",";
+      s += std::to_string(i);
+    }
+  }
+  s += "}";
+  return s;
+}
 
 }
 

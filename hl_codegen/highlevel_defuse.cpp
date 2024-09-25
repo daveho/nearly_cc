@@ -1,4 +1,4 @@
-// Copyright (c) 2021-2023, David H. Hovemeyer <david.hovemeyer@gmail.com>
+// Copyright (c) 2021-2024, David H. Hovemeyer <david.hovemeyer@gmail.com>
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
 // copy of this software and associated documentation files (the "Software"),
@@ -32,7 +32,6 @@ const std::set<HighLevelOpcode> NO_DEST = {
   HINS_nop,
   HINS_ret,
   HINS_jmp,
-  HINS_call,
   HINS_enter,
   HINS_leave,
   HINS_cjmp_t,
@@ -51,6 +50,10 @@ namespace HighLevel {
 // A high-level instruction is a def if it has a destination operand,
 // and the destination operand is a vreg.
 bool is_def(Instruction *ins) {
+  // HINS_call is a special case: it implicitly is a def of vr0
+  if (ins->get_opcode() == HINS_call)
+    return true;
+
   if (!has_dest_operand(HighLevelOpcode(ins->get_opcode())))
     return false;
 
@@ -58,6 +61,17 @@ bool is_def(Instruction *ins) {
   Operand dest = ins->get_operand(0);
 
   return dest.get_kind() == Operand::VREG;
+}
+
+int get_def_vreg(Instruction *ins) {
+  assert(is_def(ins));
+
+  // a HINS_call instruction is a def of vr0:
+  // otherwise, the assigned-to vreg is the base register
+  // of the first Operand
+  return (ins->get_opcode() == HINS_call)
+         ? 0
+         : ins->get_operand(0).get_base_reg();
 }
 
 bool is_use(Instruction *ins, unsigned operand_index) {

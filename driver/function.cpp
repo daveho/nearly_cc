@@ -1,4 +1,4 @@
-// Copyright (c) 2021-2023, David H. Hovemeyer <david.hovemeyer@gmail.com>
+// Copyright (c) 2021-2024, David H. Hovemeyer <david.hovemeyer@gmail.com>
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
 // copy of this software and associated documentation files (the "Software"),
@@ -46,7 +46,7 @@ std::shared_ptr<InstructionSequence> Function::get_hl_iseq() const {
   return m_hl_iseq;
 }
 
-void Function::set_hl_iseq(const std::shared_ptr<InstructionSequence> &hl_iseq) {
+void Function::set_hl_iseq(std::shared_ptr<InstructionSequence> hl_iseq) {
   m_hl_iseq = hl_iseq;
 }
 
@@ -54,6 +54,6 @@ std::shared_ptr<InstructionSequence> Function::get_ll_iseq() const {
   return m_ll_iseq;
 }
 
-void Function::set_ll_iseq(const std::shared_ptr<InstructionSequence> &ll_iseq) {
+void Function::set_ll_iseq(std::shared_ptr<InstructionSequence> ll_iseq) {
   m_ll_iseq = ll_iseq;
 }

@@ -1,4 +1,4 @@
-// Copyright (c) 2021-2023, David H. Hovemeyer <david.hovemeyer@gmail.com>
+// Copyright (c) 2021-2024, David H. Hovemeyer <david.hovemeyer@gmail.com>
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
 // copy of this software and associated documentation files (the "Software"),
@@ -22,6 +22,7 @@
 #define LIVE_VREGS_H
 
 #include <string>
+#include "cpputil.h"
 #include "instruction.h"
 #include "highlevel_defuse.h"
 #include "dataflow.h"
@@ -75,9 +76,8 @@ public:
     // the vreg becomes alive (or is kept alive.)
 
     if (HighLevel::is_def(ins)) {
-      Operand operand = ins->get_operand(0);
-      assert(operand.has_base_reg());
-      fact.reset(operand.get_base_reg());
+      int dest_vreg = HighLevel::get_def_vreg(ins);
+      fact.reset(dest_vreg);
     }
 
     for (unsigned i = 0; i < ins->get_num_operands(); i++) {
@@ -99,15 +99,7 @@ public:
   //! @param fact dataflow fact (set of virtual register numbers)
   //! @return string representation of the dataflow fact
   std::string fact_to_string(const FactType &fact) const {
-    std::string s("{");
-    for (unsigned i = 0; i < MAX_VREGS; i++) {
-      if (fact.test(i)) {
-        if (s != "{") { s += ","; }
-        s += std::to_string(i);
-      }
-    }
-    s += "}";
-    return s;
+    return cpputil::stringify_bitset(fact);
   }
 };
 

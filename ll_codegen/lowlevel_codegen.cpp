@@ -1,4 +1,4 @@
-// Copyright (c) 2021-2023, David H. Hovemeyer <david.hovemeyer@gmail.com>
+// Copyright (c) 2021-2024, David H. Hovemeyer <david.hovemeyer@gmail.com>
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
 // copy of this software and associated documentation files (the "Software"),
@@ -103,7 +103,7 @@ LowLevelCodeGen::LowLevelCodeGen(const Options &options)
 LowLevelCodeGen::~LowLevelCodeGen() {
 }
 
-void LowLevelCodeGen::generate(const std::shared_ptr<Function> &function) {
+void LowLevelCodeGen::generate(std::shared_ptr<Function> function) {
   // Make the Function object available to member functions
   m_function = function;
 
@@ -112,7 +112,7 @@ void LowLevelCodeGen::generate(const std::shared_ptr<Function> &function) {
   m_function->set_ll_iseq(ll_iseq);
 }
 
-std::shared_ptr<InstructionSequence> LowLevelCodeGen::translate_hl_to_ll(const std::shared_ptr<InstructionSequence> &hl_iseq) {
+std::shared_ptr<InstructionSequence> LowLevelCodeGen::translate_hl_to_ll(std::shared_ptr<InstructionSequence> hl_iseq) {
   std::shared_ptr<InstructionSequence> ll_iseq(new InstructionSequence());
 
   // The high-level InstructionSequence will have a pointer to the Node
@@ -209,7 +209,7 @@ Operand::Kind select_mreg_kind(int operand_size) {
   }
 }
 
-void LowLevelCodeGen::translate_instruction(Instruction *hl_ins, const std::shared_ptr<InstructionSequence> &ll_iseq) {
+void LowLevelCodeGen::translate_instruction(Instruction *hl_ins, std::shared_ptr<InstructionSequence> ll_iseq) {
   HighLevelOpcode hl_opcode = HighLevelOpcode(hl_ins->get_opcode());
 
   if (hl_opcode == HINS_enter) {
