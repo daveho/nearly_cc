@@ -146,6 +146,21 @@ void print_tokens(const std::string &filename) {
 }
 
 void print_symbol_tables(SemanticAnalysis &sema) {
+  // This *should* print consistent output independent of how
+  // semantic analysis is implemented, as long as
+  //
+  //   - array parameter types are converted to the corresponding pointer types
+  //   - a symbol table entry is created immediately when the semantic
+  //     analyzer enters a scope
+  //   - symbols are added in the order in which they are encountered
+  //
+  // Note that it is fine for the semantic analyzer to either
+  //
+  //   (1) "preemptively" create a function entry before its parameter
+  //        types are fully known, and "fix" it later, or
+  //   (2) wait to create a function entry until its parameter types
+  //        are known
+
   // for each symbol table...
   for (auto i = sema.symtab_cbegin(); i != sema.symtab_cend(); ++i) {
     SymbolTable *symtab = *i;
