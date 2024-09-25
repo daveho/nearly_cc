@@ -42,6 +42,11 @@ const Member *Type::find_member(const std::string &name) const {
   return nullptr;
 }
 
+std::string Type::as_str() const {
+  std::set<const Type *> seen;
+  return as_str(seen);
+}
+
 const Type *Type::get_unqualified_type() const {
   // only QualifiedType will need to override this member function
   return this;
@@ -103,12 +108,24 @@ unsigned Type::get_field_offset(const std::string &name) const {
   RuntimeError::raise("not a StructType");
 }
 
+bool Type::has_base_type() const {
+  return false;
+}
+
 std::shared_ptr<Type> Type::get_base_type() const {
   RuntimeError::raise("type does not have a base type");
 }
 
 unsigned Type::get_array_size() const {
   RuntimeError::raise("not an ArrayType");
+}
+
+bool Type::is_recursive(std::set<const Type *> &seen) const {
+  if (has_base_type()) {
+    seen.insert(this);
+    return get_base_type()->is_recursive(seen);
+  }
+  return false;
 }
 
 ////////////////////////////////////////////////////////////////////////
@@ -120,6 +137,10 @@ HasBaseType::HasBaseType(std::shared_ptr<Type> base_type)
 }
 
 HasBaseType::~HasBaseType() {
+}
+
+bool HasBaseType::has_base_type() const {
+  return true;
 }
 
 std::shared_ptr<Type> HasBaseType::get_base_type() const {
@@ -156,35 +177,40 @@ HasMembers::HasMembers() {
 HasMembers::~HasMembers() {
 }
 
-std::string HasMembers::as_str() const {
+std::string HasMembers::as_str(std::set<const Type *> &seen) const {
+  // subclass should already have marked this object as seen
+  assert(seen.count(this) == 1);
+
   std::string s;
 
   for (unsigned i = 0; i < get_num_members(); ++i) {
     if (i > 0)
       s += ", ";
     const Member &member = get_member(i);
-
-    // Special case: recursive struct types such as linked list nodes, trees, etc.
-    // will lead to an infinite recursion if we try to recursively
-    // stringify the complete struct type. This is not a complete workaround,
-    // but it handles simple cases like "struct Node *next;".
-
-    bool member_is_recursive = false;
-    if (member.get_type()->is_pointer()) {
-      std::shared_ptr<Type> base_type = member.get_type()->get_base_type();
-      if (base_type.get() == this) {
-        member_is_recursive = true;
-        const StructType *struct_type = dynamic_cast<const StructType *>(this);
-        assert(struct_type != nullptr);
-        s += "pointer to struct " + struct_type->get_name();
-      }
-    }
-
-    if (!member_is_recursive)
-      s += member.get_type()->as_str();
+    s += member.get_type()->as_str(seen);
   }
 
   return s;
+}
+
+bool HasMembers::is_recursive(std::set<const Type *> &seen) const {
+  // This should work for StructType and FunctionType
+  if (seen.count(this) > 0)
+    return true;
+
+  // Mark this Type as seen
+  seen.insert(this);
+
+  // See if we detect self-reference in any of the members
+  for (unsigned i = 0; i < get_num_members(); ++i) {
+    const Member &member = get_member(i);
+    if (member.get_type()->is_recursive(seen))
+      return true;
+  }
+
+  // Delegate to default implementation (which will detect
+  // self-reference in the base type if there is one)
+  return Type::is_recursive(seen);
 }
 
 void HasMembers::add_member(const Member &member) {
@@ -223,11 +249,12 @@ bool QualifiedType::is_same(const Type *other) const {
   return get_unqualified_type()->is_same(other->get_unqualified_type());
 }
 
-std::string QualifiedType::as_str() const {
+std::string QualifiedType::as_str(std::set<const Type *> &seen) const {
+  seen.insert(this);
   std::string s;
   assert(is_const() || is_volatile());
   s += is_const() ? "const " : "volatile ";
-  s += get_base_type()->as_str();
+  s += get_base_type()->as_str(seen);
   return s;
 }
 
@@ -318,7 +345,9 @@ bool BasicType::is_same(const Type *other) const {
       && m_is_signed == other->is_signed();
 }
 
-std::string BasicType::as_str() const {
+std::string BasicType::as_str(std::set<const Type *> &seen) const {
+  seen.insert(this);
+
   std::string s;
 
   if (!is_signed())
@@ -422,14 +451,36 @@ bool StructType::is_same(const Type *other) const {
   return true;
 }
 
-std::string StructType::as_str() const {
+std::string StructType::as_str(std::set<const Type *> &seen) const {
+  bool first_time = (seen.count(this) == 0);
+  seen.insert(this);
+
+  bool recursive = false;
+  if (!first_time) {
+    // If we're seeing a struct type a second time,
+    // it might just be a non-recursive struct type that
+    // happens to occur multiple times (in parameters,
+    // fields, etc.). So, at this point, check to see
+    // if the struct type is *actually* recursive.
+    // If it isn't we can print its members in full safely.
+    std::set<const Type *> rseen;
+    recursive = this->is_recursive(rseen);
+  }
+
   std::string s;
 
   s += "struct ";
   s += m_name;
-  s += " {";
-  s += HasMembers::as_str();
-  s += "}";
+
+  // Elaborate the struct type with its members only if this is
+  // the first time we're seeing it. This avoids infinite recursion
+  // for recursive struct types.
+
+  if (first_time || !recursive) {
+    s += " {";
+    s += HasMembers::as_str(seen);
+    s += "}";
+  }
 
   return s;
 }
@@ -504,13 +555,20 @@ bool FunctionType::is_same(const Type *other) const {
   return true;
 }
 
-std::string FunctionType::as_str() const {
+std::string FunctionType::as_str(std::set<const Type *> &seen) const {
+  bool first_time = (seen.count(this) == 0);
+
+  // It should not be possible for a function type to be recursive
+  assert(first_time);
+
+  seen.insert(this);
+
   std::string s;
 
   s += "function (";
-  s += HasMembers::as_str();
+  s += HasMembers::as_str(seen);
   s += ") returning ";
-  s += get_base_type()->as_str();
+  s += get_base_type()->as_str(seen);
 
   return s;
 }
@@ -545,11 +603,13 @@ bool PointerType::is_same(const Type *other) const {
   return get_base_type()->is_same(other->get_base_type().get());
 }
 
-std::string PointerType::as_str() const {
+std::string PointerType::as_str(std::set<const Type *> &seen) const {
+  seen.insert(this);
+
   std::string s;
 
   s += "pointer to ";
-  s += get_base_type()->as_str();
+  s += get_base_type()->as_str(seen);
 
   return s;
 }
@@ -592,13 +652,15 @@ bool ArrayType::is_same(const Type *other) const {
       && get_base_type()->is_same(other->get_base_type().get());
 }
 
-std::string ArrayType::as_str() const {
+std::string ArrayType::as_str(std::set<const Type *> &seen) const {
+  seen.insert(this);
+
   std::string s;
 
   s += "array of ";
   s += std::to_string(m_size);
   s += " x ";
-  s += get_base_type()->as_str();
+  s += get_base_type()->as_str(seen);
 
   return s;
 }

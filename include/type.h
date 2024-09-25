@@ -23,6 +23,7 @@
 
 #include <memory>
 #include <vector>
+#include <set>
 #include <string>
 
 //! @file
@@ -95,7 +96,7 @@ public:
 
   //! Convert to a readable string representation of this type.
   //! @return a string containing a description of the type
-  virtual std::string as_str() const = 0;
+  std::string as_str() const;
 
   //! Get unqualified type (strip off type qualifiers, if any).
   //! @return The unqualified type
@@ -177,6 +178,12 @@ public:
   //! @return the offset of the field in bytes
   virtual unsigned get_field_offset(const std::string &name) const;
 
+  //! Determine whether this Type has a base type.
+  //! If this function returns true, it is safe to call get_base_type().
+  //!
+  //! @return true if this Type has a base type, false otherwise
+  virtual bool has_base_type() const;
+
   //! Get the base type.
   //! For a FunctionType, the base type is the return type.
   //! For a PointerType, the base type is the pointed-to type.
@@ -209,6 +216,22 @@ public:
   //! Throws an exception if called on a FunctionType.
   //! @return the storage alignment multiple in bytes for an instance of this type
   virtual unsigned get_alignment() const = 0;
+
+  //! Implementation function to support `as_str()`.
+  //! Deals with the possibility that the representation of the type
+  //! could be recursive and thus contain a cycle.
+  //! Only the `as_str()` function should ever call this.
+  //!
+  //! @param seen set of Type objects already seen (to detect cycles)
+  //! @return string representation of the type
+  virtual std::string as_str(std::set<const Type *> &seen) const = 0;
+
+  //! Implementation function to check whether this type is recursive
+  //! (i.e., self referential.)
+  //!
+  //! @param seen set of Type objects already seen (to detect cycles)
+  //! @return true if this Type is recursive, false otherwise
+  virtual bool is_recursive(std::set<const Type *> &seen) const;
 };
 
 //! Common base class for QualifiedType, FunctionType, PointerType, and
@@ -225,6 +248,7 @@ public:
   HasBaseType(std::shared_ptr<Type> base_type);
   virtual ~HasBaseType();
 
+  virtual bool has_base_type() const;
   virtual std::shared_ptr<Type> get_base_type() const;
 };
 
@@ -261,7 +285,8 @@ public:
   HasMembers();
   virtual ~HasMembers();
 
-  virtual std::string as_str() const;
+  virtual std::string as_str(std::set<const Type *> &seen) const;
+  virtual bool is_recursive(std::set<const Type *> &seen) const;
   virtual void add_member(const Member &member);
   virtual unsigned get_num_members() const;
   virtual const Member &get_member(unsigned index) const;
@@ -283,7 +308,7 @@ public:
   virtual ~QualifiedType();
 
   virtual bool is_same(const Type *other) const;
-  virtual std::string as_str() const;
+  virtual std::string as_str(std::set<const Type *> &seen) const;
   virtual const Type *get_unqualified_type() const;
   virtual bool is_basic() const;
   virtual bool is_void() const;
@@ -318,7 +343,7 @@ public:
   virtual ~BasicType();
 
   virtual bool is_same(const Type *other) const;
-  virtual std::string as_str() const;
+  virtual std::string as_str(std::set<const Type *> &seen) const;
   virtual bool is_basic() const;
   virtual bool is_void() const;
   virtual BasicTypeKind get_basic_type_kind() const;
@@ -345,7 +370,7 @@ public:
   std::string get_name() const { return m_name; }
 
   virtual bool is_same(const Type *other) const;
-  virtual std::string as_str() const;
+  virtual std::string as_str(std::set<const Type *> &seen) const;
   virtual bool is_struct() const;
   virtual unsigned get_storage_size() const;
   virtual unsigned get_alignment() const;
@@ -370,7 +395,7 @@ public:
   virtual ~FunctionType();
 
   virtual bool is_same(const Type *other) const;
-  virtual std::string as_str() const;
+  virtual std::string as_str(std::set<const Type *> &seen) const;
   virtual bool is_function() const;
   virtual unsigned get_storage_size() const;
   virtual unsigned get_alignment() const;
@@ -389,7 +414,7 @@ public:
   virtual ~PointerType();
 
   virtual bool is_same(const Type *other) const;
-  virtual std::string as_str() const;
+  virtual std::string as_str(std::set<const Type *> &seen) const;
   virtual bool is_pointer() const;
   virtual unsigned get_storage_size() const;
   virtual unsigned get_alignment() const;
@@ -410,7 +435,7 @@ public:
   virtual ~ArrayType();
 
   virtual bool is_same(const Type *other) const;
-  virtual std::string as_str() const;
+  virtual std::string as_str(std::set<const Type *> &seen) const;
   virtual bool is_array() const;
   virtual unsigned get_array_size() const;
   virtual unsigned get_storage_size() const;
