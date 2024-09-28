@@ -31,7 +31,7 @@
 
 SemanticAnalysis::SemanticAnalysis(const Options &options)
   : m_options(options)
-  , m_global_symtab(new SymbolTable(nullptr)) {
+  , m_global_symtab(new SymbolTable(nullptr, "global")) {
   m_cur_symtab = m_global_symtab;
   m_all_symtabs.push_back(m_global_symtab);
 }
@@ -61,6 +61,18 @@ void SemanticAnalysis::visit_basic_type(Node *n) {
   // TODO: implement
 }
 
+void SemanticAnalysis::visit_named_declarator(Node *n) {
+  // TODO: implement
+}
+
+void SemanticAnalysis::visit_pointer_declarator(Node *n) {
+  // TODO: implement
+}
+
+void SemanticAnalysis::visit_array_declarator(Node *n) {
+  // TODO: implement
+}
+
 void SemanticAnalysis::visit_function_definition(Node *n) {
   // TODO: implement
 }
@@ -69,8 +81,12 @@ void SemanticAnalysis::visit_function_declaration(Node *n) {
   // TODO: implement
 }
 
+void SemanticAnalysis::visit_function_parameter_list(Node *n) {
+  // TODO: implement
+}
+
 void SemanticAnalysis::visit_function_parameter(Node *n) {
-  // TODO: solution
+  // TODO: implement
 }
 
 void SemanticAnalysis::visit_statement_list(Node *n) {
@@ -127,6 +143,18 @@ void SemanticAnalysis::visit_variable_ref(Node *n) {
 
 void SemanticAnalysis::visit_literal_value(Node *n) {
   // TODO: implement
+}
+
+SymbolTable *SemanticAnalysis::enter_scope(const std::string &name) {
+  SymbolTable *symtab = new SymbolTable(m_cur_symtab, name);
+  m_all_symtabs.push_back(symtab);
+  m_cur_symtab = symtab;
+  return symtab;
+}
+
+void SemanticAnalysis::leave_scope() {
+  assert(m_cur_symtab->get_parent() != nullptr);
+  m_cur_symtab = m_cur_symtab->get_parent();
 }
 
 // TODO: implement helper functions

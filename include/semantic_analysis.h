@@ -36,11 +36,7 @@ public:
 private:
   const Options &m_options;
   SymbolTable *m_global_symtab, *m_cur_symtab;
-  // Keep track of SymbolTables; as the visitor creates scopes,
-  // it should append each SymbolTable object pointer to this
-  // vector
   SymbolTableList m_all_symtabs;
-
 
 public:
   SemanticAnalysis(const Options &options);
@@ -56,8 +52,12 @@ public:
   virtual void visit_union_type(Node *n);
   virtual void visit_variable_declaration(Node *n);
   virtual void visit_basic_type(Node *n);
+  virtual void visit_named_declarator(Node *n);
+  virtual void visit_pointer_declarator(Node *n);
+  virtual void visit_array_declarator(Node *n);
   virtual void visit_function_definition(Node *n);
   virtual void visit_function_declaration(Node *n);
+  virtual void visit_function_parameter_list(Node *n);
   virtual void visit_function_parameter(Node *n);
   virtual void visit_statement_list(Node *n);
   virtual void visit_return_expression_statement(Node *n);
@@ -75,6 +75,14 @@ public:
   virtual void visit_literal_value(Node *n);
 
 private:
+  //! Enter a nested scope.
+  //! @param name the name of the nested scope
+  //! @return pointer to the new SymbolTable representing the scope being entered
+  SymbolTable *enter_scope(const std::string &name);
+
+  //! Return to the parent of the current scope.
+  void leave_scope();
+
   // TODO: add helper functions
 };
 

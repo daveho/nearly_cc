@@ -72,11 +72,9 @@ public:
   //!                 to allocate local storage for
   void allocate_storage(std::shared_ptr<Function> function);
 
-  virtual void visit_declarator_list(Node *n);
   virtual void visit_function_definition(Node *n);
-  virtual void visit_function_parameter(Node *n);
   virtual void visit_statement_list(Node *n);
-  virtual void visit_struct_type_definition(Node *n);
+  // TODO: override any other AST visitor member functions you need to
 
 private:
   // TODO: add private member functions

@@ -20,25 +20,21 @@
 
 #include <cassert>
 #include <cstdio>
+#include "exceptions.h"
 #include "symtab.h"
 
 ////////////////////////////////////////////////////////////////////////
 // Symbol implementation
 ////////////////////////////////////////////////////////////////////////
 
-Symbol::Symbol(SymbolKind kind, const std::string &name, std::shared_ptr<Type> type, SymbolTable *symtab, bool is_defined)
+Symbol::Symbol(SymbolKind kind, const std::string &name, std::shared_ptr<Type> type, SymbolTable *symtab)
   : m_kind(kind)
   , m_name(name)
   , m_type(type)
-  , m_symtab(symtab)
-  , m_is_defined(is_defined) {
+  , m_symtab(symtab) {
 }
 
 Symbol::~Symbol() {
-}
-
-void Symbol::set_is_defined(bool is_defined) {
-  m_is_defined = is_defined;
 }
 
 SymbolKind Symbol::get_kind() const {
@@ -57,17 +53,13 @@ SymbolTable *Symbol::get_symtab() const {
   return m_symtab;
 }
 
-bool Symbol::is_defined() const {
-  return m_is_defined;
-}
-
 ////////////////////////////////////////////////////////////////////////
 // SymbolTable implementation
 ////////////////////////////////////////////////////////////////////////
 
-SymbolTable::SymbolTable(SymbolTable *parent)
+SymbolTable::SymbolTable(SymbolTable *parent, const std::string &name)
   : m_parent(parent)
-  , m_has_params(false) {
+  , m_name(name) {
 }
 
 SymbolTable::~SymbolTable() {
@@ -80,12 +72,8 @@ SymbolTable *SymbolTable::get_parent() const {
   return m_parent;
 }
 
-bool SymbolTable::has_params() const {
-  return m_has_params;
-}
-
-void SymbolTable::set_has_params(bool has_params) {
-  m_has_params = has_params;
+const std::string &SymbolTable::get_name() const {
+  return m_name;
 }
 
 bool SymbolTable::has_symbol_local(const std::string &name) const {
@@ -97,16 +85,32 @@ Symbol *SymbolTable::lookup_local(const std::string &name) const {
   return (i != m_lookup.end()) ? m_symbols[i->second] : nullptr;
 }
 
-Symbol *SymbolTable::declare(SymbolKind sym_kind, const std::string &name, std::shared_ptr<Type> type) {
-  Symbol *sym = new Symbol(sym_kind, name, type, this, false);
-  add_symbol(sym);
+Symbol *SymbolTable::add_entry(const Location &loc, SymbolKind kind, const std::string &name, std::shared_ptr<Type> type) {
+  assert(name != "");
+  assert(type);
+
+  if (m_lookup.find(name) != m_lookup.end())
+    SemanticError::raise(loc, "Redefinition of '%s'", name.c_str());
+  unsigned index = m_symbols.size();
+  Symbol *sym = new Symbol(kind, name, type, this);
+  m_symbols.push_back(sym);
+  m_lookup[name] = index;
+
   return sym;
 }
 
-Symbol *SymbolTable::define(SymbolKind sym_kind, const std::string &name, std::shared_ptr<Type> type) {
-  Symbol *sym = new Symbol(sym_kind, name, type, this, true);
-  add_symbol(sym);
-  return sym;
+unsigned SymbolTable::get_num_entries() const {
+  return m_symbols.size();
+}
+
+Symbol *SymbolTable::get_entry(unsigned index) const {
+  assert(index < get_num_entries());
+  return m_symbols[index];
+}
+
+unsigned SymbolTable::get_num_parameters() const {
+  assert(m_fn_type);
+  return m_fn_type->get_num_members();
 }
 
 Symbol *SymbolTable::lookup_recursive(const std::string &name) const {
@@ -152,10 +156,4 @@ int SymbolTable::get_depth() const {
   return depth;
 }
 
-void SymbolTable::add_symbol(Symbol *sym) {
-  assert(!has_symbol_local(sym->get_name()));
-
-  unsigned pos = unsigned(m_symbols.size());
-  m_symbols.push_back(sym);
-  m_lookup[sym->get_name()] = pos;
-}
+// TODO: add helper functions

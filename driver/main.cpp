@@ -166,6 +166,9 @@ void print_symbol_tables(SemanticAnalysis &sema) {
     SymbolTable *symtab = *i;
     int depth = symtab->get_depth();
 
+    // print name of symbol table
+    printf("*** Symbol table %s ***\n", symtab->get_name().c_str());
+
     // for each symbol table entry...
     for (auto j = symtab->cbegin(); j != symtab->cend(); ++j) {
       // print a textual representation of the symbol table entry
