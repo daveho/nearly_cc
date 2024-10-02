@@ -93,7 +93,6 @@ public:
   //! @return pointer to the Symbol representing the symbol table entry
   Symbol *add_entry(const Location &loc, SymbolKind kind, const std::string &name, std::shared_ptr<Type> type);
 
-
   // Get number of symbol table entries.
   unsigned get_num_entries() const;
 
@@ -101,6 +100,10 @@ public:
   // This is useful for accessing symbol table entries representing
   // function parameters.
   Symbol *get_entry(unsigned index) const;
+
+  // For a symbol table representing a function declaration or definition,
+  // return the number of parameters
+  unsigned get_num_parameters() const;
 
   // Iterate through the symbol table entries in the order in which they were added
   // to the symbol table. This is important for struct types, where the representation
