@@ -287,11 +287,11 @@ bool QualifiedType::is_function() const {
 }
 
 bool QualifiedType::is_volatile() const {
-  return m_type_qualifier == TypeQualifier::VOLATILE;
+  return m_type_qualifier == TypeQualifier::VOLATILE || get_base_type()->is_volatile();
 }
 
 bool QualifiedType::is_const() const {
-  return m_type_qualifier == TypeQualifier::CONST;
+  return m_type_qualifier == TypeQualifier::CONST || get_base_type()->is_const();
 }
 
 BasicTypeKind QualifiedType::get_basic_type_kind() const {
