@@ -7,6 +7,9 @@ CXXFLAGS = -g -Wall -std=c++20 -Iinclude -Ibuild
 CXXFLAGS += -DSOLUTION
 #endif
 
+CC = gcc
+CFLAGS = -g -Wall -std=gnu11 -Iinclude -Ibuild
+
 # Generated source files and header files.
 # Note that these won't necessarily get built correctly
 # unless you run "make depend" once before running "make".
@@ -75,9 +78,22 @@ build/%.o : sema/%.cpp
 build/%.o : build/%.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o build/$*.o
 
+build/%.o : tests/%.cpp
+	$(CXX) $(CXXFLAGS) -c $< -o build/$*.o
+
+build/%.o : tests/%.c
+	$(CC) $(CFLAGS) -c $< -o build/$*.o
+
+# Pattern rule for test executables
+build/test_% : build/test_%.o build/tctest.o $(OBJS)
+	$(CXX) -o $@ build/test_$*.o build/tctest.o $(filter-out build/main.o,$(OBJS))
+
 # Default target: build nearly_cc
 $(EXE) : $(GENERATED_SRCS) $(GENERATED_HDRS) $(OBJS)
 	$(CXX) -o $@ $(OBJS)
+
+# Unit test programs
+tests : build/test_type
 
 # Targets for generated source and header files
 
