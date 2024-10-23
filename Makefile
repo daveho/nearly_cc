@@ -115,7 +115,7 @@ build/highlevel.h build/highlevel.cpp : scripts/gen_highlevel_ir.rb
 # Build a solution zipfile to submit to Gradescope
 
 solution.zip :
-	zip -9r solution.zip include ast driver hl_codegen linear_ir ll_codegen sema scripts \
+	zip -9r solution.zip include ast driver hl_codegen linear_ir ll_codegen sema scripts tests \
 		*.y *.l Makefile README.txt
 
 # Generate header file dependencies.
