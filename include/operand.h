@@ -1,4 +1,4 @@
-// Copyright (c) 2021-2023, David H. Hovemeyer <david.hovemeyer@gmail.com>
+// Copyright (c) 2021-2024, David H. Hovemeyer <david.hovemeyer@gmail.com>
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
 // copy of this software and associated documentation files (the "Software"),
@@ -120,6 +120,12 @@ public:
   //! Get the operand Kind.
   //! @return the operand Kind
   Kind get_kind() const;
+
+  //! Determine whether this operand refers to a virtual register (vreg).
+  //! @return true if the operand refers to a vreg, false otherwise
+  bool has_vreg() const {
+    return m_kind == Operand::VREG || m_kind == Operand::VREG_MEM || m_kind == Operand::VREG_MEM_OFF;
+  }
 
   //! Is the operand an immediate integer value?
   //! @return true if the operand is an immediate integer value, false otherwise

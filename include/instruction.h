@@ -89,6 +89,10 @@ public:
   //! @param operand the value to copy to the specified Operand of the Instruction
   void set_operand(unsigned index, const Operand &operand);
 
+  //! Append an Operand to the Instruction.
+  //! @param operand the Operand to append
+  void append_operand(const Operand &operand);
+
   //! Return a copy of the last (rightmost) Operand.
   //! @return a copy of the last (rightmost) Operand
   Operand get_last_operand() const;

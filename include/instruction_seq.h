@@ -1,4 +1,4 @@
-// Copyright (c) 2021-2023, David H. Hovemeyer <david.hovemeyer@gmail.com>
+// Copyright (c) 2021-2024, David H. Hovemeyer <david.hovemeyer@gmail.com>
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
 // copy of this software and associated documentation files (the "Software"),
@@ -21,7 +21,7 @@
 #ifndef INSTRUCTION_SEQ_H
 #define INSTRUCTION_SEQ_H
 
-#include <vector>
+#include <deque>
 #include <string>
 #include <map>
 #include "instruction_seq_iter.h"
@@ -54,7 +54,7 @@ private:
     Instruction *ins;
   };
 
-  std::vector<Slot> m_instructions;
+  std::deque<Slot> m_instructions;
   std::map<std::string, unsigned> m_label_map; // label to instruction index map
   std::string m_next_label;
 
@@ -73,10 +73,10 @@ public:
   // dereferenced. These are random access.
 
   //! Iterator over instructions in forward order.
-  typedef ISeqIterator<std::vector<Slot>::const_iterator> const_iterator;
+  typedef ISeqIterator<std::deque<Slot>::const_iterator> const_iterator;
 
   //! Iterator over instructions in reverse order.
-  typedef ISeqIterator<std::vector<Slot>::const_reverse_iterator> const_reverse_iterator;
+  typedef ISeqIterator<std::deque<Slot>::const_reverse_iterator> const_reverse_iterator;
 
   //! Default constructor.
   InstructionSequence();
@@ -130,6 +130,23 @@ public:
   //! @param ins pointer to the Instruction to append (and adopt)
   void append(Instruction *ins);
 
+  //! Prepend an Instruction.
+  //!
+  //! The InstructionSequence will assume responsibility for deleting the
+  //! Instruction object. This member function must not be used if
+  //! a label was defined using set_label(). If the current first
+  //! Instruction is labeled, that label will be updated to label
+  //! the prepended Instruction. (This is intended to handle the case
+  //! of a basic block with a control label: prepending the new
+  //! Instruction before this label would create unreachable code.)
+  //!
+  //! This member function could be useful for building an SSA
+  //! representation (where Phi nodes must be added to the beginning
+  //! of basic blocks.)
+  //!
+  //! @param ins pointer to the Instruction to prepend (and adopt)
+  void prepend(Instruction *ins);
+
   //! Get number of instructions.
   //! @return the number of instrtuctions
   unsigned get_length() const;
@@ -151,15 +168,20 @@ public:
   void define_label(const std::string &label);
 
   //! Determine if Instruction at given index has a label.
+  //! As a special case, if index is equal to the length of the InstructionSequence,
+  //! return true IFF has_label_at_end() returns true.
   //! @param index index of instruction to get (0 for first, etc.)
   //! @return true if the instruction at this index has a label, false if not
-  bool has_label(unsigned index) const { return !m_instructions.at(index).label.empty(); }
+  bool has_label(unsigned index) const;
 
   //! Get label of the Instruction at the specified index.
+  //! As a special case, if index is equal to the length of the InstructionSequence,
+  //! returns the "end label" set by the most recent call to
+  //! define_label().
   //! @param index index of instruction to get (0 for first, etc.)
-  //! @return label of the instructino at this index (empty string if
+  //! @return label of the instruction at this index (empty string if
   //!         there is no label)
-  std::string get_label_at_index(unsigned index) const { return m_instructions.at(index).label; }
+  std::string get_label_at_index(unsigned index) const;
 
   //! Determine if Instruction referred to by specified iterator has a label.
   //! @param iter a forward iterator

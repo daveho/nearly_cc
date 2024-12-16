@@ -1,4 +1,4 @@
-// Copyright (c) 2021-2023, David H. Hovemeyer <david.hovemeyer@gmail.com>
+// Copyright (c) 2021-2024, David H. Hovemeyer <david.hovemeyer@gmail.com>
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
 // copy of this software and associated documentation files (the "Software"),
@@ -147,6 +147,10 @@ bool Operand::operator==(const Operand &rhs) const {
   switch (lhs.get_kind()) {
   case Operand::VREG:
   case Operand::VREG_MEM:
+  #ifdef SOLUTION
+    return lhs.get_base_reg() == rhs.get_base_reg() &&
+           lhs.get_ssa_version() == rhs.get_ssa_version();
+  #endif
   case Operand::MREG8:
   case Operand::MREG16:
   case Operand::MREG32:

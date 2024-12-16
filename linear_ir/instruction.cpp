@@ -74,6 +74,10 @@ void Instruction::set_operand(unsigned index, const Operand &operand) {
   m_operands[index] = operand;
 }
 
+void Instruction::append_operand(const Operand &operand) {
+  m_operands.push_back(operand);
+}
+
 Operand Instruction::get_last_operand() const {
   assert(get_num_operands() > 0);
   return m_operands[get_num_operands() - 1];

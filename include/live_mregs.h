@@ -1,4 +1,4 @@
-// Copyright (c) 2021-2023, David H. Hovemeyer <david.hovemeyer@gmail.com>
+// Copyright (c) 2021-2024, David H. Hovemeyer <david.hovemeyer@gmail.com>
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
 // copy of this software and associated documentation files (the "Software"),
@@ -86,11 +86,12 @@ public:
       fact.set(unsigned(*i));
   }
 
-  //! Convert a dataflow fact to a string (for printing the CFG annotated with
-  //! dataflow facts)
+  //! Convert a bitset of mregs to a string.
+  //! This is used to implement fact_to_string(), but can be
+  //! useful in other contexts as well.
   //! @param fact dataflow fact (set of machine register numbers)
   //! @return string representation of the dataflow fact
-  std::string fact_to_string(const FactType &fact) const {
+  static std::string stringify_mreg_set(const FactType &fact) {
     LowLevelFormatter ll_formatter;
 
     std::string s("{");
@@ -104,6 +105,14 @@ public:
     }
     s += "}";
     return s;
+  }
+
+  //! Convert a dataflow fact to a string (for printing the CFG annotated with
+  //! dataflow facts)
+  //! @param fact dataflow fact (set of machine register numbers)
+  //! @return string representation of the dataflow fact
+  std::string fact_to_string(const FactType &fact) const {
+    return stringify_mreg_set(fact);
   }
 };
 

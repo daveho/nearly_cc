@@ -1,4 +1,4 @@
-// Copyright (c) 2021-2023, David H. Hovemeyer <david.hovemeyer@gmail.com>
+// Copyright (c) 2021-2024, David H. Hovemeyer <david.hovemeyer@gmail.com>
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
 // copy of this software and associated documentation files (the "Software"),
@@ -32,7 +32,6 @@ InstructionSequence::InstructionSequence()
 InstructionSequence::InstructionSequence(BasicBlockKind kind, int code_order, const std::string &block_label)
   : m_next_label(block_label)
   , m_kind(kind)
-  //, m_block_label(block_label)
   , m_block_id(unsigned(-1))
   , m_code_order(code_order) {
 
@@ -46,8 +45,8 @@ InstructionSequence::~InstructionSequence() {
 
 InstructionSequence *InstructionSequence::duplicate() const {
   InstructionSequence *dup = new InstructionSequence();
-  dup->m_next_label = m_next_label;
 
+  // Copy instructions and existing labels
   for (auto i = m_instructions.begin(); i != m_instructions.end(); ++i) {
     const Slot &slot = *i;
     if (!slot.label.empty())
@@ -55,16 +54,54 @@ InstructionSequence *InstructionSequence::duplicate() const {
     dup->append(slot.ins->duplicate());
   }
 
+  // If this InstructionSequence has a next label set,
+  // set the duplicate's next label
+  dup->m_next_label = m_next_label;
+
   return dup;
 }
 
 void InstructionSequence::append(Instruction *ins) {
+  // If a next label is set, it becomes the appended
+  // instruction's label
   if (!m_next_label.empty()) {
     unsigned index = unsigned(m_instructions.size());
     m_label_map[m_next_label] = index;
   }
+
+  // Append the instruction
   m_instructions.push_back({ label: m_next_label, ins: ins });
+
+  // Clear next label
   m_next_label = "";
+}
+
+void InstructionSequence::prepend(Instruction *ins) {
+  // There should not be a next label set
+  assert(m_next_label.empty());
+
+  // Special case for prepending to an empty InstructionSequence
+  if (m_instructions.empty()) {
+    assert(m_label_map.empty());
+    m_instructions.push_back({ label: "", ins: ins });
+    return;
+  }
+
+  // Check whether there is a label on the first instruction.
+  // If so, it needs to become the label on the *new*
+  // first instruction.
+  std::string first_ins_label = m_instructions[0].label;
+
+  // Increment all entries in the label map to reflect the
+  // fact that the indices of all existing instructions
+  // will increase by 1, *except* for the existing first label,
+  // which stays the same.
+  for (auto i = m_label_map.begin(); i != m_label_map.end(); ++i) {
+    if (i->first != first_ins_label)
+      ++i->second;
+  }
+
+  m_instructions.push_front({ label: first_ins_label, ins: ins });
 }
 
 unsigned InstructionSequence::get_length() const {
@@ -83,6 +120,26 @@ Instruction *InstructionSequence::get_last_instruction() const {
 void InstructionSequence::define_label(const std::string &label) {
   assert(m_next_label.empty());
   m_next_label = label;
+}
+
+bool InstructionSequence::has_label(unsigned index) const {
+  assert(index <= m_instructions.size());
+
+  // special case
+  if (index == m_instructions.size())
+    return has_label_at_end();
+
+  return !m_instructions.at(index).label.empty();
+}
+
+std::string InstructionSequence::get_label_at_index(unsigned index) const {
+  assert(index <= m_instructions.size());
+
+  // special case
+  if (index == m_instructions.size())
+    return m_next_label;
+
+  return m_instructions.at(index).label;
 }
 
 bool InstructionSequence::has_label_at_end() const {
