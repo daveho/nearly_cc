@@ -3,9 +3,6 @@
 
 CXX = g++
 CXXFLAGS = -g -Wall -std=c++20 -Iinclude -Ibuild
-#ifdef SOLUTION
-CXXFLAGS += -DSOLUTION
-#endif
 
 CC = gcc
 CFLAGS = -g -Wall -std=gnu11 -Iinclude -Ibuild
