@@ -1,4 +1,4 @@
-// Copyright (c) 2021-2024, David H. Hovemeyer <david.hovemeyer@gmail.com>
+// Copyright (c) 2021-2024,2026 David H. Hovemeyer <david.hovemeyer@gmail.com>
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
 // copy of this software and associated documentation files (the "Software"),
@@ -69,6 +69,8 @@ const std::map<HighLevelOpcode, LowLevelOpcode> HL_TO_LL = {
   // and then generate a setXX instruction to put the result of the
   // comparison into the destination operand. These entries indicate
   // the apprpropriate setXX instruction to use.
+
+  // Signed integer comparisons
   { HINS_cmplt_b, MINS_SETL },
   { HINS_cmplt_w, MINS_SETL },
   { HINS_cmplt_l, MINS_SETL },
@@ -85,6 +87,26 @@ const std::map<HighLevelOpcode, LowLevelOpcode> HL_TO_LL = {
   { HINS_cmpgte_w, MINS_SETGE },
   { HINS_cmpgte_l, MINS_SETGE },
   { HINS_cmpgte_q, MINS_SETGE },
+
+  // Unsigned integer (or pointer) comparisons
+  { HINS_ucmplt_b, MINS_SETB },
+  { HINS_ucmplt_w, MINS_SETB },
+  { HINS_ucmplt_l, MINS_SETB },
+  { HINS_ucmplt_q, MINS_SETB },
+  { HINS_ucmplte_b, MINS_SETBE },
+  { HINS_ucmplte_w, MINS_SETBE },
+  { HINS_ucmplte_l, MINS_SETBE },
+  { HINS_ucmplte_q, MINS_SETBE },
+  { HINS_ucmpgt_b, MINS_SETA },
+  { HINS_ucmpgt_w, MINS_SETA },
+  { HINS_ucmpgt_l, MINS_SETA },
+  { HINS_ucmpgt_q, MINS_SETA },
+  { HINS_ucmpgte_b, MINS_SETAE },
+  { HINS_ucmpgte_w, MINS_SETAE },
+  { HINS_ucmpgte_l, MINS_SETAE },
+  { HINS_ucmpgte_q, MINS_SETAE },
+
+  // Equality/inequality comparisons
   { HINS_cmpeq_b, MINS_SETE },
   { HINS_cmpeq_w, MINS_SETE },
   { HINS_cmpeq_l, MINS_SETE },

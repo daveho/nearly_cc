@@ -1,6 +1,6 @@
 #! /usr/bin/env ruby
 
-# Copyright (c) 2021-2024, David H. Hovemeyer <david.hovemeyer@gmail.com>
+# Copyright (c) 2021-2024,2026 David H. Hovemeyer <david.hovemeyer@gmail.com>
 #
 # Permission is hereby granted, free of charge, to any person obtaining a
 # copy of this software and associated documentation files (the "Software"),
@@ -82,7 +82,6 @@ def gen_ast_visitor_cpp(outf, ast_tags)
   outf.print <<"EOF3"
 #include "node.h"
 #include "exceptions.h"
-#include "ast.h"
 #include "ast_visitor.h"
 
 ASTVisitor::ASTVisitor() {
@@ -141,7 +140,6 @@ def gen_ast_cpp(outf, ast_tags)
   outf.print <<"EOF7"
 #include <cassert>
 #include "node.h"
-#include "ast.h"
 
 ASTTreePrint::ASTTreePrint() {
 }
@@ -166,13 +164,22 @@ EOF7
 EOF8
 end
 
+if ARGV.length != 1
+  STDERR.puts "Usage: scripts/gen_ast_code.rb <ast node types file>"
+  exit 1
+end
+ast_node_types_filename = ARGV[0]
+
 ast_tags = []
 
-STDIN.each_line do |line|
-  line.rstrip!
 
-  if m = /^\s+(AST_\S+)\s*(=\s*\d+\s*)?,(\s*\/\/.*)?$/.match(line)
-    ast_tags.push(m[1])
+File.open(ast_node_types_filename, 'r') do |ast_node_types_in|
+  ast_node_types_in.each_line do |line|
+    line.rstrip!
+
+    if m = /^\s*(AST_\S+)\s*(=\s*\d+\s*)?,(\s*\/\/.*)?$/.match(line)
+      ast_tags.push(m[1])
+    end
   end
 end
 
@@ -186,6 +193,6 @@ File.open('build/ast_visitor.cpp', 'w') do |outf|
   gen_ast_visitor_cpp(outf, ast_tags)
 end
 
-File.open('build/ast.cpp', 'w') do |outf|
-  gen_ast_cpp(outf, ast_tags)
-end
+#File.open('build/ast.cpp', 'w') do |outf|
+#  gen_ast_cpp(outf, ast_tags)
+#end

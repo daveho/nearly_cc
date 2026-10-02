@@ -1,4 +1,4 @@
-// Copyright (c) 2021-2023, David H. Hovemeyer <david.hovemeyer@gmail.com>
+// Copyright (c) 2021-2023,2026 David H. Hovemeyer <david.hovemeyer@gmail.com>
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
 // copy of this software and associated documentation files (the "Software"),
@@ -21,7 +21,7 @@
 #include "node.h"
 
 // Private constructor, used only by other constructors
-Node::Node(int tag, const std::string &str, const std::vector<Node *> &kids)
+Node::Node(NodeKind tag, const std::string &str, const std::vector<Node *> &kids)
   : m_tag(tag)
   , m_kids(kids)
   , m_str(str)
@@ -29,18 +29,18 @@ Node::Node(int tag, const std::string &str, const std::vector<Node *> &kids)
 }
 
 // Private constructor, used only by other constructors
-Node::Node(int tag, const std::string &str, const std::initializer_list<Node *> kids)
+Node::Node(NodeKind tag, const std::string &str, const std::initializer_list<Node *> kids)
   : m_tag(tag)
   , m_kids(kids)
   , m_str(str)
   , m_loc_was_set_explicitly(false) {
 }
 
-Node::Node(int tag)
+Node::Node(NodeKind tag)
   : Node(tag, "", {}) {
 }
 
-Node::Node(int tag, std::initializer_list<Node *> kids)
+Node::Node(NodeKind tag, std::initializer_list<Node *> kids)
   : Node(tag, "", kids) {
   // parent node's location defaults to first kid's location
   if (!m_kids.empty()) {
@@ -48,7 +48,7 @@ Node::Node(int tag, std::initializer_list<Node *> kids)
   }
 }
 
-Node::Node(int tag, const std::vector<Node *> &kids)
+Node::Node(NodeKind tag, const std::vector<Node *> &kids)
   : Node(tag, "", kids) {
   // parent node's location defaults to first kid's location
   if (!m_kids.empty()) {
@@ -56,7 +56,7 @@ Node::Node(int tag, const std::vector<Node *> &kids)
   }
 }
 
-Node::Node(int tag, const std::string &str)
+Node::Node(NodeKind tag, const std::string &str)
   : Node(tag, str, {}) {
 }
 

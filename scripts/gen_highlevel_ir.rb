@@ -1,6 +1,6 @@
 #! /usr/bin/env ruby
 
-# Copyright (c) 2021-2024, David H. Hovemeyer <david.hovemeyer@gmail.com>
+# Copyright (c) 2021-2024,2026 David H. Hovemeyer <david.hovemeyer@gmail.com>
 #
 # Permission is hereby granted, free of charge, to any person obtaining a
 # copy of this software and associated documentation files (the "Software"),
@@ -32,15 +32,6 @@ ARITH = [
   :lshift,
   :rshift,
 
-  # Integer comparisons to compute a boolean value:
-  # note that all of these assign to a destination vreg
-  :cmplt,
-  :cmplte,
-  :cmpgt,
-  :cmpgte,
-  :cmpeq,
-  :cmpneq,
-
   # Bitwise operations
   :and,
   :or,
@@ -62,6 +53,26 @@ ARITH = [
   # operand sizes)
   :spill,
   :restore,
+]
+
+# Comparisons to compute a boolean value:
+# note that all of these assign to a destination vreg.
+
+# Relational operators:
+# note that these will be generated in both signed
+# (no prefix) and unsigned ("u" prefix) versions.
+RELATIONAL = [
+  :cmplt,
+  :cmplte,
+  :cmpgt,
+  :cmpgte,
+]
+
+# Equality/inequality comparisons.
+# These don't have separate signed and unsigned forms.
+EQUALITY = [
+  :cmpeq,
+  :cmpneq,
 ]
 
 SIZES = [ :b, :w, :l, :q ]
@@ -96,6 +107,13 @@ OPCODES = [
   # Include the arithmetic and data movement operations,
   # with variations for different operand sizes
   *(ARITH.product(SIZES).map { |pair| "#{pair[0]}_#{pair[1]}".to_sym }),
+
+  # Comparisons (signed and unsigned)
+  *(RELATIONAL.product(SIZES).map { |pair| "#{pair[0]}_#{pair[1]}".to_sym }),
+  *(RELATIONAL.product(SIZES).map { |pair| "u#{pair[0]}_#{pair[1]}".to_sym }),
+
+  # Equality/inequality
+  *(EQUALITY.product(SIZES).map { |pair| "#{pair[0]}_#{pair[1]}".to_sym }),
 
   # Signed promotions (convert less-precise value to a more-precise type)
   *promotions("sconv"),

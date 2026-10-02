@@ -1,4 +1,4 @@
-// Copyright (c) 2021-2023, David H. Hovemeyer <david.hovemeyer@gmail.com>
+// Copyright (c) 2021-2023,2026 David H. Hovemeyer <david.hovemeyer@gmail.com>
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
 // copy of this software and associated documentation files (the "Software"),
@@ -25,6 +25,7 @@
 #include <string>
 #include "location.h"
 #include "node_base.h"
+#include "node_kind.h"
 
 //! Tree node class, suitable for parse trees and ASTs.
 //! Nodes can also be used as tokens returned by a lexer.
@@ -33,7 +34,7 @@
 //! sufficient to delete the root.
 class Node : public NodeBase {
 private:
-  int m_tag;
+  NodeKind m_tag;
   std::vector<Node *> m_kids;
   std::string m_str;
   Location m_loc;
@@ -43,8 +44,8 @@ private:
   Node(const Node &);
   Node &operator=(const Node &);
 
-  Node(int tag, const std::string &str, const std::vector<Node *> &kids);
-  Node(int tag, const std::string &str, const std::initializer_list<Node *> kids);
+  Node(NodeKind tag, const std::string &str, const std::vector<Node *> &kids);
+  Node(NodeKind tag, const std::string &str, const std::initializer_list<Node *> kids);
 
 public:
   //! Const iterator type (for iterating through pointers to children).
@@ -52,33 +53,33 @@ public:
 
   //! Constructor.
   //! @param tag the node tag indicating what kind of node this is
-  Node(int tag);
+  Node(NodeKind tag);
 
   //! Constructor.
   //! @param tag the node tag indicating what kind of node this is
   //! @param kids initializer list with pointers to child Nodes to adopt
-  Node(int tag, std::initializer_list<Node *> kids);
+  Node(NodeKind tag, std::initializer_list<Node *> kids);
 
   //! Constructor.
   //! @param tag the node tag indicating what kind of node this is
   //! @param kids vector with pointers to child Nodes to adopt
-  Node(int tag, const std::vector<Node *> &kids);
+  Node(NodeKind tag, const std::vector<Node *> &kids);
 
   //! Constructor for a Node with a string value (e.g., a token).
   //! @param tag the node tag indicating what kind of node this is
   //!            (i.e., the token value)
   //! @param str the node's string value (e.g., the token's lexeme)
-  Node(int tag, const std::string &str);
+  Node(NodeKind tag, const std::string &str);
 
   virtual ~Node();
 
   //! Get the Node's tag value.
   //! @return the Node's tag value
-  int get_tag() const { return m_tag; }
+  NodeKind get_tag() const { return m_tag; }
 
   //! Set the Node's tag value.
   //! @param tag the tag value to set
-  void set_tag(int tag) { m_tag = tag; }
+  void set_tag(NodeKind tag) { m_tag = tag; }
 
   //! Get the Node's string value.
   //! @return the Node's string value

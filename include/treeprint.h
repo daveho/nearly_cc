@@ -1,4 +1,4 @@
-// Copyright (c) 2021, David H. Hovemeyer <david.hovemeyer@gmail.com>
+// Copyright (c) 2021,2026 David H. Hovemeyer <david.hovemeyer@gmail.com>
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
 // copy of this software and associated documentation files (the "Software"),
@@ -22,6 +22,7 @@
 #define TREEPRINT_H
 
 #include <string>
+#include "node_kind.h"
 class Node;
 
 class TreePrint {
@@ -31,7 +32,11 @@ public:
 
   void print(Node *t) const;
 
-  virtual std::string node_tag_to_string(int tag) const = 0;
+  //! This can be overridden to change how a NodeKind
+  //! value is converted into a string. However, you should
+  //! not need to do this, since the default implementation
+  //! works well for any NodeKind value.
+  virtual std::string node_tag_to_string(NodeKind tag) const;
 };
 
 #endif // TREEPRINT_H

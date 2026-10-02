@@ -1,4 +1,4 @@
-// Copyright (c) 2021-2024, David H. Hovemeyer <david.hovemeyer@gmail.com>
+// Copyright (c) 2021-2024,2026 David H. Hovemeyer <david.hovemeyer@gmail.com>
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
 // copy of this software and associated documentation files (the "Software"),
@@ -21,7 +21,8 @@
 #include <cstdio>
 #include <set>
 #include "node.h"
-#include "ast.h"
+#include "node_kind.h"
+#include "treeprint.h"
 #include "parse.tab.h"
 #include "lex.yy.h"
 #include "parser_state.h"
@@ -397,7 +398,7 @@ int process_source_file(Options &options, const std::string &filename) {
 
   if (ir_kind_goal == IRKind::AST) {
     // Just print the AST
-    ASTTreePrint ptp;
+    TreePrint ptp;
     ptp.print(unit.get_ast());
     return 0;
   }

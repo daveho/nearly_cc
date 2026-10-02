@@ -1,4 +1,4 @@
-// Copyright (c) 2021-2022, David H. Hovemeyer <david.hovemeyer@gmail.com>
+// Copyright (c) 2021-2022,2026 David H. Hovemeyer <david.hovemeyer@gmail.com>
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
 // copy of this software and associated documentation files (the "Software"),
@@ -18,9 +18,9 @@
 // ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 // OTHER DEALINGS IN THE SOFTWARE.
 
-#include "ast.h"
 #include "node.h"
 #include "cpputil.h"
+#include "treeprint.h"
 #include "print_graph.h"
 
 PrintGraph::PrintGraph(Node *root)
@@ -54,9 +54,9 @@ void PrintGraph::print() {
 }
 
 int PrintGraph::visit(Node *n, const std::string &parent_name, int level) {
-  ASTTreePrint atp; // for getting node tag as string
+  TreePrint atp; // for getting node tag as string
 
-  int tag = n->get_tag();
+  NodeKind tag = n->get_tag();
   std::map<int, int>::iterator i = m_node_type_count.find(tag);
   int count = (i == m_node_type_count.end()) ? 0 : i->second;
   m_node_type_count[tag] = count + 1;

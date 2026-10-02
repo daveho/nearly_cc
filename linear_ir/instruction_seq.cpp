@@ -1,4 +1,4 @@
-// Copyright (c) 2021-2024, David H. Hovemeyer <david.hovemeyer@gmail.com>
+// Copyright (c) 2021-2024,2026 David H. Hovemeyer <david.hovemeyer@gmail.com>
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
 // copy of this software and associated documentation files (the "Software"),
@@ -144,6 +144,11 @@ std::string InstructionSequence::get_label_at_index(unsigned index) const {
 
 bool InstructionSequence::has_label_at_end() const {
   return !m_next_label.empty();
+}
+
+std::string InstructionSequence::get_label_at_end() const {
+  assert(has_label_at_end());
+  return m_next_label;
 }
 
 InstructionSequence::const_iterator InstructionSequence::get_iterator_at_labeled_position(const std::string &label) const {

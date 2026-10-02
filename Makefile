@@ -11,9 +11,9 @@ CFLAGS = -g -Wall -std=gnu11 -Iinclude -Ibuild
 # Note that these won't necessarily get built correctly
 # unless you run "make depend" once before running "make".
 
-GENERATED_SRCS = build/parse.tab.cpp build/lex.yy.cpp build/grammar_symbols.cpp \
-	build/ast.cpp build/ast_visitor.cpp build/highlevel.cpp
-GENERATED_HDRS = build/parse.tab.h build/lex.yy.h build/grammar_symbols.h \
+GENERATED_SRCS = build/parse.tab.cpp build/lex.yy.cpp build/node_kind.cpp \
+	build/ast_visitor.cpp build/highlevel.cpp
+GENERATED_HDRS = build/parse.tab.h build/lex.yy.h build/node_kind.h \
 	build/ast_visitor.h build/highlevel.h
 
 # Source files.
@@ -100,11 +100,11 @@ build/parse.tab.h build/parse.tab.cpp : $(PARSER_SRC)
 build/lex.yy.cpp build/lex.yy.h : $(LEXER_SRC)
 	flex --outfile=build/lex.yy.cpp --header-file=build/lex.yy.h $(LEXER_SRC)
 
-build/grammar_symbols.h build/grammar_symbols.cpp : $(PARSER_SRC) scripts/scan_grammar_symbols.rb
-	scripts/scan_grammar_symbols.rb < $(PARSER_SRC)
+build/node_kind.h build/node_kind.cpp : $(PARSER_SRC) ast/ast_node_types.txt scripts/scan_grammar_symbols.rb
+	scripts/scan_grammar_symbols.rb $(PARSER_SRC) ast/ast_node_types.txt
 
-build/ast.cpp build/ast_visitor.h build/ast_visitor.cpp : include/ast.h scripts/gen_ast_code.rb
-	scripts/gen_ast_code.rb < include/ast.h
+build/ast.cpp build/ast_visitor.h build/ast_visitor.cpp : ast/ast_node_types.txt scripts/gen_ast_code.rb
+	scripts/gen_ast_code.rb ast/ast_node_types.txt
 
 build/highlevel.h build/highlevel.cpp : scripts/gen_highlevel_ir.rb
 	scripts/gen_highlevel_ir.rb

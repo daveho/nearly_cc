@@ -1,4 +1,4 @@
-// Copyright (c) 2021-2023, David H. Hovemeyer <david.hovemeyer@gmail.com>
+// Copyright (c) 2021-2023,2026 David H. Hovemeyer <david.hovemeyer@gmail.com>
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
 // copy of this software and associated documentation files (the "Software"),
@@ -137,6 +137,14 @@ const char *lowlevel_opcode_to_str(LowLevelOpcode opcode) {
     return "sete";
   case MINS_SETNE:
     return "setne";
+  case MINS_SETB:
+    return "setb";
+  case MINS_SETBE:
+    return "setbe";
+  case MINS_SETA:
+    return "seta";
+  case MINS_SETAE:
+    return "setae";
   default:
     assert(false);
     return nullptr;

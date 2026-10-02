@@ -1,4 +1,4 @@
-// Copyright (c) 2021-2024, David H. Hovemeyer <david.hovemeyer@gmail.com>
+// Copyright (c) 2021-2024,2026 David H. Hovemeyer <david.hovemeyer@gmail.com>
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
 // copy of this software and associated documentation files (the "Software"),
@@ -195,6 +195,11 @@ public:
   //! @return true if there is a label at the end of the InstructionSequence,
   //!         false if not
   bool has_label_at_end() const;
+
+  //! Get the label at the end of the InstructionSequence.
+  //! Should only be called if has_label_at_end() returns true.
+  //! @return the label at the end of the instruction sequence
+  std::string get_label_at_end() const;
 
   //! Return a forward const iterator positioned at the instruction with
   //! the specified label, or the end iterator if there is no instruction

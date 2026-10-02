@@ -1,5 +1,5 @@
 %{
-// Copyright (c) 2021-2022, David H. Hovemeyer <david.hovemeyer@gmail.com>
+// Copyright (c) 2021-2022,2026 David H. Hovemeyer <david.hovemeyer@gmail.com>
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
 // copy of this software and associated documentation files (the "Software"),
@@ -24,8 +24,7 @@
 
 #include "node.h"
 #include "parser_state.h"
-#include "grammar_symbols.h"
-#include "ast.h"
+#include "node_kind.h"
 #include "yyerror.h"
 
 // This is a weird hack required to make bison pass the

@@ -1,4 +1,4 @@
-// Copyright (c) 2021-2023, David H. Hovemeyer <david.hovemeyer@gmail.com>
+// Copyright (c) 2021-2023,2026 David H. Hovemeyer <david.hovemeyer@gmail.com>
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
 // copy of this software and associated documentation files (the "Software"),
@@ -72,7 +72,10 @@ enum LowLevelOpcode {
   MINS_NOP,
   MINS_MOVB,
   MINS_MOVW,
-  MINS_MOVL,
+  MINS_MOVL,bit
+  MINS_JMP,
+  MINS_JL,   // these are in the same order as the corresponding SETx instructions
+  MINS_JLE,
   MINS_MOVQ,
   MINS_ADDB,
   MINS_ADDW,
@@ -126,6 +129,10 @@ enum LowLevelOpcode {
   MINS_SETGE,
   MINS_SETE,
   MINS_SETNE,
+  MINS_SETB,
+  MINS_SETBE,
+  MINS_SETA,
+  MINS_SETAE,
   MINS_XORB,
   MINS_XORW,
   MINS_XORL,

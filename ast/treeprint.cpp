@@ -1,4 +1,4 @@
-// Copyright (c) 2021, David H. Hovemeyer <david.hovemeyer@gmail.com>
+// Copyright (c) 2021,2026 David H. Hovemeyer <david.hovemeyer@gmail.com>
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
 // copy of this software and associated documentation files (the "Software"),
@@ -68,7 +68,7 @@ void TreePrintContext::print_node(Node *n) {
     }
   }
 
-  int tag = n->get_tag();
+  NodeKind tag = n->get_tag();
   std::string str = n->get_str();
 
   printf("%s", tp_obj->node_tag_to_string(tag).c_str());
@@ -98,4 +98,8 @@ void TreePrint::print(Node *t) const {
   TreePrintContext ctx(this);
   ctx.pushctx(1);
   ctx.print_node(t);
+}
+
+std::string TreePrint::node_tag_to_string(NodeKind tag) const {
+  return std::string(get_grammar_symbol_name(tag));
 }
